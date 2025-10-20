@@ -1,0 +1,21 @@
+jsonapi:
+    route_prefix: /api
+    media_types:
+        default:
+            request:
+                allowed:
+                    - application/vnd.api+json
+            response:
+                default: application/vnd.api+json
+    resource_paths:
+        - '%kernel.project_dir%/src/PgEntity'
+        - '%kernel.project_dir%/src/MysqlEntity'
+    pagination:
+        default_size: 10
+        max_size: 50
+    write:
+        allow_relationship_writes: true
+    profiles:
+        negotiation:
+            require_known_profiles: false
+        enabled_by_default: []

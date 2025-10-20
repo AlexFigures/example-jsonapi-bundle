@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         beStrictAboutTestsThatDoNotTestAnything="false"
+>
+    <php>
+        <env name="APP_ENV" value="test"/>
+        <env name="KERNEL_CLASS" value="App\\Kernel"/>
+        <env name="DATABASE_URL" value="postgresql://symfony:symfony@127.0.0.1:5432/symfony_pg?serverVersion=16&charset=utf8"/>
+        <env name="MYSQL_URL" value="mysql://symfony:symfony@127.0.0.1:3306/symfony_mysql?serverVersion=8.0.39&charset=utf8mb4"/>
+    </php>
+</phpunit>

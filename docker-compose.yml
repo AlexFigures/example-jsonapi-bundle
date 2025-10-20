@@ -1,0 +1,63 @@
+version: "3.8"
+
+services:
+  php:
+    image: ghcr.io/symfonycorp/php:8.3-fpm
+    working_dir: /srv/app
+    volumes:
+      - ./:/srv/app:cached
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+    networks:
+      - appnet
+    depends_on:
+      - pgsql
+      - mysql
+
+  pgsql:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: symfony_pg
+      POSTGRES_USER: symfony
+      POSTGRES_PASSWORD: symfony
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - appnet
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: symfony_mysql
+      MYSQL_USER: symfony
+      MYSQL_PASSWORD: symfony
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    command: ["mysqld", "--default-authentication-plugin=mysql_native_password"]
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - appnet
+
+  nginx:
+    image: nginx:1.27-alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./public:/srv/app/public:ro
+    depends_on:
+      - php
+    networks:
+      - appnet
+
+volumes:
+  pgdata:
+  mysqldata:
+
+networks:
+  appnet:
+    driver: bridge
