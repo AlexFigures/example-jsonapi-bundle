@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicLidTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-004')]
     public function testLocalIdsAcrossCreateAndRelationshipOperations(): void
     {

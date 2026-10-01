@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class WritePreconditionsTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('CACHE-001')]
     public function testMatchingIfMatchAllowsUpdate(): void
     {
@@ -20,7 +19,6 @@ final class WritePreconditionsTest extends AcceptanceTestCase
         self::assertSame('Concurrent update', $doc['data']['attributes']['title']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('CACHE-001')]
     public function testStaleIfMatchRejectsWithoutChangingState(): void
     {
@@ -30,7 +28,6 @@ final class WritePreconditionsTest extends AcceptanceTestCase
         self::assertSame('Shared title', $doc['data']['attributes']['title']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('CACHE-001')]
     public function testStaleIfMatchDoesNotDelete(): void
     {

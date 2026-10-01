@@ -17,7 +17,6 @@ final class ErrorDocumentTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/articles', $payload), 400, '/data/relationships/author');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ERROR-002')]
     public function testMalformedRelationshipDataPointsToData(): void
     {

@@ -1,0 +1,21 @@
+framework:
+    test: true
+jsonapi:
+    resource_paths:
+        - '%kernel.project_dir%/src/Torture/Composite'
+doctrine:
+    dbal:
+        connections:
+            pgsql:
+                dbname_suffix: '_torture'
+            mysql:
+                dbname_suffix: '_torture'
+    orm:
+        entity_managers:
+            pgsql:
+                mappings:
+                    Composite:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/Composite'
+                        prefix: 'App\Torture\Composite'
+                        is_bundle: false

@@ -28,7 +28,6 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
     }
 
     #[DataProvider('failuresBundleGaps')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('DOCTRINE-001', ['#1'])]
     public function testEarlierCreateIsRolledBackBundleGap(string $failure, int $status): void
     {
@@ -50,7 +49,6 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
         yield ['validation',422]; yield ['unique',409]; yield ['unknown resource',404]; yield ['invalid relationship',404];
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-008')]
     public function testSuccessfulBatchOrderAndMixedEmptyResults(): void
     {

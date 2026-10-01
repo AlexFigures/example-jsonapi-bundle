@@ -4,4 +4,4 @@ services:
         autoconfigure: true
     App\:
         resource: '../src/'
-        exclude: '../src/{PgEntity,MysqlEntity,Enum,Kernel.php}'
+        exclude: '../src/{PgEntity,MysqlEntity,Enum,Torture,Kernel.php}'

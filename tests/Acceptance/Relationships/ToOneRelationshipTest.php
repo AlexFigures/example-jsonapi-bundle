@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class ToOneRelationshipTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-005')]
     public function testReadLinkageAndRelatedResource(): void
     {
@@ -52,7 +51,6 @@ final class ToOneRelationshipTest extends AcceptanceTestCase
     }
 
     #[DataProvider('invalidLinkageBundleGaps')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-001', ['#1'])]
     #[ExpectedBundleGap('RELATIONSHIP-004', ['#3'])]
     public function testInvalidLinkageBundleGap(string $case, int $status, ?string $pointer): void

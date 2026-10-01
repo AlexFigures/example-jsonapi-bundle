@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicCreateTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-004')]
     public function testCreateUsingHrefAndGeneratedId(): void
     {
@@ -24,7 +23,6 @@ final class AtomicCreateTest extends AcceptanceTestCase
         self::assertSame('New article', $after['data']['attributes']['title']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-001')]
     public function testCanonicalAddWithoutRefOrHref(): void
     {
@@ -34,7 +32,6 @@ final class AtomicCreateTest extends AcceptanceTestCase
         self::assertNotSame('', $doc['atomic:results'][0]['data']['id']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-001')]
     public function testTitleOnlyCanonicalAddReachesDomainValidation(): void
     {

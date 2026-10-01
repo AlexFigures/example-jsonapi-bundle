@@ -26,7 +26,6 @@ final class ProfileTest extends AcceptanceTestCase
         self::assertContains('Accept', $response->getVary());
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('PROFILE-001')]
     public function testProfileEnabledByDefaultForTags(): void
     {
@@ -41,7 +40,6 @@ final class ProfileTest extends AcceptanceTestCase
         self::assertArrayNotHasKey('meta', $doc['data']['relationships']['tags']);
         self::assertStringNotContainsString('https://example.test/unknown', $response->headers->get('Content-Type'));
     }
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('PROFILE-002')]
     public function testSoftDeleteProfileExcludesArchivedCategory(): void
     {
@@ -53,7 +51,6 @@ final class ProfileTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('GET', $this->url('archived', 'categories'), headers: ['Accept' => self::MEDIA.';profile="urn:jsonapi:profile:soft-delete"']), 404);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('PROFILE-003')]
     public function testAuditTrailProfileUpdatesTimestamp(): void
     {

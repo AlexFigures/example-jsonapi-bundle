@@ -38,7 +38,6 @@ final class ContentNegotiationTest extends AcceptanceTestCase
         yield 'multiple profiles' => [self::MEDIA.';profile="urn:jsonapi:profile:rel-counts https://example.test/unknown"', 200];
     }
 
-    #[Group('bundle-gap')]
     #[DataProvider('mixedCandidates')]
     #[ExpectedBundleGap('CONTENT-NEGOTIATION-001')]
     public function testMixedValidInvalidCandidates(string $accept): void
@@ -54,7 +53,6 @@ final class ContentNegotiationTest extends AcceptanceTestCase
         yield 'unknown ext then valid' => [self::MEDIA.';ext="https://example.test/unknown", '.self::MEDIA];
     }
 
-    #[Group('bundle-gap')]
     #[DataProvider('qualityValues')]
     #[ExpectedBundleGap('CONTENT-NEGOTIATION-002')]
     public function testQualityValues(string $accept, int $status): void

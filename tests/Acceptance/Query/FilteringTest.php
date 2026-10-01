@@ -19,7 +19,6 @@ final class FilteringTest extends AcceptanceTestCase
     }
 
     #[DataProvider('filtersBundleGaps')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('FILTER-001', ['neq public operator', 'ne'])]
     #[ExpectedBundleGap('FILTER-002', ['between'])]
     #[ExpectedBundleGap('FILTER-003', ['null', 'not null'])]

@@ -21,6 +21,7 @@ if (!is_file($junitPath)) {
     exit(2);
 }
 $inventory = json_decode(file_get_contents($root.'/docs/bundle-gaps.json'), true, 512, JSON_THROW_ON_ERROR);
+$inventory['bundle_revision'] = Composer\InstalledVersions::getReference('alexfigures/symfony-jsonapi-bundle');
 $gapById = array_column($inventory['gaps'], null, 'id');
 $methods = [];
 $iterator = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($root.'/tests/Acceptance'));
@@ -34,7 +35,7 @@ foreach ($iterator as $file) {
         $groups = array_merge($reflection->getAttributes(Group::class), $method->getAttributes(Group::class));
         $isGap = in_array('bundle-gap', array_map(static fn (ReflectionAttribute $a): string => $a->newInstance()->name(), $groups), true);
         $markers = array_map(static fn (ReflectionAttribute $a): ExpectedBundleGap => $a->newInstance(), $method->getAttributes(ExpectedBundleGap::class));
-        if ($isGap !== ($markers !== [])) {
+        if ($isGap && $markers === []) {
             throw new RuntimeException("Group/expected-gap marker mismatch: $class::{$method->name}");
         }
         foreach ($markers as $marker) {
@@ -112,7 +113,15 @@ foreach ($xml->xpath('//testcase') as $test) {
 if (count($rows) !== $expectedCases) {
     throw new RuntimeException(sprintf('Incomplete JUnit: %d cases, expected %d. Run the full acceptance suite before generating reports.', count($rows), $expectedCases));
 }
-$report = ['bundle_revision' => $inventory['bundle_revision'], 'phpunit_version' => PHPUnit\Runner\Version::id(),
+$gapSummary = [];
+foreach ($inventory['gaps'] as $gap) {
+    $matching = array_values(array_filter($rows, static fn (array $row): bool => in_array($gap['id'], $row['bundle_gaps'], true)));
+    $failures = array_values(array_filter($matching, static fn (array $row): bool => $row['result'] === 'FAIL'));
+    $gapSummary[] = ['id' => $gap['id'], 'status' => $failures === [] ? 'RESOLVED_ON_TESTED_REVISION' : 'OPEN',
+        'passing_cases' => count($matching) - count($failures), 'failing_cases' => count($failures),
+        'current_failures' => array_column($failures, 'test')];
+}
+$report = ['bundle_revision' => $inventory['bundle_revision'], 'gap_summary' => $gapSummary, 'phpunit_version' => PHPUnit\Runner\Version::id(),
     'php_version' => PHP_VERSION, 'counts' => $counts, 'scenarios' => $rows];
 writeReportFile($root.'/docs/acceptance-results.json', json_encode($report, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)."\n");
 $escape = static fn (string $value): string => str_replace(["\n", '|'], [' ', '\\|'], $value);
@@ -121,7 +130,7 @@ $matrix .= "Stable passes: {$counts['stable_pass']}; gap failures: {$counts['gap
 $matrix .= "Expected statuses list assertions in each scenario, including follow-up requests. HTTP statuses are observations, not substituted expectations. A failing test may stop before later assertions.\n\n";
 $matrix .= "| Area | Scenario | Test | Expected HTTP | Current result / HTTP | Bundle gap? |\n|---|---|---|---|---|---|\n";
 foreach ($rows as $row) {
-    $matrix .= '| '.$row['area'].' | '.$escape($row['scenario']).' | ['.basename($row['file']).'](../'.$row['file'].') | '.(implode(', ', $row['expected_statuses']) ?: 'See test assertions').' | '.$row['result'].' / '.(implode(', ', $row['current_statuses']) ?: 'trace not recorded').' | '.(implode(', ', $row['bundle_gaps']) ?: 'No')." |\n";
+    $matrix .= '| '.$row['area'].' | '.$escape($row['scenario']).' | ['.basename($row['file']).'](../'.$row['file'].') | '.(implode(', ', $row['expected_statuses']) ?: 'See test assertions').' | '.$row['result'].' / '.(implode(', ', $row['current_statuses']) ?: 'trace not recorded').' | '.($row['bundle_gaps'] === [] ? 'No' : ($row['result'] === 'PASS' ? 'Resolved: ' : 'OPEN: ').implode(', ', $row['bundle_gaps']))." |\n";
 }
 writeReportFile($root.'/docs/acceptance-matrix.md', $matrix);
 $gapDoc = "# Known bundle gaps\n\n`docs/bundle-gaps.json` is the reviewed inventory. Tests carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; they use normal assertions and are never skipped. This report validates the markers against the inventory.\n\n";
@@ -132,7 +141,7 @@ foreach ($inventory['gaps'] as $gap) {
     $failCount = count(array_filter($matching, static fn (array $row): bool => $row['result'] === 'FAIL'));
     $gapDoc .= '## '.$gap['id'].' — '.$gap['area']."\n\n";
     $gapDoc .= '**'.$gap['category'].' · '.$gap['priority'].'**. Observed: '.$failCount.' failing / '.count($matching)." cases.\n\n";
-    $gapDoc .= '- Expected: '.$gap['expected']."\n- Current: ".$gap['current']."\n- Bundle change: ".$gap['bundle_change_required']."\n- Tests:\n";
+    $gapDoc .= '- Expected: '.$gap['expected']."\n- Current on tested revision: ".($failCount === 0 ? 'PASS; historical gap resolved for all covered cases.' : 'OPEN; see observed failures in acceptance-results.json.')."\n- Historical baseline: ".$gap['current']."\n- Bundle change: ".$gap['bundle_change_required']."\n- Tests:\n";
     foreach ($gap['tests'] as $target) {
         [$testClass, $testMethod] = explode('::', $target['test']);
         $gapDoc .= '  - ['.$target['test'].'](../tests/Acceptance/'.$testClass.'.php)'.(isset($target['datasets']) ? ' ('.implode(', ', $target['datasets']).')' : '')."\n";

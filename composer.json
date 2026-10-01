@@ -9,7 +9,7 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "alexfigures/symfony-jsonapi-bundle": "dev-main",
+        "alexfigures/symfony-jsonapi-bundle": "dev-fix/acceptance-gaps",
         "doctrine/doctrine-bundle": "^2.19.1",
         "doctrine/orm": "^3.7.2",
         "symfony/console": "7.3.*",
@@ -74,7 +74,14 @@
         "test:stable": "phpunit --exclude-group bundle-gap",
         "test:full": "phpunit",
         "test:gaps": "phpunit --group bundle-gap",
-        "acceptance:report": "php tools/acceptance-report.php"
+        "acceptance:report": "php tools/acceptance-report.php",
+        "test:extreme": "phpunit -c phpunit.torture.xml.dist --testsuite extreme",
+        "test:performance": "phpunit -c phpunit.torture.xml.dist --testsuite performance",
+        "test:chaos": "phpunit -c phpunit.torture.xml.dist --testsuite chaos",
+        "test:torture:stable": "phpunit -c phpunit.torture.xml.dist --exclude-group torture-gap",
+        "test:torture:full": "phpunit -c phpunit.torture.xml.dist --log-junit var/torture/junit.xml",
+        "test:torture:gaps": "phpunit -c phpunit.torture.xml.dist --group torture-gap",
+        "torture:report": "php tools/torture-report.php"
     },
     "conflict": {
         "symfony/symfony": "*"

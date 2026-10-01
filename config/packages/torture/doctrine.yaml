@@ -1,0 +1,105 @@
+doctrine:
+    dbal:
+        connections:
+            pgsql:
+                dbname_suffix: '_torture'
+            mysql:
+                dbname_suffix: '_torture'
+            shard_b:
+                url: '%env(resolve:DATABASE_URL)%'
+                dbname_suffix: '_torture_b'
+            replica:
+                url: '%env(resolve:TORTURE_REPLICA_URL)%'
+            replicated:
+                driver: pdo_pgsql
+                url: '%env(resolve:DATABASE_URL)%'
+                dbname_suffix: '_torture'
+                wrapper_class: Doctrine\DBAL\Connections\PrimaryReadReplicaConnection
+                replicas:
+                    snapshot:
+                        url: '%env(resolve:TORTURE_REPLICA_URL)%'
+            broken_replica:
+                driver: pdo_pgsql
+                url: '%env(resolve:DATABASE_URL)%'
+                dbname_suffix: '_torture'
+                wrapper_class: Doctrine\DBAL\Connections\PrimaryReadReplicaConnection
+                replicas:
+                    unavailable:
+                        url: 'postgresql://symfony:symfony@127.0.0.1:1/unavailable?serverVersion=16'
+    orm:
+        entity_managers:
+            pgsql:
+                connection: pgsql
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                mappings:
+                    PgEntity:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/PgEntity'
+                        prefix: 'App\PgEntity'
+                        is_bundle: false
+                    Torture:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/Entity'
+                        prefix: 'App\Torture\Entity'
+                        is_bundle: false
+            shard_b:
+                connection: shard_b
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                mappings:
+                    Shard:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/ShardEntity'
+                        prefix: 'App\Torture\ShardEntity'
+                        is_bundle: false
+                    PgEntity:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/PgEntity'
+                        prefix: 'App\PgEntity'
+                        is_bundle: false
+                    Torture:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/Entity'
+                        prefix: 'App\Torture\Entity'
+                        is_bundle: false
+            replica:
+                connection: replica
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                mappings:
+                    PgEntity:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/PgEntity'
+                        prefix: 'App\PgEntity'
+                        is_bundle: false
+                    Torture:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/Entity'
+                        prefix: 'App\Torture\Entity'
+                        is_bundle: false
+            replicated:
+                connection: replicated
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                mappings:
+                    PgEntity:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/PgEntity'
+                        prefix: 'App\PgEntity'
+                        is_bundle: false
+                    Torture:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/Entity'
+                        prefix: 'App\Torture\Entity'
+                        is_bundle: false
+            broken_replica:
+                connection: broken_replica
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                mappings:
+                    PgEntity:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/PgEntity'
+                        prefix: 'App\PgEntity'
+                        is_bundle: false
+                    Torture:
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/Torture/Entity'
+                        prefix: 'App\Torture\Entity'
+                        is_bundle: false

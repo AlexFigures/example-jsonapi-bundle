@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a9df60447fae3104e190cd63bdc1cbc",
+    "content-hash": "3a519d124cdab7bbcce325faa81bb714",
     "packages": [
         {
             "name": "alexfigures/symfony-jsonapi-bundle",
-            "version": "dev-main",
+            "version": "dev-fix/acceptance-gaps",
             "source": {
                 "type": "git",
-                "url": "https://github.com/AlexFigures/jsonapi-symfony",
-                "reference": "5458778adc87386ffff9c07f009c25906e0971db"
+                "url": "https://github.com/AlexFigures/jsonapi-symfony.git",
+                "reference": "f02849d58615e29d20c4e14fb373a3ca0a1db94e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AlexFigures/jsonapi-symfony/zipball/f02849d58615e29d20c4e14fb373a3ca0a1db94e",
+                "reference": "f02849d58615e29d20c4e14fb373a3ca0a1db94e",
+                "shasum": ""
             },
             "require": {
                 "php": "^8.2",
@@ -44,7 +50,6 @@
                 "symfony/phpunit-bridge": "^7.1",
                 "symfony/var-exporter": "^7.1"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -56,13 +61,7 @@
                     "AlexFigures\\Symfony\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "AlexFigures\\Symfony\\Tests\\": "tests/",
-                    "AlexFigures\\Symfony\\StressApp\\": "scripts/stress/app/",
-                    "AlexFigures\\Symfony\\StressTest\\": "scripts/stress/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -77,18 +76,18 @@
                 "symfony-bundle"
             ],
             "support": {
-                "issues": "https://github.com/AlexFigures/jsonapi-symfony/issues",
                 "discussions": "https://github.com/AlexFigures/jsonapi-symfony/discussions",
                 "docs": "https://github.com/AlexFigures/jsonapi-symfony/tree/main/docs",
+                "issues": "https://github.com/AlexFigures/jsonapi-symfony/issues",
                 "source": "https://github.com/AlexFigures/jsonapi-symfony"
             },
             "funding": [
                 {
-                    "type": "github",
-                    "url": "https://github.com/sponsors/AlexFigures"
+                    "url": "https://github.com/sponsors/AlexFigures",
+                    "type": "github"
                 }
             ],
-            "time": "2026-10-01T09:23:00+00:00"
+            "time": "2026-10-01T16:26:48+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -6667,5 +6666,5 @@
         "ext-iconv": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }

@@ -12,7 +12,6 @@ use PHPUnit\Framework\Attributes\Group;
 final class OptionsTest extends AcceptanceTestCase
 {
     #[DataProvider('routes')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('HTTP-002')]
     public function testAllowHeader(string $suffix, array $methods): void
     {

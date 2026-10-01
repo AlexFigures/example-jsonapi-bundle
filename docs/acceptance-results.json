@@ -1,11 +1,325 @@
 {
-    "bundle_revision": "5458778adc87386ffff9c07f009c25906e0971db",
+    "bundle_revision": "f02849d58615e29d20c4e14fb373a3ca0a1db94e",
+    "gap_summary": [
+        {
+            "id": "CONTENT-NEGOTIATION-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "CONTENT-NEGOTIATION-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-003",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-004",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-005",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-006",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-007",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-008",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-009",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-010",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-011",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-012",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-013",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "CACHE-001",
+            "status": "OPEN",
+            "passing_cases": 3,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testRequiredPrecondition"
+            ]
+        },
+        {
+            "id": "CACHE-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCTRINE-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCTRINE-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "RELATIONSHIP-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "RELATIONSHIP-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "RELATIONSHIP-003",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "RELATIONSHIP-004",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "RELATIONSHIP-005",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "HTTP-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 4,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "HTTP-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 6,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "FILTER-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "FILTER-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "FILTER-003",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "FILTER-004",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "FILTER-005",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ALIAS-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "QUERY-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "QUERY-002",
+            "status": "OPEN",
+            "passing_cases": 2,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected"
+            ]
+        },
+        {
+            "id": "ERROR-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ERROR-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "INCLUDE-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "WRITE-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-003",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "SORT-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "UUID-001",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "UUID-002",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        }
+    ],
     "phpunit_version": "11.5.56",
     "php_version": "8.4.26",
     "counts": {
-        "stable_pass": 238,
+        "stable_pass": 314,
         "gap_pass": 0,
-        "gap_fail": 78,
+        "gap_fail": 2,
         "unexpected_fail": 0,
         "skipped": 0
     },
@@ -19,13 +333,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-004"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicCreateTest::testCreateUsingHrefAndGeneratedId\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-parameter\",\"id\":\"<uuid>\",\"title\":\"Invalid query parameter\",\"detail\":\"Unable to resolve resource identifier for persisted model.\"}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicCreateTest.php:18\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -36,13 +350,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicCreateTest::testCanonicalAddWithoutRefOrHref\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-pointer\",\"id\":\"<uuid>\",\"title\":\"Invalid document member\",\"detail\":\"Each operation MUST include a \\u0022ref\\u0022 or \\u0022href\\u0022 member.\",\"source\":{\"pointer\":\"\\/atomic:operations\\/0\"}}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicCreateTest.php:32\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -54,13 +368,13 @@
                 422
             ],
             "current_statuses": [
-                400
+                422
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicCreateTest::testTitleOnlyCanonicalAddReachesDomainValidation\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-pointer\",\"id\":\"<uuid>\",\"title\":\"Invalid document member\",\"detail\":\"Each operation MUST include a \\u0022ref\\u0022 or \\u0022href\\u0022 member.\",\"source\":{\"pointer\":\"\\/atomic:operations\\/0\"}}]}\nFailed asserting that 400 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicCreateTest.php:43\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -71,13 +385,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-004"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicLidTest::testLocalIdsAcrossCreateAndRelationshipOperations\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-parameter\",\"id\":\"<uuid>\",\"title\":\"Invalid query parameter\",\"detail\":\"Unable to resolve resource identifier for persisted model.\"}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicLidTest.php:26\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -287,13 +601,13 @@
                 200
             ],
             "current_statuses": [
-                415
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-012"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicNegotiationTest::testEnabledAtomicExtensionWithStrictGlobalNegotiation\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/vnd.api+json;ext=\\u0022https:\\/\\/jsonapi.org\\/ext\\/atomic\\u0022\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicNegotiationTest.php:50\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -304,13 +618,13 @@
                 415
             ],
             "current_statuses": [
-                200
+                415
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-013"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicNegotiationTest::testWrongBaseMediaTypeWithAtomicExtIsRejected\n{\"atomic:results\":[{\"data\":{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Wrong media\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}}}]}\nFailed asserting that 200 is identical to 415.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicNegotiationTest.php:57\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -321,13 +635,13 @@
                 415
             ],
             "current_statuses": [
-                200
+                415
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-013"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicNegotiationTest::testAtomicMediaParameterRejected\n{\"atomic:results\":[{\"data\":{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Unsupported parameter\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}}}]}\nFailed asserting that 200 is identical to 415.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicNegotiationTest.php:64\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -634,14 +948,14 @@
                 409
             ],
             "current_statuses": [
-                500,
+                409,
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "DOCTRINE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testEarlierCreateIsRolledBackBundleGap with data set \"#1\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 409.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicTransactionalityTest.php:45\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -653,13 +967,14 @@
                 404
             ],
             "current_statuses": [
-                200
+                200,
+                404
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-008"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testSuccessfulBatchOrderAndMixedEmptyResults\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'First version'\n+'Final version'\n\n/srv/app/tests/Acceptance/Atomic/AtomicTransactionalityTest.php:64\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -717,13 +1032,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicUpdateTest::testUpdateTargetFromDataWithoutRefOrHref\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-pointer\",\"id\":\"<uuid>\",\"title\":\"Invalid document member\",\"detail\":\"Each operation MUST include a \\u0022ref\\u0022 or \\u0022href\\u0022 member.\",\"source\":{\"pointer\":\"\\/atomic:operations\\/0\"}}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicUpdateTest.php:31\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -734,13 +1049,13 @@
                 400
             ],
             "current_statuses": [
-                200
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-003"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testRefCannotContainBothIdAndLid\n{\"atomic:results\":[{\"data\":{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Invalid target\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}}}]}\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -886,13 +1201,13 @@
                 400
             ],
             "current_statuses": [
-                200
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-006"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testInvalidHrefBundleGap with data set \"#1\"\n{\"atomic:results\":[[]]}\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:50\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -903,13 +1218,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-005"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testSameOriginAbsoluteHref\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-pointer\",\"id\":\"<uuid>\",\"title\":\"Invalid document member\",\"detail\":\"The \\u0022href\\u0022 member MUST be a relative URI.\",\"source\":{\"pointer\":\"\\/atomic:operations\\/0\\/href\"}}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:62\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -920,13 +1235,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-005"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testRelativeUriReference\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-pointer\",\"id\":\"<uuid>\",\"title\":\"Invalid document member\",\"detail\":\"The \\u0022href\\u0022 member MUST start with the configured route prefix.\",\"source\":{\"pointer\":\"\\/atomic:operations\\/0\\/href\"}}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:71\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -937,13 +1252,13 @@
                 403
             ],
             "current_statuses": [
-                500
+                403
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-010"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testAtomicClientIdPolicyMatchesOrdinaryCreates\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 403.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:81\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -954,13 +1269,13 @@
                 403
             ],
             "current_statuses": [
-                422
+                403
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-009"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testAtomicReadonlyResourceCannotBeWritten\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022message\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/message\"},\"meta\":{\"extraAttribute\":\"message\"}}]}\nFailed asserting that 422 is identical to 403.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:89\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -973,11 +1288,11 @@
             "current_statuses": [
                 400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-011"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testAtomicUnknownAttributeIsRejected\nFailed asserting that an array contains '/atomic:operations/0/data/attributes/secret'.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:104\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:97\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -990,11 +1305,11 @@
             "current_statuses": [
                 422
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-011"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testAtomicFailurePointerIdentifiesOperationAndExternalField\nFailed asserting that an array contains '/atomic:operations/0/data/attributes/title'.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:104\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:105\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -1008,11 +1323,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-007"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicValidationTest::testEmptyAtomicResultsMustBeObjects\nFailed asserting that an array is an instance of class stdClass.\n\n/srv/app/tests/Acceptance/Atomic/AtomicValidationTest.php:115\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Cache",
@@ -1130,13 +1445,14 @@
                 304
             ],
             "current_statuses": [
-                200
+                200,
+                304
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CACHE-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Cache\\ConditionalRequestsTest::testLastModifiedUsesConfiguredEntityField\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'Thu, 15 Jan 2026 00:00:00 GMT'\n+'Thu, 01 Oct 2026 12:07:17 GMT'\n\n/srv/app/tests/Acceptance/Cache/ConditionalRequestsTest.php:55\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Cache",
@@ -1147,14 +1463,13 @@
                 200
             ],
             "current_statuses": [
-                200,
-                412
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CACHE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testMatchingIfMatchAllowsUpdate\n{\"errors\":[{\"status\":\"412\",\"code\":\"invalid-header\",\"id\":\"<uuid>\",\"title\":\"Invalid header\",\"detail\":\"The supplied If-Match validator does not match the current resource state.\",\"source\":{\"header\":\"If-Match\"}}]}\nFailed asserting that 412 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Cache/WritePreconditionsTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Cache",
@@ -1169,11 +1484,11 @@
                 412,
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CACHE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testStaleIfMatchRejectsWithoutChangingState\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'Shared title'\n+'Must never persist'\n\n/srv/app/tests/Acceptance/Cache/WritePreconditionsTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Cache",
@@ -1186,13 +1501,13 @@
             ],
             "current_statuses": [
                 412,
-                404
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CACHE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testStaleIfMatchDoesNotDelete\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"links\":{\"about\":\"\\/errors\\/not-found\"},\"title\":\"Resource not found\",\"detail\":\"Resource \\u0022articles\\u0022 with id \\u00221\\u0022 was not found.\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Cache/WritePreconditionsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Cache",
@@ -1225,7 +1540,7 @@
             "bundle_gaps": [
                 "CACHE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testRequiredPrecondition\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'428'\n+'400'\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:99\n/srv/app/tests/Acceptance/Cache/WritePreconditionsTest.php:53\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testRequiredPrecondition\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'428'\n+'400'\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:99\n/srv/app/tests/Acceptance/Cache/WritePreconditionsTest.php:50\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Doctrine",
@@ -1237,13 +1552,14 @@
                 409
             ],
             "current_statuses": [
-                500
+                409,
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "DOCTRINE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineConstraintsTest::testUniqueConstraintOnCreate\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 409.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Doctrine/DoctrineConstraintsTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1255,13 +1571,14 @@
                 409
             ],
             "current_statuses": [
-                500
+                409,
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "DOCTRINE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineConstraintsTest::testUniqueConstraintOnUpdate\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 409.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Doctrine/DoctrineConstraintsTest.php:28\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1274,11 +1591,11 @@
             "current_statuses": [
                 404
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineConstraintsTest::testMissingRelationshipReference\nFailed asserting that an array contains '/data/relationships/author/data/id'.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:104\n/srv/app/tests/Acceptance/Doctrine/DoctrineConstraintsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1289,13 +1606,13 @@
                 409
             ],
             "current_statuses": [
-                422
+                409
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineConstraintsTest::testWrongRelationshipType\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Invalid type: expected \\u0022authors\\u0022, got \\u0022tags\\u0022.\",\"source\":{\"pointer\":\"\\/data\\/relationships\\/author\\/data\\/type\"},\"meta\":{\"expected\":\"authors\",\"actual\":\"tags\"}}]}\nFailed asserting that 422 is identical to 409.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Doctrine/DoctrineConstraintsTest.php:46\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1306,13 +1623,13 @@
                 400
             ],
             "current_statuses": [
-                201
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-003"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineConstraintsTest::testUnknownRelationship\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\"},\"data\":{\"type\":\"articles\",\"id\":\"13\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/13\"},\"attributes\":{\"title\":\"New article\",\"slug\":\"new-article\",\"content\":\"\",\"status\":\"draft\",\"metadata\":[],\"published-at\":null,\"createdAt\":\"2026-10-01T12:07:22+00:00\",\"updatedAt\":\"2026-10-01T12:07:22+00:00\",\"featured\":false,\"views\":0,\"rating\":0},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/tags\"},\"data\":[]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/editor\"},\"data\":null},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/13\\/reviewedBy\"},\"data\":null}}}}\nFailed asserting that 201 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Doctrine/DoctrineConstraintsTest.php:54\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1469,13 +1786,15 @@
                 409
             ],
             "current_statuses": [
-                500
+                201,
+                200,
+                409
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "UUID-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\UuidIdentifierTest::testClientAssignedDoctrineUuidObject\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Doctrine/UuidIdentifierTest.php:62\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1486,13 +1805,13 @@
                 400
             ],
             "current_statuses": [
-                500
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "UUID-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\UuidIdentifierTest::testMalformedUuidDoesNotLeakServerError\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Doctrine/UuidIdentifierTest.php:72\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1503,13 +1822,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "UUID-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\UuidIdentifierTest::testAtomicClientAssignedDoctrineUuidObject\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Doctrine/UuidIdentifierTest.php:80\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1781,11 +2100,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "PROFILE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Profiles\\ProfileTest::testProfileEnabledByDefaultForTags\nFailed asserting that null is identical to 3.\n\n/srv/app/tests/Acceptance/Profiles/ProfileTest.php:34\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Profiles",
@@ -1812,13 +2131,14 @@
                 404
             ],
             "current_statuses": [
-                200
+                200,
+                404
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "PROFILE-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Profiles\\ProfileTest::testSoftDeleteProfileExcludesArchivedCategory\nFailed asserting that an array does not contain '1'.\n\n/srv/app/tests/Acceptance/Profiles/ProfileTest.php:52\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Profiles",
@@ -1831,11 +2151,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "PROFILE-003"
             ],
-            "failure": "App\\Tests\\Acceptance\\Profiles\\ProfileTest::testAuditTrailProfileUpdatesTimestamp\nFailed asserting that DateTimeImmutable Object #4716 (\n    'date' => '2026-01-15 00:00:00.000000',\n    'timezone_type' => 1,\n    'timezone' => '+00:00',\n) is greater than DateTimeImmutable Object #13997 (\n    'date' => '2026-01-15 00:00:00.000000',\n    'timezone_type' => 1,\n    'timezone' => '+00:00',\n).\n\n/srv/app/tests/Acceptance/Profiles/ProfileTest.php:62\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2015,13 +2335,13 @@
                 200
             ],
             "current_statuses": [
-                406
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CONTENT-NEGOTIATION-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ContentNegotiationTest::testMixedValidInvalidCandidates with data set \"invalid first\"\n{\"errors\":[{\"status\":\"406\",\"code\":\"not-acceptable\",\"id\":\"<uuid>\",\"title\":\"Not acceptable\",\"detail\":\"The Accept header \\u0022application\\/vnd.api+json;foo=bar, application\\/vnd.api+json\\u0022 does not allow application\\/vnd.api+json.\",\"source\":{\"header\":\"Accept\"}}]}\nFailed asserting that 406 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Protocol/ContentNegotiationTest.php:47\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2032,13 +2352,13 @@
                 200
             ],
             "current_statuses": [
-                406
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CONTENT-NEGOTIATION-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ContentNegotiationTest::testMixedValidInvalidCandidates with data set \"valid first\"\n{\"errors\":[{\"status\":\"406\",\"code\":\"not-acceptable\",\"id\":\"<uuid>\",\"title\":\"Not acceptable\",\"detail\":\"The Accept header \\u0022application\\/vnd.api+json, application\\/vnd.api+json;foo=bar\\u0022 does not allow application\\/vnd.api+json.\",\"source\":{\"header\":\"Accept\"}}]}\nFailed asserting that 406 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Protocol/ContentNegotiationTest.php:47\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2049,13 +2369,13 @@
                 200
             ],
             "current_statuses": [
-                406
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CONTENT-NEGOTIATION-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ContentNegotiationTest::testMixedValidInvalidCandidates with data set \"unknown ext then valid\"\n{\"errors\":[{\"status\":\"406\",\"code\":\"not-acceptable\",\"id\":\"<uuid>\",\"title\":\"Not acceptable\",\"detail\":\"The Accept header \\u0022application\\/vnd.api+json;ext=\\u0022https:\\/\\/example.test\\/unknown\\u0022, application\\/vnd.api+json\\u0022 does not allow application\\/vnd.api+json.\",\"source\":{\"header\":\"Accept\"}}]}\nFailed asserting that 406 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Protocol/ContentNegotiationTest.php:47\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2066,13 +2386,13 @@
                 200
             ],
             "current_statuses": [
-                406
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CONTENT-NEGOTIATION-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ContentNegotiationTest::testQualityValues with data set \"q one\"\n{\"errors\":[{\"status\":\"406\",\"code\":\"not-acceptable\",\"id\":\"<uuid>\",\"title\":\"Not acceptable\",\"detail\":\"The Accept header \\u0022application\\/vnd.api+json;q=1\\u0022 does not allow application\\/vnd.api+json.\",\"source\":{\"header\":\"Accept\"}}]}\nFailed asserting that 406 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Protocol/ContentNegotiationTest.php:64\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2083,13 +2403,13 @@
                 200
             ],
             "current_statuses": [
-                406
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CONTENT-NEGOTIATION-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ContentNegotiationTest::testQualityValues with data set \"q fraction\"\n{\"errors\":[{\"status\":\"406\",\"code\":\"not-acceptable\",\"id\":\"<uuid>\",\"title\":\"Not acceptable\",\"detail\":\"The Accept header \\u0022application\\/vnd.api+json;q=0.8\\u0022 does not allow application\\/vnd.api+json.\",\"source\":{\"header\":\"Accept\"}}]}\nFailed asserting that 406 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Protocol/ContentNegotiationTest.php:64\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2100,13 +2420,13 @@
                 200
             ],
             "current_statuses": [
-                406
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CONTENT-NEGOTIATION-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ContentNegotiationTest::testQualityValues with data set \"fallback candidate\"\n{\"errors\":[{\"status\":\"406\",\"code\":\"not-acceptable\",\"id\":\"<uuid>\",\"title\":\"Not acceptable\",\"detail\":\"The Accept header \\u0022text\\/html;q=1, application\\/vnd.api+json;q=0.8\\u0022 does not allow application\\/vnd.api+json.\",\"source\":{\"header\":\"Accept\"}}]}\nFailed asserting that 406 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Protocol/ContentNegotiationTest.php:64\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2264,13 +2584,13 @@
                 400
             ],
             "current_statuses": [
-                500
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ERROR-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\ErrorDocumentTest::testMalformedRelationshipDataPointsToData\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Protocol/ErrorDocumentTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2315,11 +2635,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\HeadTest::testHeadHasGetHeadersAndNoBody with data set #0\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'\"f5924f8a672e204a\"'\n+'\"2e76d1fc55a92da9\"'\n\n/srv/app/tests/Acceptance/Protocol/HeadTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2332,11 +2652,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\HeadTest::testHeadHasGetHeadersAndNoBody with data set #1\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'\"a79ee2fad8128a70\"'\n+'\"8e3afe92d2463f6d\"'\n\n/srv/app/tests/Acceptance/Protocol/HeadTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2349,11 +2669,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\HeadTest::testHeadHasGetHeadersAndNoBody with data set #2\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'\"f0dfadd04d64785a\"'\n+'\"a1ce82b08f5ae2a4\"'\n\n/srv/app/tests/Acceptance/Protocol/HeadTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2366,11 +2686,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\HeadTest::testHeadHasGetHeadersAndNoBody with data set #3\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'\"b905c5c6084a06a4\"'\n+'\"2ece7911e13e1b10\"'\n\n/srv/app/tests/Acceptance/Protocol/HeadTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2441,13 +2761,13 @@
                 204
             ],
             "current_statuses": [
-                500
+                204
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\OperationRestrictionsTest::testReadonlyOptions\nFailed asserting that 500 is identical to 204.\n\n/srv/app/tests/Acceptance/Protocol/OperationRestrictionsTest.php:37\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2458,13 +2778,13 @@
                 204
             ],
             "current_statuses": [
-                500
+                204
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\OptionsTest::testAllowHeader with data set #0\nFailed asserting that 500 is identical to 204.\n\n/srv/app/tests/Acceptance/Protocol/OptionsTest.php:21\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2475,13 +2795,13 @@
                 204
             ],
             "current_statuses": [
-                500
+                204
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\OptionsTest::testAllowHeader with data set #1\nFailed asserting that 500 is identical to 204.\n\n/srv/app/tests/Acceptance/Protocol/OptionsTest.php:21\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2492,13 +2812,13 @@
                 204
             ],
             "current_statuses": [
-                500
+                204
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\OptionsTest::testAllowHeader with data set #2\nFailed asserting that 500 is identical to 204.\n\n/srv/app/tests/Acceptance/Protocol/OptionsTest.php:21\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2509,13 +2829,13 @@
                 204
             ],
             "current_statuses": [
-                500
+                204
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\OptionsTest::testAllowHeader with data set #3\nFailed asserting that 500 is identical to 204.\n\n/srv/app/tests/Acceptance/Protocol/OptionsTest.php:21\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Protocol",
@@ -2526,13 +2846,13 @@
                 204
             ],
             "current_statuses": [
-                500
+                204
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "HTTP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Protocol\\OptionsTest::testAllowHeader with data set #4\nFailed asserting that 500 is identical to 204.\n\n/srv/app/tests/Acceptance/Protocol/OptionsTest.php:21\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2783,13 +3103,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"neq public operator\"\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-parameter\",\"id\":\"<uuid>\",\"title\":\"Invalid query parameter\",\"detail\":\"Unsupported operator \\u0022neq\\u0022.\",\"source\":{\"parameter\":\"filter\"}}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2800,13 +3120,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"ne\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2817,13 +3137,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-004"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"ilike\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2834,13 +3154,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"between\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2851,13 +3171,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-003"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"null\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2868,13 +3188,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-003"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"not null\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -2885,13 +3205,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ALIAS-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\FilteringTest::testSupportedOperatorsBundleGap with data set \"datetime alias\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/FilteringTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3039,11 +3359,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "INCLUDE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\IncludeTest::testNullableInclude\nFailed asserting that null is identical to Array &0 [].\n\n/srv/app/tests/Acceptance/Query/IncludeTest.php:58\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3491,11 +3811,11 @@
             "current_statuses": [
                 400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ERROR-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testQueryBoundaryBundleGap with data set \"unknown filter field\"\nFailed asserting that a NULL is not empty.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:101\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:26\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3506,13 +3826,13 @@
                 400
             ],
             "current_statuses": [
-                200
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testQueryBoundaryBundleGap with data set \"wrong operator shape\"\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles?filter%5Bviews%5D%5Bgt%5D%5Bx%5D=1\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?filter%5Bviews%5D%5Bgt%5D%5Bx%5D=1\\u0026page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?filter%5Bviews%5D%5Bgt%5D%5Bx%5D=1\\u0026page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?filter%5Bviews%5D%5Bgt%5D%5Bx%5D=1\\u0026page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"dr\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:26\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3598,13 +3918,13 @@
                 400
             ],
             "current_statuses": [
-                200
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testMalformedPageListRejected\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles?page%5B0%5D=1\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?page%5B0%5D=1\\u0026page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?page%5B0%5D=1\\u0026page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?page%5B0%5D=1\\u0026page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"draft\",\"metadata\":{\"sequence\":3,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"c\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:74\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3617,11 +3937,11 @@
             "current_statuses": [
                 400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testScalarPageRejected\nFailed asserting that an array contains 'page'.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:107\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:81\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3632,13 +3952,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-005"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testEmptyInMatchesNothing\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:88\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3649,13 +3969,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-005"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testEmptyNotInMatchesEverything\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:96\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3666,13 +3986,13 @@
                 400
             ],
             "current_statuses": [
-                500
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testWrongIntegerOperandProducesClientError\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:104\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3689,7 +4009,7 @@
             "bundle_gaps": [
                 "QUERY-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"draft\",\"metadata\":{\"sequence\":3,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-03T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:112\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"draft\",\"metadata\":{\"sequence\":3,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-03T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:106\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Query",
@@ -3700,13 +4020,13 @@
                 400
             ],
             "current_statuses": [
-                500
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "FILTER-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testBetweenRejectsExtraOperand\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:119\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3822,13 +4142,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ALIAS-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\SortingTest::testNullableAliasSort\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:146\n/srv/app/tests/Acceptance/Query/SortingTest.php:51\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -3841,11 +4161,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "SORT-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\SortingTest::testImplicitIdTiebreakerSurvivesUpdates\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n Array &0 [\n-    0 => '1',\n-    1 => '2',\n+    0 => '2',\n+    1 => '1',\n ]\n\n/srv/app/tests/Acceptance/Query/SortingTest.php:62\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -4188,11 +4508,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-005"
             ],
-            "failure": "App\\Tests\\Acceptance\\Relationships\\ToOneRelationshipTest::testReadLinkageAndRelatedResource\nFailed asserting that an array has the key 'related'.\n\n/srv/app/tests/Acceptance/Relationships/ToOneRelationshipTest.php:21\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Relationships",
@@ -4265,11 +4585,11 @@
             "current_statuses": [
                 404
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Relationships\\ToOneRelationshipTest::testInvalidLinkageBundleGap with data set \"#1\"\nFailed asserting that an array contains '/data/id'.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:104\n/srv/app/tests/Acceptance/Relationships/ToOneRelationshipTest.php:66\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Relationships",
@@ -4280,13 +4600,13 @@
                 422
             ],
             "current_statuses": [
-                500
+                422
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-004"
             ],
-            "failure": "App\\Tests\\Acceptance\\Relationships\\ToOneRelationshipTest::testInvalidLinkageBundleGap with data set \"#3\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Relationships/ToOneRelationshipTest.php:66\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Relationships",
@@ -4698,13 +5018,14 @@
                 422
             ],
             "current_statuses": [
-                500
+                422,
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "DOCTRINE-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceDeleteTest::testForeignKeyRestrictionIsAnErrorDocument\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Resource/ResourceDeleteTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Resource",
@@ -4820,13 +5141,13 @@
                 200
             ],
             "current_statuses": [
-                400
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "WRITE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testEmptyAttributeObjectIsValid\n{\"errors\":[{\"status\":\"400\",\"code\":\"invalid-pointer\",\"id\":\"<uuid>\",\"title\":\"Invalid document member\",\"detail\":\"The \\u0022attributes\\u0022 member must be an object.\",\"source\":{\"pointer\":\"\\/data\\/attributes\"}}]}\nFailed asserting that 400 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Resource/ResourceUpdateTest.php:37\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Resource",
@@ -4959,11 +5280,11 @@
             "current_statuses": [
                 404
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testUnknownRelatedResourceInPatch\nFailed asserting that an array contains '/data/relationships/editor/data/id'.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:104\n/srv/app/tests/Acceptance/Resource/ResourceUpdateTest.php:81\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Resource",
@@ -4974,13 +5295,13 @@
                 409
             ],
             "current_statuses": [
-                422
+                409
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "RELATIONSHIP-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testWrongRelatedTypeInPatch\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Invalid type: expected \\u0022authors\\u0022, got \\u0022tags\\u0022.\",\"source\":{\"pointer\":\"\\/data\\/relationships\\/editor\\/data\\/type\"},\"meta\":{\"expected\":\"authors\",\"actual\":\"tags\"}}]}\nFailed asserting that 422 is identical to 409.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Resource/ResourceUpdateTest.php:90\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Smoke",

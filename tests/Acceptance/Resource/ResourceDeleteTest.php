@@ -31,7 +31,6 @@ final class ResourceDeleteTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('GET', $this->url('article-1')), 404);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('DOCTRINE-002')]
     public function testForeignKeyRestrictionIsAnErrorDocument(): void
     {

@@ -49,7 +49,6 @@ final class IncludeTest extends AcceptanceTestCase
         yield ['author,author', ['authors']];
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('INCLUDE-001')]
     public function testNullableInclude(): void
     {

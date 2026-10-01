@@ -1,0 +1,19 @@
+jsonapi:
+    resource_paths:
+        - '%kernel.project_dir%/src/Torture/Entity'
+        - '%kernel.project_dir%/src/Torture/ShardEntity'
+    limits:
+        include_max_depth: 5
+        include_max_paths: 12
+        included_max_resources: 250
+        complexity_budget: 100
+        page_max_size: 100
+    pagination:
+        max_size: 100
+    write:
+        client_generated_ids:
+            organizations: true
+            workspace-users: true
+            projects: true
+            project-memberships: true
+            countries: true

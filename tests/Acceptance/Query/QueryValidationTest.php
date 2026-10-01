@@ -18,7 +18,6 @@ final class QueryValidationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('invalidQueriesBundleGaps')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('QUERY-002', ['wrong operator shape'])]
     #[ExpectedBundleGap('ERROR-001', ['unknown filter field'])]
     public function testQueryBoundaryBundleGap(string $query, ?string $parameter): void
@@ -67,21 +66,18 @@ final class QueryValidationTest extends AcceptanceTestCase
         yield ['sort=title&sort=-title'];
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('QUERY-001')]
     public function testMalformedPageListRejected(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?page[]=1'), 400, parameter: 'page');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('QUERY-001')]
     public function testScalarPageRejected(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?page=1'), 400, parameter: 'page');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('FILTER-005')]
     public function testEmptyInMatchesNothing(): void
     {
@@ -89,7 +85,6 @@ final class QueryValidationTest extends AcceptanceTestCase
         self::assertSame([], $doc['data']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('FILTER-005')]
     public function testEmptyNotInMatchesEverything(): void
     {
@@ -97,7 +92,6 @@ final class QueryValidationTest extends AcceptanceTestCase
         self::assertCount(12, $doc['data']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('QUERY-002')]
     public function testWrongIntegerOperandProducesClientError(): void
     {
@@ -112,7 +106,6 @@ final class QueryValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?'.http_build_query(['filter' => $filter])), 400, parameter: 'filter');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('FILTER-002')]
     public function testBetweenRejectsExtraOperand(): void
     {

@@ -1,0 +1,5 @@
+imports:
+    - { resource: '../torture/*.yaml', type: glob }
+jsonapi:
+    relationships:
+        linkage_in_resource: when_included

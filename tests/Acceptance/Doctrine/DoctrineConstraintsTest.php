@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class DoctrineConstraintsTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('DOCTRINE-001')]
     public function testUniqueConstraintOnCreate(): void
     {
@@ -21,7 +20,6 @@ final class DoctrineConstraintsTest extends AcceptanceTestCase
         self::assertCount(1, $doc['data']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('DOCTRINE-001')]
     public function testUniqueConstraintOnUpdate(): void
     {
@@ -30,7 +28,6 @@ final class DoctrineConstraintsTest extends AcceptanceTestCase
         self::assertSame('article-01', $doc['data']['attributes']['slug']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-001')]
     public function testMissingRelationshipReference(): void
     {
@@ -38,7 +35,6 @@ final class DoctrineConstraintsTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/articles', $payload), 404, '/data/relationships/author/data/id');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-002')]
     public function testWrongRelationshipType(): void
     {
@@ -46,7 +42,6 @@ final class DoctrineConstraintsTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/articles', $payload), 409, '/data/relationships/author/data/type');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-003')]
     public function testUnknownRelationship(): void
     {

@@ -53,7 +53,6 @@ final class UuidIdentifierTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/subscriptions', $payload), 409);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('UUID-001')]
     public function testClientAssignedDoctrineUuidObject(): void
     {
@@ -65,14 +64,12 @@ final class UuidIdentifierTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/newsletters', $payload), 409);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('UUID-002')]
     public function testMalformedUuidDoesNotLeakServerError(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/newsletters/not-a-uuid'), 400);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('UUID-001')]
     public function testAtomicClientAssignedDoctrineUuidObject(): void
     {
@@ -135,7 +132,7 @@ final class UuidIdentifierTest extends AcceptanceTestCase
     {
         $result = $this->decodeJsonApi($this->atomic([
             ['op' => 'add', 'href' => '/api/newsletters', 'data' => ['type' => 'newsletters', 'lid' => 'new-edition', 'attributes' => ['subject' => 'Created atomically']]],
-            ['op' => 'update', 'ref' => ['type' => 'newsletters', 'lid' => 'new-edition'], 'data' => ['attributes' => ['subject' => 'Updated atomically']]],
+            ['op' => 'update', 'ref' => ['type' => 'newsletters', 'lid' => 'new-edition'], 'data' => ['type' => 'newsletters', 'lid' => 'new-edition', 'attributes' => ['subject' => 'Updated atomically']]],
         ]));
         self::assertCount(2, $result['atomic:results']);
         $id = $result['atomic:results'][0]['data']['id'];

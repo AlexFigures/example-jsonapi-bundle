@@ -28,7 +28,6 @@ final class OperationRestrictionsTest extends AcceptanceTestCase
 
     public static function writes(): iterable { yield ['POST']; yield ['PATCH']; yield ['DELETE']; }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('HTTP-002')]
     public function testReadonlyOptions(): void
     {

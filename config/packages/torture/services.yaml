@@ -1,0 +1,16 @@
+services:
+    App\Torture\Infrastructure\SqlMetricsMiddleware:
+        tags: [{ name: doctrine.middleware, priority: 100 }]
+    App\Torture\Infrastructure\TortureRequestSubscriber:
+        autoconfigure: true
+    App\Torture\Infrastructure\TenantRegistry:
+        decorates: doctrine
+        arguments: ['@App\Torture\Infrastructure\TenantRegistry.inner', '@request_stack']
+    App\Torture\Infrastructure\TenantRepository:
+        decorates: AlexFigures\Symfony\Contract\Data\ResourceRepository
+        arguments: ['@App\Torture\Infrastructure\TenantRepository.inner', '@request_stack']
+    App\Torture\Infrastructure\TortureFixtures:
+        autowire: true
+    App\Torture\Command\SeedTortureCommand:
+        autowire: true
+        autoconfigure: true

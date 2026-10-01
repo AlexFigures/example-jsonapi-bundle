@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicValidationTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-003')]
     public function testRefCannotContainBothIdAndLid(): void
     {
@@ -43,7 +42,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('hrefsBundleGaps')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-006', ['#1'])]
     public function testInvalidHrefBundleGap(string $href): void
     {
@@ -55,7 +53,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         yield ['/outside/articles/1']; yield ['/api/articles/1/trailing']; yield ['%broken']; yield ['https://other.example/api/articles/1'];
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-005')]
     public function testSameOriginAbsoluteHref(): void
     {
@@ -64,7 +61,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         self::assertSame('Absolute target', $doc['data']['attributes']['title']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-005')]
     public function testRelativeUriReference(): void
     {
@@ -72,7 +68,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', $this->url()));
         self::assertSame('Relative target', $doc['data']['attributes']['title']);
     }
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-010')]
     public function testAtomicClientIdPolicyMatchesOrdinaryCreates(): void
     {
@@ -81,7 +76,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->atomic([['op' => 'add', 'href' => '/api/articles', 'data' => $data]]), 403);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-009')]
     public function testAtomicReadonlyResourceCannotBeWritten(): void
     {
@@ -89,7 +83,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->atomic([$op]), 403);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-011')]
     public function testAtomicUnknownAttributeIsRejected(): void
     {
@@ -97,7 +90,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->atomic([['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $data]]), 400, '/atomic:operations/0/data/attributes/secret');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-011')]
     public function testAtomicFailurePointerIdentifiesOperationAndExternalField(): void
     {
@@ -105,7 +97,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->atomic([['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $data]]), 422, '/atomic:operations/0/data/attributes/title');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-007')]
     public function testEmptyAtomicResultsMustBeObjects(): void
     {

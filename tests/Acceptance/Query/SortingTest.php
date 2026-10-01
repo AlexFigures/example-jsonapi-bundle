@@ -44,7 +44,6 @@ final class SortingTest extends AcceptanceTestCase
         self::assertCount(12, array_unique(array_merge(array_column($first['data'], 'id'), array_column($last['data'], 'id'))));
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ALIAS-001')]
     public function testNullableAliasSort(): void
     {
@@ -53,7 +52,6 @@ final class SortingTest extends AcceptanceTestCase
         $values = array_column(array_column($doc['data'], 'attributes'), 'published-at');
         self::assertCount(6, array_filter($values, static fn ($v): bool => $v === null));
     }
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('SORT-001')]
     public function testImplicitIdTiebreakerSurvivesUpdates(): void
     {

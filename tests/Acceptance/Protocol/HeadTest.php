@@ -12,7 +12,6 @@ use PHPUnit\Framework\Attributes\Group;
 final class HeadTest extends AcceptanceTestCase
 {
     #[DataProvider('routeCategories')]
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('HTTP-001')]
     public function testHeadHasGetHeadersAndNoBody(string $suffix): void
     {

@@ -30,7 +30,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         self::assertSame($this->ids['grace'], $doc['data']['relationships']['author']['data']['id']);
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('WRITE-001')]
     public function testEmptyAttributeObjectIsValid(): void
     {
@@ -72,7 +71,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         $payload['data']['id'] = '999999';
         $this->assertJsonApiError($this->requestJsonApi('PATCH', '/api/articles/999999', $payload), 404);
     }
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-001')]
     public function testUnknownRelatedResourceInPatch(): void
     {
@@ -81,7 +79,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('PATCH', $this->url(), $payload), 404, '/data/relationships/editor/data/id');
     }
 
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('RELATIONSHIP-002')]
     public function testWrongRelatedTypeInPatch(): void
     {
