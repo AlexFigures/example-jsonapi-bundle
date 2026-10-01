@@ -1,0 +1,9 @@
+acceptance_failure:
+    path: /api/acceptance-failure
+    controller: App\Tests\Acceptance\Support\FailureController
+    methods: [GET]
+
+acceptance_strict_atomic:
+    path: /api/strict-operations
+    controller: AlexFigures\Symfony\Bridge\Symfony\Controller\AtomicController
+    methods: [POST]

@@ -1,8 +1,8 @@
 doctrine:
     dbal:
         default_connection: pgsql
-        profiling_collect_backtrace: '%kernel.debug%'
-        use_savepoints: true
+        types:
+            uuid: Symfony\Bridge\Doctrine\Types\UuidType
         connections:
             pgsql:
                 url: '%env(resolve:DATABASE_URL)%'
@@ -17,9 +17,6 @@ doctrine:
     orm:
         default_entity_manager: pgsql
         auto_generate_proxy_classes: true
-        enable_lazy_ghost_objects: true
-        report_fields_where_declared: true
-        validate_xml_mapping: true
         entity_managers:
             pgsql:
                 connection: pgsql
@@ -30,7 +27,7 @@ doctrine:
                         is_bundle: false
                         type: attribute
                         dir: '%kernel.project_dir%/src/PgEntity'
-                        prefix: 'App\\PgEntity'
+                        prefix: 'App\PgEntity'
                         alias: PgEntity
             mysql:
                 connection: mysql
@@ -41,7 +38,7 @@ doctrine:
                         is_bundle: false
                         type: attribute
                         dir: '%kernel.project_dir%/src/MysqlEntity'
-                        prefix: 'App\\MysqlEntity'
+                        prefix: 'App\MysqlEntity'
                         alias: MysqlEntity
 
 when@test:

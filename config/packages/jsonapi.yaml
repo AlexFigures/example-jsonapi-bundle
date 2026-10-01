@@ -1,21 +1,56 @@
 jsonapi:
     route_prefix: /api
+    strict_content_negotiation: true
     media_types:
-        default:
-            request:
-                allowed:
-                    - application/vnd.api+json
-            response:
-                default: application/vnd.api+json
+        channels:
+            atomic:
+                scope:
+                    path_prefix: /api/operations
+                request:
+                    allowed: ['*']
+                response:
+                    default: application/vnd.api+json
+    data_layer:
+        provider: doctrine
     resource_paths:
         - '%kernel.project_dir%/src/PgEntity'
         - '%kernel.project_dir%/src/MysqlEntity'
+        - '%kernel.project_dir%/src/Api'
     pagination:
-        default_size: 10
-        max_size: 50
+        default_size: 5
+        max_size: 20
+    limits:
+        page_max_size: 20
+        include_max_depth: 5
     write:
         allow_relationship_writes: true
+        client_generated_ids:
+            articles: false
+            subscriptions: true
+            newsletters: true
+    relationships:
+        write_response: linkage
+        linkage_in_resource: always
+    cache:
+        enabled: true
+        etag:
+            strategy: hash
+            include_query_shape: true
+        last_modified:
+            per_type:
+                articles: updatedAt
+        conditional:
+            require_if_match_on_write: false
+    atomic:
+        enabled: true
+        endpoint: /api/operations
+        require_ext_header: true
+        allow_href: true
+        max_operations: 20
+        return_policy: always
     profiles:
         negotiation:
             require_known_profiles: false
         enabled_by_default: []
+        per_type:
+            tags: ['urn:jsonapi:profile:rel-counts']

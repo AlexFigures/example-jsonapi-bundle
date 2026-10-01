@@ -1,0 +1,15 @@
+jsonapi:
+    cache:
+        conditional:
+            require_if_match_on_write: true
+framework:
+    test: true
+    session:
+        storage_factory_id: session.storage.factory.mock_file
+doctrine:
+    dbal:
+        connections:
+            pgsql:
+                dbname_suffix: '_test'
+            mysql:
+                dbname_suffix: '_test'

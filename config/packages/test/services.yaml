@@ -1,0 +1,4 @@
+services:
+    App\Tests\Acceptance\Support\FailureController:
+        public: true
+        tags: ['controller.service_arguments']

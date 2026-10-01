@@ -1,9 +1,8 @@
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
-
 jsonapi_auto:
     resource: .
     type: jsonapi
+
+jsonapi_atomic:
+    path: /api/operations
+    controller: AlexFigures\Symfony\Bridge\Symfony\Controller\AtomicController
+    methods: [POST]

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
-         bootstrap="vendor/autoload.php"
-         colors="true"
-         beStrictAboutTestsThatDoNotTestAnything="false"
->
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+         bootstrap="tests/bootstrap.php" colors="true" cacheDirectory="var/phpunit"
+         failOnWarning="true" failOnRisky="true">
+    <testsuites>
+        <testsuite name="acceptance"><directory>tests/Acceptance</directory></testsuite>
+    </testsuites>
     <php>
-        <env name="APP_ENV" value="test"/>
-        <env name="KERNEL_CLASS" value="App\\Kernel"/>
-        <env name="DATABASE_URL" value="postgresql://symfony:symfony@127.0.0.1:5432/symfony_pg?serverVersion=16&charset=utf8"/>
-        <env name="MYSQL_URL" value="mysql://symfony:symfony@127.0.0.1:3306/symfony_mysql?serverVersion=8.0.39&charset=utf8mb4"/>
+        <env name="APP_ENV" value="test" force="true"/>
+        <env name="APP_DEBUG" value="0" force="true"/>
+        <env name="KERNEL_CLASS" value="App\Kernel"/>
     </php>
+    <logging><junit outputFile="var/acceptance-junit.xml"/></logging>
 </phpunit>

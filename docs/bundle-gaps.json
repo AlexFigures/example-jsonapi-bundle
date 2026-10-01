@@ -1,0 +1,719 @@
+{
+  "bundle_revision": "5458778adc87386ffff9c07f009c25906e0971db",
+  "gaps": [
+    {
+      "id": "CONTENT-NEGOTIATION-001",
+      "area": "content negotiation",
+      "expected": "Ignore invalid Accept candidates when a valid JSON:API candidate remains.",
+      "current": "406 for both candidate orders and unsupported-extension fallback.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Parse candidates independently in ContentNegotiationSubscriber.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/ContentNegotiationTest::testMixedValidInvalidCandidates"
+        }
+      ]
+    },
+    {
+      "id": "CONTENT-NEGOTIATION-002",
+      "area": "content negotiation",
+      "expected": "Treat q-values as HTTP metadata; respect unacceptable q=0.",
+      "current": "q=1 and q=0.8 return 406; q=0 already returns 406.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Separate Accept quality values from JSON:API media parameters.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/ContentNegotiationTest::testQualityValues"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-001",
+      "area": "Atomic Operations",
+      "expected": "Infer add target from data.type without ref/href. Domain-invalid title-only articles reach 422 validation.",
+      "current": "400 missing target before domain validation.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AtomicValidator target inference.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicCreateTest::testCanonicalAddWithoutRefOrHref"
+        },
+        {
+          "test": "Atomic/AtomicCreateTest::testTitleOnlyCanonicalAddReachesDomainValidation"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-002",
+      "area": "Atomic Operations",
+      "expected": "Infer update target from data.type and data.id.",
+      "current": "400 missing target.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AtomicValidator target inference.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicUpdateTest::testUpdateTargetFromDataWithoutRefOrHref"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-003",
+      "area": "Atomic Operations",
+      "expected": "Reject ref with both id and lid.",
+      "current": "200 accepts the id and ignores lid.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AtomicRequestParser exclusive identifier validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testRefCannotContainBothIdAndLid"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-004",
+      "area": "Atomic Operations",
+      "expected": "Return generated IDs and resolve lids after persisting generated-ID resources.",
+      "current": "400 Unable to resolve resource identifier for persisted model, before operation flush.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AddHandler/OperationDispatcher flush and lid resolution ordering.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicCreateTest::testCreateUsingHrefAndGeneratedId"
+        },
+        {
+          "test": "Atomic/AtomicLidTest::testLocalIdsAcrossCreateAndRelationshipOperations"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-005",
+      "area": "Atomic Operations",
+      "expected": "Accept same-origin absolute and path-relative URI references.",
+      "current": "400 rejects absolute URLs and references without leading slash.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "AtomicValidator URI-reference resolution and same-origin checks.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testSameOriginAbsoluteHref"
+        },
+        {
+          "test": "Atomic/AtomicValidationTest::testRelativeUriReference"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-006",
+      "area": "Atomic Operations",
+      "expected": "Reject href with unrecognized trailing path segments.",
+      "current": "200 ignores trailing path segments and removes the resource.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "AtomicValidator must consume and validate the entire href.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testInvalidHrefBundleGap",
+          "datasets": [
+            "#1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-007",
+      "area": "Atomic Operations",
+      "expected": "Serialize empty atomic result entries as JSON objects.",
+      "current": "200 emits [] entries instead of {}.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "ResultBuilder empty object serialization.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testEmptyAtomicResultsMustBeObjects"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-008",
+      "area": "Atomic Operations",
+      "expected": "Return each operation representation at its position in the batch.",
+      "current": "Earlier update result reflects the final mutable entity state.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Snapshot operation outcomes before processing later mutations.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicTransactionalityTest::testSuccessfulBatchOrderAndMixedEmptyResults"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-009",
+      "area": "Atomic Operations",
+      "expected": "Apply read-only operation policy to atomic resource updates.",
+      "current": "422 serializer rejection instead of policy 403; operation authorization is bypassed.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Atomic execution must enforce ResourceOperation restrictions.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicReadonlyResourceCannotBeWritten"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-010",
+      "area": "Atomic Operations",
+      "expected": "Apply the configured client-generated ID policy to atomic creates.",
+      "current": "500 attempts to assign a string to a generated integer ID.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Atomic AddHandler must apply WriteConfig client-ID policy.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicClientIdPolicyMatchesOrdinaryCreates"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-011",
+      "area": "errors",
+      "expected": "Use /atomic:operations/N/data/... pointers in atomic errors.",
+      "current": "Errors contain ordinary /data/... pointers.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Rebase write/validation error pointers onto their atomic operation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicUnknownAttributeIsRejected"
+        },
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicFailurePointerIdentifiesOperationAndExternalField"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-012",
+      "area": "content negotiation",
+      "expected": "Recognize the enabled Atomic extension with strict global negotiation.",
+      "current": "415 rejects all extensions before AtomicController. A public channel isolates Atomic execution tests.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Connect enabled extensions to global media-type negotiation.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicNegotiationTest::testEnabledAtomicExtensionWithStrictGlobalNegotiation"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-013",
+      "area": "content negotiation",
+      "expected": "Atomic negotiation rejects incorrect base media types and unsupported Content-Type parameters.",
+      "current": "AtomicController accepts text/plain with atomic ext and JSON:API atomic with charset.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Use a shared structured media-type parser for Atomic requests.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicNegotiationTest::testWrongBaseMediaTypeWithAtomicExtIsRejected"
+        },
+        {
+          "test": "Atomic/AtomicNegotiationTest::testAtomicMediaParameterRejected"
+        }
+      ]
+    },
+    {
+      "id": "CACHE-001",
+      "area": "cache/preconditions",
+      "expected": "Evaluate write preconditions before mutation; matching GET ETag permits a write.",
+      "current": "Valid If-Match gets 412; stale/missing conditions return 412/428 after changes have already persisted.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "CachePreconditionsSubscriber currently runs at kernel.response; move write checks before persistence.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Cache/WritePreconditionsTest::testMatchingIfMatchAllowsUpdate"
+        },
+        {
+          "test": "Cache/WritePreconditionsTest::testStaleIfMatchRejectsWithoutChangingState"
+        },
+        {
+          "test": "Cache/WritePreconditionsTest::testStaleIfMatchDoesNotDelete"
+        },
+        {
+          "test": "Cache/WritePreconditionsTest::testRequiredPrecondition"
+        }
+      ]
+    },
+    {
+      "id": "CACHE-002",
+      "area": "cache/preconditions",
+      "expected": "Resolve Last-Modified from the configured updatedAt field.",
+      "current": "Header uses current wall-clock time instead of the entity timestamp.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "LastModifiedResolver must use resource metadata/configuration.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Cache/ConditionalRequestsTest::testLastModifiedUsesConfiguredEntityField"
+        }
+      ]
+    },
+    {
+      "id": "DOCTRINE-001",
+      "area": "Doctrine",
+      "expected": "Map unique violations to JSON:API 409 and roll back the transaction.",
+      "current": "500 escapes from transaction/flush; rollback checks themselves pass.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Map database exceptions raised inside DoctrineTransactionManager and Atomic dispatch.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testUniqueConstraintOnCreate"
+        },
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testUniqueConstraintOnUpdate"
+        },
+        {
+          "test": "Atomic/AtomicTransactionalityTest::testEarlierCreateIsRolledBackBundleGap",
+          "datasets": [
+            "#1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DOCTRINE-002",
+      "area": "Doctrine",
+      "expected": "Report FK restriction as JSON:API 422 and retain the parent.",
+      "current": "500 from an unmapped Doctrine FK exception.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "DatabaseErrorMapper integration at transaction flush/delete.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Resource/ResourceDeleteTest::testForeignKeyRestrictionIsAnErrorDocument"
+        }
+      ]
+    },
+    {
+      "id": "RELATIONSHIP-001",
+      "area": "errors",
+      "expected": "Point missing related identifiers at the public linkage id member.",
+      "current": "404 pointer omits /data/id or refers to the relationship rather than its identifier.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "RelationshipResolver and relationship endpoint error pointers.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testMissingRelationshipReference"
+        },
+        {
+          "test": "Resource/ResourceUpdateTest::testUnknownRelatedResourceInPatch"
+        },
+        {
+          "test": "Relationships/ToOneRelationshipTest::testInvalidLinkageBundleGap",
+          "datasets": [
+            "#1"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RELATIONSHIP-002",
+      "area": "relationships",
+      "expected": "Use consistent 409 for linkage resource-type conflicts in ordinary create/update requests.",
+      "current": "Relationship endpoints use 409, resource writes use 422.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Unify resource-write and relationship endpoint type-conflict validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testWrongRelationshipType"
+        },
+        {
+          "test": "Resource/ResourceUpdateTest::testWrongRelatedTypeInPatch"
+        }
+      ]
+    },
+    {
+      "id": "RELATIONSHIP-003",
+      "area": "relationships",
+      "expected": "Reject unknown relationship writes with 400.",
+      "current": "201 silently discards unknown relationship names.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "InputDocumentValidator relationship whitelist.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testUnknownRelationship"
+        }
+      ]
+    },
+    {
+      "id": "RELATIONSHIP-004",
+      "area": "relationships",
+      "expected": "Reject null on required author with a client validation error.",
+      "current": "500 DB not-null violation when clearing required relationship.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate required relationship metadata before persistence.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Relationships/ToOneRelationshipTest::testInvalidLinkageBundleGap",
+          "datasets": [
+            "#3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RELATIONSHIP-005",
+      "area": "relationships",
+      "expected": "Provide a related link in the linkage document as an application navigation contract.",
+      "current": "The resource relationship object has related, but its standalone linkage document omits it.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Linkage document navigation links.",
+      "priority": "P2",
+      "tests": [
+        {
+          "test": "Relationships/ToOneRelationshipTest::testReadLinkageAndRelatedResource"
+        }
+      ]
+    },
+    {
+      "id": "HTTP-001",
+      "area": "HEAD/OPTIONS",
+      "expected": "HEAD sends GET-compatible ETag and an empty body.",
+      "current": "Bodies are empty, but HEAD ETags differ from GET for all route categories.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Generate validators from GET representation before stripping HEAD body.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/HeadTest::testHeadHasGetHeadersAndNoBody"
+        }
+      ]
+    },
+    {
+      "id": "HTTP-002",
+      "area": "HEAD/OPTIONS",
+      "expected": "Generated OPTIONS routes execute and report cardinality-aware Allow methods.",
+      "current": "500: OptionsController has constructor arguments but is not registered in the container.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Register OptionsController and exclude POST/DELETE for to-one relationships.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/OptionsTest::testAllowHeader"
+        },
+        {
+          "test": "Protocol/OperationRestrictionsTest::testReadonlyOptions"
+        }
+      ]
+    },
+    {
+      "id": "FILTER-001",
+      "area": "filtering",
+      "expected": "Support registered neq and documented ne not-equals operators.",
+      "current": "neq is rejected by parser; ne reaches an unknown compiler operator and returns 500.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Align FilterParser, operator registry and filter whitelist.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "neq public operator",
+            "ne"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FILTER-002",
+      "area": "filtering",
+      "expected": "Compile supported between filters and reject extra operands.",
+      "current": "500: Between AST is unsupported by DoctrineFilterCompiler.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Handle Between AST and require exactly two operands.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "between"
+          ]
+        },
+        {
+          "test": "Query/QueryValidationTest::testBetweenRejectsExtraOperand"
+        }
+      ]
+    },
+    {
+      "id": "FILTER-003",
+      "area": "filtering",
+      "expected": "Compile isnull true/false through configured nullable field aliases.",
+      "current": "500: NullCheck AST is unsupported by DoctrineFilterCompiler.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Handle NullCheck AST and resolve attribute aliases.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "null",
+            "not null"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FILTER-004",
+      "area": "filtering",
+      "expected": "Execute PostgreSQL ilike with the app's installed DBAL 4.",
+      "current": "500: PostgreSQL platform no longer has getName().",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Update Doctrine ILikeFunction platform detection for DBAL 4.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "ilike"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FILTER-005",
+      "area": "filtering",
+      "expected": "Define empty IN as no matches and empty NOT IN as all matches.",
+      "current": "500 for empty string operands on the integer field.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate/coerce set operands; compile deliberate empty-set semantics.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testEmptyInMatchesNothing"
+        },
+        {
+          "test": "Query/QueryValidationTest::testEmptyNotInMatchesEverything"
+        }
+      ]
+    },
+    {
+      "id": "ALIAS-001",
+      "area": "aliases",
+      "expected": "Translate external attribute aliases for filter and sort.",
+      "current": "500: published-at is emitted as a DQL path instead of publishedAt.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "ResourceMetadata.resolveFieldPath must map attribute names as well as relationships.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "datetime alias"
+          ]
+        },
+        {
+          "test": "Query/SortingTest::testNullableAliasSort"
+        }
+      ]
+    },
+    {
+      "id": "QUERY-001",
+      "area": "query parsing",
+      "expected": "Reject malformed page lists and report source.parameter=page.",
+      "current": "page[]=1 succeeds; scalar page error uses a different source parameter.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "QueryParser pagination member shape validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testMalformedPageListRejected"
+        },
+        {
+          "test": "Query/QueryValidationTest::testScalarPageRejected"
+        }
+      ]
+    },
+    {
+      "id": "QUERY-002",
+      "area": "query parsing",
+      "expected": "Reject invalid operand objects/types and excessive filter depth at HTTP boundary.",
+      "current": "Object operand and deep groups succeed; invalid integer operand leaks a DB 500.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Bound and type-check parsed filter operands before Doctrine.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testQueryBoundaryBundleGap",
+          "datasets": [
+            "wrong operator shape"
+          ]
+        },
+        {
+          "test": "Query/QueryValidationTest::testWrongIntegerOperandProducesClientError"
+        },
+        {
+          "test": "Query/QueryValidationTest::testExcessiveFilterDepthIsRejected"
+        }
+      ]
+    },
+    {
+      "id": "ERROR-001",
+      "area": "errors",
+      "expected": "Provide a stable nonempty title for query errors.",
+      "current": "Unknown filter field response has code/status/source but no title.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Complete ErrorMapper title mapping for query whitelist errors.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testQueryBoundaryBundleGap",
+          "datasets": [
+            "unknown filter field"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ERROR-002",
+      "area": "errors",
+      "expected": "Report malformed to-one resource linkage as JSON:API 400 with public data pointer.",
+      "current": "500 for array linkage in a resource create document.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate resource relationship cardinality/shape before resolving.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/ErrorDocumentTest::testMalformedRelationshipDataPointsToData"
+        }
+      ]
+    },
+    {
+      "id": "INCLUDE-001",
+      "area": "compound documents",
+      "expected": "When include is requested and the nullable relationship is empty, emit included: [].",
+      "current": "The included member is omitted.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "DocumentBuilder requested-but-empty include handling.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/IncludeTest::testNullableInclude"
+        }
+      ]
+    },
+    {
+      "id": "WRITE-001",
+      "area": "writes",
+      "expected": "Accept empty attributes object in a partial PATCH.",
+      "current": "400: associative decoding conflates {} with [].",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Preserve JSON object/array distinction in request validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Resource/ResourceUpdateTest::testEmptyAttributeObjectIsValid"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-001",
+      "area": "profiles",
+      "expected": "Apply per-type default relationship count profile.",
+      "current": "No count metadata for tags without Accept profile; negotiated profile works.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Per-type ProfileContext activation in DocumentBuilder.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Profiles/ProfileTest::testProfileEnabledByDefaultForTags"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-002",
+      "area": "profiles",
+      "expected": "Negotiated soft-delete profile excludes archived categories on collection/item reads.",
+      "current": "Archived categories remain visible.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Integrate soft-delete query hooks with Doctrine collection and item reads.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Profiles/ProfileTest::testSoftDeleteProfileExcludesArchivedCategory"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-003",
+      "area": "profiles",
+      "expected": "Negotiated audit profile advances and persists updatedAt on writes.",
+      "current": "Timestamp remains the seeded value; write hooks are not integrated.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Integrate audit WriteHook into resource processors/controllers.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Profiles/ProfileTest::testAuditTrailProfileUpdatesTimestamp"
+        }
+      ]
+    },
+    {
+      "id": "SORT-001",
+      "area": "sorting",
+      "expected": "Implicit ID tiebreaker keeps tied title pagination deterministic after updates.",
+      "current": "Tied rows reverse after an unrelated row update.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Append a stable identifier ordering when absent from client sorting.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/SortingTest::testImplicitIdTiebreakerSurvivesUpdates"
+        }
+      ]
+    },
+    {
+      "id": "UUID-001",
+      "area": "Doctrine UUID identifiers",
+      "expected": "Client-supplied UUID strings create resources with a typed Symfony Uuid identifier through ordinary POST and Atomic add.",
+      "current": "Both requests return 500 because client ID assignment passes a string to setId(Uuid). Constructor-generated UUID objects and UUID string identifiers work.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Doctrine processors must convert client identifiers using mapped Doctrine/Serializer types before PropertyAccessor assignment.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/UuidIdentifierTest::testClientAssignedDoctrineUuidObject"
+        },
+        {
+          "test": "Doctrine/UuidIdentifierTest::testAtomicClientAssignedDoctrineUuidObject"
+        }
+      ]
+    },
+    {
+      "id": "UUID-002",
+      "area": "Doctrine UUID identifiers",
+      "expected": "A malformed identifier in a UUID resource URL produces a JSON:API 400 client error.",
+      "current": "GET /api/newsletters/not-a-uuid returns 500 when Doctrine UuidType rejects the identifier. A valid nonexistent UUID correctly returns 404.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate mapped UUID identifiers at the HTTP boundary or translate Doctrine UID conversion errors into JSON:API client errors.",
+      "priority": "P2",
+      "tests": [
+        {
+          "test": "Doctrine/UuidIdentifierTest::testMalformedUuidDoesNotLeakServerError"
+        }
+      ]
+    }
+  ]
+}

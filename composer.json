@@ -1,24 +1,20 @@
 {
+    "name": "alexfigures/example-jsonapi-bundle",
+    "description": "Real Symfony JSON:API usage example and HTTP black-box acceptance application",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/AlexFigures/jsonapi-symfony"
-        }
-    ],
     "require": {
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
         "alexfigures/symfony-jsonapi-bundle": "dev-main",
-        "doctrine/doctrine-bundle": "^2.18",
-        "doctrine/orm": "^3.5.2",
+        "doctrine/doctrine-bundle": "^2.19.1",
+        "doctrine/orm": "^3.7.2",
         "symfony/console": "7.3.*",
         "symfony/dotenv": "7.3.*",
-        "symfony/flex": "^2.8.2",
+        "symfony/flex": "^2.11.0",
         "symfony/framework-bundle": "7.3.*",
         "symfony/property-access": "7.3.*",
         "symfony/property-info": "7.3.*",
@@ -32,7 +28,8 @@
     "require-dev": {
         "symfony/browser-kit": "7.3.*",
         "symfony/css-selector": "7.3.*",
-        "symfony/phpunit-bridge": "^7.3.4"
+        "symfony/phpunit-bridge": "^7.4.18",
+        "phpunit/phpunit": "^11.5.56"
     },
     "config": {
         "allow-plugins": {
@@ -73,7 +70,11 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "test:stable": "phpunit --exclude-group bundle-gap",
+        "test:full": "phpunit",
+        "test:gaps": "phpunit --group bundle-gap",
+        "acceptance:report": "php tools/acceptance-report.php"
     },
     "conflict": {
         "symfony/symfony": "*"
