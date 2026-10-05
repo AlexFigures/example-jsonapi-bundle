@@ -26,8 +26,9 @@ final class ArticleSearchFilter implements FilterHandlerInterface
         $alias = $queryBuilder->getRootAliases()[0];
         // Escape LIKE wildcards as well as binding the value. SQL is never interpolated.
         $term = strtr(strtolower(trim($values[0])), ['!' => '!!', '%' => '!%', '_' => '!_']);
-        $queryBuilder->andWhere("(LOWER($alias.title) LIKE :article_search ESCAPE '!' OR LOWER($alias.content) LIKE :article_search ESCAPE '!')")
-            ->setParameter('article_search', '%'.$term.'%');
+        $parameter = 'article_search_'.count($queryBuilder->getParameters());
+        $queryBuilder->andWhere("(LOWER($alias.title) LIKE :$parameter ESCAPE '!' OR LOWER($alias.content) LIKE :$parameter ESCAPE '!')")
+            ->setParameter($parameter, '%'.$term.'%');
     }
 
     public function getPriority(): int

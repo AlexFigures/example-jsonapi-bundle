@@ -1,0 +1,8 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    atomic:
+        lid:
+            accept_in_resource_and_identifier: false

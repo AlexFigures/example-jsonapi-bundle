@@ -1,0 +1,10 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    limits:
+        filter_max_depth: 0
+        filter_max_nodes: 0
+        filter_max_operands: 0
+        complexity_budget: 0

@@ -2,7 +2,6 @@ jsonapi_auto:
     resource: .
     type: jsonapi
 
-jsonapi_atomic:
-    path: /api/operations
-    controller: AlexFigures\Symfony\Bridge\Symfony\Controller\AtomicController
-    methods: [POST]
+cookbook_controllers:
+    resource: ../src/Controller/
+    type: attribute

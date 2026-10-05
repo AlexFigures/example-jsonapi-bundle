@@ -1,0 +1,7 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    relationships:
+        linkage_in_resource: when_included

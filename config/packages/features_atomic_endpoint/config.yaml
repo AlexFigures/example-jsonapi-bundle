@@ -1,0 +1,13 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    atomic:
+        endpoint: /api/batch
+    media_types:
+        channels:
+            cookbook-batch:
+                scope: { path_prefix: /api/batch }
+                request: { allowed: ['*'] }
+                response: { default: application/vnd.api+json }

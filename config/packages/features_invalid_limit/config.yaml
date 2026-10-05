@@ -1,0 +1,3 @@
+jsonapi:
+    limits:
+        filter_max_nodes: -1

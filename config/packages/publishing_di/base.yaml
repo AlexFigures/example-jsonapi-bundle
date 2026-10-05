@@ -6,4 +6,5 @@ jsonapi:
         enabled_by_default: ['urn:example:injectable-profile']
 services:
     App\Tests\Acceptance\Support\InjectableProfile:
+        autowire: true
         tags: ['jsonapi.profile']

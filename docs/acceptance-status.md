@@ -2,9 +2,9 @@
 
 `docs/bundle-gaps.json` is the reviewed inventory. Tests carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; they use normal assertions and are never skipped. This report validates the markers against the inventory.
 
-Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes discoverability rather than an absent runtime feature.
+Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes documentation/contract drift or discoverability. `DX_GAP` describes public integration ergonomics/tooling. `CONFIG_IMPLEMENTATION_GAP` identifies accepted configuration with no corresponding runtime implementation.
 
-Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit 11.5.56.
+Baseline: bundle `1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b`, PHP 8.4.26, PHPUnit 11.5.56.
 
 ## CONTENT-NEGOTIATION-001 — content negotiation
 
@@ -389,10 +389,10 @@ Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit
 
 ## QUERY-002 — query parsing
 
-**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 3 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 3 cases.
 
 - Expected: Reject invalid operand objects/types and excessive filter depth at HTTP boundary.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Object operand and deep groups succeed; invalid integer operand leaks a DB 500.
 - Bundle change: Bound and type-check parsed filter operands before Doctrine.
 - Tests:
@@ -513,10 +513,10 @@ Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit
 
 ## EXTENSIBILITY-PROFILE-DI — Production profile dependency injection
 
-**DESIRED_CAPABILITY · P2**. Observed: 1 failing / 1 cases.
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 1 cases.
 
 - Expected: A tagged public ProfileInterface service can use required constructor injection and the HTTP application still boots.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Container validation reports the registered profile as missing when it has a required constructor dependency; HTTP cannot start.
 - Bundle change: Support dependency-injected profile services during validation; obtain static descriptors without constructing unconfigured application services.
 - Tests:
@@ -525,10 +525,10 @@ Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit
 
 ## QUERY-SCOPE-GRAPH — Production ownership scope across graph reads
 
-**DESIRED_CAPABILITY · P1**. Observed: 3 failing / 3 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 3 cases.
 
 - Expected: Application-owned Article scope applies before pagination to INDEX, related collections, includes and relationship linkage; foreign objects and identifiers are not exposed.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: ResourceRepository decoration scopes INDEX/SHOW and DTO projections, but related collections, includes and linkage bypass that scope and expose Grace articles to editor A.
 - Bundle change: Provide one mandatory resource query/visibility extension used for root queries, relationship pagination, identifier discovery and includes, independent of client profile negotiation.
 - Tests:
@@ -539,10 +539,10 @@ Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit
 
 ## CUSTOM-ACTION-READ-MODEL — Custom-route-only aggregate read model
 
-**DESIRED_CAPABILITY · P2**. Observed: 1 failing / 1 cases.
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 1 cases.
 
 - Expected: A custom handler can serialize a registered non-Doctrine aggregate resource with operations=[] using its custom GET route, without requiring fictitious generated CRUD routes.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: CustomRouteResult::resource attempts to generate jsonapi.author-publishing-statistics.show although SHOW is disabled; the aggregate endpoint returns 500.
 - Bundle change: Support canonical/self link metadata for custom-route-only resources or safely serialize resources without a generated SHOW route.
 - Tests:
@@ -551,10 +551,10 @@ Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit
 
 ## WRITE-MODEL-SERIALIZER-METADATA — Symfony external serializer mapping
 
-**DESIRED_CAPABILITY · P2**. Observed: 5 failing / 5 cases.
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 5 cases.
 
 - Expected: The bundle honors effective Symfony Serializer metadata, including configured environment-specific YAML write groups; original wide-surface test contracts remain executable while publishing uses attribute-only safe groups.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Symfony debug:serializer reports articles:write for the configured test fields, but generated JSON:API writes reject views/status/published-at as extra attributes (422). Five original desired round-trip/workflow assertions fail without being changed.
 - Bundle change: Use effective Symfony serializer metadata consistently when determining allowed input fields, including external mapping paths and inherited metadata.
 - Tests:
@@ -567,12 +567,375 @@ Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit
 
 ## ATOMIC-VALIDATION-BOUNDARY — Existing mixed-manager validation expectation
 
-**INFRASTRUCTURE_LIMIT · P2**. Observed: 1 failing / 1 cases.
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 1 cases.
 
-- Expected: The original mixed-manager batch assertion expects 422 for invalid Article title and verifies preceding MySQL Comment changes do not persist.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
-- Historical baseline: The installed provider rejects the multi-manager boundary with JSON:API 409 unsupported-transaction-boundary before business validation; the preceding Comment state is unchanged. The safety assertion passes and the 422 status assertion remains failing.
-- Bundle change: No transaction-safety fix is inferred: rejection is safe. Document unsupported-boundary error precedence and the single-manager contract; any future broader provider must preserve rollback assertions.
+- Expected: Reject a batch spanning independent PostgreSQL and MySQL connections with 409 unsupported-transaction-boundary before either operation mutates storage, including when a later operation would fail validation.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: 409 unsupported-transaction-boundary; both resources remain unchanged. The user confirmed this single-connection contract; earlier 422 business-validation precedence is no longer required.
+- Bundle change: No change required on the tested revision; keep early rejection and single-connection rollback guarantees.
 - Tests:
-  - [Atomic/AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit](../tests/Acceptance/Atomic/AtomicTransactionalityTest.php)
-- Responsibility: This records an existing consumer contract against the installed single-EntityManager transaction provider, not a JSON:API violation or a loss of Atomic safety. Distributed/multi-connection atomic commit is outside the application example. The desired error precedence remains explicit instead of silently changing an existing assertion.
+  - [Atomic/AtomicTransactionalityTest::testMixedManagerBatchIsRejectedBeforeAnyMutation](../tests/Acceptance/Atomic/AtomicTransactionalityTest.php)
+- Responsibility: The bundle must detect incompatible transaction boundaries before executing any operation; distributed transactions are outside its contract.
+
+## EXTENSIBILITY-CUSTOM-OPERATOR — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 3 cases.
+
+- Expected: Registered custom filter operators execute through HTTP parser and Doctrine compilation.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: 400 Unsupported operator starts_with before registered operator invocation.
+- Bundle change: Public operator registry must participate in parser validation; application must not replace generic parser.
+- Tests:
+  - [Features/Filtering/InheritanceAndExtensionsTest::testPublicQueryExtensions](../tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php) (custom operator, logical custom operator, bound SQL literal)
+- Responsibility: Public operator registry must participate in parser validation; application must not replace generic parser.
+
+## DOCS-OPERATIONS — Public feature conformance
+
+**DOCUMENTATION_GAP · P1**. Observed: 0 failing / 3 cases.
+
+- Expected: OpenAPI advertises only enabled resource operations.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Read-only audit-logs advertises POST.
+- Bundle change: OpenAPI generator must honor ResourceOperation metadata.
+- Tests:
+  - [Features/Docs/OpenApiTest::testGeneratedResourceOperations](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+  - [Features/Docs/OpenApiTest::testCustomOnlyResourceDoesNotAdvertiseCrud](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+  - [Features/Docs/OpenApiTest::testSelectiveOperationsMatchActualCollectionAndItemRoutes](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: OpenAPI generator must honor ResourceOperation metadata.
+
+## DOCS-NEGOTIATION — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 3 cases.
+
+- Expected: Documentation endpoints accept their native response media types with strict negotiation enabled.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: OpenAPI returns 406 for Accept application/json; UI returns 406 for text/html.
+- Bundle change: Bundle-owned documentation routes must integrate with negotiation policy without consumer route replacements.
+- Tests:
+  - [Features/Docs/OpenApiTest::testDocumentationAcceptsItsNativeMediaType](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: Bundle-owned documentation routes must integrate with negotiation policy without consumer route replacements.
+
+## CONFIG-JSON-SCHEMA — Public feature conformance
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Enabled JSON Schema generator exposes its configured HTTP route.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Default enabled schema endpoint returns 404; schema configuration has no routing implementation.
+- Bundle change: Public configuration must have a working external contract or be removed/deprecated clearly.
+- Tests:
+  - [Features/Docs/OpenApiTest::testEnabledJsonSchemaRouteExists](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: Public configuration must have a working external contract or be removed/deprecated clearly.
+
+## CUSTOM-ACTION-QUERY-PARAMETER — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Custom handlers receive application query parameters alongside JSON:API criteria.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Query parser rejects title before CustomRouteContext::getQueryParam can consume it.
+- Bundle change: Expose a per-route query allowlist or documented parsing seam.
+- Tests:
+  - [Features/CustomRoutes/HandlerContractTest::testApplicationQueryParameterReachesCustomHandler](../tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php)
+- Responsibility: Expose a per-route query allowlist or documented parsing seam.
+
+## PROFILE-READ-HOOK — Public feature conformance
+
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 1 cases.
+
+- Expected: Negotiated public ReadHook restricts collection before pagination.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: QueryHook caps page size, but ReadHook custom condition is ignored: views 10/20 instead of 100/110.
+- Bundle change: Generated repositories must invoke public read hooks with negotiated context.
+- Tests:
+  - [Features/Profiles/PublicHooksTest::testDocumentQueryAndReadHooksCompose](../tests/Acceptance/Features/Profiles/PublicHooksTest.php)
+- Responsibility: Generated repositories must invoke public read hooks with negotiated context.
+
+## PROFILE-RELATIONSHIP-HOOK — Public feature conformance
+
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 1 cases.
+
+- Expected: Negotiated RelationshipHook can reject associations before mutation.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: PATCH succeeds 200 and changes author despite hook throwing ForbiddenException.
+- Bundle change: All generated relationship writes must invoke public relationship hooks before persistence.
+- Tests:
+  - [Features/Profiles/PublicHooksTest::testRelationshipHookRejectsBeforePersistence](../tests/Acceptance/Features/Profiles/PublicHooksTest.php)
+- Responsibility: All generated relationship writes must invoke public relationship hooks before persistence.
+
+## WRITE-REQUEST-DTO — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Operation-specific writeRequests input class validates incoming attributes.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Short title receives 201; configured DTO Length(min:20) ignored.
+- Bundle change: Make public operation input metadata participate in normal validation/denormalization; document supported keys.
+- Tests:
+  - [Features/Mapping/PublicInputAndVersionTest::testOperationSpecificInputClassIsValidated](../tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php)
+- Responsibility: Make public operation input metadata participate in normal validation/denormalization; document supported keys.
+
+## VERSION-RESOLVER-CONTEXT — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 2 failing / 4 cases.
+
+- Expected: VersionResolver receives negotiated profile and selects the configured DTO mapping.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: GET returns original title despite profile requesting alternate representation.
+- Bundle change: Carry request ProfileContext into public representation-definition resolution.
+- Tests:
+  - [Features/Mapping/PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation](../tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php)
+- Responsibility: Carry request ProfileContext into public representation-definition resolution.
+
+## DX-PROFILE-COMMAND — Public feature conformance
+
+**DX_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Documented jsonapi:validate-profiles command is registered.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Symfony Console has no jsonapi namespace despite command class present.
+- Bundle change: Register the public command and document availability/dependencies.
+- Tests:
+  - [Features/Configuration/PublicConfigurationTest::testProfileValidationCommandRunsFromConsumerContainer](../tests/Acceptance/Features/Configuration/PublicConfigurationTest.php)
+- Responsibility: Register the public command and document availability/dependencies.
+
+## FILTER-PUBLIC-NULL-NAMES — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 2 cases.
+
+- Expected: Public FilterableField null/nnull operators execute as null checks.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Both names return400 unsupported operator; isnull alias works.
+- Bundle change: Align parser operator vocabulary with public metadata and docs.
+- Tests:
+  - [Features/Filtering/NativeOperatorsTest::testDocumentedNullOperatorNames](../tests/Acceptance/Features/Filtering/NativeOperatorsTest.php)
+- Responsibility: Align parser operator vocabulary with public metadata and docs.
+
+## RELATIONSHIP-BUDGET-ENDPOINT — Public feature conformance
+
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 1 cases.
+
+- Expected: Relationship identifier budget applies to standalone linkage endpoints.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Root/include reject oversized tags, standalone linkage returns200 with all identifiers.
+- Bundle change: Enforce the same budget before legacy relationship identifier reads.
+- Tests:
+  - [Features/Relationships/IdentifierBudgetTest::testOversizedRelationshipIsRejectedWithoutTruncation](../tests/Acceptance/Features/Relationships/IdentifierBudgetTest.php) (linkage endpoint)
+- Responsibility: Enforce the same budget before legacy relationship identifier reads.
+
+## CACHE-SURROGATE-ROUTES — Public feature conformance
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 2 cases.
+
+- Expected: Generated resource/collection routes emit configured surrogate keys.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: No X-Cache-Tags header; builder recognizes legacy generic names rather than generated resource-specific names.
+- Bundle change: Resolve resource identity from public route metadata consistently for all generated routes.
+- Tests:
+  - [Features/Cache/HeaderConfigurationTest::testConfiguredCacheHeadersAndSurrogateResource](../tests/Acceptance/Features/Cache/HeaderConfigurationTest.php)
+  - [Features/Cache/HeaderConfigurationTest::testStrongCollectionValidatorAndCollectionKey](../tests/Acceptance/Features/Cache/HeaderConfigurationTest.php)
+- Responsibility: Resolve resource identity from public route metadata consistently for all generated routes.
+
+## DOCS-INHERITANCE — Public feature conformance
+
+**DOCUMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: OpenAPI expands inherited filter/sort whitelists including aliases and exclusions.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Spec advertises relationship root author rather than executable author.name/email fields.
+- Bundle change: Document effective whitelist rather than raw inheritance declarations.
+- Tests:
+  - [Features/Docs/OpenApiTest::testInheritedWhitelistIsExpandedInDocumentation](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: Document effective whitelist rather than raw inheritance declarations.
+
+## DOCS-WRITABLE-SCHEMA — Public feature conformance
+
+**DOCUMENTATION_GAP · P1**. Observed: 0 failing / 1 cases.
+
+- Expected: OpenAPI schema distinguishes server-owned attributes from writable inputs.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: createdAt/updatedAt lack readOnly despite HTTP rejecting client writes.
+- Bundle change: Generate operation input schemas or readOnly/writeOnly from effective serializer metadata.
+- Tests:
+  - [Features/Docs/OpenApiTest::testReadOnlyAttributesAreNotAdvertisedAsWritable](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: Generate operation input schemas or readOnly/writeOnly from effective serializer metadata.
+
+## DOCS-PAGINATION-CONFIG — Public feature conformance
+
+**DOCUMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: OpenAPI pagination defaults/limits equal effective application configuration.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Spec default20/max100 while runtime configuration default5/max20.
+- Bundle change: Read effective public pagination/limits configuration during generation.
+- Tests:
+  - [Features/Docs/OpenApiTest::testPaginationDocumentationUsesEffectiveConfiguration](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: Read effective public pagination/limits configuration during generation.
+
+## ATOMIC-LID-CONFIG — Atomic configuration
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Setting lid.accept_in_resource_and_identifier=false rejects resource and identifier lids.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Atomic add accepts data.lid and creates the Author with200 despite the disabled policy.
+- Bundle change: Apply lid policy consistently to data resources as well as operation refs.
+- Tests:
+  - [Features/Atomic/ConfigurationMatrixTest::testAtomicConfigurationGuards](../tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php) (lid)
+- Responsibility: Enforcing a public Atomic protocol configuration is transport infrastructure.
+
+## PROFILE-SOFT-VISIBILITY — Public configuration interoperability
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 2 cases.
+
+- Expected: Soft-delete default_visibility include/only controls visible rows.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Both include and only return the default three undeleted categories.
+- Bundle change: Wire public visibility configuration into the negotiated query hook.
+- Tests:
+  - [Features/Profiles/SoftDeleteConfigurationTest::testConfiguredVisibility](../tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php) (include, only)
+- Responsibility: Wire public visibility configuration into the negotiated query hook.
+
+## PROFILE-SOFT-DELETE-SEMANTICS — Public configuration interoperability
+
+**CONFIG_IMPLEMENTATION_GAP · P1**. Observed: 0 failing / 1 cases.
+
+- Expected: delete_semantics=soft retains the row and records deletion state.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: DELETE204 physically removes the category despite configured soft semantics.
+- Bundle change: Implement the declared generic deletion policy or explicitly remove/deprecate the misleading option.
+- Tests:
+  - [Features/Profiles/SoftDeleteConfigurationTest::testDeleteSemanticsPersistExpectedState](../tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php) (soft)
+- Responsibility: Implement the declared generic deletion policy or explicitly remove/deprecate the misleading option.
+
+## PROFILE-SOFT-QUERY-FLAGS — Public configuration interoperability
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Configured soft-delete flags are consumed as profile query controls.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: includeArchived returns400 filter-not-allowed before the profile can consume it.
+- Bundle change: Connect public flag names with query parsing and whitelist handling.
+- Tests:
+  - [Features/Profiles/SoftDeleteConfigurationTest::testConfiguredQueryFlagIsConsumedBeforeWhitelist](../tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php)
+- Responsibility: Connect public flag names with query parsing and whitelist handling.
+
+## PROFILE-SOFT-BOOLEAN — Public configuration interoperability
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: strategy=boolean excludes true deletion markers and retains false markers.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Boolean strategy still uses IS NULL; both nonnullable false/true records disappear.
+- Bundle change: Compile configured strategy using boolean predicates and validate compatible metadata.
+- Tests:
+  - [Features/Profiles/BooleanSoftDeleteTest::testBooleanStrategyExcludesOnlyMarkedRows](../tests/Acceptance/Features/Profiles/BooleanSoftDeleteTest.php)
+- Responsibility: Compile configured strategy using boolean predicates and validate compatible metadata.
+
+## MEDIA-CHANNEL-ROUTING — Public configuration interoperability
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 2 cases.
+
+- Expected: Route-name and attribute channels select configured request/response policy.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Path channel works; route/attribute POST application/json returns415 using default policy.
+- Bundle change: Resolve routing/MediaChannel metadata before selecting scoped negotiation policy.
+- Tests:
+  - [Features/Protocol/MediaChannelsTest::testPublicChannelScopeAndResponse](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) (route, attribute)
+- Responsibility: Resolve routing/MediaChannel metadata before selecting scoped negotiation policy.
+
+## DOCS-ENDPOINT-EXAMPLES — OpenAPI endpoint attributes
+
+**DOCUMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
+
+- Expected: Public OpenApiEndpoint examples/OpenApiExample values appear in the generated HTTP specification.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Summary, parameters, schemaRef, headers and security are emitted; examples silently disappear.
+- Bundle change: Serialize configured named examples at the appropriate OpenAPI request/response media location.
+- Tests:
+  - [Features/Docs/OpenApiTest::testPublicEndpointExamplesArePresentInSpec](../tests/Acceptance/Features/Docs/OpenApiTest.php)
+- Responsibility: Interpreting public documentation attributes is the bundle generator responsibility.
+
+## DX-TYPED-PERSISTER-DISPATCH — typed data layer
+
+**DOCUMENTATION_GAP · P1**. Observed: 2 failing / 2 cases.
+
+- Expected: Documented jsonapi.persister tagged TypedResourcePersister implementations handle generated create routes independently for multiple resource types.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: Typed repository reads succeed, but both typed create routes return JSON:API 500; current ResourceProcessor dispatch ignores the documented legacy persister registration.
+- Bundle change: Provide and document an active typed write contract/registration seam, or deprecate obsolete persister/tag examples with an executable migration example.
+- Tests:
+  - [Features/DataLayer/TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites](../tests/Acceptance/Features/DataLayer/TypedProviderTest.php)
+- Responsibility: The bundle advertises the public legacy contract and tag; independent consumers need a supported typed write registration path or an explicit documented migration to ResourceProcessor. Reimplementing dispatch in the application would hide this mismatch.
+
+## CACHE-VERSION-STRATEGY — HTTP caching
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 2 failing / 2 cases.
+
+- Expected: cache.etag.strategy=version uses X-Resource-Version supplied by the application; no version produces no ETag.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: The configured strategy still generates body-hash ETags, including when no version header is present.
+- Bundle change: Wire the version strategy through the public configuration and document the response-version header contract.
+- Tests:
+  - [Features/Cache/VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion](../tests/Acceptance/Features/Cache/VersionStrategyTest.php)
+- Responsibility: Selecting the configured ETag generator belongs to bundle configuration, not application alias replacement.
+
+## PROFILE-DEFAULT-WRITE — profile lifecycle
+
+**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 1 cases.
+
+- Expected: Per-type default profiles execute write hooks without an explicit Accept profile; application identity is recorded on create.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: Explicitly negotiated builtin audit records createdBy/updatedBy, but per_type default alone creates the memo with createdBy=null.
+- Bundle change: Resolve default and per-type profiles before write-hook execution on generated mutations.
+- Tests:
+  - [Features/Profiles/AuditIdentityTest::testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation](../tests/Acceptance/Features/Profiles/AuditIdentityTest.php)
+- Responsibility: Default-profile selection must apply consistently to read and write lifecycle hooks. Applications should not require clients to request server audit policy.
+
+## FILTER-HANDLER-LOGICAL-COMPOSITION — custom filter composition
+
+**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 1 cases.
+
+- Expected: A custom search predicate inside OR preserves the alternative ordinary filter branch.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: search=No such term OR views=10 returns zero resources rather than article-1; the handler adds its predicate as a global AND condition.
+- Bundle change: Expose an expression/predicate custom-filter contract that composes at the original logical AST position, including bound parameters and error mapping.
+- Tests:
+  - [Features/Filtering/SearchCompositionTest::testHandlerInsideOrPreservesAlternativeNormalPredicate](../tests/Acceptance/Features/Filtering/SearchCompositionTest.php)
+- Responsibility: The public imperative FilterHandlerInterface cannot naturally contribute a predicate at its AST position. Rebuilding logical query compilation in the application would replace generic bundle behavior.
+
+## DATA-LAYER-CUSTOM-ATOMIC — custom data provider and Atomic
+
+**CONFIG_IMPLEMENTATION_GAP · P1**. Observed: 0 failing / 1 cases.
+
+- Expected: A resource-only Atomic batch uses the configured custom processor/transaction manager; a business failure rolls back the earlier mutation and returns 422.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: Atomic controller returns500 before executing the batch: custom-provider services reference the nonexistent AlexFigures\Symfony\Contract\Data\NullRelationshipUpdater class.
+- Bundle change: Provide valid custom-provider fallback services and avoid mandatory initialization of unused relationship capabilities for standard Atomic resource mutations.
+- Tests:
+  - [Features/DataLayer/CustomProviderTest::testAtomicBusinessFailureRollsBackEarlierCustomProviderMutation](../tests/Acceptance/Features/DataLayer/CustomProviderTest.php)
+- Responsibility: A supported custom provider must boot the resource-only Atomic dispatcher without requiring an application dummy implementation for an unused optional relationship write service.
+
+## CACHE-COLLECTION-LAST-MODIFIED — Last-Modified configuration
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 1 failing / 1 cases.
+
+- Expected: collections_max_of=false disables automatically computed collection Last-Modified, while item validators remain available.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: collections_max_of is accepted but only appears in configuration; runtime always computes a maximum.
+- Bundle change: Honor the documented configuration or explicitly remove/deprecate the unsupported option with a migration contract.
+- Tests:
+  - [Features/Cache/DisabledCollectionLastModifiedTest::testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator](../tests/Acceptance/Features/Cache/DisabledCollectionLastModifiedTest.php)
+- Responsibility: This is bundle-owned public configuration; implementing an application substitute would hide its missing behavior.
+
+## PROFILE-AUDIT-META — Audit profile metadata
+
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 1 failing / 1 cases.
+
+- Expected: expose_in_meta=true exposes server-owned audit information in negotiated resource metadata.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: The public AuditTrailDocumentHook is a placeholder; the option has no observable effect.
+- Bundle change: Honor the documented configuration or explicitly remove/deprecate the unsupported option with a migration contract.
+- Tests:
+  - [Features/Profiles/AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation](../tests/Acceptance/Features/Profiles/AuditIdentityTest.php)
+- Responsibility: This is bundle-owned public configuration; implementing an application substitute would hide its missing behavior.

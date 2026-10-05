@@ -1,0 +1,10 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    cache:
+        last_modified:
+            resource_field: createdAt
+            per_type:
+                articles: createdAt

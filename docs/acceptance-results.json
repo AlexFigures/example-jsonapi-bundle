@@ -1,5 +1,5 @@
 {
-    "bundle_revision": "727d671c47a6de33340939415ef93053fdcbaf7d",
+    "bundle_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
     "gap_summary": [
         {
             "id": "CONTENT-NEGOTIATION-001",
@@ -234,12 +234,10 @@
         },
         {
             "id": "QUERY-002",
-            "status": "OPEN",
-            "passing_cases": 2,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "ERROR-001",
@@ -313,62 +311,273 @@
         },
         {
             "id": "EXTENSIBILITY-PROFILE-DI",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Production\\ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "QUERY-SCOPE-GRAPH",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 3,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles",
-                "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testIncludesCannotLeakForeignArticles",
-                "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "CUSTOM-ACTION-READ-MODEL",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Production\\ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "WRITE-MODEL-SERIALIZER-METADATA",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 5,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Doctrine\\DoctrineTypesTest::testWriteTypesRoundTrip",
-                "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testReadAndWriteAlias",
-                "App\\Tests\\Acceptance\\Resource\\ResourceCreateTest::testAllWritableAttributesAndRelationships",
-                "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testAttributesAndRelationshipsTogether",
-                "App\\Tests\\Acceptance\\Smoke\\RealWorldWorkflowTest::testPublishingWorkflow"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 5,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "ATOMIC-VALIDATION-BOUNDARY",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "EXTENSIBILITY-CUSTOM-OPERATOR",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCS-OPERATIONS",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCS-NEGOTIATION",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "CONFIG-JSON-SCHEMA",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "CUSTOM-ACTION-QUERY-PARAMETER",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-READ-HOOK",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-RELATIONSHIP-HOOK",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "WRITE-REQUEST-DTO",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "VERSION-RESOLVER-CONTEXT",
+            "status": "OPEN",
+            "passing_cases": 2,
+            "failing_cases": 2,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation",
+                "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\""
+            ]
+        },
+        {
+            "id": "DX-PROFILE-COMMAND",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "FILTER-PUBLIC-NULL-NAMES",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "RELATIONSHIP-BUDGET-ENDPOINT",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "CACHE-SURROGATE-ROUTES",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCS-INHERITANCE",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCS-WRITABLE-SCHEMA",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCS-PAGINATION-CONFIG",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "ATOMIC-LID-CONFIG",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-SOFT-VISIBILITY",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-SOFT-DELETE-SEMANTICS",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-SOFT-QUERY-FLAGS",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "PROFILE-SOFT-BOOLEAN",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "MEDIA-CHANNEL-ROUTING",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DOCS-ENDPOINT-EXAMPLES",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "DX-TYPED-PERSISTER-DISPATCH",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 2,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"cards\"",
+                "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"notes\""
+            ]
+        },
+        {
+            "id": "CACHE-VERSION-STRATEGY",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 2,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Features\\Cache\\VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion with data set \"version header\"",
+                "App\\Tests\\Acceptance\\Features\\Cache\\VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion with data set \"no version\""
+            ]
+        },
+        {
+            "id": "PROFILE-DEFAULT-WRITE",
             "status": "OPEN",
             "passing_cases": 0,
             "failing_cases": 1,
             "current_failures": [
-                "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit"
+                "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation"
+            ]
+        },
+        {
+            "id": "FILTER-HANDLER-LOGICAL-COMPOSITION",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Features\\Filtering\\SearchCompositionTest::testHandlerInsideOrPreservesAlternativeNormalPredicate"
+            ]
+        },
+        {
+            "id": "DATA-LAYER-CUSTOM-ATOMIC",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
+        },
+        {
+            "id": "CACHE-COLLECTION-LAST-MODIFIED",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Features\\Cache\\DisabledCollectionLastModifiedTest::testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator"
+            ]
+        },
+        {
+            "id": "PROFILE-AUDIT-META",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation"
             ]
         }
     ],
     "phpunit_version": "11.5.56",
     "php_version": "8.4.26",
     "counts": {
-        "stable_pass": 378,
-        "gap_pass": 1,
-        "gap_fail": 12,
+        "stable_pass": 454,
+        "gap_pass": 124,
+        "gap_fail": 10,
         "unexpected_fail": 0,
         "skipped": 0
     },
@@ -1027,22 +1236,22 @@
         },
         {
             "area": "Atomic",
-            "scenario": "testMixedManagerBatchRollsBackBeforeCommit",
-            "test": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit",
+            "scenario": "testMixedManagerBatchIsRejectedBeforeAnyMutation",
+            "test": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchIsRejectedBeforeAnyMutation",
             "file": "tests/Acceptance/Atomic/AtomicTransactionalityTest.php",
             "expected_statuses": [
                 200,
-                422
+                409
             ],
             "current_statuses": [
                 409,
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "ATOMIC-VALIDATION-BOUNDARY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit\n{\"errors\":[{\"status\":\"409\",\"code\":\"unsupported-transaction-boundary\",\"id\":\"<uuid>\",\"title\":\"Unsupported transaction boundary\",\"detail\":\"This operation spans unsupported transaction boundaries. The built-in Doctrine provider requires one EntityManager and one connection per transaction.\"}]}\nFailed asserting that 409 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:105\n/srv/app/tests/Acceptance/Atomic/AtomicTransactionalityTest.php:81\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Atomic",
@@ -1708,13 +1917,13 @@
                 200
             ],
             "current_statuses": [
-                422
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "WRITE-MODEL-SERIALIZER-METADATA"
             ],
-            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineTypesTest::testWriteTypesRoundTrip\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022views\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/views\"},\"meta\":{\"extraAttribute\":\"views\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022status\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/status\"},\"meta\":{\"extraAttribute\":\"status\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Doctrine/DoctrineTypesTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -2009,6 +2218,3138 @@
             "failure": null
         },
         {
+            "area": "Features",
+            "scenario": "testReturnPolicyControlsRepresentation with data set \"none\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testReturnPolicyControlsRepresentation with data set \"none\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testReturnPolicyControlsRepresentation with data set \"auto\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testReturnPolicyControlsRepresentation with data set \"auto\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                200,
+                204
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testReturnPolicyControlsRepresentation with data set \"always\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testReturnPolicyControlsRepresentation with data set \"always\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                200,
+                204
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAtomicConfigurationGuards with data set \"max\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testAtomicConfigurationGuards with data set \"max\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAtomicConfigurationGuards with data set \"href\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testAtomicConfigurationGuards with data set \"href\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAtomicConfigurationGuards with data set \"lid\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testAtomicConfigurationGuards with data set \"lid\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "ATOMIC-LID-CONFIG"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAtomicConfigurationGuards with data set \"noext\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\ConfigurationMatrixTest::testAtomicConfigurationGuards with data set \"noext\"",
+            "file": "tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDisabledAtomicExtensionCannotExecuteAMutation",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\DisabledAtomicTest::testDisabledAtomicExtensionCannotExecuteAMutation",
+            "file": "tests/Acceptance/Features/Atomic/DisabledAtomicTest.php",
+            "expected_statuses": [
+                200,
+                404
+            ],
+            "current_statuses": [
+                404,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredEndpointExecutesAndDocumentationMatchesApplicationRoute",
+            "test": "App\\Tests\\Acceptance\\Features\\Atomic\\EndpointTest::testConfiguredEndpointExecutesAndDocumentationMatchesApplicationRoute",
+            "file": "tests/Acceptance/Features/Atomic/EndpointTest.php",
+            "expected_statuses": [
+                200,
+                404
+            ],
+            "current_statuses": [
+                404,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDisabledCacheDoesNotGenerateValidatorsOrConditionalResponse",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\DisabledCacheTest::testDisabledCacheDoesNotGenerateValidatorsOrConditionalResponse",
+            "file": "tests/Acceptance/Features/Cache/DisabledCacheTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\DisabledCollectionLastModifiedTest::testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator",
+            "file": "tests/Acceptance/Features/Cache/DisabledCollectionLastModifiedTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "CACHE-COLLECTION-LAST-MODIFIED"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Cache\\DisabledCollectionLastModifiedTest::testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator\nFailed asserting that 'Thu, 15 Jan 2026 00:00:00 GMT' is null.\n\n/srv/app/tests/Acceptance/Features/Cache/DisabledCollectionLastModifiedTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredCacheHeadersAndSurrogateResource",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\HeaderConfigurationTest::testConfiguredCacheHeadersAndSurrogateResource",
+            "file": "tests/Acceptance/Features/Cache/HeaderConfigurationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "CACHE-SURROGATE-ROUTES"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStrongCollectionValidatorAndCollectionKey",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\HeaderConfigurationTest::testStrongCollectionValidatorAndCollectionKey",
+            "file": "tests/Acceptance/Features/Cache/HeaderConfigurationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "CACHE-SURROGATE-ROUTES"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHeadAndGetValidatorsAgree",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\HeaderConfigurationTest::testHeadAndGetValidatorsAgree",
+            "file": "tests/Acceptance/Features/Cache/HeaderConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredFieldAndCollectionMaximumDetermineValidators",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\LastModifiedConfigurationTest::testConfiguredFieldAndCollectionMaximumDetermineValidators",
+            "file": "tests/Acceptance/Features/Cache/LastModifiedConfigurationTest.php",
+            "expected_statuses": [
+                200,
+                304
+            ],
+            "current_statuses": [
+                200,
+                304
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testEquivalentRepresentationsIgnoreQueryShapeWhenDisabled",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\QueryShapeTest::testEquivalentRepresentationsIgnoreQueryShapeWhenDisabled",
+            "file": "tests/Acceptance/Features/Cache/QueryShapeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredVersionStrategyUsesApplicationVersion with data set \"version header\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion with data set \"version header\"",
+            "file": "tests/Acceptance/Features/Cache/VersionStrategyTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "CACHE-VERSION-STRATEGY"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Cache\\VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion with data set \"version header\"\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'\"7\"'\n+'\"f750185a3b29fee2\"'\n\n/srv/app/tests/Acceptance/Features/Cache/VersionStrategyTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredVersionStrategyUsesApplicationVersion with data set \"no version\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Cache\\VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion with data set \"no version\"",
+            "file": "tests/Acceptance/Features/Cache/VersionStrategyTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "CACHE-VERSION-STRATEGY"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Cache\\VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion with data set \"no version\"\nFailed asserting that '\"cf0555598170a17d\"' is identical to null.\n\n/srv/app/tests/Acceptance/Features/Cache/VersionStrategyTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testDtoFilterSortPaginationAndEtagCompose",
+            "test": "App\\Tests\\Acceptance\\Features\\Composition\\DtoQueryTest::testDtoFilterSortPaginationAndEtagCompose",
+            "file": "tests/Acceptance/Features/Composition/DtoQueryTest.php",
+            "expected_statuses": [
+                200,
+                304
+            ],
+            "current_statuses": [
+                200,
+                304
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testProfileIncludeCountsNeverLinkageAndCachingCompose",
+            "test": "App\\Tests\\Acceptance\\Features\\Composition\\ProfileRepresentationTest::testProfileIncludeCountsNeverLinkageAndCachingCompose",
+            "file": "tests/Acceptance/Features/Composition/ProfileRepresentationTest.php",
+            "expected_statuses": [
+                200,
+                304
+            ],
+            "current_statuses": [
+                200,
+                304
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testBusinessActionAuthorizationCommitEventAndOpenApiCompose",
+            "test": "App\\Tests\\Acceptance\\Features\\Composition\\PublishingCommandTest::testBusinessActionAuthorizationCommitEventAndOpenApiCompose",
+            "file": "tests/Acceptance/Features/Composition/PublishingCommandTest.php",
+            "expected_statuses": [
+                200,
+                403,
+                512
+            ],
+            "current_statuses": [
+                403,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUuidLidRelationshipAndAuthorizationFailureRollBackAtomicBatch",
+            "test": "App\\Tests\\Acceptance\\Features\\Composition\\PublishingCommandTest::testUuidLidRelationshipAndAuthorizationFailureRollBackAtomicBatch",
+            "file": "tests/Acceptance/Features/Composition/PublishingCommandTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAuthenticatedScopedInheritedSearchAndCustomSortCompose",
+            "test": "App\\Tests\\Acceptance\\Features\\Composition\\PublishingQueryTest::testAuthenticatedScopedInheritedSearchAndCustomSortCompose",
+            "file": "tests/Acceptance/Features/Composition/PublishingQueryTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testProfileValidationCommandRunsFromConsumerContainer",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicConfigurationTest::testProfileValidationCommandRunsFromConsumerContainer",
+            "file": "tests/Acceptance/Features/Configuration/PublicConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DX-PROFILE-COMMAND"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnsafeConfigurationFailsDuringBoot with data set \"negative limit\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicConfigurationTest::testUnsafeConfigurationFailsDuringBoot with data set \"negative limit\"",
+            "file": "tests/Acceptance/Features/Configuration/PublicConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnsafeConfigurationFailsDuringBoot with data set \"sort policy\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicConfigurationTest::testUnsafeConfigurationFailsDuringBoot with data set \"sort policy\"",
+            "file": "tests/Acceptance/Features/Configuration/PublicConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnsafeConfigurationFailsDuringBoot with data set \"docs theme\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicConfigurationTest::testUnsafeConfigurationFailsDuringBoot with data set \"docs theme\"",
+            "file": "tests/Acceptance/Features/Configuration/PublicConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnsafeConfigurationFailsDuringBoot with data set \"provider\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicConfigurationTest::testUnsafeConfigurationFailsDuringBoot with data set \"provider\"",
+            "file": "tests/Acceptance/Features/Configuration/PublicConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnsafeConfigurationFailsDuringBoot with data set \"linkage mode\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicConfigurationTest::testUnsafeConfigurationFailsDuringBoot with data set \"linkage mode\"",
+            "file": "tests/Acceptance/Features/Configuration/PublicConfigurationTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testInvalidResourcesFailDuringBootOrRouteDiscoveryWithUsefulDiagnostic with data set \"duplicate type\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\ResourceDiscoveryTest::testInvalidResourcesFailDuringBootOrRouteDiscoveryWithUsefulDiagnostic with data set \"duplicate type\"",
+            "file": "tests/Acceptance/Features/Configuration/ResourceDiscoveryTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testInvalidResourcesFailDuringBootOrRouteDiscoveryWithUsefulDiagnostic with data set \"duplicate attribute\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\ResourceDiscoveryTest::testInvalidResourcesFailDuringBootOrRouteDiscoveryWithUsefulDiagnostic with data set \"duplicate attribute\"",
+            "file": "tests/Acceptance/Features/Configuration/ResourceDiscoveryTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testNoTransactionReadHandler",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testNoTransactionReadHandler",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testBusinessHandlerHasTransaction",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testBusinessHandlerHasTransaction",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testCriteriaBuilderComposesServerAndClientCriteria",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testCriteriaBuilderComposesServerAndClientCriteria",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testApplicationQueryParameterReachesCustomHandler",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testApplicationQueryParameterReachesCustomHandler",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "CUSTOM-ACTION-QUERY-PARAMETER"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicScopedTransactionUsesOnlyRequestedManager",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testPublicScopedTransactionUsesOnlyRequestedManager",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicScopedTransactionRejectsIndependentBoundaries",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testPublicScopedTransactionRejectsIndependentBoundaries",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                409
+            ],
+            "current_statuses": [
+                409
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testResultForms with data set \"accepted\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testResultForms with data set \"accepted\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200,
+                202,
+                204
+            ],
+            "current_statuses": [
+                202
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testResultForms with data set \"no content\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testResultForms with data set \"no content\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200,
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testResultForms with data set \"conflict\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\HandlerContractTest::testResultForms with data set \"conflict\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                409
+            ],
+            "current_statuses": [
+                409
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"resource\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"resource\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"created\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"created\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                204,
+                400
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"collection\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"collection\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"accepted\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"accepted\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                202,
+                204,
+                400
+            ],
+            "current_statuses": [
+                202
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"no-content\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"no-content\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"error\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"error\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400,
+                409
+            ],
+            "current_statuses": [
+                409
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFactoryForms with data set \"validation\"",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testFactoryForms with data set \"validation\"",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                400,
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testResponseBuilderModifiersCompose",
+            "test": "App\\Tests\\Acceptance\\Features\\CustomRoutes\\ResponseFactoryTest::testResponseBuilderModifiersCompose",
+            "file": "tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php",
+            "expected_statuses": [
+                200,
+                203
+            ],
+            "current_statuses": [
+                203
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testComputedRelationshipUsesTaggedBatchReaderForLinkageAndInclude",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\BatchRelationshipReaderTest::testComputedRelationshipUsesTaggedBatchReaderForLinkageAndInclude",
+            "file": "tests/Acceptance/Features/DataLayer/BatchRelationshipReaderTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testIndexAndShowWithoutDoctrineEntity",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\CustomProviderTest::testIndexAndShowWithoutDoctrineEntity",
+            "file": "tests/Acceptance/Features/DataLayer/CustomProviderTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testCreateWithoutDoctrineEntity",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\CustomProviderTest::testCreateWithoutDoctrineEntity",
+            "file": "tests/Acceptance/Features/DataLayer/CustomProviderTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPatchWithoutDoctrineEntity",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\CustomProviderTest::testPatchWithoutDoctrineEntity",
+            "file": "tests/Acceptance/Features/DataLayer/CustomProviderTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelatedAndLinkageWithoutDoctrineEntity",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\CustomProviderTest::testRelatedAndLinkageWithoutDoctrineEntity",
+            "file": "tests/Acceptance/Features/DataLayer/CustomProviderTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPaginationAndDeleteUseTheCustomSource",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\CustomProviderTest::testPaginationAndDeleteUseTheCustomSource",
+            "file": "tests/Acceptance/Features/DataLayer/CustomProviderTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                404
+            ],
+            "current_statuses": [
+                200,
+                204,
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAtomicBusinessFailureRollsBackEarlierCustomProviderMutation",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\CustomProviderTest::testAtomicBusinessFailureRollsBackEarlierCustomProviderMutation",
+            "file": "tests/Acceptance/Features/DataLayer/CustomProviderTest.php",
+            "expected_statuses": [
+                200,
+                422
+            ],
+            "current_statuses": [
+                422,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DATA-LAYER-CUSTOM-ATOMIC"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testGeneratedReadsDispatchByResourceType with data set \"cards\"",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testGeneratedReadsDispatchByResourceType with data set \"cards\"",
+            "file": "tests/Acceptance/Features/DataLayer/TypedProviderTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testGeneratedReadsDispatchByResourceType with data set \"notes\"",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testGeneratedReadsDispatchByResourceType with data set \"notes\"",
+            "file": "tests/Acceptance/Features/DataLayer/TypedProviderTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"cards\"",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"cards\"",
+            "file": "tests/Acceptance/Features/DataLayer/TypedProviderTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "DX-TYPED-PERSISTER-DISPATCH"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"cards\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/DataLayer/TypedProviderTest.php:31\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"notes\"",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"notes\"",
+            "file": "tests/Acceptance/Features/DataLayer/TypedProviderTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "DX-TYPED-PERSISTER-DISPATCH"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites with data set \"notes\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/DataLayer/TypedProviderTest.php:31\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testRejectPolicyDoesNotInvokeUnboundedComputedFallback",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\UnplannedRelationshipTest::testRejectPolicyDoesNotInvokeUnboundedComputedFallback",
+            "file": "tests/Acceptance/Features/DataLayer/UnplannedRelationshipTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testSparseFieldsAvoidUnneededComputedRelationship",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\UnplannedRelationshipTest::testSparseFieldsAvoidUnneededComputedRelationship",
+            "file": "tests/Acceptance/Features/DataLayer/UnplannedRelationshipTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDisabledSpecAndUiDoNotServeDocuments",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\DisabledDocumentationTest::testDisabledSpecAndUiDoNotServeDocuments",
+            "file": "tests/Acceptance/Features/Docs/DisabledDocumentationTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUiCanBeDisabledIndependently",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\DisabledUiTest::testUiCanBeDisabledIndependently",
+            "file": "tests/Acceptance/Features/Docs/DisabledUiTest.php",
+            "expected_statuses": [
+                200,
+                404
+            ],
+            "current_statuses": [
+                404,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testGeneratedResourceOperations",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testGeneratedResourceOperations",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-OPERATIONS"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testCustomOnlyResourceDoesNotAdvertiseCrud",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testCustomOnlyResourceDoesNotAdvertiseCrud",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-OPERATIONS"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testInheritedWhitelistIsExpandedInDocumentation",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testInheritedWhitelistIsExpandedInDocumentation",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-INHERITANCE"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testSchemaPrimitiveTypesAndEnumMatchRepresentation",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testSchemaPrimitiveTypesAndEnumMatchRepresentation",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testReadOnlyAttributesAreNotAdvertisedAsWritable",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testReadOnlyAttributesAreNotAdvertisedAsWritable",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-WRITABLE-SCHEMA"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPaginationDocumentationUsesEffectiveConfiguration",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testPaginationDocumentationUsesEffectiveConfiguration",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-PAGINATION-CONFIG"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testCustomHandlerRoutesAreDocumented",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testCustomHandlerRoutesAreDocumented",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testControllerAttributesAreDocumented",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testControllerAttributesAreDocumented",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicEndpointExamplesArePresentInSpec",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testPublicEndpointExamplesArePresentInSpec",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-ENDPOINT-EXAMPLES"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testSwaggerShellReferencesConfiguredSpecification",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testSwaggerShellReferencesConfiguredSpecification",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentationAcceptsItsNativeMediaType with data set \"OpenAPI native\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testDocumentationAcceptsItsNativeMediaType with data set \"OpenAPI native\"",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-NEGOTIATION"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentationAcceptsItsNativeMediaType with data set \"OpenAPI JSON\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testDocumentationAcceptsItsNativeMediaType with data set \"OpenAPI JSON\"",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-NEGOTIATION"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentationAcceptsItsNativeMediaType with data set \"UI HTML\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testDocumentationAcceptsItsNativeMediaType with data set \"UI HTML\"",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-NEGOTIATION"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testEnabledJsonSchemaRouteExists",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testEnabledJsonSchemaRouteExists",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "CONFIG-JSON-SCHEMA"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testSelectiveOperationsMatchActualCollectionAndItemRoutes",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\OpenApiTest::testSelectiveOperationsMatchActualCollectionAndItemRoutes",
+            "file": "tests/Acceptance/Features/Docs/OpenApiTest.php",
+            "expected_statuses": [],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "DOCS-OPERATIONS"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredSpecIdentity",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\RedocTest::testConfiguredSpecIdentity",
+            "file": "tests/Acceptance/Features/Docs/RedocTest.php",
+            "expected_statuses": [
+                200,
+                512
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRedocShell",
+            "test": "App\\Tests\\Acceptance\\Features\\Docs\\RedocTest::testRedocShell",
+            "file": "tests/Acceptance/Features/Docs/RedocTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testGeneratedCrudPublishesResourceEvent with data set \"create\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testGeneratedCrudPublishesResourceEvent with data set \"create\"",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                204,
+                512
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testGeneratedCrudPublishesResourceEvent with data set \"update\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testGeneratedCrudPublishesResourceEvent with data set \"update\"",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                204,
+                512
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testGeneratedCrudPublishesResourceEvent with data set \"delete\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testGeneratedCrudPublishesResourceEvent with data set \"delete\"",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                204,
+                512
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelationshipEvents with data set \"replace\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testRelationshipEvents with data set \"replace\"",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                200,
+                512
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelationshipEvents with data set \"add\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testRelationshipEvents with data set \"add\"",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                200,
+                512
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelationshipEvents with data set \"remove\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testRelationshipEvents with data set \"remove\"",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                200,
+                512
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRejectedMutationProducesNoResourceNotification",
+            "test": "App\\Tests\\Acceptance\\Features\\Events\\ResourceEventsTest::testRejectedMutationProducesNoResourceNotification",
+            "file": "tests/Acceptance/Features/Events/ResourceEventsTest.php",
+            "expected_statuses": [
+                422,
+                512
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testZeroDisablesStructuralGuards",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\DisabledGuardsTest::testZeroDisablesStructuralGuards",
+            "file": "tests/Acceptance/Features/Filtering/DisabledGuardsTest.php",
+            "expected_statuses": [
+                200,
+                250
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"filter priority\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"filter priority\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"normal field\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"normal field\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"composed filters\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"composed filters\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"sort priority asc\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"sort priority asc\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"sort priority desc\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"sort priority desc\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"duplicate sort field\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"duplicate sort field\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"sort pagination\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testHigherPriorityWinsAndUnrelatedFieldsRemainStandard with data set \"sort pagination\"",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testCustomSortTiesRemainStableAcrossPages",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\HandlerPriorityTest::testCustomSortTiesRemainStableAcrossPages",
+            "file": "tests/Acceptance/Features/Filtering/HandlerPriorityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"inherited name\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"inherited name\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"inherited email\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"inherited email\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"alias inherited name\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"alias inherited name\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"custom operator\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"custom operator\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "EXTENSIBILITY-CUSTOM-OPERATOR"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"custom sort ascending\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"custom sort ascending\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"custom sort descending\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"custom sort descending\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"composed sort pagination\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"composed sort pagination\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"logical custom operator\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"logical custom operator\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "EXTENSIBILITY-CUSTOM-OPERATOR"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicQueryExtensions with data set \"bound SQL literal\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testPublicQueryExtensions with data set \"bound SQL literal\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "EXTENSIBILITY-CUSTOM-OPERATOR"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testExcludedFieldsAndInvalidOperands with data set \"excluded filter\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testExcludedFieldsAndInvalidOperands with data set \"excluded filter\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testExcludedFieldsAndInvalidOperands with data set \"excluded sort\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testExcludedFieldsAndInvalidOperands with data set \"excluded sort\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testExcludedFieldsAndInvalidOperands with data set \"invalid custom operand\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testExcludedFieldsAndInvalidOperands with data set \"invalid custom operand\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testExcludedFieldsAndInvalidOperands with data set \"operator not whitelisted\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\InheritanceAndExtensionsTest::testExcludedFieldsAndInvalidOperands with data set \"operator not whitelisted\"",
+            "file": "tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentedNullOperatorNames with data set \"null\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\NativeOperatorsTest::testDocumentedNullOperatorNames with data set \"null\"",
+            "file": "tests/Acceptance/Features/Filtering/NativeOperatorsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "FILTER-PUBLIC-NULL-NAMES"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentedNullOperatorNames with data set \"nnull\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\NativeOperatorsTest::testDocumentedNullOperatorNames with data set \"nnull\"",
+            "file": "tests/Acceptance/Features/Filtering/NativeOperatorsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "FILTER-PUBLIC-NULL-NAMES"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnsupportedNotExpressionHasControlledClientDiagnostic",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\NativeOperatorsTest::testUnsupportedNotExpressionHasControlledClientDiagnostic",
+            "file": "tests/Acceptance/Features/Filtering/NativeOperatorsTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testTwoLevelsOfInheritanceComposeWithInclude with data set \"nested name\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\NestedInheritanceTest::testTwoLevelsOfInheritanceComposeWithInclude with data set \"nested name\"",
+            "file": "tests/Acceptance/Features/Filtering/NestedInheritanceTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testTwoLevelsOfInheritanceComposeWithInclude with data set \"nested email\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\NestedInheritanceTest::testTwoLevelsOfInheritanceComposeWithInclude with data set \"nested email\"",
+            "file": "tests/Acceptance/Features/Filtering/NestedInheritanceTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRepeatedHandlerUsesDistinctBoundParameters",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\SearchCompositionTest::testRepeatedHandlerUsesDistinctBoundParameters",
+            "file": "tests/Acceptance/Features/Filtering/SearchCompositionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testHandlerInsideOrPreservesAlternativeNormalPredicate",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\SearchCompositionTest::testHandlerInsideOrPreservesAlternativeNormalPredicate",
+            "file": "tests/Acceptance/Features/Filtering/SearchCompositionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "FILTER-HANDLER-LOGICAL-COMPOSITION"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Filtering\\SearchCompositionTest::testHandlerInsideOrPreservesAlternativeNormalPredicate\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 [\n-    0 => '1',\n-]\n+Array &0 []\n\n/srv/app/tests/Acceptance/Features/Filtering/SearchCompositionTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"operands below\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"operands below\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"operands at\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"operands at\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"operands above\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"operands above\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"nin above\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"nin above\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"nodes at\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"nodes at\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"nodes above\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"nodes above\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"depth below\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"depth below\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"depth at\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"depth at\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStructuralGuards with data set \"depth above\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testStructuralGuards with data set \"depth above\"",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testWeightedRelationshipHopComplexityBoundary",
+            "test": "App\\Tests\\Acceptance\\Features\\Filtering\\StructuralLimitsTest::testWeightedRelationshipHopComplexityBoundary",
+            "file": "tests/Acceptance/Features/Filtering/StructuralLimitsTest.php",
+            "expected_statuses": [
+                200,
+                400
+            ],
+            "current_statuses": [
+                200,
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRequiredConstructorArgumentAndServerDefault",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\ConstructorAndProjectionTest::testRequiredConstructorArgumentAndServerDefault",
+            "file": "tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConstructorValidationErrorPointsAtAttribute",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\ConstructorAndProjectionTest::testConstructorValidationErrorPointsAtAttribute",
+            "file": "tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicCustomReadMapperProjectsEntityThroughHttp",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\ConstructorAndProjectionTest::testPublicCustomReadMapperProjectsEntityThroughHttp",
+            "file": "tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDtoIdentifierNameAndRootOrderingAcrossPages",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\ConstructorAndProjectionTest::testDtoIdentifierNameAndRootOrderingAcrossPages",
+            "file": "tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOperationSpecificInputClassIsValidated",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testOperationSpecificInputClassIsValidated",
+            "file": "tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "WRITE-REQUEST-DTO"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testValidOperationSpecificInputCanCreate",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testValidOperationSpecificInputCanCreate",
+            "file": "tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testNegotiatedVersionChangesRepresentation",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation",
+            "file": "tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200,
+                500
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "VERSION-RESOLVER-CONTEXT"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:43\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"",
+            "file": "tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "VERSION-RESOLVER-CONTEXT"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:61\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"sparse collection\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"sparse collection\"",
+            "file": "tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "VERSION-RESOLVER-CONTEXT"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"included\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"included\"",
+            "file": "tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "VERSION-RESOLVER-CONTEXT"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testEnabledOperationsWorkAndDisabledOperationsAreAbsent",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SelectiveOperationsTest::testEnabledOperationsWorkAndDisabledOperationsAreAbsent",
+            "file": "tests/Acceptance/Features/Mapping/SelectiveOperationsTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                405
+            ],
+            "current_statuses": [
+                201,
+                200,
+                405
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOptionsReflectsDifferentCollectionAndItemOperations",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SelectiveOperationsTest::testOptionsReflectsDifferentCollectionAndItemOperations",
+            "file": "tests/Acceptance/Features/Mapping/SelectiveOperationsTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                204
+            ],
+            "current_statuses": [
+                201,
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"POST Default\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"POST Default\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"POST memo:write\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"POST memo:write\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"PATCH Default\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"PATCH Default\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"PATCH memo:write\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testDefaultAndConfiguredGroupsProduceAttributePointers with data set \"PATCH memo:write\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOperationSpecificGroupsRemainDistinct with data set \"create-specific rejection\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testOperationSpecificGroupsRemainDistinct with data set \"create-specific rejection\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                200,
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOperationSpecificGroupsRemainDistinct with data set \"create rule not applied on update\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testOperationSpecificGroupsRemainDistinct with data set \"create rule not applied on update\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                200,
+                422
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOperationSpecificGroupsRemainDistinct with data set \"update-specific rejection\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testOperationSpecificGroupsRemainDistinct with data set \"update-specific rejection\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                200,
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOperationSpecificGroupsRemainDistinct with data set \"update rule not applied on create\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Mapping\\SharedValidationGroupsTest::testOperationSpecificGroupsRemainDistinct with data set \"update rule not applied on create\"",
+            "file": "tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                422
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testCreateUpdateTrackAuthenticatedIdentityAndPersistAuditFields",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testCreateUpdateTrackAuthenticatedIdentityAndPersistAuditFields",
+            "file": "tests/Acceptance/Features/Profiles/AuditIdentityTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                422
+            ],
+            "current_statuses": [
+                201,
+                200,
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation",
+            "file": "tests/Acceptance/Features/Profiles/AuditIdentityTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "PROFILE-AUDIT-META"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation\nexpose_in_meta must have an externally visible resource metadata effect.\nFailed asserting that an array has the key 'meta'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditIdentityTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation",
+            "file": "tests/Acceptance/Features/Profiles/AuditIdentityTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                201
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "PROFILE-DEFAULT-WRITE"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Features\\Profiles\\AuditIdentityTest::testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation\nFailed asserting that null is identical to 'ada@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditIdentityTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Features",
+            "scenario": "testBooleanStrategyExcludesOnlyMarkedRows",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\BooleanSoftDeleteTest::testBooleanStrategyExcludesOnlyMarkedRows",
+            "file": "tests/Acceptance/Features/Profiles/BooleanSoftDeleteTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-SOFT-BOOLEAN"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testStrictUnknownProfilePolicyRejectsUnknownProfile",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\KnownProfilesTest::testStrictUnknownProfilePolicyRejectsUnknownProfile",
+            "file": "tests/Acceptance/Features/Profiles/KnownProfilesTest.php",
+            "expected_statuses": [
+                406
+            ],
+            "current_statuses": [
+                406
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testKnownProfilesComposeAndAreEchoed",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\KnownProfilesTest::testKnownProfilesComposeAndAreEchoed",
+            "file": "tests/Acceptance/Features/Profiles/KnownProfilesTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentQueryAndReadHooksCompose",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\PublicHooksTest::testDocumentQueryAndReadHooksCompose",
+            "file": "tests/Acceptance/Features/Profiles/PublicHooksTest.php",
+            "expected_statuses": [
+                100,
+                110,
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-READ-HOOK"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDocumentAndQueryHooksHaveIndependentVisibleEffects",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\PublicHooksTest::testDocumentAndQueryHooksHaveIndependentVisibleEffects",
+            "file": "tests/Acceptance/Features/Profiles/PublicHooksTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFetchPlanHookRequestsCountsWithoutCountProfile",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\PublicHooksTest::testFetchPlanHookRequestsCountsWithoutCountProfile",
+            "file": "tests/Acceptance/Features/Profiles/PublicHooksTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testWriteHookChangesPersistedRepresentation",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\PublicHooksTest::testWriteHookChangesPersistedRepresentation",
+            "file": "tests/Acceptance/Features/Profiles/PublicHooksTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelationshipHookRejectsBeforePersistence",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\PublicHooksTest::testRelationshipHookRejectsBeforePersistence",
+            "file": "tests/Acceptance/Features/Profiles/PublicHooksTest.php",
+            "expected_statuses": [
+                200,
+                403
+            ],
+            "current_statuses": [
+                403,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-RELATIONSHIP-HOOK"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredVisibility with data set \"exclude\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteConfigurationTest::testConfiguredVisibility with data set \"exclude\"",
+            "file": "tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredVisibility with data set \"include\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteConfigurationTest::testConfiguredVisibility with data set \"include\"",
+            "file": "tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-SOFT-VISIBILITY"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredVisibility with data set \"only\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteConfigurationTest::testConfiguredVisibility with data set \"only\"",
+            "file": "tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-SOFT-VISIBILITY"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDeleteSemanticsPersistExpectedState with data set \"soft\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteConfigurationTest::testDeleteSemanticsPersistExpectedState with data set \"soft\"",
+            "file": "tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php",
+            "expected_statuses": [
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-SOFT-DELETE-SEMANTICS"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDeleteSemanticsPersistExpectedState with data set \"hard\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteConfigurationTest::testDeleteSemanticsPersistExpectedState with data set \"hard\"",
+            "file": "tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php",
+            "expected_statuses": [
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testConfiguredQueryFlagIsConsumedBeforeWhitelist with data set \"flags\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteConfigurationTest::testConfiguredQueryFlagIsConsumedBeforeWhitelist with data set \"flags\"",
+            "file": "tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "PROFILE-SOFT-QUERY-FLAGS"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDebugMetadataCanBeEnabledAndCorrelationDisabledExplicitly",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\ErrorConfigurationTest::testDebugMetadataCanBeEnabledAndCorrelationDisabledExplicitly",
+            "file": "tests/Acceptance/Features/Protocol/ErrorConfigurationTest.php",
+            "expected_statuses": [
+                500
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultTitleMappingCanBeDisabled",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\ErrorConfigurationTest::testDefaultTitleMappingCanBeDisabled",
+            "file": "tests/Acceptance/Features/Protocol/ErrorConfigurationTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicChannelScopeAndResponse with data set \"path\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\MediaChannelsTest::testPublicChannelScopeAndResponse with data set \"path\"",
+            "file": "tests/Acceptance/Features/Protocol/MediaChannelsTest.php",
+            "expected_statuses": [
+                200,
+                415
+            ],
+            "current_statuses": [
+                200,
+                415
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicChannelScopeAndResponse with data set \"route\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\MediaChannelsTest::testPublicChannelScopeAndResponse with data set \"route\"",
+            "file": "tests/Acceptance/Features/Protocol/MediaChannelsTest.php",
+            "expected_statuses": [
+                200,
+                415
+            ],
+            "current_statuses": [
+                200,
+                415
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "MEDIA-CHANNEL-ROUTING"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPublicChannelScopeAndResponse with data set \"attribute\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\MediaChannelsTest::testPublicChannelScopeAndResponse with data set \"attribute\"",
+            "file": "tests/Acceptance/Features/Protocol/MediaChannelsTest.php",
+            "expected_statuses": [
+                200,
+                415
+            ],
+            "current_statuses": [
+                200,
+                415
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "MEDIA-CHANNEL-ROUTING"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultChannelStillAppliesOutsideMatchedScope",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\MediaChannelsTest::testDefaultChannelStillAppliesOutsideMatchedScope",
+            "file": "tests/Acceptance/Features/Protocol/MediaChannelsTest.php",
+            "expected_statuses": [
+                406
+            ],
+            "current_statuses": [
+                406
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testInternalExceptionIsMaskedAndCorrelationIsObservable",
+            "test": "App\\Tests\\Acceptance\\Features\\Protocol\\ProductionErrorSafetyTest::testInternalExceptionIsMaskedAndCorrelationIsObservable",
+            "file": "tests/Acceptance/Features/Protocol/ProductionErrorSafetyTest.php",
+            "expected_statuses": [
+                500
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFieldBudgetAtLimitStillAllowsConnectedInclude",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DocumentBudgetTest::testFieldBudgetAtLimitStillAllowsConnectedInclude",
+            "file": "tests/Acceptance/Features/Relationships/DocumentBudgetTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testFieldBudgetRejectsCumulativeFieldsetsAboveLimit",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DocumentBudgetTest::testFieldBudgetRejectsCumulativeFieldsetsAboveLimit",
+            "file": "tests/Acceptance/Features/Relationships/DocumentBudgetTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testIncludedResourceBudgetRejectsAboveLimitWithoutTruncation",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DocumentBudgetTest::testIncludedResourceBudgetRejectsAboveLimitWithoutTruncation",
+            "file": "tests/Acceptance/Features/Relationships/DocumentBudgetTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOversizedRelationshipIsRejectedWithoutTruncation with data set \"root linkage\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\IdentifierBudgetTest::testOversizedRelationshipIsRejectedWithoutTruncation with data set \"root linkage\"",
+            "file": "tests/Acceptance/Features/Relationships/IdentifierBudgetTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOversizedRelationshipIsRejectedWithoutTruncation with data set \"included relationship\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\IdentifierBudgetTest::testOversizedRelationshipIsRejectedWithoutTruncation with data set \"included relationship\"",
+            "file": "tests/Acceptance/Features/Relationships/IdentifierBudgetTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testOversizedRelationshipIsRejectedWithoutTruncation with data set \"linkage endpoint\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\IdentifierBudgetTest::testOversizedRelationshipIsRejectedWithoutTruncation with data set \"linkage endpoint\"",
+            "file": "tests/Acceptance/Features/Relationships/IdentifierBudgetTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [
+                "RELATIONSHIP-BUDGET-ENDPOINT"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPolicyAcceptsExistingTargetAndRejectsMissingTarget with data set \"VERIFY\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\LinkingPoliciesTest::testPolicyAcceptsExistingTargetAndRejectsMissingTarget with data set \"VERIFY\"",
+            "file": "tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                404,
+                409,
+                422
+            ],
+            "current_statuses": [
+                201,
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPolicyAcceptsExistingTargetAndRejectsMissingTarget with data set \"REFERENCE\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\LinkingPoliciesTest::testPolicyAcceptsExistingTargetAndRejectsMissingTarget with data set \"REFERENCE\"",
+            "file": "tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                404,
+                409,
+                422
+            ],
+            "current_statuses": [
+                201,
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPolicyAlsoAppliesToUpdateAndAtomicRelationshipMutation with data set \"VERIFY\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\LinkingPoliciesTest::testPolicyAlsoAppliesToUpdateAndAtomicRelationshipMutation with data set \"VERIFY\"",
+            "file": "tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                404,
+                409,
+                422
+            ],
+            "current_statuses": [
+                201,
+                200,
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPolicyAlsoAppliesToUpdateAndAtomicRelationshipMutation with data set \"REFERENCE\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\LinkingPoliciesTest::testPolicyAlsoAppliesToUpdateAndAtomicRelationshipMutation with data set \"REFERENCE\"",
+            "file": "tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php",
+            "expected_statuses": [
+                200,
+                201,
+                404,
+                409,
+                422
+            ],
+            "current_statuses": [
+                201,
+                200,
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testInheritedFilterTraversesUnexposedJoinEntity",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\PathAliasTest::testInheritedFilterTraversesUnexposedJoinEntity",
+            "file": "tests/Acceptance/Features/Relationships/PathAliasTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testSerializationIncludesLinkageWithoutExposingJoinState",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\PathAliasTest::testSerializationIncludesLinkageWithoutExposingJoinState",
+            "file": "tests/Acceptance/Features/Relationships/PathAliasTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelatedEndpointUsesPublicTargets",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\PathAliasTest::testRelatedEndpointUsesPublicTargets",
+            "file": "tests/Acceptance/Features/Relationships/PathAliasTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testLinkageEndpointUsesPublicIdentifiers",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\PathAliasTest::testLinkageEndpointUsesPublicIdentifiers",
+            "file": "tests/Acceptance/Features/Relationships/PathAliasTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testSparseFieldsetExcludesAlias",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\PathAliasTest::testSparseFieldsetExcludesAlias",
+            "file": "tests/Acceptance/Features/Relationships/PathAliasTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testNeverOmitsUnrequestedLinkage",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testNeverOmitsUnrequestedLinkage",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testExplicitIncludeRetainsConnectedCompoundDocument",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testExplicitIncludeRetainsConnectedCompoundDocument",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testPrimaryIdentitiesDoNotReappearInIncluded",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testPrimaryIdentitiesDoNotReappearInIncluded",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testToManyWrite204Modes with data set \"PATCH\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testToManyWrite204Modes with data set \"PATCH\"",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testToManyWrite204Modes with data set \"POST\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testToManyWrite204Modes with data set \"POST\"",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testToManyWrite204Modes with data set \"DELETE\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testToManyWrite204Modes with data set \"DELETE\"",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                204
+            ],
+            "current_statuses": [
+                204
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testRelationshipWrite204HasNoDocument",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RepresentationModesTest::testRelationshipWrite204HasNoDocument",
+            "file": "tests/Acceptance/Features/Relationships/RepresentationModesTest.php",
+            "expected_statuses": [
+                200,
+                204
+            ],
+            "current_statuses": [
+                204,
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDistinctRootsAcrossThreePagesOfToManyJoins",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RootJoinPaginationTest::testDistinctRootsAcrossThreePagesOfToManyJoins",
+            "file": "tests/Acceptance/Features/Relationships/RootJoinPaginationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testIncludeQueryCountDoesNotGrowPerRoot",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\RootJoinPaginationTest::testIncludeQueryCountDoesNotGrowPerRoot",
+            "file": "tests/Acceptance/Features/Relationships/RootJoinPaginationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testLinkageAppearsOnlyWithRequestedInclude",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\WhenIncludedTest::testLinkageAppearsOnlyWithRequestedInclude",
+            "file": "tests/Acceptance/Features/Relationships/WhenIncludedTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testExplicitAggregateHandlerSupportsToManyTraversal",
+            "test": "App\\Tests\\Acceptance\\Features\\Sorting\\AggregateSemanticsTest::testExplicitAggregateHandlerSupportsToManyTraversal",
+            "file": "tests/Acceptance/Features/Sorting/AggregateSemanticsTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAmbiguousInheritedToManySortIsRejected",
+            "test": "App\\Tests\\Acceptance\\Features\\Sorting\\CollectionPolicyTest::testAmbiguousInheritedToManySortIsRejected",
+            "file": "tests/Acceptance/Features/Sorting/CollectionPolicyTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
             "area": "Mapping",
             "scenario": "testReadProjectionDoesNotExposeEntityInternals",
             "test": "App\\Tests\\Acceptance\\Mapping\\DtoResourceTest::testReadProjectionDoesNotExposeEntityInternals",
@@ -2047,13 +5388,13 @@
                 200
             ],
             "current_statuses": [
-                422
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "WRITE-MODEL-SERIALIZER-METADATA"
             ],
-            "failure": "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testReadAndWriteAlias\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Mapping/FieldAliasesTest.php:18\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Mapping",
@@ -2476,12 +5817,14 @@
             "expected_statuses": [
                 200
             ],
-            "current_statuses": [],
-            "result": "FAIL",
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
             "bundle_gaps": [
                 "EXTENSIBILITY-PROFILE-DI"
             ],
-            "failure": "App\\Tests\\Acceptance\\Production\\ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext\nA public profile with an injected application context must boot: Profile validation failed with 10 error(s):\n\n\u2717 [urn:example:injectable-profile] audit-logs: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] categories: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] tags: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] subscriptions: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] newsletters: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] authors: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] articles: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] comments: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] article-summaries: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] author-publishing-statistics: Profile 'urn:example:injectable-profile' not found in profile registry\n\nFix these errors before deploying to production.\nFailed asserting that 'Profile validation failed with 10 error(s):\\n\n\\n\n\u2717 [urn:example:injectable-profile] audit-logs: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] categories: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] tags: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] subscriptions: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] newsletters: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] authors: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] articles: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] comments: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] article-summaries: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] author-publishing-statistics: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\\n\nFix these errors before deploying to production.' is null.\n\n/srv/app/tests/Acceptance/Production/ExtensibilityTest.php:24\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Production",
@@ -2844,11 +6187,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-SCOPE-GRAPH"
             ],
-            "failure": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles\nRelated collections must honor the same application scope as INDEX.\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 []\n+Array &0 [\n+    0 => '9',\n+    1 => '10',\n+    2 => '11',\n+    3 => '12',\n+]\n\n/srv/app/tests/Acceptance/Production/QueryScopeTest.php:76\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Production",
@@ -2861,11 +6204,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-SCOPE-GRAPH"
             ],
-            "failure": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testIncludesCannotLeakForeignArticles\nIncludes must honor the application-owned Article scope.\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 []\n+Array &0 [\n+    0 => '9',\n+    1 => '10',\n+    2 => '11',\n+    3 => '12',\n+]\n\n/srv/app/tests/Acceptance/Production/QueryScopeTest.php:85\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Production",
@@ -2878,11 +6221,11 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-SCOPE-GRAPH"
             ],
-            "failure": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers\nLinkage must be scoped before pagination, not just existence-checked.\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 []\n+Array &0 [\n+    0 => Array &1 [\n+        'type' => 'articles',\n+        'id' => '9',\n+    ],\n+    1 => Array &2 [\n+        'type' => 'articles',\n+        'id' => '10',\n+    ],\n+    2 => Array &3 [\n+        'type' => 'articles',\n+        'id' => '11',\n+    ],\n+    3 => Array &4 [\n+        'type' => 'articles',\n+        'id' => '12',\n+    ],\n+]\n\n/srv/app/tests/Acceptance/Production/QueryScopeTest.php:94\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Production",
@@ -2893,13 +6236,13 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CUSTOM-ACTION-READ-MODEL"
             ],
-            "failure": "App\\Tests\\Acceptance\\Production\\ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal Server Error\",\"detail\":\"Unable to generate a URL for the named route \\u0022jsonapi.author-publishing-statistics.show\\u0022 as such route does not exist.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Production/ReadModelTest.php:17\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Production",
@@ -5205,13 +8548,13 @@
                 400
             ],
             "current_statuses": [
-                200
+                400
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "QUERY-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"draft\",\"metadata\":{\"sequence\":3,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-03T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:105\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:106\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Query",
@@ -5897,13 +9240,13 @@
                 201
             ],
             "current_statuses": [
-                422
+                201
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "WRITE-MODEL-SERIALIZER-METADATA"
             ],
-            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceCreateTest::testAllWritableAttributesAndRelationships\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022status\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/status\"},\"meta\":{\"extraAttribute\":\"status\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022views\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/views\"},\"meta\":{\"extraAttribute\":\"views\"}}]}\nFailed asserting that 422 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Resource/ResourceCreateTest.php:28\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Resource",
@@ -6330,13 +9673,13 @@
                 200
             ],
             "current_statuses": [
-                422
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "WRITE-MODEL-SERIALIZER-METADATA"
             ],
-            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testAttributesAndRelationshipsTogether\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Resource/ResourceUpdateTest.php:29\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Resource",
@@ -6523,13 +9866,16 @@
             ],
             "current_statuses": [
                 201,
-                422
+                200,
+                304,
+                204,
+                404
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "WRITE-MODEL-SERIALIZER-METADATA"
             ],
-            "failure": "App\\Tests\\Acceptance\\Smoke\\RealWorldWorkflowTest::testPublishingWorkflow\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022status\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/status\"},\"meta\":{\"extraAttribute\":\"status\"}}]}\nFailed asserting that 422 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Smoke/RealWorldWorkflowTest.php:28\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         }
     ]
 }

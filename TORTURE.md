@@ -49,7 +49,10 @@ cross-manager/cross-shard Atomic requests.
 No application transaction wrapper, eager-loading substitute, query complexity
 guard or retry hides bundle behavior. Without distributed transactions, rejecting
 a multi-boundary Atomic batch before mutation is the desired safe contract.
-Tests deliberately remain red when the bundle cannot provide it.
+Tests deliberately remain red when the bundle cannot provide it. A same-connection
+batch must commit or roll back all participating operations; unrelated connections
+must not be enlisted. An injected MySQL commit failure therefore must not fail a
+PostgreSQL-only batch. No distributed transaction is expected.
 
 The replica is a separately seeded deterministic snapshot, not live replication.
 Instrumentation records the physical database actually used by the driver.
@@ -100,7 +103,10 @@ Offset timings at pages 1/10/100/1000 inform future keyset work without requirin
 Passing historical markers are reported as resolved; only observed failures are
 open. Unexpected failures remain distinct and make the reporter fail.
 
-## Verified findings on f02849d
+## Historical findings on f02849d
+
+This section records the old revision, not the current gap list. Current results
+and open/resolved markers are generated in [torture-results.md](docs/torture-results.md).
 
 62 torture cases: 40 PASS, 17 BUNDLE_GAP, 4 APPLICATION_POLICY and 1
 INFRASTRUCTURE_LIMIT. No unexpected failures or skipped tests. The unique-create

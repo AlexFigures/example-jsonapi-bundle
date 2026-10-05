@@ -265,3 +265,13 @@ docker compose exec -T php php tools/acceptance-report.php
 Gap metadata lives in `docs/bundle-gaps.json`; generated status/matrix/results cover
 all acceptance tests. The [iteration report](production-iteration.md) maps each
 scenario to files, public APIs, results and responsibility classification.
+
+### Atomic route configuration
+
+[Kernel](../src/Kernel.php) imports normal application routes and registers the public
+AtomicController only when `jsonapi.atomic.enabled` is true, at
+`jsonapi.atomic.endpoint`. This is normal Symfony application routing: changing the
+endpoint must also change the path of the Atomic media channel if one is configured.
+The HTTP disable/endpoint tests also check generated OpenAPI. Standard Atomic
+resource mutations do not invoke arbitrary publishing commands; multi-connection
+distributed transactions are not promised.

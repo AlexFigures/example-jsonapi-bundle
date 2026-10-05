@@ -93,12 +93,17 @@ final class ConsistencyAndFailureTest extends TortureTestCase
         self::assertStringNotContainsString('symfony', json_encode($document, JSON_THROW_ON_ERROR));
     }
 
-    #[Group('torture-gap')]
     #[ExpectedTortureGap('TRANSACTION-SECOND-COMMIT')]
-    public function testSecondManagerCommitFailureLeavesNoPartialMutation(): void
+    public function testSingleManagerAtomicDoesNotCommitUnrelatedConnection(): void
     {
-        $response = $this->atomic([['op' => 'update', 'ref' => ['type' => 'projects', 'id' => 'p-1'], 'data' => ['type' => 'projects', 'attributes' => ['name' => 'Must rollback']]]], ['X-Torture-Fault' => 'commit:mysql']);
-        $this->assertJsonApiError($response, 500);
-        self::assertSame('Primary v2 project 1', $this->decodeJsonApi($this->requestJsonApi('GET', '/api/projects/p-1'))['data']['attributes']['name']);
+        $response = $this->atomic([['op' => 'update', 'ref' => ['type' => 'projects', 'id' => 'p-1'], 'data' => ['type' => 'projects', 'attributes' => ['name' => 'Scoped commit']]]], ['X-Torture-Fault' => 'commit:mysql']);
+        $this->decodeJsonApi($response);
+        $metric = $this->lastMetric();
+        self::assertNotEmpty($metric['transactions']);
+        self::assertContains('COMMIT', array_column($metric['transactions'], 'event'));
+        foreach ($metric['transactions'] as $transaction) {
+            self::assertSame('symfony_pg_torture', $transaction['database'], 'Only the participating connection may be enlisted.');
+        }
+        self::assertSame('Scoped commit', $this->decodeJsonApi($this->requestJsonApi('GET', '/api/projects/p-1'))['data']['attributes']['name']);
     }
 }

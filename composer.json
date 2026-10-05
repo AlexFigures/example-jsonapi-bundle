@@ -84,7 +84,10 @@
         "torture:report": "php tools/torture-report.php",
         "test:production": "phpunit tests/Acceptance/Production --exclude-group bundle-gap",
         "test:production:full": "phpunit tests/Acceptance/Production",
-        "test:production:gaps": "phpunit tests/Acceptance/Production --group bundle-gap"
+        "test:production:gaps": "phpunit tests/Acceptance/Production --group bundle-gap",
+        "test:features": "phpunit tests/Acceptance/Features",
+        "test:features:gaps": "phpunit tests/Acceptance/Features --group bundle-gap",
+        "features:inventory": "php tools/public-feature-inventory.php"
     },
     "conflict": {
         "symfony/symfony": "*"

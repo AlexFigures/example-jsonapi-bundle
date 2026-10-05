@@ -1,0 +1,3 @@
+jsonapi:
+    relationships:
+        linkage_in_resource: random

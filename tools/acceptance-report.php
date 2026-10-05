@@ -87,10 +87,12 @@ foreach ($xml->xpath('//testcase') as $test) {
     foreach ($info['markers'] as $marker) {
         if ($marker->datasets === [] || in_array($label, $marker->datasets, true)) { $gapIds[] = $marker->id; }
     }
-    if ($info['isGap'] && $gapIds === []) { throw new RuntimeException('Gap dataset has no inventory entry: '.$name); }
+    // A provider can mix regular cases with explicitly named gap datasets.
+    // Only matching metadata classifies a failure as an expected bundle gap.
+    $isGapCase = $gapIds !== [];
     $failure = isset($test->failure) || isset($test->error);
     $skipped = isset($test->skipped);
-    ++$counts[$skipped ? 'skipped' : ($failure ? ($info['isGap'] ? 'gap_fail' : 'unexpected_fail') : ($info['isGap'] ? 'gap_pass' : 'stable_pass'))];
+    ++$counts[$skipped ? 'skipped' : ($failure ? ($isGapCase ? 'gap_fail' : 'unexpected_fail') : ($isGapCase ? 'gap_pass' : 'stable_pass'))];
     $statuses = $info['statuses'];
     if (isset($info['datasets'][$label])) {
         foreach ($info['method']->getParameters() as $index => $parameter) {
@@ -134,7 +136,7 @@ foreach ($rows as $row) {
 }
 writeReportFile($root.'/docs/acceptance-matrix.md', $matrix);
 $gapDoc = "# Known bundle gaps\n\n`docs/bundle-gaps.json` is the reviewed inventory. Tests carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; they use normal assertions and are never skipped. This report validates the markers against the inventory.\n\n";
-$gapDoc .= "Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes discoverability rather than an absent runtime feature.\n\n";
+$gapDoc .= "Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes documentation/contract drift or discoverability. `DX_GAP` describes public integration ergonomics/tooling. `CONFIG_IMPLEMENTATION_GAP` identifies accepted configuration with no corresponding runtime implementation.\n\n";
 $gapDoc .= "Baseline: bundle `{$inventory['bundle_revision']}`, PHP ".PHP_VERSION.', PHPUnit '.PHPUnit\Runner\Version::id().".\n\n";
 foreach ($inventory['gaps'] as $gap) {
     $matching = array_filter($rows, static fn (array $row): bool => in_array($gap['id'], $row['bundle_gaps'], true));

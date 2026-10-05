@@ -1,11 +1,69 @@
-{"gaps":[
-{"id":"PERFORMANCE-NPLUS1","category":"PERFORMANCE_GAP","priority":"P1","expected":"SQL count stays approximately constant when page size grows from 5 to 20.","subsystem":"Doctrine reads and linkage batching"},
-{"id":"SCALABILITY-FILTER-BUDGET","category":"SCALABILITY_GAP","priority":"P1","expected":"Reject excessive filter trees and operand lists before SQL.","subsystem":"Criteria complexity enforcement"},
-{"id":"SCALABILITY-JOIN-PAGINATION","category":"SCALABILITY_GAP","priority":"P1","expected":"Paginate distinct roots across multiple to-many joins without omissions.","subsystem":"Doctrine collection paginator"},
-{"id":"SCALABILITY-INCLUDE-AMPLIFICATION","category":"SCALABILITY_GAP","priority":"P1","expected":"Stop include traversal at the cap before mass hydration.","subsystem":"Include traversal and limits"},
-{"id":"ARCHITECTURE-COMPOSITE-ID","category":"ARCHITECTURE_GAP","priority":"P1","expected":"Reject unsupported composite identifiers during resource/route discovery with a diagnostic.","subsystem":"Doctrine metadata discovery"},
-{"id":"CONSISTENCY-ETAG","category":"CONSISTENCY_GAP","priority":"P0","expected":"Two writers with the same validator produce one success and one 412 without loser mutation.","subsystem":"Write preconditions and optimistic concurrency"},
-{"id":"CONSISTENCY-UNIQUE-RACE","category":"CONSISTENCY_GAP","priority":"P0","expected":"Unique create race yields 201 and JSON:API 409, with exactly one row.","subsystem":"Doctrine constraint error translation"},
-{"id":"TRANSACTION-BOUNDARY","category":"TRANSACTION_BOUNDARY","priority":"P0","expected":"Reject Atomic batches spanning independent managers/shards before mutation.","subsystem":"Atomic transaction boundary discovery"},
-{"id":"TRANSACTION-SECOND-COMMIT","category":"TRANSACTION_BOUNDARY","priority":"P0","expected":"Single-manager Atomic does not commit unrelated managers or suffer a partial commit on their failure.","subsystem":"Transaction runner manager enlistment"}
-]}
+{
+  "gaps": [
+    {
+      "id": "PERFORMANCE-NPLUS1",
+      "category": "PERFORMANCE_GAP",
+      "priority": "P1",
+      "expected": "SQL count stays approximately constant when page size grows from 5 to 20.",
+      "subsystem": "Doctrine reads and linkage batching"
+    },
+    {
+      "id": "SCALABILITY-FILTER-BUDGET",
+      "category": "SCALABILITY_GAP",
+      "priority": "P1",
+      "expected": "Reject excessive filter trees and operand lists before SQL.",
+      "subsystem": "Criteria complexity enforcement"
+    },
+    {
+      "id": "SCALABILITY-JOIN-PAGINATION",
+      "category": "SCALABILITY_GAP",
+      "priority": "P1",
+      "expected": "Paginate distinct roots across multiple to-many joins without omissions.",
+      "subsystem": "Doctrine collection paginator"
+    },
+    {
+      "id": "SCALABILITY-INCLUDE-AMPLIFICATION",
+      "category": "SCALABILITY_GAP",
+      "priority": "P1",
+      "expected": "Stop include traversal at the cap before mass hydration.",
+      "subsystem": "Include traversal and limits"
+    },
+    {
+      "id": "ARCHITECTURE-COMPOSITE-ID",
+      "category": "ARCHITECTURE_GAP",
+      "priority": "P1",
+      "expected": "Reject unsupported composite identifiers during resource/route discovery with a diagnostic.",
+      "subsystem": "Doctrine metadata discovery"
+    },
+    {
+      "id": "CONSISTENCY-ETAG",
+      "category": "CONSISTENCY_GAP",
+      "priority": "P0",
+      "expected": "Two writers with the same validator produce one success and one 412 without loser mutation.",
+      "subsystem": "Write preconditions and optimistic concurrency"
+    },
+    {
+      "id": "CONSISTENCY-UNIQUE-RACE",
+      "category": "CONSISTENCY_GAP",
+      "priority": "P0",
+      "expected": "Unique create race yields 201 and JSON:API 409, with exactly one row.",
+      "subsystem": "Doctrine constraint error translation"
+    },
+    {
+      "id": "TRANSACTION-BOUNDARY",
+      "category": "TRANSACTION_BOUNDARY",
+      "priority": "P0",
+      "expected": "Reject Atomic batches spanning independent managers/shards before mutation.",
+      "subsystem": "Atomic transaction boundary discovery"
+    },
+    {
+      "id": "TRANSACTION-SECOND-COMMIT",
+      "category": "TRANSACTION_BOUNDARY",
+      "priority": "P0",
+      "expected": "A single-connection PostgreSQL Atomic batch commits only PostgreSQL, succeeds even when an unused MySQL commit would fail, and persists its final state.",
+      "subsystem": "Transaction runner manager enlistment",
+      "current": "The scoped transaction provider does not enlist the unrelated MySQL connection.",
+      "interpretation": "Cross-connection Atomic must be rejected before mutation; same-connection Atomic must preserve all-or-nothing rollback. No distributed transaction is required."
+    }
+  ]
+}

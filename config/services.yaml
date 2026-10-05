@@ -4,7 +4,7 @@ services:
         autoconfigure: true
     App\:
         resource: '../src/'
-        exclude: '../src/{PgEntity,MysqlEntity,Enum,Torture,Kernel.php}'
+        exclude: '../src/{PgEntity,MysqlEntity,Enum,Torture,FeatureMemory,Kernel.php}'
 
     App\Security\PublishingContext:
         arguments:
@@ -27,3 +27,23 @@ services:
             $inner: '@App\JsonApi\AuthorizedArticleRelationships.inner'
     App\Application\Article\AuthorPublishingStatisticsHandler:
         tags: ['jsonapi.custom_route_handler']
+    App\JsonApi\Filter\StartsWithOperator:
+        tags: ['jsonapi.filter.operator']
+    App\JsonApi\Sort\TitleLengthSort:
+        tags: ['jsonapi.sort.handler']
+    App\Api\Cookbook\FeatureReadHandler:
+        tags: ['jsonapi.custom_route_handler']
+    App\Api\Cookbook\FeatureCommandHandler:
+        tags: ['jsonapi.custom_route_handler']
+    App\JsonApi\Profile\CookbookProfile:
+        tags: ['jsonapi.profile']
+    App\JsonApi\DataLayer\TypedMemoryRepository:
+        arguments:
+            $type: disabled
+    App\Api\Cookbook\ScopedTransactionHandler:
+        tags: ['jsonapi.custom_route_handler']
+    App\JsonApi\DataLayer\CookbookReadMapper:
+        decorates: AlexFigures\Symfony\Resource\Mapper\ReadMapperInterface
+        arguments: ['@App\JsonApi\DataLayer\CookbookReadMapper.inner']
+    App\JsonApi\DataLayer\SuggestedAuthorsBatchReader:
+        autoconfigure: false

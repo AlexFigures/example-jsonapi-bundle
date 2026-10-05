@@ -1,0 +1,4 @@
+jsonapi:
+    docs:
+        ui:
+            theme: random

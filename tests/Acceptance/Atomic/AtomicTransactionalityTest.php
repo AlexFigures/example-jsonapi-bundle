@@ -7,7 +7,6 @@ namespace App\Tests\Acceptance\Atomic;
 use App\Tests\Acceptance\Support\AcceptanceTestCase;
 use App\Tests\Acceptance\Support\ExpectedBundleGap;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicTransactionalityTest extends AcceptanceTestCase
 {
@@ -66,9 +65,8 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
         self::assertSame('Final version', $after['data']['attributes']['title']);
         $this->assertJsonApiError($this->requestJsonApi('GET', $this->url('article-12')), 404);
     }
-    #[Group('bundle-gap')]
     #[ExpectedBundleGap('ATOMIC-VALIDATION-BOUNDARY')]
-    public function testMixedManagerBatchRollsBackBeforeCommit(): void
+    public function testMixedManagerBatchIsRejectedBeforeAnyMutation(): void
     {
         $ops = [
             ['op' => 'update', 'ref' => $this->identifier('comment', 'comments'), 'data' => ['type' => 'comments', 'id' => $this->ids['comment'], 'attributes' => ['body' => 'Must roll back']]],
@@ -78,7 +76,9 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
         $doc = $this->collection(['page' => ['size' => 20]], 'comments');
         self::assertCount(1, $doc['data']);
         self::assertSame('Useful article', $doc['data'][0]['attributes']['body']);
-        $this->assertJsonApiError($response, 422);
+        $error = $this->assertJsonApiError($response, 409);
+        self::assertSame('unsupported-transaction-boundary', $error['errors'][0]['code']);
+        self::assertSame('Shared title', $this->decodeJsonApi($this->requestJsonApi('GET', $this->url()))['data']['attributes']['title']);
     }
 
 

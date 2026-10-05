@@ -1,0 +1,4 @@
+jsonapi:
+    performance:
+        doctrine:
+            collection_sort_policy: random

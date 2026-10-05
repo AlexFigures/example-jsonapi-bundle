@@ -1,0 +1,21 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+services:
+    cookbook.filter.low:
+        class: App\JsonApi\Filter\PriorityFilter
+        arguments: { $priority: -10, $title: Beta }
+        tags: ['jsonapi.filter.handler']
+    cookbook.filter.high:
+        class: App\JsonApi\Filter\PriorityFilter
+        arguments: { $priority: 100, $title: Alpha }
+        tags: ['jsonapi.filter.handler']
+    cookbook.sort.low:
+        class: App\JsonApi\Sort\PrioritySort
+        arguments: { $priority: -10, $byLength: false }
+        tags: ['jsonapi.sort.handler']
+    cookbook.sort.high:
+        class: App\JsonApi\Sort\PrioritySort
+        arguments: { $priority: 100, $byLength: true }
+        tags: ['jsonapi.sort.handler']

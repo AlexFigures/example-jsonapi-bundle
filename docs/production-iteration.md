@@ -75,14 +75,13 @@ All four are **DESIRED_CAPABILITY**, not JSON:API conformance allegations.
 | `CUSTOM-ACTION-READ-MODEL` / P2 | A custom-route-only aggregate resource should serialize its type/counts. Serialization instead generates a nonexistent disabled SHOW route and returns 500. | Aggregate SQL/policy belongs to the application; representation/link construction belongs to the bundle. Needed: canonical custom resource links or serialization without a generated SHOW route. No fictitious CRUD endpoint is introduced. | `ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel` |
 | `WRITE-MODEL-SERIALIZER-METADATA` / P2 | Effective Symfony YAML write groups should compose with attribute/resource context. Symfony reports configured write groups, but bundle input validation rejects the fields with 422. | External serializer mappings are a normal Symfony integration. Use effective serializer metadata consistently rather than requiring consumers to duplicate transport metadata or rewrite generic processors. | Existing `DoctrineTypesTest::testWriteTypesRoundTrip`, `ResourceCreateTest::testAllWritableAttributesAndRelationships`, `ResourceUpdateTest::testAttributesAndRelationshipsTogether`, `RealWorldWorkflowTest::testPublishingWorkflow`, `FieldAliasesTest::testReadAndWriteAlias` |
 
-An additional existing assertion is classified separately as
-`ATOMIC-VALIDATION-BOUNDARY` (**INFRASTRUCTURE_LIMIT**, P2): the original mixed-manager
-batch still requires 422 for invalid Article title and verifies no preceding Comment
-write persists. The installed single-manager provider safely rejects the boundary
-with 409 before domain validation. Rollback/state assertions pass; the original
-422 assertion remains failing. This is not a newly alleged transaction-safety defect
-or a request for distributed commit. The inventory records that error-precedence
-boundary explicitly rather than weakening the prior executable contract.
+The Atomic boundary contract is now explicit: independent connections are rejected
+with 409 `unsupported-transaction-boundary` before any mutation, even if a later
+operation would also fail business validation. `ATOMIC-VALIDATION-BOUNDARY` retains
+its historical ID, but its test now asserts the agreed safe rejection and unchanged
+state in both databases. PostgreSQL-only Atomic must succeed independently of an
+unused MySQL connection. Distributed transactions are outside the expected bundle
+contract; all-or-nothing rollback within one connection remains required.
 
 Original gaps and assertion strengths remain in the inventory. Current open/resolved
 status is generated from a complete suite, not inferred from historical descriptions.

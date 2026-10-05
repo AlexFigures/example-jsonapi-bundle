@@ -1,0 +1,18 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    profiles:
+        per_type:
+            feature-memos: ['urn:jsonapi:profile:audit-trail']
+        audit_trail:
+            created_by: createdBy
+            updated_by: updatedBy
+            expose_in_meta: true
+services:
+    AlexFigures\Symfony\Profile\Builtin\AuditTrailProfile:
+        arguments:
+            $config:
+                userProvider: '@App\Security\AuditIdentity'
+        tags: ['jsonapi.profile']

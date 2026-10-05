@@ -1,0 +1,19 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    media_types:
+        channels:
+            cookbook_path:
+                scope: { path_prefix: '^/cookbook/channel/path$' }
+                request: { allowed: ['application/json'] }
+                response: { default: 'application/json', negotiable: ['application/json'] }
+            cookbook_route:
+                scope: { route_name: '^cookbook.channel.route$' }
+                request: { allowed: ['application/json'] }
+                response: { default: 'application/json', negotiable: ['application/json'] }
+            cookbook_attribute:
+                scope: { attribute: '^cookbook-attribute$' }
+                request: { allowed: ['application/json'] }
+                response: { default: 'application/json', negotiable: ['application/json'] }

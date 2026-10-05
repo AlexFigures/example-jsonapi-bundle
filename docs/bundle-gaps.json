@@ -1,5 +1,5 @@
 {
-  "bundle_revision": "727d671c47a6de33340939415ef93053fdcbaf7d",
+  "bundle_revision": "cf1a2aa29e373951520dcc15e1996554ecad8444",
   "gaps": [
     {
       "id": "CONTENT-NEGOTIATION-001",
@@ -796,15 +796,496 @@
     {
       "id": "ATOMIC-VALIDATION-BOUNDARY",
       "area": "Existing mixed-manager validation expectation",
-      "expected": "The original mixed-manager batch assertion expects 422 for invalid Article title and verifies preceding MySQL Comment changes do not persist.",
-      "current": "The installed provider rejects the multi-manager boundary with JSON:API 409 unsupported-transaction-boundary before business validation; the preceding Comment state is unchanged. The safety assertion passes and the 422 status assertion remains failing.",
-      "category": "INFRASTRUCTURE_LIMIT",
+      "expected": "Reject a batch spanning independent PostgreSQL and MySQL connections with 409 unsupported-transaction-boundary before either operation mutates storage, including when a later operation would fail validation.",
+      "current": "409 unsupported-transaction-boundary; both resources remain unchanged. The user confirmed this single-connection contract; earlier 422 business-validation precedence is no longer required.",
+      "category": "DESIRED_CAPABILITY",
       "priority": "P2",
-      "why_bundle": "This records an existing consumer contract against the installed single-EntityManager transaction provider, not a JSON:API violation or a loss of Atomic safety. Distributed/multi-connection atomic commit is outside the application example. The desired error precedence remains explicit instead of silently changing an existing assertion.",
-      "bundle_change_required": "No transaction-safety fix is inferred: rejection is safe. Document unsupported-boundary error precedence and the single-manager contract; any future broader provider must preserve rollback assertions.",
+      "why_bundle": "The bundle must detect incompatible transaction boundaries before executing any operation; distributed transactions are outside its contract.",
+      "bundle_change_required": "No change required on the tested revision; keep early rejection and single-connection rollback guarantees.",
       "tests": [
         {
-          "test": "Atomic/AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit"
+          "test": "Atomic/AtomicTransactionalityTest::testMixedManagerBatchIsRejectedBeforeAnyMutation"
+        }
+      ]
+    },
+    {
+      "id": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "area": "Public feature conformance",
+      "expected": "Registered custom filter operators execute through HTTP parser and Doctrine compilation.",
+      "current": "400 Unsupported operator starts_with before registered operator invocation.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Public operator registry must participate in parser validation; application must not replace generic parser.",
+      "bundle_change_required": "Public operator registry must participate in parser validation; application must not replace generic parser.",
+      "tests": [
+        {
+          "test": "Features/Filtering/InheritanceAndExtensionsTest::testPublicQueryExtensions",
+          "datasets": [
+            "custom operator",
+            "logical custom operator",
+            "bound SQL literal"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DOCS-OPERATIONS",
+      "area": "Public feature conformance",
+      "expected": "OpenAPI advertises only enabled resource operations.",
+      "current": "Read-only audit-logs advertises POST.",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P1",
+      "why_bundle": "OpenAPI generator must honor ResourceOperation metadata.",
+      "bundle_change_required": "OpenAPI generator must honor ResourceOperation metadata.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testGeneratedResourceOperations"
+        },
+        {
+          "test": "Features/Docs/OpenApiTest::testCustomOnlyResourceDoesNotAdvertiseCrud"
+        },
+        {
+          "test": "Features/Docs/OpenApiTest::testSelectiveOperationsMatchActualCollectionAndItemRoutes"
+        }
+      ]
+    },
+    {
+      "id": "DOCS-NEGOTIATION",
+      "area": "Public feature conformance",
+      "expected": "Documentation endpoints accept their native response media types with strict negotiation enabled.",
+      "current": "OpenAPI returns 406 for Accept application/json; UI returns 406 for text/html.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Bundle-owned documentation routes must integrate with negotiation policy without consumer route replacements.",
+      "bundle_change_required": "Bundle-owned documentation routes must integrate with negotiation policy without consumer route replacements.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testDocumentationAcceptsItsNativeMediaType"
+        }
+      ]
+    },
+    {
+      "id": "CONFIG-JSON-SCHEMA",
+      "area": "Public feature conformance",
+      "expected": "Enabled JSON Schema generator exposes its configured HTTP route.",
+      "current": "Default enabled schema endpoint returns 404; schema configuration has no routing implementation.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "Public configuration must have a working external contract or be removed/deprecated clearly.",
+      "bundle_change_required": "Public configuration must have a working external contract or be removed/deprecated clearly.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testEnabledJsonSchemaRouteExists"
+        }
+      ]
+    },
+    {
+      "id": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Custom handlers receive application query parameters alongside JSON:API criteria.",
+      "current": "Query parser rejects title before CustomRouteContext::getQueryParam can consume it.",
+      "why_bundle": "Expose a per-route query allowlist or documented parsing seam.",
+      "bundle_change_required": "Expose a per-route query allowlist or documented parsing seam.",
+      "tests": [
+        {
+          "test": "Features/CustomRoutes/HandlerContractTest::testApplicationQueryParameterReachesCustomHandler"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-READ-HOOK",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "Negotiated public ReadHook restricts collection before pagination.",
+      "current": "QueryHook caps page size, but ReadHook custom condition is ignored: views 10/20 instead of 100/110.",
+      "why_bundle": "Generated repositories must invoke public read hooks with negotiated context.",
+      "bundle_change_required": "Generated repositories must invoke public read hooks with negotiated context.",
+      "tests": [
+        {
+          "test": "Features/Profiles/PublicHooksTest::testDocumentQueryAndReadHooksCompose"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-RELATIONSHIP-HOOK",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "Negotiated RelationshipHook can reject associations before mutation.",
+      "current": "PATCH succeeds 200 and changes author despite hook throwing ForbiddenException.",
+      "why_bundle": "All generated relationship writes must invoke public relationship hooks before persistence.",
+      "bundle_change_required": "All generated relationship writes must invoke public relationship hooks before persistence.",
+      "tests": [
+        {
+          "test": "Features/Profiles/PublicHooksTest::testRelationshipHookRejectsBeforePersistence"
+        }
+      ]
+    },
+    {
+      "id": "WRITE-REQUEST-DTO",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Operation-specific writeRequests input class validates incoming attributes.",
+      "current": "Short title receives 201; configured DTO Length(min:20) ignored.",
+      "why_bundle": "Make public operation input metadata participate in normal validation/denormalization; document supported keys.",
+      "bundle_change_required": "Make public operation input metadata participate in normal validation/denormalization; document supported keys.",
+      "tests": [
+        {
+          "test": "Features/Mapping/PublicInputAndVersionTest::testOperationSpecificInputClassIsValidated"
+        }
+      ]
+    },
+    {
+      "id": "VERSION-RESOLVER-CONTEXT",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "VersionResolver receives negotiated profile and selects the configured DTO mapping.",
+      "current": "GET returns original title despite profile requesting alternate representation.",
+      "why_bundle": "Carry request ProfileContext into public representation-definition resolution.",
+      "bundle_change_required": "Carry request ProfileContext into public representation-definition resolution.",
+      "tests": [
+        {
+          "test": "Features/Mapping/PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation"
+        }
+      ]
+    },
+    {
+      "id": "DX-PROFILE-COMMAND",
+      "area": "Public feature conformance",
+      "category": "DX_GAP",
+      "priority": "P2",
+      "expected": "Documented jsonapi:validate-profiles command is registered.",
+      "current": "Symfony Console has no jsonapi namespace despite command class present.",
+      "why_bundle": "Register the public command and document availability/dependencies.",
+      "bundle_change_required": "Register the public command and document availability/dependencies.",
+      "tests": [
+        {
+          "test": "Features/Configuration/PublicConfigurationTest::testProfileValidationCommandRunsFromConsumerContainer"
+        }
+      ]
+    },
+    {
+      "id": "FILTER-PUBLIC-NULL-NAMES",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Public FilterableField null/nnull operators execute as null checks.",
+      "current": "Both names return400 unsupported operator; isnull alias works.",
+      "why_bundle": "Align parser operator vocabulary with public metadata and docs.",
+      "bundle_change_required": "Align parser operator vocabulary with public metadata and docs.",
+      "tests": [
+        {
+          "test": "Features/Filtering/NativeOperatorsTest::testDocumentedNullOperatorNames"
+        }
+      ]
+    },
+    {
+      "id": "RELATIONSHIP-BUDGET-ENDPOINT",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "Relationship identifier budget applies to standalone linkage endpoints.",
+      "current": "Root/include reject oversized tags, standalone linkage returns200 with all identifiers.",
+      "why_bundle": "Enforce the same budget before legacy relationship identifier reads.",
+      "bundle_change_required": "Enforce the same budget before legacy relationship identifier reads.",
+      "tests": [
+        {
+          "test": "Features/Relationships/IdentifierBudgetTest::testOversizedRelationshipIsRejectedWithoutTruncation",
+          "datasets": [
+            "linkage endpoint"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CACHE-SURROGATE-ROUTES",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Generated resource/collection routes emit configured surrogate keys.",
+      "current": "No X-Cache-Tags header; builder recognizes legacy generic names rather than generated resource-specific names.",
+      "why_bundle": "Resolve resource identity from public route metadata consistently for all generated routes.",
+      "bundle_change_required": "Resolve resource identity from public route metadata consistently for all generated routes.",
+      "tests": [
+        {
+          "test": "Features/Cache/HeaderConfigurationTest::testConfiguredCacheHeadersAndSurrogateResource"
+        },
+        {
+          "test": "Features/Cache/HeaderConfigurationTest::testStrongCollectionValidatorAndCollectionKey"
+        }
+      ]
+    },
+    {
+      "id": "DOCS-INHERITANCE",
+      "area": "Public feature conformance",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "OpenAPI expands inherited filter/sort whitelists including aliases and exclusions.",
+      "current": "Spec advertises relationship root author rather than executable author.name/email fields.",
+      "why_bundle": "Document effective whitelist rather than raw inheritance declarations.",
+      "bundle_change_required": "Document effective whitelist rather than raw inheritance declarations.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testInheritedWhitelistIsExpandedInDocumentation"
+        }
+      ]
+    },
+    {
+      "id": "DOCS-WRITABLE-SCHEMA",
+      "area": "Public feature conformance",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P1",
+      "expected": "OpenAPI schema distinguishes server-owned attributes from writable inputs.",
+      "current": "createdAt/updatedAt lack readOnly despite HTTP rejecting client writes.",
+      "why_bundle": "Generate operation input schemas or readOnly/writeOnly from effective serializer metadata.",
+      "bundle_change_required": "Generate operation input schemas or readOnly/writeOnly from effective serializer metadata.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testReadOnlyAttributesAreNotAdvertisedAsWritable"
+        }
+      ]
+    },
+    {
+      "id": "DOCS-PAGINATION-CONFIG",
+      "area": "Public feature conformance",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "OpenAPI pagination defaults/limits equal effective application configuration.",
+      "current": "Spec default20/max100 while runtime configuration default5/max20.",
+      "why_bundle": "Read effective public pagination/limits configuration during generation.",
+      "bundle_change_required": "Read effective public pagination/limits configuration during generation.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testPaginationDocumentationUsesEffectiveConfiguration"
+        }
+      ]
+    },
+    {
+      "id": "ATOMIC-LID-CONFIG",
+      "area": "Atomic configuration",
+      "expected": "Setting lid.accept_in_resource_and_identifier=false rejects resource and identifier lids.",
+      "current": "Atomic add accepts data.lid and creates the Author with200 despite the disabled policy.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Enforcing a public Atomic protocol configuration is transport infrastructure.",
+      "bundle_change_required": "Apply lid policy consistently to data resources as well as operation refs.",
+      "tests": [
+        {
+          "test": "Features/Atomic/ConfigurationMatrixTest::testAtomicConfigurationGuards",
+          "datasets": [
+            "lid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-SOFT-VISIBILITY",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Soft-delete default_visibility include/only controls visible rows.",
+      "current": "Both include and only return the default three undeleted categories.",
+      "why_bundle": "Wire public visibility configuration into the negotiated query hook.",
+      "bundle_change_required": "Wire public visibility configuration into the negotiated query hook.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteConfigurationTest::testConfiguredVisibility",
+          "datasets": [
+            "include",
+            "only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-SOFT-DELETE-SEMANTICS",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P1",
+      "expected": "delete_semantics=soft retains the row and records deletion state.",
+      "current": "DELETE204 physically removes the category despite configured soft semantics.",
+      "why_bundle": "Implement the declared generic deletion policy or explicitly remove/deprecate the misleading option.",
+      "bundle_change_required": "Implement the declared generic deletion policy or explicitly remove/deprecate the misleading option.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteConfigurationTest::testDeleteSemanticsPersistExpectedState",
+          "datasets": [
+            "soft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-SOFT-QUERY-FLAGS",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Configured soft-delete flags are consumed as profile query controls.",
+      "current": "includeArchived returns400 filter-not-allowed before the profile can consume it.",
+      "why_bundle": "Connect public flag names with query parsing and whitelist handling.",
+      "bundle_change_required": "Connect public flag names with query parsing and whitelist handling.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteConfigurationTest::testConfiguredQueryFlagIsConsumedBeforeWhitelist"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-SOFT-BOOLEAN",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "expected": "strategy=boolean excludes true deletion markers and retains false markers.",
+      "current": "Boolean strategy still uses IS NULL; both nonnullable false/true records disappear.",
+      "why_bundle": "Compile configured strategy using boolean predicates and validate compatible metadata.",
+      "bundle_change_required": "Compile configured strategy using boolean predicates and validate compatible metadata.",
+      "tests": [
+        {
+          "test": "Features/Profiles/BooleanSoftDeleteTest::testBooleanStrategyExcludesOnlyMarkedRows"
+        }
+      ]
+    },
+    {
+      "id": "MEDIA-CHANNEL-ROUTING",
+      "area": "Public configuration interoperability",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Route-name and attribute channels select configured request/response policy.",
+      "current": "Path channel works; route/attribute POST application/json returns415 using default policy.",
+      "why_bundle": "Resolve routing/MediaChannel metadata before selecting scoped negotiation policy.",
+      "bundle_change_required": "Resolve routing/MediaChannel metadata before selecting scoped negotiation policy.",
+      "tests": [
+        {
+          "test": "Features/Protocol/MediaChannelsTest::testPublicChannelScopeAndResponse",
+          "datasets": [
+            "route",
+            "attribute"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DOCS-ENDPOINT-EXAMPLES",
+      "area": "OpenAPI endpoint attributes",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Public OpenApiEndpoint examples/OpenApiExample values appear in the generated HTTP specification.",
+      "current": "Summary, parameters, schemaRef, headers and security are emitted; examples silently disappear.",
+      "why_bundle": "Interpreting public documentation attributes is the bundle generator responsibility.",
+      "bundle_change_required": "Serialize configured named examples at the appropriate OpenAPI request/response media location.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testPublicEndpointExamplesArePresentInSpec"
+        }
+      ]
+    },
+    {
+      "id": "DX-TYPED-PERSISTER-DISPATCH",
+      "area": "typed data layer",
+      "expected": "Documented jsonapi.persister tagged TypedResourcePersister implementations handle generated create routes independently for multiple resource types.",
+      "current": "Typed repository reads succeed, but both typed create routes return JSON:API 500; current ResourceProcessor dispatch ignores the documented legacy persister registration.",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P1",
+      "why_bundle": "The bundle advertises the public legacy contract and tag; independent consumers need a supported typed write registration path or an explicit documented migration to ResourceProcessor. Reimplementing dispatch in the application would hide this mismatch.",
+      "bundle_change_required": "Provide and document an active typed write contract/registration seam, or deprecate obsolete persister/tag examples with an executable migration example.",
+      "tests": [
+        {
+          "test": "Features/DataLayer/TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites"
+        }
+      ]
+    },
+    {
+      "id": "CACHE-VERSION-STRATEGY",
+      "area": "HTTP caching",
+      "expected": "cache.etag.strategy=version uses X-Resource-Version supplied by the application; no version produces no ETag.",
+      "current": "The configured strategy still generates body-hash ETags, including when no version header is present.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "Selecting the configured ETag generator belongs to bundle configuration, not application alias replacement.",
+      "bundle_change_required": "Wire the version strategy through the public configuration and document the response-version header contract.",
+      "tests": [
+        {
+          "test": "Features/Cache/VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-DEFAULT-WRITE",
+      "area": "profile lifecycle",
+      "expected": "Per-type default profiles execute write hooks without an explicit Accept profile; application identity is recorded on create.",
+      "current": "Explicitly negotiated builtin audit records createdBy/updatedBy, but per_type default alone creates the memo with createdBy=null.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "why_bundle": "Default-profile selection must apply consistently to read and write lifecycle hooks. Applications should not require clients to request server audit policy.",
+      "bundle_change_required": "Resolve default and per-type profiles before write-hook execution on generated mutations.",
+      "tests": [
+        {
+          "test": "Features/Profiles/AuditIdentityTest::testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation"
+        }
+      ]
+    },
+    {
+      "id": "FILTER-HANDLER-LOGICAL-COMPOSITION",
+      "area": "custom filter composition",
+      "expected": "A custom search predicate inside OR preserves the alternative ordinary filter branch.",
+      "current": "search=No such term OR views=10 returns zero resources rather than article-1; the handler adds its predicate as a global AND condition.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "why_bundle": "The public imperative FilterHandlerInterface cannot naturally contribute a predicate at its AST position. Rebuilding logical query compilation in the application would replace generic bundle behavior.",
+      "bundle_change_required": "Expose an expression/predicate custom-filter contract that composes at the original logical AST position, including bound parameters and error mapping.",
+      "tests": [
+        {
+          "test": "Features/Filtering/SearchCompositionTest::testHandlerInsideOrPreservesAlternativeNormalPredicate"
+        }
+      ]
+    },
+    {
+      "id": "DATA-LAYER-CUSTOM-ATOMIC",
+      "area": "custom data provider and Atomic",
+      "expected": "A resource-only Atomic batch uses the configured custom processor/transaction manager; a business failure rolls back the earlier mutation and returns 422.",
+      "current": "Atomic controller returns500 before executing the batch: custom-provider services reference the nonexistent AlexFigures\\Symfony\\Contract\\Data\\NullRelationshipUpdater class.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P1",
+      "why_bundle": "A supported custom provider must boot the resource-only Atomic dispatcher without requiring an application dummy implementation for an unused optional relationship write service.",
+      "bundle_change_required": "Provide valid custom-provider fallback services and avoid mandatory initialization of unused relationship capabilities for standard Atomic resource mutations.",
+      "tests": [
+        {
+          "test": "Features/DataLayer/CustomProviderTest::testAtomicBusinessFailureRollsBackEarlierCustomProviderMutation"
+        }
+      ]
+    },
+    {
+      "id": "CACHE-COLLECTION-LAST-MODIFIED",
+      "area": "Last-Modified configuration",
+      "expected": "collections_max_of=false disables automatically computed collection Last-Modified, while item validators remain available.",
+      "current": "collections_max_of is accepted but only appears in configuration; runtime always computes a maximum.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "This is bundle-owned public configuration; implementing an application substitute would hide its missing behavior.",
+      "bundle_change_required": "Honor the documented configuration or explicitly remove/deprecate the unsupported option with a migration contract.",
+      "tests": [
+        {
+          "test": "Features/Cache/DisabledCollectionLastModifiedTest::testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator"
+        }
+      ]
+    },
+    {
+      "id": "PROFILE-AUDIT-META",
+      "area": "Audit profile metadata",
+      "expected": "expose_in_meta=true exposes server-owned audit information in negotiated resource metadata.",
+      "current": "The public AuditTrailDocumentHook is a placeholder; the option has no observable effect.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "This is bundle-owned public configuration; implementing an application substitute would hide its missing behavior.",
+      "bundle_change_required": "Honor the documented configuration or explicitly remove/deprecate the unsupported option with a migration contract.",
+      "tests": [
+        {
+          "test": "Features/Profiles/AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation"
         }
       ]
     }

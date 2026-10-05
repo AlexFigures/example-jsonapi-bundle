@@ -1,0 +1,2781 @@
+{
+  "bundle_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+  "counts": {
+    "COVERED_GREEN": 92,
+    "PARTIAL": 226,
+    "CONFIG_ONLY": 17,
+    "COVERED_GAP": 8,
+    "DOCUMENTATION_ONLY": 2,
+    "NOT_APPLICABLE": 1
+  },
+  "features": [
+    {
+      "feature": "jsonapi.strict_content_negotiation",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.default.request.allowed.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.default.response.default",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.default.response.negotiable.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.scope.path_prefix",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.scope.route_name",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.scope.attribute",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.request.allowed.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.response.default",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.response.negotiable.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.media_type",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/ContentNegotiationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.route_prefix",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Resource/ResourceReadTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.resource_paths.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/TypedProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.data_layer.provider",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.data_layer.repository",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.data_layer.processor",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.data_layer.relationship_reader",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.data_layer.transaction_manager",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.pagination.default_size",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Query/PaginationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.pagination.max_size",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Query/PaginationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.write.allow_relationship_writes",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Resource/ResourceCreateTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.write.client_generated_ids.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Resource/ResourceCreateTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.relationships.write_response",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/RepresentationModesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.relationships.linkage_in_resource",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/RepresentationModesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.relationships.unplanned_read_policy",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/UnplannedRelationshipTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.errors.expose_debug_meta",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/ErrorConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.errors.add_correlation_id",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/ErrorConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.errors.default_title_map",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/ErrorConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.errors.locale",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.cache.enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/DisabledCacheTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.etag.strategy",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Cache/VersionStrategyTest.php",
+      "gap": "CACHE-VERSION-STRATEGY",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.etag.hash_algo",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.etag.weak_for_collections",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.etag.include_query_shape",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Cache/QueryShapeTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.last_modified.resource_field",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/LastModifiedConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.last_modified.per_type.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/LastModifiedConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.last_modified.collections_max_of",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Cache/DisabledCollectionLastModifiedTest.php",
+      "gap": "CACHE-COLLECTION-LAST-MODIFIED",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.headers.public",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.headers.max_age",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.headers.s_maxage",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.headers.stale_while_revalidate",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.headers.stale_if_error",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.headers.add_age",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.vary.accept",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.vary.accept_language",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.surrogate_keys.enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "CACHE-SURROGATE-ROUTES",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.surrogate_keys.header_name",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "CACHE-SURROGATE-ROUTES",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.surrogate_keys.format.resource",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "CACHE-SURROGATE-ROUTES",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.surrogate_keys.format.collection",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "CACHE-SURROGATE-ROUTES",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.surrogate_keys.format.relationship",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/HeaderConfigurationTest.php",
+      "gap": "CACHE-SURROGATE-ROUTES",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_none_match",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Cache/WritePreconditionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_modified_since",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Cache/WritePreconditionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_match",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Cache/WritePreconditionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_unmodified_since",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Cache/WritePreconditionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.require_if_match_on_write",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Cache/WritePreconditionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.include_max_depth",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Query/IncludeTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.filter_max_depth",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/StructuralLimitsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.filter_max_nodes",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/StructuralLimitsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.filter_max_operands",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/StructuralLimitsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.include_max_paths",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Query/IncludeTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.fields_max_total",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/DocumentBudgetTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.page_max_size",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Query/PaginationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.included_max_resources",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/DocumentBudgetTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.limits.relationship_max_identifiers",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/IdentifierBudgetTest.php",
+      "gap": "RELATIONSHIP-BUDGET-ENDPOINT",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.limits.complexity_budget",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/StructuralLimitsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.performance.doctrine.enable_query_cache",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.performance.doctrine.query_cache_pool",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.performance.doctrine.enable_second_level_cache",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.performance.doctrine.hydrate_partial_by_fields",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.performance.doctrine.collection_sort_policy",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.performance.doctrine.default_fetch",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.performance.head_enabled",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Protocol/HeadTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.dx.dev_toolbar",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.dx.sandbox.enabled",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.dx.sandbox.route",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.dx.doctor.enabled",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.dx.doctor.rules.*",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.dx.maker.defaults.namespace",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.dx.maker.defaults.resource_type_prefix",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.enabled",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.route",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.title",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.version",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.servers.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.json_schema.enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "CONFIG-JSON-SCHEMA",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.json_schema.route",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "CONFIG-JSON-SCHEMA",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.generator.json_schema.include_profiles",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.docs.ui.enabled",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/DisabledUiTest.php",
+      "gap": "DOCS-NEGOTIATION",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.ui.route",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/DisabledUiTest.php",
+      "gap": "DOCS-NEGOTIATION",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.ui.spec_url",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/DisabledUiTest.php",
+      "gap": "DOCS-NEGOTIATION",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.docs.ui.theme",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/DisabledUiTest.php",
+      "gap": "DOCS-NEGOTIATION",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.release.semver",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.release.bc_policy",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.release.min_php",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.release.min_symfony",
+      "public_api": "Configuration",
+      "status": "CONFIG_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+    },
+    {
+      "feature": "jsonapi.atomic.enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/DisabledAtomicTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.atomic.endpoint",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/EndpointTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.atomic.require_ext_header",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/ConfigurationMatrixTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.atomic.max_operations",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/ConfigurationMatrixTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.atomic.return_policy",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/ConfigurationMatrixTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.atomic.allow_href",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/ConfigurationMatrixTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.atomic.lid.accept_in_resource_and_identifier",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Atomic/ConfigurationMatrixTest.php",
+      "gap": "ATOMIC-LID-CONFIG",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.negotiation.require_known_profiles",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.negotiation.echo_profiles_in_content_type",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.negotiation.link_header",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.enabled_by_default.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.per_type.*.*",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.field",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "PROFILE-SOFT-VISIBILITY",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.strategy",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
+      "gap": "PROFILE-SOFT-BOOLEAN",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.default_visibility",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "PROFILE-SOFT-VISIBILITY",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.query_flags.with_deleted",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "PROFILE-SOFT-QUERY-FLAGS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.query_flags.only_deleted",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "PROFILE-SOFT-VISIBILITY",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.delete_semantics",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "PROFILE-SOFT-DELETE-SEMANTICS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.created_at",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.updated_at",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.created_by",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.updated_by",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.expose_in_meta",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "PROFILE-AUDIT-META",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "jsonapi.profiles.rel_counts.relationship_meta_key",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "jsonapi.profiles.rel_counts.compute_in_related_endpoints",
+      "public_api": "Configuration",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Attribute",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Attribute::$name",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$field",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$operators",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$customHandler",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$inherit",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$except",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableFields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableFields::$fields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/Id",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Id",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$name",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$path",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$methods",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$handler",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$controller",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$resourceType",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$defaults",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$requirements",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$description",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$priority",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$type",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$normalizationContext",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$denormalizationContext",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$routePrefix",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$description",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$exposeId",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$operations",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$dataClass",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$viewClass",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$readProjection",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$fieldMap",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$relationshipPolicies",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "PARTIAL",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$writeRequests",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/PublicInputAndVersionTest.php",
+      "gap": "WRITE-REQUEST-DTO",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$versionResolver",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/PublicInputAndVersionTest.php",
+      "gap": "VERSION-RESOLVER-CONTEXT",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$toMany",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$inverse",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$targetType",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$linkingPolicy",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$propertyPath",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$field",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$customHandler",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$inherit",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$except",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableFields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Attribute/SortableFields::$fields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$summary",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$requestBody",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$responses",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$tags",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$parameters",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$operationId",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$security",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$deprecated",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$examples",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample::$summary",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample::$value",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader::$type",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader::$format",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$name",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$in",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$required",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$type",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$format",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$schema",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$example",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$contentType",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$schema",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$required",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$contentType",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$schema",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$schemaRef",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$headers",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/ChangeSet",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ChangeSet",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/ExistenceChecker",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ExistenceChecker",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/RelationshipBatchReaderInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RelationshipBatchReaderInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/BatchRelationshipReaderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/RelationshipReader",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RelationshipReader",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/RelationshipUpdater",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RelationshipUpdater",
+      "status": "COVERED_GREEN",
+      "test": "Production/RelationshipPolicyTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/RepresentationPreloaderInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RepresentationPreloaderInterface",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/BatchRelationshipReaderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/ResourceIdentifier",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ResourceIdentifier",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/ResourcePersister",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ResourcePersister",
+      "status": "COVERED_GAP",
+      "test": "Features/DataLayer/TypedProviderTest.php",
+      "gap": "DX-TYPED-PERSISTER-DISPATCH",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Contract/Data/ResourceProcessor",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ResourceProcessor",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/ResourceRepository",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ResourceRepository",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/Slice",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\Slice",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/SliceIds",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\SliceIds",
+      "status": "PARTIAL",
+      "test": "Features/Relationships/RootJoinPaginationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/TypedRelationshipReader",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedRelationshipReader",
+      "status": "DOCUMENTATION_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md."
+    },
+    {
+      "feature": "Contract/Data/TypedRelationshipUpdater",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedRelationshipUpdater",
+      "status": "DOCUMENTATION_ONLY",
+      "test": "",
+      "gap": "",
+      "finding": "Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md."
+    },
+    {
+      "feature": "Contract/Data/TypedResourcePersister",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedResourcePersister",
+      "status": "COVERED_GAP",
+      "test": "Features/DataLayer/TypedProviderTest.php",
+      "gap": "DX-TYPED-PERSISTER-DISPATCH",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Contract/Data/TypedResourceRepository",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedResourceRepository",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Data/WriteConcurrencyGuardInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\WriteConcurrencyGuardInterface",
+      "status": "PARTIAL",
+      "test": "Production/ConcurrencyAndAtomicTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Resource/ResourceMetadataInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Resource\\ResourceMetadataInterface",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Tx/NullTransactionManager",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\NullTransactionManager",
+      "status": "NOT_APPLICABLE",
+      "test": "",
+      "gap": "",
+      "finding": "Value/default implementation without a separate application-facing HTTP operation."
+    },
+    {
+      "feature": "Contract/Tx/ScopedTransactionManagerInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\ScopedTransactionManagerInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Contract/Tx/TransactionManager",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\TransactionManager",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Hook/DocumentHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\DocumentHook",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Hook/FetchPlanHookInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\FetchPlanHookInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Hook/FilterParameterProviderInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\FilterParameterProviderInterface",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Hook/QueryHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\QueryHook",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Hook/ReadHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ReadHook",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "PROFILE-READ-HOOK",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Profile/Hook/RelationshipFetchRequirementsHookInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\RelationshipFetchRequirementsHookInterface",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Hook/RelationshipHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\RelationshipHook",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "PROFILE-RELATIONSHIP-HOOK",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Profile/Hook/WriteHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\WriteHook",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$createdAtField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$updatedAtField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$createdByField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$updatedByField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/SoftDeletable",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/SoftDeletable::$deletedAtField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/Attribute/SoftDeletable::$deletedByField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "status": "PARTIAL",
+      "test": "Profiles/ProfileTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Bridge/Symfony/Routing/Attribute/MediaChannel",
+      "public_api": "AlexFigures\\Symfony\\Bridge\\Symfony\\Routing\\Attribute\\MediaChannel",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "MEDIA-CHANNEL-ROUTING",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Bridge/Symfony/Routing/Attribute/MediaChannel::$name",
+      "public_api": "AlexFigures\\Symfony\\Bridge\\Symfony\\Routing\\Attribute\\MediaChannel",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "MEDIA-CHANNEL-ROUTING",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Events/RelationshipChangedEvent",
+      "public_api": "AlexFigures\\Symfony\\Events\\RelationshipChangedEvent",
+      "status": "COVERED_GREEN",
+      "test": "Features/Events/ResourceEventsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Events/ResourceChangedEvent",
+      "public_api": "AlexFigures\\Symfony\\Events\\ResourceChangedEvent",
+      "status": "COVERED_GREEN",
+      "test": "Features/Events/ResourceEventsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Metadata/RelationshipLinkingPolicy",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "status": "PARTIAL",
+      "test": "Relationships/ToOneRelationshipTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Metadata/RelationshipLinkingPolicy::REFERENCE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "status": "PARTIAL",
+      "test": "Relationships/ToOneRelationshipTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Metadata/RelationshipLinkingPolicy::VERIFY",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "status": "PARTIAL",
+      "test": "Relationships/ToOneRelationshipTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/AbstractOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\AbstractOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/BetweenOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\BetweenOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/EqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\EqualOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/GreaterOrEqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterOrEqualOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/GreaterThanOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterThanOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/ILikeOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\ILikeOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/InOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\InOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/IsNullOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\IsNullOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/LessOrEqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessOrEqualOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/LessThanOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessThanOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/LikeOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LikeOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/NotEqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotEqualOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/NotInOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotInOperator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/Operator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Operator",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Operator/Registry",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Registry",
+      "status": "PARTIAL",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Handler/FilterHandlerInterface",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\FilterHandlerInterface",
+      "status": "PARTIAL",
+      "test": "Production/QueryScopeTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Filter/Handler/SortHandlerInterface",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\SortHandlerInterface",
+      "status": "PARTIAL",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Handler/CustomRouteHandlerInterface",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Handler\\CustomRouteHandlerInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Handler/CustomRouteHandlerRegistry",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Handler\\CustomRouteHandlerRegistry",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Attribute/NoTransaction",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Attribute\\NoTransaction",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Definition/ReadProjection",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ReadProjection",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Definition/ReadProjection::ENTITY",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ReadProjection",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Definition/ReadProjection::DTO",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ReadProjection",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Definition/ReadProjection::CUSTOM",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ReadProjection",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Definition/ResourceDefinition",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceDefinition",
+      "status": "PARTIAL",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "PARTIAL",
+      "test": "Protocol/OperationRestrictionsTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::INDEX",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "PARTIAL",
+      "test": "Protocol/OperationRestrictionsTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::SHOW",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "PARTIAL",
+      "test": "Protocol/OperationRestrictionsTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::CREATE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "PARTIAL",
+      "test": "Protocol/OperationRestrictionsTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::UPDATE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "PARTIAL",
+      "test": "Protocol/OperationRestrictionsTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::DELETE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "PARTIAL",
+      "test": "Protocol/OperationRestrictionsTest.php",
+      "gap": "DOCS-OPERATIONS",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/VersionDefinition",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\VersionDefinition",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/PublicInputAndVersionTest.php",
+      "gap": "VERSION-RESOLVER-CONTEXT",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Definition/VersionResolverInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\VersionResolverInterface",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/PublicInputAndVersionTest.php",
+      "gap": "VERSION-RESOLVER-CONTEXT",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Mapper/DefaultReadMapper",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\DefaultReadMapper",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Mapper/DefaultWriteMapper",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\DefaultWriteMapper",
+      "status": "PARTIAL",
+      "test": "Features/Mapping/PublicInputAndVersionTest.php",
+      "gap": "WRITE-REQUEST-DTO",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Mapper/ReadMapperInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\ReadMapperInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Mapper/WriteMapperInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\WriteMapperInterface",
+      "status": "PARTIAL",
+      "test": "Features/Mapping/PublicInputAndVersionTest.php",
+      "gap": "WRITE-REQUEST-DTO",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Resource/Registry/CustomRouteRegistry",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistry",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Registry/CustomRouteRegistryInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistryInterface",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Registry/ResourceRegistry",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistry",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Resource/Registry/ResourceRegistryInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistryInterface",
+      "status": "PARTIAL",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Profile/ProfileInterface::uri",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "PARTIAL",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "EXTENSIBILITY-PROFILE-DI",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Profile/ProfileInterface::descriptor",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "PARTIAL",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "EXTENSIBILITY-PROFILE-DI",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Profile/ProfileInterface::hooks",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "PARTIAL",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "EXTENSIBILITY-PROFILE-DI",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "Profile/ProfileInterface::requirements",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "PARTIAL",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "EXTENSIBILITY-PROFILE-DI",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "CustomRoute/Context/CustomRouteContext::hasResource",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "CustomRoute/Context/CustomRouteContext::hasQueryParam",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "CustomRoute/Context/CustomRouteContext::criteria",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::resource",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::collection",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::noContent",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::accepted",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::created",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::badRequest",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::forbidden",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::notFound",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::conflict",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::unprocessable",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withMeta",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withLinks",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withStatus",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withHeader",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isError",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isResource",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isCollection",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isNoContent",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Query/CriteriaBuilder::addFilter",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Query\\CriteriaBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Query/CriteriaBuilder::addCustomCondition",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Query\\CriteriaBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "CustomRoute/Query/CriteriaBuilder::build",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Query\\CriteriaBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::resource",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::created",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::collection",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::noContent",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::accepted",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::error",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::validationErrors",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "PARTIAL",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withMeta",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withLinks",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withHeader",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withStatus",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withInclude",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withSparseFieldsets",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withTotalItems",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::withRequest",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseBuilder::build",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseBuilder",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.profile",
+      "public_api": "Symfony tagged service registration",
+      "status": "PARTIAL",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.resource",
+      "public_api": "Symfony tagged service registration",
+      "status": "PARTIAL",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.filter.operator",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.filter.handler",
+      "public_api": "Symfony tagged service registration",
+      "status": "PARTIAL",
+      "test": "Features/Filtering/HandlerPriorityTest.php",
+      "gap": "FILTER-HANDLER-LOGICAL-COMPOSITION",
+      "finding": "See gap inventory."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.sort.handler",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.relationship_batch_reader",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/BatchRelationshipReaderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.resource_repository",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedProviderTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.custom_route_handler",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+    }
+  ]
+}

@@ -20,3 +20,5 @@
 .DS_Store
 *.swp
 *.swo
+# Python report-generator cache
+__pycache__/

@@ -5,9 +5,8 @@ This is both a usage example and a black-box acceptance application for
 requests through Symfony's routing/kernel, the installed bundle, Doctrine,
 Serializer, and Validator. They never instantiate bundle controllers or services.
 
-The bundle is an external Composer dependency. The repository serves three roles:
-production onboarding/reference application, independent black-box acceptance
-application, and production torture/stress laboratory. Desired capabilities use
+The bundle is an external Composer dependency. The repository combines production onboarding, protocol acceptance, public feature
+verification, a DX cookbook, and a separate production torture/stress laboratory. Desired capabilities use
 normal runnable assertions, including intentionally failing `bundle-gap` cases.
 No vendor code is patched and no generic JSON:API workaround is installed.
 
@@ -28,7 +27,7 @@ Normal environments require `Authorization: Bearer reader`, `editor-a`, `editor-
 or `admin` on `/api/` requests. These are deterministic demo credentials to replace
 with a real identity provider. Run `composer test:production` for working publishing
 contracts and `composer test:production:gaps` for missing capabilities. The
-walkthrough identifies the open graph-scope boundary and aggregate endpoint gap.
+walkthrough explains the responsibility boundaries; use the generated status report for currently open gaps.
 
 ### B. I want to verify bundle behavior
 
@@ -37,6 +36,44 @@ Use [tests/Acceptance](tests/Acceptance), [ACCEPTANCE.md](ACCEPTANCE.md),
 [matrix](docs/acceptance-matrix.md). `test` preserves the original protocol fixture
 surface; `publishing` exercises authentication and safe inputs against disposable
 test databases. Full-suite failures remain visible and classified.
+
+### Feature cookbook
+
+Latest dependency verification: [remaining gaps and resolved contracts](docs/bundle-refresh.md).
+
+Start with the [public feature matrix](docs/feature-coverage.md),
+[OpenAPI comparison](docs/openapi-coverage.md), [configuration/DX audit](docs/configuration-dx-audit.md), [PR #67 checklist](docs/pr67-verification.md), and [feature iteration report](docs/feature-iteration.md).
+A passing example and a failing bundle contract have different labels in the reports.
+
+| Area | Application example | HTTP contract |
+|---|---|---|
+| Built-in filtering | [Article](src/PgEntity/Article.php) | [operators](tests/Acceptance/Query/FilteringTest.php) |
+| Filter/sort inheritance and exclusions | [FeatureArticle](src/PgEntity/FeatureArticle.php) | [inheritance](tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php) |
+| Custom search / operator | [ArticleSearchFilter](src/JsonApi/Filter/ArticleSearchFilter.php), [StartsWithOperator](src/JsonApi/Filter/StartsWithOperator.php) | [scope/search](tests/Acceptance/Production/QueryScopeTest.php), [operator contracts](tests/Acceptance/Features/Filtering/InheritanceAndExtensionsTest.php) |
+| Custom / aggregate sort | [TitleLengthSort](src/JsonApi/Sort/TitleLengthSort.php), [MinimumTagNameSort](src/JsonApi/Sort/MinimumTagNameSort.php) | [to-many policy](tests/Acceptance/Features/Sorting/CollectionPolicyTest.php), [aggregate semantics](tests/Acceptance/Features/Sorting/AggregateSemanticsTest.php) |
+| Join-entity path alias | [FeatureArticleTag](src/PgEntity/FeatureArticleTag.php) | [aliases](tests/Acceptance/Features/Relationships/PathAliasTest.php) |
+| Relationship policies / writes | [Article](src/PgEntity/Article.php) | [linking policies](tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php), [writes](tests/Acceptance/Production/RelationshipPolicyTest.php) |
+| Business handler | [PublishArticle](src/Application/Article/PublishArticle.php) | [publish](tests/Acceptance/Production/PublishArticleTest.php) |
+| NoTransaction / CriteriaBuilder | [FeatureReadHandler](src/Api/Cookbook/FeatureReadHandler.php) | [custom-route contracts](tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php) |
+| ResponseFactory / OpenAPI attributes | [FeatureCookbookController](src/Controller/FeatureCookbookController.php) | [response forms](tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php), [OpenAPI](tests/Acceptance/Features/Docs/OpenApiTest.php) |
+| DTO / CUSTOM read mapper | [FeatureSummary](src/Api/FeatureSummary.php), [CookbookReadMapper](src/JsonApi/DataLayer/CookbookReadMapper.php) | [projections](tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php) |
+| Profiles / representation version | [CookbookProfile](src/JsonApi/Profile/CookbookProfile.php), [FeatureVersionResolver](src/Api/Cookbook/FeatureVersionResolver.php) | [hooks](tests/Acceptance/Features/Profiles/PublicHooksTest.php), [version/input contracts](tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php) |
+| Resource events | [PublicationRecorder](src/EventSubscriber/PublicationRecorder.php) | [CRUD/relationship events](tests/Acceptance/Features/Events/ResourceEventsTest.php) |
+| Custom / typed data layer | [MemoryArticleProvider](src/JsonApi/DataLayer/MemoryArticleProvider.php), [TypedMemoryRepository](src/JsonApi/DataLayer/TypedMemoryRepository.php) | [provider](tests/Acceptance/Features/DataLayer/CustomProviderTest.php), [typed dispatch](tests/Acceptance/Features/DataLayer/TypedProviderTest.php) |
+| Scoped transactions | [ScopedTransactionHandler](src/Api/Cookbook/ScopedTransactionHandler.php) | [manager boundary](tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php) |
+| Optimistic concurrency / Atomic | [production walkthrough](docs/production-example.md) | [concurrency](tests/Acceptance/Production/ConcurrencyAndAtomicTest.php), [Atomic configuration](tests/Acceptance/Features/Atomic/ConfigurationMatrixTest.php) |
+| Competing handlers / deep inheritance | [PriorityFilter](src/JsonApi/Filter/PriorityFilter.php), [PrioritySort](src/JsonApi/Sort/PrioritySort.php) | [priority](tests/Acceptance/Features/Filtering/HandlerPriorityTest.php), [nested inheritance](tests/Acceptance/Features/Filtering/NestedInheritanceTest.php) |
+| Required constructor / validation groups | [FeatureMemo](src/PgEntity/FeatureMemo.php) | [validation matrix](tests/Acceptance/Features/Mapping/SharedValidationGroupsTest.php) |
+| Audit identity / defaults | [AuditIdentity](src/Security/AuditIdentity.php) | [audit contracts](tests/Acceptance/Features/Profiles/AuditIdentityTest.php) |
+| Computed relationship batch loading | [SuggestedAuthorsBatchReader](src/JsonApi/DataLayer/SuggestedAuthorsBatchReader.php) | [batch reader](tests/Acceptance/Features/DataLayer/BatchRelationshipReaderTest.php) |
+| Selective operations / discovery | [FeatureRecord](src/PgEntity/FeatureRecord.php) | [operations](tests/Acceptance/Features/Mapping/SelectiveOperationsTest.php), [boot discovery](tests/Acceptance/Features/Configuration/ResourceDiscoveryTest.php) |
+| Cache configuration | [isolated environments](config/packages/features_cache) | [Last-Modified](tests/Acceptance/Features/Cache/LastModifiedConfigurationTest.php), [version ETag contract](tests/Acceptance/Features/Cache/VersionStrategyTest.php) |
+| Feature combinations | [publishing application](docs/production-example.md) | [composition journeys](tests/Acceptance/Features/Composition) |
+
+Run `composer test:features` for all feature assertions (including known failures).
+`composer test:features:gaps` selects marked contracts; these remain executable failures.
+The `features*` environments use disposable test databases and isolate configuration variants.
+The in-memory provider is enabled only in its dedicated environment; it is not a fallback for Doctrine defects.
 
 ### C. I want to inspect production edge cases
 
@@ -61,7 +98,7 @@ counts, use the generated acceptance results rather than a hardcoded README base
 | `subscriptions` | PostgreSQL | Natural UUID string ID; client IDs explicitly allowed |
 | `newsletters` | PostgreSQL | Native `uuid` column with Symfony `Uuid` object; UUID recipient and previous-edition relationships |
 | `article-summaries` | PostgreSQL projection | Bundle DTO projection of Article, exposing only `headline` |
-| `author-publishing-statistics` | Application aggregate | Custom-route-only read model; currently exposes a link-generation gap |
+| `author-publishing-statistics` | Application aggregate | Custom-route-only read model with generated JSON:API representation |
 | Publication notifications | PostgreSQL, not an API resource | Transactional local side effect of publication |
 
 Entity mappings live in `src/PgEntity` and `src/MysqlEntity`; DTO metadata lives in

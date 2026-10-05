@@ -1,0 +1,3 @@
+jsonapi:
+    data_layer:
+        provider: random

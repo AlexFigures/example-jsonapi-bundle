@@ -1,0 +1,12 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    performance:
+        doctrine:
+            collection_sort_policy: reject
+services:
+    cookbook.minimum_tag_name_sort:
+        class: App\JsonApi\Sort\MinimumTagNameSort
+        tags: ['jsonapi.sort.handler']

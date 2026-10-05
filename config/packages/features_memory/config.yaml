@@ -1,0 +1,17 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    resource_paths: ['%kernel.project_dir%/src/FeatureMemory']
+    data_layer:
+        provider: custom
+        repository: App\JsonApi\DataLayer\MemoryArticleProvider
+        processor: App\JsonApi\DataLayer\MemoryArticleProvider
+        relationship_reader: App\JsonApi\DataLayer\MemoryArticleProvider
+        transaction_manager: App\JsonApi\DataLayer\MemoryArticleProvider
+    cache:
+        enabled: false
+    profiles:
+        per_type:
+            tags: []

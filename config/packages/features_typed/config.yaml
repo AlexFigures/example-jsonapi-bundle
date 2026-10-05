@@ -1,0 +1,25 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    resource_paths: ['%kernel.project_dir%/src/FeatureMemory']
+    cache:
+        enabled: false
+services:
+    cookbook.card_repository:
+        class: App\JsonApi\DataLayer\TypedMemoryRepository
+        arguments: ['memory-cards']
+        tags: ['jsonapi.resource_repository']
+    cookbook.note_repository:
+        class: App\JsonApi\DataLayer\TypedMemoryRepository
+        arguments: ['memory-notes']
+        tags: ['jsonapi.resource_repository']
+    cookbook.card_persister:
+        class: App\JsonApi\DataLayer\TypedMemoryPersister
+        arguments: ['memory-cards']
+        tags: [{ name: 'jsonapi.persister', type: 'memory-cards' }]
+    cookbook.note_persister:
+        class: App\JsonApi\DataLayer\TypedMemoryPersister
+        arguments: ['memory-notes']
+        tags: [{ name: 'jsonapi.persister', type: 'memory-notes' }]
