@@ -4,7 +4,7 @@
 
 Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes discoverability rather than an absent runtime feature.
 
-Baseline: bundle `cbbd06106a3353f5e70b89feac48f3e13df3384e`, PHP 8.4.26, PHPUnit 11.5.56.
+Baseline: bundle `727d671c47a6de33340939415ef93053fdcbaf7d`, PHP 8.4.26, PHPUnit 11.5.56.
 
 ## CONTENT-NEGOTIATION-001 — content negotiation
 

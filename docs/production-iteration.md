@@ -1,5 +1,24 @@
 # Production onboarding iteration
 
+## Latest acceptance refresh
+
+Tested bundle `727d671c47a6de33340939415ef93053fdcbaf7d` with a complete
+HTTP acceptance run: **391 cases, 3,781 assertions, 379 passing, 12 classified
+failures, zero unexpected failures and zero skips**. Production remains 70/75
+passing. Compared with the initial iteration, no gap closed and no new failing
+scenario appeared. The initial iteration results below are historical.
+
+Remaining desired bundle capabilities: `QUERY-002` (one failure),
+`QUERY-SCOPE-GRAPH` (three), `EXTENSIBILITY-PROFILE-DI` (one),
+`CUSTOM-ACTION-READ-MODEL` (one), and `WRITE-MODEL-SERIALIZER-METADATA` (five).
+`ATOMIC-VALIDATION-BOUNDARY` remains a separate infrastructure-limit contract
+(one failure): safe boundary rejection returns 409 before the expected 422 domain
+validation; the rollback assertion still passes.
+
+Generated status/matrix/results have been refreshed; assertions and application
+code are unchanged. This refresh covers Acceptance, not a new full Torture or
+performance run.
+
 This repository now separates a small publishing reference application, HTTP
 acceptance contracts and the existing torture laboratory. Composer supplies the
 bundle; no installed implementation is patched, no generated CRUD controller is

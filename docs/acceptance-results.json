@@ -1,5 +1,5 @@
 {
-    "bundle_revision": "cbbd06106a3353f5e70b89feac48f3e13df3384e",
+    "bundle_revision": "727d671c47a6de33340939415ef93053fdcbaf7d",
     "gap_summary": [
         {
             "id": "CONTENT-NEGOTIATION-001",
@@ -1042,7 +1042,7 @@
             "bundle_gaps": [
                 "ATOMIC-VALIDATION-BOUNDARY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit\n{\"errors\":[{\"status\":\"409\",\"code\":\"unsupported-transaction-boundary\",\"id\":\"<uuid>\",\"title\":\"Unsupported transaction boundary\",\"detail\":\"This operation spans unsupported transaction boundaries. The built-in Doctrine provider requires one EntityManager and one connection per transaction.\"}]}\nFailed asserting that 409 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:105\n/srv/app/tests/Acceptance/Atomic/AtomicTransactionalityTest.php:79\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit\n{\"errors\":[{\"status\":\"409\",\"code\":\"unsupported-transaction-boundary\",\"id\":\"<uuid>\",\"title\":\"Unsupported transaction boundary\",\"detail\":\"This operation spans unsupported transaction boundaries. The built-in Doctrine provider requires one EntityManager and one connection per transaction.\"}]}\nFailed asserting that 409 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:105\n/srv/app/tests/Acceptance/Atomic/AtomicTransactionalityTest.php:81\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Atomic",
@@ -2053,7 +2053,7 @@
             "bundle_gaps": [
                 "WRITE-MODEL-SERIALIZER-METADATA"
             ],
-            "failure": "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testReadAndWriteAlias\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Mapping/FieldAliasesTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testReadAndWriteAlias\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Mapping/FieldAliasesTest.php:18\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Mapping",
