@@ -5,3 +5,25 @@ services:
     App\:
         resource: '../src/'
         exclude: '../src/{PgEntity,MysqlEntity,Enum,Torture,Kernel.php}'
+
+    App\Security\PublishingContext:
+        arguments:
+            $enabled: '%publishing.enabled%'
+    App\JsonApi\Filter\ArticleSearchFilter:
+        tags: ['jsonapi.filter.handler']
+    App\Application\Article\PublishArticle:
+        tags: ['jsonapi.custom_route_handler']
+    App\JsonApi\ScopedArticleRepository:
+        decorates: AlexFigures\Symfony\Contract\Data\ResourceRepository
+        arguments:
+            $inner: '@App\JsonApi\ScopedArticleRepository.inner'
+    App\JsonApi\AuthorizedArticleProcessor:
+        decorates: AlexFigures\Symfony\Contract\Data\ResourceProcessor
+        arguments:
+            $inner: '@App\JsonApi\AuthorizedArticleProcessor.inner'
+    App\JsonApi\AuthorizedArticleRelationships:
+        decorates: AlexFigures\Symfony\Contract\Data\RelationshipUpdater
+        arguments:
+            $inner: '@App\JsonApi\AuthorizedArticleRelationships.inner'
+    App\Application\Article\AuthorPublishingStatisticsHandler:
+        tags: ['jsonapi.custom_route_handler']

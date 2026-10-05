@@ -66,6 +66,8 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
         self::assertSame('Final version', $after['data']['attributes']['title']);
         $this->assertJsonApiError($this->requestJsonApi('GET', $this->url('article-12')), 404);
     }
+    #[Group('bundle-gap')]
+    #[ExpectedBundleGap('ATOMIC-VALIDATION-BOUNDARY')]
     public function testMixedManagerBatchRollsBackBeforeCommit(): void
     {
         $ops = [

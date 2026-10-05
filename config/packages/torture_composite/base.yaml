@@ -1,3 +1,6 @@
+parameters:
+    publishing.enabled: false
+
 framework:
     test: true
 jsonapi:

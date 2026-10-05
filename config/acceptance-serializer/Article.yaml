@@ -1,0 +1,10 @@
+# Historical protocol/type tests intentionally exercise a wider writable surface.
+# This mapping is loaded ONLY in the legacy test environment, never publishing/dev/prod.
+App\PgEntity\Article:
+    attributes:
+        status:
+            groups: ['articles:read', 'articles:write']
+        publishedAt:
+            groups: ['articles:read', 'articles:write']
+        views:
+            groups: ['articles:read', 'articles:write']

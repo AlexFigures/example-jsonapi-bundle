@@ -81,7 +81,10 @@
         "test:torture:stable": "phpunit -c phpunit.torture.xml.dist --exclude-group torture-gap",
         "test:torture:full": "phpunit -c phpunit.torture.xml.dist --log-junit var/torture/junit.xml",
         "test:torture:gaps": "phpunit -c phpunit.torture.xml.dist --group torture-gap",
-        "torture:report": "php tools/torture-report.php"
+        "torture:report": "php tools/torture-report.php",
+        "test:production": "phpunit tests/Acceptance/Production --exclude-group bundle-gap",
+        "test:production:full": "phpunit tests/Acceptance/Production",
+        "test:production:gaps": "phpunit tests/Acceptance/Production --group bundle-gap"
     },
     "conflict": {
         "symfony/symfony": "*"

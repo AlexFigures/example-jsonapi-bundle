@@ -1,0 +1,9 @@
+imports:
+    - { resource: '../publishing/framework.yaml' }
+    - { resource: '../publishing/doctrine.yaml' }
+jsonapi:
+    profiles:
+        enabled_by_default: ['urn:example:injectable-profile']
+services:
+    App\Tests\Acceptance\Support\InjectableProfile:
+        tags: ['jsonapi.profile']

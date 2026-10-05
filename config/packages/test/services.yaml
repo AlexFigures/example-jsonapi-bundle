@@ -1,3 +1,6 @@
+parameters:
+    publishing.enabled: false
+
 services:
     App\Tests\Acceptance\Support\FailureController:
         public: true

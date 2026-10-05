@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Acceptance\Resource;
 
 use App\Tests\Acceptance\Support\AcceptanceTestCase;
+use App\Tests\Acceptance\Support\ExpectedBundleGap;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 
@@ -19,6 +20,8 @@ final class ResourceCreateTest extends AcceptanceTestCase
         $this->decodeJsonApi($this->requestJsonApi('GET', $response->headers->get('Location')));
     }
 
+    #[Group('bundle-gap')]
+    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testAllWritableAttributesAndRelationships(): void
     {
         $payload = $this->articlePayload(['content' => 'Full body', 'status' => 'published', 'metadata' => ['audience' => ['developers']], 'published-at' => '2026-02-01T12:00:00+00:00', 'featured' => true, 'views' => 42, 'rating' => 4.75], ['editor' => ['data' => null], 'tags' => ['data' => [$this->identifier('php', 'tags'), $this->identifier('api', 'tags')]]]);

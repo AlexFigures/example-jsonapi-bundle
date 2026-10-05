@@ -5,20 +5,39 @@ Only deterministic fixture setup uses Doctrine directly. Assertions inspect
 public documents, headers, subsequent HTTP reads, and persisted behavior; they
 do not inspect bundle services, controllers, query SQL, or private metadata.
 
-The installed bundle is `fix/acceptance-gaps` at
-`f02849d58615e29d20c4e14fb373a3ca0a1db94e`, pinned through Composer.
-No bundle source or vendor implementation was patched.
+The bundle is installed and pinned through Composer. Its tested revision and current
+counts are recorded by `tools/acceptance-report.php` in
+`docs/acceptance-results.json`, `docs/acceptance-matrix.md` and
+`docs/acceptance-status.md`. No vendor implementation is patched. Historical
+protocol baselines remain available in Git; the inventory retains every existing
+gap ID and assertion alongside new application-layer requirements.
 
-Historical main baseline: **238 stable tests passed; 78 gap cases failed across
-44 inventory entries**. On the locked branch, **314 pass and 2 known gap cases
-fail; zero unexpected failures or skips**. Of the 44 historical IDs, 42 are fully
-resolved; `CACHE-001` and `QUERY-002` each retain one failing case. Current results are generated in
-`docs/acceptance-matrix.md`, `docs/acceptance-results.json` and
-`docs/acceptance-status.md`; those files distinguish resolved IDs from open ones. The full
-suite runs 316 cases on PHP 8.4.26 / PHPUnit 11.5.56 with PostgreSQL 16 and MySQL 8.
-The included development Dockerfile targets PHP 8.3; verification reused the
-available PHP 8.4 image through `ACCEPTANCE_PHP_IMAGE`.
+## Production application contracts
 
+`tests/Acceptance/Production` uses the `publishing` kernel: real authentication,
+resource policies, automatic query scope, safe serializer input groups, publish
+business action, application events/recorder, aggregate read model and two-client
+concurrency. Only fixture setup and persisted outcome checks use Doctrine directly.
+Two independent HTTP processes exercise overlapping writes. Minimal test-only DB
+triggers make rollback and overlap observable; production services contain no fault
+injection. Large-scale faults/topology remain in Torture.
+
+The old `test` environment deliberately retains its broad write-type fixture
+mapping and disables publishing policy. This preserves generic enum/datetime/number
+assertions while production HTTP tests enforce the narrower application contract.
+The configured YAML groups appear in Symfony metadata but are ignored by the bundle;
+five unchanged historical assertions expose `WRITE-MODEL-SERIALIZER-METADATA`.
+Never copy `config/acceptance-serializer` into a production serializer mapping.
+See [the walkthrough](docs/production-example.md) and
+[iteration report](docs/production-iteration.md).
+
+New contracts are classified as `MUST_CONFORMANCE`, `DESIRED_CAPABILITY`,
+`APPLICATION_POLICY`, `INFRASTRUCTURE_LIMIT`, or `DOCUMENTATION_GAP`. Existing
+`SHOULD_CONFORMANCE` and `OPTIONAL_FEATURE` categories retain their meanings.
+The new executable failures are desired generic integration capabilities, not
+claims that JSON:API mandates authentication, custom commands or an outbox.
+Every new failure has a stable ID, `ExpectedBundleGap` marker, inventory entry and
+normal assertion. No skips, no assertions endorsing leaked data, no vendor patch.
 
 ## Specification and application decisions
 

@@ -2,9 +2,9 @@
 
 `docs/bundle-gaps.json` is the reviewed inventory. Tests carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; they use normal assertions and are never skipped. This report validates the markers against the inventory.
 
-Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent.
+Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes discoverability rather than an absent runtime feature.
 
-Baseline: bundle `f02849d58615e29d20c4e14fb373a3ca0a1db94e`, PHP 8.4.26, PHPUnit 11.5.56.
+Baseline: bundle `cbbd06106a3353f5e70b89feac48f3e13df3384e`, PHP 8.4.26, PHPUnit 11.5.56.
 
 ## CONTENT-NEGOTIATION-001 — content negotiation
 
@@ -178,10 +178,10 @@ Baseline: bundle `f02849d58615e29d20c4e14fb373a3ca0a1db94e`, PHP 8.4.26, PHPUnit
 
 ## CACHE-001 — cache/preconditions
 
-**DESIRED_CAPABILITY · P0**. Observed: 1 failing / 4 cases.
+**DESIRED_CAPABILITY · P0**. Observed: 0 failing / 4 cases.
 
 - Expected: Evaluate write preconditions before mutation; matching GET ETag permits a write.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Valid If-Match gets 412; stale/missing conditions return 412/428 after changes have already persisted.
 - Bundle change: CachePreconditionsSubscriber currently runs at kernel.response; move write checks before persistence.
 - Tests:
@@ -510,3 +510,69 @@ Baseline: bundle `f02849d58615e29d20c4e14fb373a3ca0a1db94e`, PHP 8.4.26, PHPUnit
 - Bundle change: Validate mapped UUID identifiers at the HTTP boundary or translate Doctrine UID conversion errors into JSON:API client errors.
 - Tests:
   - [Doctrine/UuidIdentifierTest::testMalformedUuidDoesNotLeakServerError](../tests/Acceptance/Doctrine/UuidIdentifierTest.php)
+
+## EXTENSIBILITY-PROFILE-DI — Production profile dependency injection
+
+**DESIRED_CAPABILITY · P2**. Observed: 1 failing / 1 cases.
+
+- Expected: A tagged public ProfileInterface service can use required constructor injection and the HTTP application still boots.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: Container validation reports the registered profile as missing when it has a required constructor dependency; HTTP cannot start.
+- Bundle change: Support dependency-injected profile services during validation; obtain static descriptors without constructing unconfigured application services.
+- Tests:
+  - [Production/ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext](../tests/Acceptance/Production/ExtensibilityTest.php)
+- Responsibility: Symfony service construction is part of the public extension integration. Application policies need injected context; they must not be forced into service-location or mutable global state.
+
+## QUERY-SCOPE-GRAPH — Production ownership scope across graph reads
+
+**DESIRED_CAPABILITY · P1**. Observed: 3 failing / 3 cases.
+
+- Expected: Application-owned Article scope applies before pagination to INDEX, related collections, includes and relationship linkage; foreign objects and identifiers are not exposed.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: ResourceRepository decoration scopes INDEX/SHOW and DTO projections, but related collections, includes and linkage bypass that scope and expose Grace articles to editor A.
+- Bundle change: Provide one mandatory resource query/visibility extension used for root queries, relationship pagination, identifier discovery and includes, independent of client profile negotiation.
+- Tests:
+  - [Production/QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles](../tests/Acceptance/Production/QueryScopeTest.php)
+  - [Production/QueryScopeTest::testIncludesCannotLeakForeignArticles](../tests/Acceptance/Production/QueryScopeTest.php)
+  - [Production/QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers](../tests/Acceptance/Production/QueryScopeTest.php)
+- Responsibility: Choosing visibility is application policy. Consistently invoking a public query-scope extension across every generated graph read is bundle infrastructure; post-filtering hydrated pages or replacing include/linkage engines would hide the missing seam.
+
+## CUSTOM-ACTION-READ-MODEL — Custom-route-only aggregate read model
+
+**DESIRED_CAPABILITY · P2**. Observed: 1 failing / 1 cases.
+
+- Expected: A custom handler can serialize a registered non-Doctrine aggregate resource with operations=[] using its custom GET route, without requiring fictitious generated CRUD routes.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: CustomRouteResult::resource attempts to generate jsonapi.author-publishing-statistics.show although SHOW is disabled; the aggregate endpoint returns 500.
+- Bundle change: Support canonical/self link metadata for custom-route-only resources or safely serialize resources without a generated SHOW route.
+- Tests:
+  - [Production/ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel](../tests/Acceptance/Production/ReadModelTest.php)
+- Responsibility: The aggregate SQL and authorization are application-owned. Resource serialization and link generation must support the public custom-route/read-model contract without forcing unrelated persistence routes.
+
+## WRITE-MODEL-SERIALIZER-METADATA — Symfony external serializer mapping
+
+**DESIRED_CAPABILITY · P2**. Observed: 5 failing / 5 cases.
+
+- Expected: The bundle honors effective Symfony Serializer metadata, including configured environment-specific YAML write groups; original wide-surface test contracts remain executable while publishing uses attribute-only safe groups.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: Symfony debug:serializer reports articles:write for the configured test fields, but generated JSON:API writes reject views/status/published-at as extra attributes (422). Five original desired round-trip/workflow assertions fail without being changed.
+- Bundle change: Use effective Symfony serializer metadata consistently when determining allowed input fields, including external mapping paths and inherited metadata.
+- Tests:
+  - [Doctrine/DoctrineTypesTest::testWriteTypesRoundTrip](../tests/Acceptance/Doctrine/DoctrineTypesTest.php)
+  - [Resource/ResourceCreateTest::testAllWritableAttributesAndRelationships](../tests/Acceptance/Resource/ResourceCreateTest.php)
+  - [Resource/ResourceUpdateTest::testAttributesAndRelationshipsTogether](../tests/Acceptance/Resource/ResourceUpdateTest.php)
+  - [Smoke/RealWorldWorkflowTest::testPublishingWorkflow](../tests/Acceptance/Smoke/RealWorldWorkflowTest.php)
+  - [Mapping/FieldAliasesTest::testReadAndWriteAlias](../tests/Acceptance/Mapping/FieldAliasesTest.php)
+- Responsibility: Resolving effective Symfony Serializer input metadata is generic transport integration. Consumers should not need to duplicate serializer mapping in bundle internals or replace generic deserialization. Production attribute groups already enforce the safe surface correctly.
+
+## ATOMIC-VALIDATION-BOUNDARY — Existing mixed-manager validation expectation
+
+**INFRASTRUCTURE_LIMIT · P2**. Observed: 1 failing / 1 cases.
+
+- Expected: The original mixed-manager batch assertion expects 422 for invalid Article title and verifies preceding MySQL Comment changes do not persist.
+- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Historical baseline: The installed provider rejects the multi-manager boundary with JSON:API 409 unsupported-transaction-boundary before business validation; the preceding Comment state is unchanged. The safety assertion passes and the 422 status assertion remains failing.
+- Bundle change: No transaction-safety fix is inferred: rejection is safe. Document unsupported-boundary error precedence and the single-manager contract; any future broader provider must preserve rollback assertions.
+- Tests:
+  - [Atomic/AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit](../tests/Acceptance/Atomic/AtomicTransactionalityTest.php)
+- Responsibility: This records an existing consumer contract against the installed single-EntityManager transaction provider, not a JSON:API violation or a loss of Atomic safety. Distributed/multi-connection atomic commit is outside the application example. The desired error precedence remains explicit instead of silently changing an existing assertion.

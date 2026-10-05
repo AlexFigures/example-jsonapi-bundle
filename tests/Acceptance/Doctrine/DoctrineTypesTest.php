@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Acceptance\Doctrine;
 
 use App\Tests\Acceptance\Support\AcceptanceTestCase;
+use App\Tests\Acceptance\Support\ExpectedBundleGap;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 
@@ -26,6 +27,8 @@ final class DoctrineTypesTest extends AcceptanceTestCase
         self::assertNull($draft['data']['attributes']['published-at']);
     }
 
+    #[Group('bundle-gap')]
+    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testWriteTypesRoundTrip(): void
     {
         $payload = $this->patchPayload(['views' => 123, 'featured' => true, 'rating' => 3.25, 'metadata' => ['nested' => ['value' => null]], 'status' => 'published', 'published-at' => '2026-02-01T00:00:00+00:00']);

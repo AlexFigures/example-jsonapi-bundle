@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace App\Tests\Acceptance\Mapping;
 
 use App\Tests\Acceptance\Support\AcceptanceTestCase;
+use App\Tests\Acceptance\Support\ExpectedBundleGap;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 
 final class FieldAliasesTest extends AcceptanceTestCase
 {
+    #[Group('bundle-gap')]
+    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testReadAndWriteAlias(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('PATCH', $this->url(), $this->patchPayload(['published-at' => '2026-02-01T00:00:00+00:00'])));

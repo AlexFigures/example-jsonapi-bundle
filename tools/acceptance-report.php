@@ -134,7 +134,7 @@ foreach ($rows as $row) {
 }
 writeReportFile($root.'/docs/acceptance-matrix.md', $matrix);
 $gapDoc = "# Known bundle gaps\n\n`docs/bundle-gaps.json` is the reviewed inventory. Tests carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; they use normal assertions and are never skipped. This report validates the markers against the inventory.\n\n";
-$gapDoc .= "Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent.\n\n";
+$gapDoc .= "Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes discoverability rather than an absent runtime feature.\n\n";
 $gapDoc .= "Baseline: bundle `{$inventory['bundle_revision']}`, PHP ".PHP_VERSION.', PHPUnit '.PHPUnit\Runner\Version::id().".\n\n";
 foreach ($inventory['gaps'] as $gap) {
     $matching = array_filter($rows, static fn (array $row): bool => in_array($gap['id'], $row['bundle_gaps'], true));
@@ -146,6 +146,7 @@ foreach ($inventory['gaps'] as $gap) {
         [$testClass, $testMethod] = explode('::', $target['test']);
         $gapDoc .= '  - ['.$target['test'].'](../tests/Acceptance/'.$testClass.'.php)'.(isset($target['datasets']) ? ' ('.implode(', ', $target['datasets']).')' : '')."\n";
     }
+    if (isset($gap['why_bundle'])) { $gapDoc .= '- Responsibility: '.$gap['why_bundle']."\n"; }
     $gapDoc .= "\n";
 }
 writeReportFile($root.'/docs/acceptance-status.md', rtrim($gapDoc)."\n");

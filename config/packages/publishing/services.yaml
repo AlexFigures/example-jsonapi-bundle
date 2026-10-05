@@ -1,0 +1,5 @@
+services:
+    App\Tests\Acceptance\Support\LifecycleProbe:
+        autowire: true
+        autoconfigure: true
+        public: true

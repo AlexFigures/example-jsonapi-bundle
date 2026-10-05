@@ -23,8 +23,13 @@ abstract class AcceptanceTestCase extends WebTestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->client = static::createClient(['debug' => false]);
+        $this->client = static::createClient(['environment' => $this->environment(), 'debug' => false]);
         $this->ids = AcceptanceFixtures::reset(self::getContainer()->get(ManagerRegistry::class));
+    }
+
+    protected function environment(): string
+    {
+        return 'test';
     }
 
     protected function url(string $key = 'article-1', string $type = 'articles'): string
@@ -49,9 +54,14 @@ abstract class AcceptanceTestCase extends WebTestCase
         $this->client->request($method, $url, server: $server, content: $content);
 
         $response = $this->client->getResponse();
-        $this->httpTrace[] = ['method' => $method, 'url' => $url, 'status' => $response->getStatusCode()];
+        $this->recordHttpResponse($method, $url, $response->getStatusCode());
 
         return $response;
+    }
+
+    protected function recordHttpResponse(string $method, string $url, int $status): void
+    {
+        $this->httpTrace[] = ['method' => $method, 'url' => $url, 'status' => $status];
     }
 
     /** @return array<string, mixed> */

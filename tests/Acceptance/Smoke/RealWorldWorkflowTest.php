@@ -5,11 +5,14 @@ declare(strict_types=1);
 namespace App\Tests\Acceptance\Smoke;
 
 use App\Tests\Acceptance\Support\AcceptanceTestCase;
+use App\Tests\Acceptance\Support\ExpectedBundleGap;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Group;
 
 final class RealWorldWorkflowTest extends AcceptanceTestCase
 {
+    #[Group('bundle-gap')]
+    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testPublishingWorkflow(): void
     {
         $create = function (string $type, array $attributes): array {

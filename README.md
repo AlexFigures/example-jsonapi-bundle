@@ -1,14 +1,52 @@
-# JSON:API Symfony acceptance application
+# JSON:API Symfony production example and acceptance application
 
 This is both a usage example and a black-box acceptance application for
 [jsonapi-symfony](https://github.com/AlexFigures/jsonapi-symfony). Tests send HTTP
 requests through Symfony's routing/kernel, the installed bundle, Doctrine,
 Serializer, and Validator. They never instantiate bundle controllers or services.
 
-The locked bundle is **`fix/acceptance-gaps` at `f02849d`**. Supported behavior is checked
-by the stable suite. Desired behavior that the bundle cannot yet deliver has
-normal, runnable assertions in the `bundle-gap` group. Those tests intentionally
-fail; they are not skipped or changed to assert buggy behavior.
+The bundle is an external Composer dependency. The repository serves three roles:
+production onboarding/reference application, independent black-box acceptance
+application, and production torture/stress laboratory. Desired capabilities use
+normal runnable assertions, including intentionally failing `bundle-gap` cases.
+No vendor code is patched and no generic JSON:API workaround is installed.
+
+## Using this repository
+
+### A. I want to learn how to use the bundle
+
+Read [the production walkthrough](docs/production-example.md), then this short sequence:
+
+1. [Article resource and serializer groups](src/PgEntity/Article.php).
+2. [JSON:API configuration](config/packages/jsonapi.yaml) and [service integration](config/services.yaml).
+3. [Publish handler](src/Application/Article/PublishArticle.php) and `Article::publish()`.
+4. [Authentication context](src/Security/PublishingContext.php) and [authorization policy](src/Security/ArticlePolicy.php).
+5. [Scoped queries](src/JsonApi/ScopedArticleRepository.php) and [custom search](src/JsonApi/Filter/ArticleSearchFilter.php).
+6. [The HTTP editor journey](tests/Acceptance/Production/PublishArticleTest.php).
+
+Normal environments require `Authorization: Bearer reader`, `editor-a`, `editor-b`
+or `admin` on `/api/` requests. These are deterministic demo credentials to replace
+with a real identity provider. Run `composer test:production` for working publishing
+contracts and `composer test:production:gaps` for missing capabilities. The
+walkthrough identifies the open graph-scope boundary and aggregate endpoint gap.
+
+### B. I want to verify bundle behavior
+
+Use [tests/Acceptance](tests/Acceptance), [ACCEPTANCE.md](ACCEPTANCE.md),
+[acceptance-status.md](docs/acceptance-status.md), and the generated
+[matrix](docs/acceptance-matrix.md). `test` preserves the original protocol fixture
+surface; `publishing` exercises authentication and safe inputs against disposable
+test databases. Full-suite failures remain visible and classified.
+
+### C. I want to inspect production edge cases
+
+Use [tests/Torture](tests/Torture), [TORTURE.md](TORTURE.md), and
+[performance results](docs/performance-results.json). Shards, replicas, large graphs,
+worker leakage and cross-manager faults stay in this separate laboratory.
+
+The [iteration report](docs/production-iteration.md) records scenarios, executable
+gaps, green contracts and DX findings. For the tested dependency revision and current
+counts, use the generated acceptance results rather than a hardcoded README baseline.
 
 ## Domain and layout
 
@@ -23,6 +61,8 @@ fail; they are not skipped or changed to assert buggy behavior.
 | `subscriptions` | PostgreSQL | Natural UUID string ID; client IDs explicitly allowed |
 | `newsletters` | PostgreSQL | Native `uuid` column with Symfony `Uuid` object; UUID recipient and previous-edition relationships |
 | `article-summaries` | PostgreSQL projection | Bundle DTO projection of Article, exposing only `headline` |
+| `author-publishing-statistics` | Application aggregate | Custom-route-only read model; currently exposes a link-generation gap |
+| Publication notifications | PostgreSQL, not an API resource | Transactional local side effect of publication |
 
 Entity mappings live in `src/PgEntity` and `src/MysqlEntity`; DTO metadata lives in
 `src/Api`. `config/packages/jsonapi.yaml` explicitly enables writes, cache,

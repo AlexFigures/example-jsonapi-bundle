@@ -19,12 +19,14 @@ use Doctrine\Common\Collections\Collection;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[FilterableFields([new FilterableField('title', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('slug', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('status', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('published-at', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('views', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('featured', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('author.name', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull'])])]
+#[FilterableFields([new FilterableField('search', operators: ['eq'], customHandler: \App\JsonApi\Filter\ArticleSearchFilter::class), new FilterableField('title', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('slug', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('status', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('published-at', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('views', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('featured', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('author.name', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull'])])]
 #[SortableFields(['id', 'title', 'createdAt', 'published-at', 'views', 'author.name'])]
 #[\AlexFigures\Symfony\Profile\Attribute\Auditable]
 #[ORM\Entity]
+#[ORM\HasLifecycleCallbacks]
 #[ORM\Table(name: 'articles')]
 #[JsonApiResource(type: 'articles', normalizationContext: ['groups' => ['articles:read']], denormalizationContext: ['groups' => ['articles:write']])]
+#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'articles.publish', path: '/api/articles/{id}/publish', methods: ['POST'], handler: \App\Application\Article\PublishArticle::class)]
 class Article
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column(type: 'integer'), Id]
@@ -87,7 +89,7 @@ class Article
     }
 
     #[ORM\Column(type: 'string', enumType: \App\Enum\ArticleStatus::class)]
-    #[JsonApiAttribute, Groups(['articles:read', 'articles:write'])]
+    #[JsonApiAttribute, Groups(['articles:read'])]
     private \App\Enum\ArticleStatus $status = \App\Enum\ArticleStatus::DRAFT;
 
     public function getStatus(): \App\Enum\ArticleStatus
@@ -119,7 +121,7 @@ class Article
     }
 
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
-    #[JsonApiAttribute(name: 'published-at'), Groups(['articles:read', 'articles:write'])]
+    #[JsonApiAttribute(name: 'published-at'), Groups(['articles:read'])]
     private ?\DateTimeImmutable $publishedAt = null;
 
     public function getPublishedAt(): ?\DateTimeImmutable
@@ -183,7 +185,7 @@ class Article
     }
 
     #[ORM\Column(type: 'integer')]
-    #[JsonApiAttribute, Groups(['articles:read', 'articles:write'])]
+    #[JsonApiAttribute, Groups(['articles:read'])]
     #[Assert\PositiveOrZero]
     private int $views = 0;
 
@@ -299,6 +301,31 @@ class Article
         $this->createdAt = new \DateTimeImmutable();
         $this->updatedAt = $this->createdAt;
         $this->tags = new ArrayCollection();
+    }
+
+    #[ORM\PreUpdate]
+    public function updateTimestamp(): void
+    {
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    /** Returns false for an idempotent repeat; the original timestamp is preserved. */
+    public function publish(\DateTimeImmutable $now): bool
+    {
+        if ($this->status === \App\Enum\ArticleStatus::PUBLISHED) {
+            return false;
+        }
+        if ($this->status === \App\Enum\ArticleStatus::ARCHIVED) {
+            throw new \App\Application\Article\PublicationRejected('Archived articles cannot be published.', 409);
+        }
+        if (trim($this->content) === '' || $this->author === null || strlen(trim($this->title)) < 3) {
+            throw new \App\Application\Article\PublicationRejected('Publication requires a title, content and author.', 422);
+        }
+        $this->status = \App\Enum\ArticleStatus::PUBLISHED;
+        $this->publishedAt = $now;
+        $this->updatedAt = $now;
+
+        return true;
     }
 
     public function getReviewer(): ?Author

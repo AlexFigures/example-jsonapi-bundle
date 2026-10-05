@@ -1,3 +1,6 @@
+parameters:
+    publishing.enabled: false
+
 services:
     App\Torture\Infrastructure\SqlMetricsMiddleware:
         tags: [{ name: doctrine.middleware, priority: 100 }]

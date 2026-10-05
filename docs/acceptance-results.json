@@ -1,5 +1,5 @@
 {
-    "bundle_revision": "f02849d58615e29d20c4e14fb373a3ca0a1db94e",
+    "bundle_revision": "cbbd06106a3353f5e70b89feac48f3e13df3384e",
     "gap_summary": [
         {
             "id": "CONTENT-NEGOTIATION-001",
@@ -108,12 +108,10 @@
         },
         {
             "id": "CACHE-001",
-            "status": "OPEN",
-            "passing_cases": 3,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testRequiredPrecondition"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 4,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "CACHE-002",
@@ -312,14 +310,65 @@
             "passing_cases": 1,
             "failing_cases": 0,
             "current_failures": []
+        },
+        {
+            "id": "EXTENSIBILITY-PROFILE-DI",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Production\\ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext"
+            ]
+        },
+        {
+            "id": "QUERY-SCOPE-GRAPH",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 3,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles",
+                "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testIncludesCannotLeakForeignArticles",
+                "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers"
+            ]
+        },
+        {
+            "id": "CUSTOM-ACTION-READ-MODEL",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Production\\ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel"
+            ]
+        },
+        {
+            "id": "WRITE-MODEL-SERIALIZER-METADATA",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 5,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Doctrine\\DoctrineTypesTest::testWriteTypesRoundTrip",
+                "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testReadAndWriteAlias",
+                "App\\Tests\\Acceptance\\Resource\\ResourceCreateTest::testAllWritableAttributesAndRelationships",
+                "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testAttributesAndRelationshipsTogether",
+                "App\\Tests\\Acceptance\\Smoke\\RealWorldWorkflowTest::testPublishingWorkflow"
+            ]
+        },
+        {
+            "id": "ATOMIC-VALIDATION-BOUNDARY",
+            "status": "OPEN",
+            "passing_cases": 0,
+            "failing_cases": 1,
+            "current_failures": [
+                "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit"
+            ]
         }
     ],
     "phpunit_version": "11.5.56",
     "php_version": "8.4.26",
     "counts": {
-        "stable_pass": 314,
-        "gap_pass": 0,
-        "gap_fail": 2,
+        "stable_pass": 378,
+        "gap_pass": 1,
+        "gap_fail": 12,
         "unexpected_fail": 0,
         "skipped": 0
     },
@@ -986,12 +1035,14 @@
                 422
             ],
             "current_statuses": [
-                422,
+                409,
                 200
             ],
-            "result": "PASS",
-            "bundle_gaps": [],
-            "failure": null
+            "result": "FAIL",
+            "bundle_gaps": [
+                "ATOMIC-VALIDATION-BOUNDARY"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Atomic\\AtomicTransactionalityTest::testMixedManagerBatchRollsBackBeforeCommit\n{\"errors\":[{\"status\":\"409\",\"code\":\"unsupported-transaction-boundary\",\"id\":\"<uuid>\",\"title\":\"Unsupported transaction boundary\",\"detail\":\"This operation spans unsupported transaction boundaries. The built-in Doctrine provider requires one EntityManager and one connection per transaction.\"}]}\nFailed asserting that 409 is identical to 422.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:105\n/srv/app/tests/Acceptance/Atomic/AtomicTransactionalityTest.php:79\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Atomic",
@@ -1534,13 +1585,14 @@
                 428
             ],
             "current_statuses": [
-                428
+                428,
+                200
             ],
-            "result": "FAIL",
+            "result": "PASS",
             "bundle_gaps": [
                 "CACHE-001"
             ],
-            "failure": "App\\Tests\\Acceptance\\Cache\\WritePreconditionsTest::testRequiredPrecondition\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'428'\n+'400'\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:99\n/srv/app/tests/Acceptance/Cache/WritePreconditionsTest.php:50\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Doctrine",
@@ -1656,11 +1708,13 @@
                 200
             ],
             "current_statuses": [
-                200
+                422
             ],
-            "result": "PASS",
-            "bundle_gaps": [],
-            "failure": null
+            "result": "FAIL",
+            "bundle_gaps": [
+                "WRITE-MODEL-SERIALIZER-METADATA"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Doctrine\\DoctrineTypesTest::testWriteTypesRoundTrip\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022views\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/views\"},\"meta\":{\"extraAttribute\":\"views\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022status\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/status\"},\"meta\":{\"extraAttribute\":\"status\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Doctrine/DoctrineTypesTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Doctrine",
@@ -1993,11 +2047,13 @@
                 200
             ],
             "current_statuses": [
-                200
+                422
             ],
-            "result": "PASS",
-            "bundle_gaps": [],
-            "failure": null
+            "result": "FAIL",
+            "bundle_gaps": [
+                "WRITE-MODEL-SERIALIZER-METADATA"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testReadAndWriteAlias\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Mapping/FieldAliasesTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Mapping",
@@ -2049,6 +2105,1152 @@
             "scenario": "testAliasValidationPointer",
             "test": "App\\Tests\\Acceptance\\Mapping\\FieldAliasesTest::testAliasValidationPointer",
             "file": "tests/Acceptance/Mapping/FieldAliasesTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAuthenticationOnGeneratedIndexAndShow with data set \"anonymous\"",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testAuthenticationOnGeneratedIndexAndShow with data set \"anonymous\"",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                401
+            ],
+            "current_statuses": [
+                401
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAuthenticationOnGeneratedIndexAndShow with data set \"invalid\"",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testAuthenticationOnGeneratedIndexAndShow with data set \"invalid\"",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                401
+            ],
+            "current_statuses": [
+                401
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReadResource with data set #0",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReadResource with data set #0",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReadResource with data set #1",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReadResource with data set #1",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReadResource with data set #2",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReadResource with data set #2",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReaderCannotMutateGeneratedRoutesOrCommand with data set \"post\"",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReaderCannotMutateGeneratedRoutesOrCommand with data set \"post\"",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReaderCannotMutateGeneratedRoutesOrCommand with data set \"patch\"",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReaderCannotMutateGeneratedRoutesOrCommand with data set \"patch\"",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReaderCannotMutateGeneratedRoutesOrCommand with data set \"delete\"",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReaderCannotMutateGeneratedRoutesOrCommand with data set \"delete\"",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReaderCannotMutateGeneratedRoutesOrCommand with data set \"publish\"",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testReaderCannotMutateGeneratedRoutesOrCommand with data set \"publish\"",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorCannotAccessAnotherOwner with data set #0",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorCannotAccessAnotherOwner with data set #0",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorCannotAccessAnotherOwner with data set #1",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorCannotAccessAnotherOwner with data set #1",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorCannotAccessAnotherOwner with data set #2",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorCannotAccessAnotherOwner with data set #2",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorCannotAccessAnotherOwner with data set #3",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorCannotAccessAnotherOwner with data set #3",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorMayEditOwnAndAdminMayManageForeignArticle",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorMayEditOwnAndAdminMayManageForeignArticle",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                200,
+                204,
+                404
+            ],
+            "current_statuses": [
+                200,
+                204,
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorCannotCreateForAnotherOwner",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorCannotCreateForAnotherOwner",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAtomicUpdateCannotBypassAuthorization",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testAtomicUpdateCannotBypassAuthorization",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAuthenticationCoversCustomRelationshipAndAtomicRoutes",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testAuthenticationCoversCustomRelationshipAndAtomicRoutes",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                401
+            ],
+            "current_statuses": [
+                401
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorCannotTakeOwnershipThroughAuthorIdentityOrInverseLinkage",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testEditorCannotTakeOwnershipThroughAuthorIdentityOrInverseLinkage",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAtomicDeniedLaterOperationRollsBackEarlierAllowedEdit",
+            "test": "App\\Tests\\Acceptance\\Production\\AuthorizationTest::testAtomicDeniedLaterOperationRollsBackEarlierAllowedEdit",
+            "file": "tests/Acceptance/Production/AuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testTwoEditorsWithSameEtagOnlyFirstCanPersist",
+            "test": "App\\Tests\\Acceptance\\Production\\ConcurrencyAndAtomicTest::testTwoEditorsWithSameEtagOnlyFirstCanPersist",
+            "file": "tests/Acceptance/Production/ConcurrencyAndAtomicTest.php",
+            "expected_statuses": [
+                200,
+                412
+            ],
+            "current_statuses": [
+                200,
+                412
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAtomicDoesNotInventPublishOperation",
+            "test": "App\\Tests\\Acceptance\\Production\\ConcurrencyAndAtomicTest::testAtomicDoesNotInventPublishOperation",
+            "file": "tests/Acceptance/Production/ConcurrencyAndAtomicTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAtomicHrefCannotInvokeCustomCommand",
+            "test": "App\\Tests\\Acceptance\\Production\\ConcurrencyAndAtomicTest::testAtomicHrefCannotInvokeCustomCommand",
+            "file": "tests/Acceptance/Production/ConcurrencyAndAtomicTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testOverlappingIfMatchWritesHaveExactlyOneWinner",
+            "test": "App\\Tests\\Acceptance\\Production\\ConcurrencyAndAtomicTest::testOverlappingIfMatchWritesHaveExactlyOneWinner",
+            "file": "tests/Acceptance/Production/ConcurrencyAndAtomicTest.php",
+            "expected_statuses": [
+                200,
+                412
+            ],
+            "current_statuses": [
+                200,
+                412
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testPublicProfileSupportsConstructorInjectedUserContext",
+            "test": "App\\Tests\\Acceptance\\Production\\ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext",
+            "file": "tests/Acceptance/Production/ExtensibilityTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "EXTENSIBILITY-PROFILE-DI"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Production\\ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext\nA public profile with an injected application context must boot: Profile validation failed with 10 error(s):\n\n\u2717 [urn:example:injectable-profile] audit-logs: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] categories: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] tags: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] subscriptions: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] newsletters: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] authors: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] articles: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] comments: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] article-summaries: Profile 'urn:example:injectable-profile' not found in profile registry\n\u2717 [urn:example:injectable-profile] author-publishing-statistics: Profile 'urn:example:injectable-profile' not found in profile registry\n\nFix these errors before deploying to production.\nFailed asserting that 'Profile validation failed with 10 error(s):\\n\n\\n\n\u2717 [urn:example:injectable-profile] audit-logs: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] categories: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] tags: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] subscriptions: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] newsletters: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] authors: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] articles: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] comments: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] article-summaries: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\u2717 [urn:example:injectable-profile] author-publishing-statistics: Profile 'urn:example:injectable-profile' not found in profile registry\\n\n\\n\nFix these errors before deploying to production.' is null.\n\n/srv/app/tests/Acceptance/Production/ExtensibilityTest.php:24\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Production",
+            "scenario": "testApplicationDomainEventAndTransactionalRecorder",
+            "test": "App\\Tests\\Acceptance\\Production\\LifecycleTest::testApplicationDomainEventAndTransactionalRecorder",
+            "file": "tests/Acceptance/Production/LifecycleTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testBundleLifecycleNotificationIsObservable",
+            "test": "App\\Tests\\Acceptance\\Production\\LifecycleTest::testBundleLifecycleNotificationIsObservable",
+            "file": "tests/Acceptance/Production/LifecycleTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorJourney",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testEditorJourney",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                200,
+                201
+            ],
+            "current_statuses": [
+                200,
+                201
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testPublicationPersistsRepresentationAndSideEffect",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testPublicationPersistsRepresentationAndSideEffect",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testBusinessErrorsHaveNoSideEffect with data set \"archived\"",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testBusinessErrorsHaveNoSideEffect with data set \"archived\"",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                409
+            ],
+            "current_statuses": [
+                409
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testBusinessErrorsHaveNoSideEffect with data set \"missing content\"",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testBusinessErrorsHaveNoSideEffect with data set \"missing content\"",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testUnknownOrMalformedArticle with data set #0",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testUnknownOrMalformedArticle with data set #0",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testUnknownOrMalformedArticle with data set #1",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testUnknownOrMalformedArticle with data set #1",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testUnknownOrMalformedArticle with data set #2",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testUnknownOrMalformedArticle with data set #2",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testRepeatOfPublishedFixtureIsIdempotent",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testRepeatOfPublishedFixtureIsIdempotent",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testCustomActionNegotiatesMediaType",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testCustomActionNegotiatesMediaType",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                406
+            ],
+            "current_statuses": [
+                406
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testFailedDatabaseWriteRollsBackPublicationAndRecorder",
+            "test": "App\\Tests\\Acceptance\\Production\\PublishArticleTest::testFailedDatabaseWriteRollsBackPublicationAndRecorder",
+            "file": "tests/Acceptance/Production/PublishArticleTest.php",
+            "expected_statuses": [
+                500
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testScopeComposesWithFilterSortPageIncludeAndFieldsets",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testScopeComposesWithFilterSortPageIncludeAndFieldsets",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testDefaultIndexScopeAndAdminAccess",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testDefaultIndexScopeAndAdminAccess",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testClientFilterCannotOverrideScope",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testClientFilterCannotOverrideScope",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testSearchMatchesTitleAndContent",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testSearchMatchesTitleAndContent",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200,
+                207
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testInvalidSearchInput with data set #0",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testInvalidSearchInput with data set #0",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testInvalidSearchInput with data set #1",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testInvalidSearchInput with data set #1",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testInvalidSearchInput with data set #2",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testInvalidSearchInput with data set #2",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                400
+            ],
+            "current_statuses": [
+                400
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testSearchUsesBoundLiteralValues with data set #0",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testSearchUsesBoundLiteralValues with data set #0",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testSearchUsesBoundLiteralValues with data set #1",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testSearchUsesBoundLiteralValues with data set #1",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testSearchUsesBoundLiteralValues with data set #2",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testSearchUsesBoundLiteralValues with data set #2",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProjectionUsesSameOwnershipScope",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testProjectionUsesSameOwnershipScope",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200,
+                403
+            ],
+            "current_statuses": [
+                200,
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testRelatedCollectionCannotLeakForeignArticles",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "QUERY-SCOPE-GRAPH"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles\nRelated collections must honor the same application scope as INDEX.\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 []\n+Array &0 [\n+    0 => '9',\n+    1 => '10',\n+    2 => '11',\n+    3 => '12',\n+]\n\n/srv/app/tests/Acceptance/Production/QueryScopeTest.php:76\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Production",
+            "scenario": "testIncludesCannotLeakForeignArticles",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testIncludesCannotLeakForeignArticles",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "QUERY-SCOPE-GRAPH"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testIncludesCannotLeakForeignArticles\nIncludes must honor the application-owned Article scope.\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 []\n+Array &0 [\n+    0 => '9',\n+    1 => '10',\n+    2 => '11',\n+    3 => '12',\n+]\n\n/srv/app/tests/Acceptance/Production/QueryScopeTest.php:85\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Production",
+            "scenario": "testRelationshipLinkageCannotLeakForeignIdentifiers",
+            "test": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers",
+            "file": "tests/Acceptance/Production/QueryScopeTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "QUERY-SCOPE-GRAPH"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Production\\QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers\nLinkage must be scoped before pagination, not just existence-checked.\nFailed asserting that two arrays are identical.\n--- Expected\n+++ Actual\n@@ @@\n-Array &0 []\n+Array &0 [\n+    0 => Array &1 [\n+        'type' => 'articles',\n+        'id' => '9',\n+    ],\n+    1 => Array &2 [\n+        'type' => 'articles',\n+        'id' => '10',\n+    ],\n+    2 => Array &3 [\n+        'type' => 'articles',\n+        'id' => '11',\n+    ],\n+    3 => Array &4 [\n+        'type' => 'articles',\n+        'id' => '12',\n+    ],\n+]\n\n/srv/app/tests/Acceptance/Production/QueryScopeTest.php:94\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Production",
+            "scenario": "testAggregateResourceIsIndependentOfDoctrineWriteModel",
+            "test": "App\\Tests\\Acceptance\\Production\\ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel",
+            "file": "tests/Acceptance/Production/ReadModelTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                500
+            ],
+            "result": "FAIL",
+            "bundle_gaps": [
+                "CUSTOM-ACTION-READ-MODEL"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Production\\ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal Server Error\",\"detail\":\"Unable to generate a URL for the named route \\u0022jsonapi.author-publishing-statistics.show\\u0022 as such route does not exist.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Production/ReadModelTest.php:17\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+        },
+        {
+            "area": "Production",
+            "scenario": "testAggregateAuthorization",
+            "test": "App\\Tests\\Acceptance\\Production\\ReadModelTest::testAggregateAuthorization",
+            "file": "tests/Acceptance/Production/ReadModelTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testReadModelHasNoGeneratedWriteRoutes",
+            "test": "App\\Tests\\Acceptance\\Production\\ReadModelTest::testReadModelHasNoGeneratedWriteRoutes",
+            "file": "tests/Acceptance/Production/ReadModelTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testUnknownAuthorHasControlledError",
+            "test": "App\\Tests\\Acceptance\\Production\\ReadModelTest::testUnknownAuthorHasControlledError",
+            "file": "tests/Acceptance/Production/ReadModelTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorMayAddAndRemoveTags",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testEditorMayAddAndRemoveTags",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testRelationshipPolicy with data set \"editor cannot change author\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testRelationshipPolicy with data set \"editor cannot change author\"",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testRelationshipPolicy with data set \"editor cannot assign another editor\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testRelationshipPolicy with data set \"editor cannot assign another editor\"",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testRelationshipPolicy with data set \"reader cannot add tag\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testRelationshipPolicy with data set \"reader cannot add tag\"",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testRelationshipPolicy with data set \"reader cannot remove tag\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testRelationshipPolicy with data set \"reader cannot remove tag\"",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEditorMayAssignSelfAndAdminMayChangeAuthor",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testEditorMayAssignSelfAndAdminMayChangeAuthor",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testTargetExistenceIsStillChecked",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testTargetExistenceIsStillChecked",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testEmbeddedRelationshipWriteCannotBypassPolicy",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testEmbeddedRelationshipWriteCannotBypassPolicy",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAtomicRelationshipCannotBypassPolicy",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testAtomicRelationshipCannotBypassPolicy",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testTagTargetMustExistAsWellAsBeingPermitted",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testTagTargetMustExistAsWellAsBeingPermitted",
+            "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
+            "expected_statuses": [
+                404
+            ],
+            "current_statuses": [
+                404
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnCreate with data set \"creation time\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnCreate with data set \"creation time\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnCreate with data set \"update time\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnCreate with data set \"update time\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnCreate with data set \"counter\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnCreate with data set \"counter\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnCreate with data set \"publication time\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnCreate with data set \"publication time\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnCreate with data set \"state\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnCreate with data set \"state\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnUpdate with data set \"creation time\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnUpdate with data set \"creation time\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnUpdate with data set \"update time\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnUpdate with data set \"update time\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnUpdate with data set \"counter\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnUpdate with data set \"counter\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnUpdate with data set \"publication time\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnUpdate with data set \"publication time\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testProtectedFieldsOnUpdate with data set \"state\"",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testProtectedFieldsOnUpdate with data set \"state\"",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testAtomicCannotWritePublicationState",
+            "test": "App\\Tests\\Acceptance\\Production\\WriteSurfaceTest::testAtomicCannotWritePublicationState",
+            "file": "tests/Acceptance/Production/WriteSurfaceTest.php",
             "expected_statuses": [
                 422
             ],
@@ -4009,7 +5211,7 @@
             "bundle_gaps": [
                 "QUERY-002"
             ],
-            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"draft\",\"metadata\":{\"sequence\":3,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-03T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:60\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:95\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:106\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": "App\\Tests\\Acceptance\\Query\\QueryValidationTest::testExcessiveFilterDepthIsRejected\n{\"jsonapi\":{\"version\":\"1.1\"},\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\",\"first\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=1\\u0026page%5Bsize%5D=5\",\"last\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=3\\u0026page%5Bsize%5D=5\",\"next\":\"http:\\/\\/localhost\\/api\\/articles?page%5Bnumber%5D=2\\u0026page%5Bsize%5D=5\"},\"data\":[{\"type\":\"articles\",\"id\":\"1\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-01\",\"content\":\"Body 1\",\"status\":\"draft\",\"metadata\":{\"sequence\":1,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-01T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":false,\"views\":10,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/1\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"2\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\"},\"attributes\":{\"title\":\"Shared title\",\"slug\":\"article-02\",\"content\":\"Body 2\",\"status\":\"published\",\"metadata\":{\"sequence\":2,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":\"2026-01-02T12:00:00+00:00\",\"createdAt\":\"2026-01-02T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+00:00\",\"featured\":true,\"views\":20,\"rating\":4.5},\"relationships\":{\"tags\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/tags\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/tags\"},\"data\":[{\"type\":\"tags\",\"id\":\"1\"},{\"type\":\"tags\",\"id\":\"2\"}]},\"author\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/author\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/author\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}},\"editor\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/editor\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/editor\"},\"data\":{\"type\":\"authors\",\"id\":\"2\"}},\"reviewedBy\":{\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/relationships\\/reviewedBy\",\"related\":\"http:\\/\\/localhost\\/api\\/articles\\/2\\/reviewedBy\"},\"data\":{\"type\":\"authors\",\"id\":\"1\"}}}},{\"type\":\"articles\",\"id\":\"3\",\"links\":{\"self\":\"http:\\/\\/localhost\\/api\\/articles\\/3\"},\"attributes\":{\"title\":\"Article 03\",\"slug\":\"article-03\",\"content\":\"Body 3\",\"status\":\"draft\",\"metadata\":{\"sequence\":3,\"labels\":[\"acceptance\",\"demo\"]},\"published-at\":null,\"createdAt\":\"2026-01-03T00:00:00+00:00\",\"updatedAt\":\"2026-01-15T00:00:00+\nFailed asserting that 200 is identical to 400.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:105\n/srv/app/tests/Acceptance/Query/QueryValidationTest.php:106\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Query",
@@ -4695,11 +5897,13 @@
                 201
             ],
             "current_statuses": [
-                201
+                422
             ],
-            "result": "PASS",
-            "bundle_gaps": [],
-            "failure": null
+            "result": "FAIL",
+            "bundle_gaps": [
+                "WRITE-MODEL-SERIALIZER-METADATA"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceCreateTest::testAllWritableAttributesAndRelationships\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022status\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/status\"},\"meta\":{\"extraAttribute\":\"status\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}},{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022views\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/views\"},\"meta\":{\"extraAttribute\":\"views\"}}]}\nFailed asserting that 422 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Resource/ResourceCreateTest.php:28\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Resource",
@@ -5126,11 +6330,13 @@
                 200
             ],
             "current_statuses": [
-                200
+                422
             ],
-            "result": "PASS",
-            "bundle_gaps": [],
-            "failure": null
+            "result": "FAIL",
+            "bundle_gaps": [
+                "WRITE-MODEL-SERIALIZER-METADATA"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Resource\\ResourceUpdateTest::testAttributesAndRelationshipsTogether\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022publishedAt\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/published-at\"},\"meta\":{\"extraAttribute\":\"publishedAt\"}}]}\nFailed asserting that 422 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Resource/ResourceUpdateTest.php:29\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         },
         {
             "area": "Resource",
@@ -5317,14 +6523,13 @@
             ],
             "current_statuses": [
                 201,
-                200,
-                304,
-                204,
-                404
+                422
             ],
-            "result": "PASS",
-            "bundle_gaps": [],
-            "failure": null
+            "result": "FAIL",
+            "bundle_gaps": [
+                "WRITE-MODEL-SERIALIZER-METADATA"
+            ],
+            "failure": "App\\Tests\\Acceptance\\Smoke\\RealWorldWorkflowTest::testPublishingWorkflow\n{\"errors\":[{\"status\":\"422\",\"code\":\"validation-error\",\"id\":\"<uuid>\",\"title\":\"Validation error\",\"detail\":\"Unknown attribute \\u0022status\\u0022 is not allowed.\",\"source\":{\"pointer\":\"\\/data\\/attributes\\/status\"},\"meta\":{\"extraAttribute\":\"status\"}}]}\nFailed asserting that 422 is identical to 201.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Smoke/RealWorldWorkflowTest.php:28\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
         }
     ]
 }

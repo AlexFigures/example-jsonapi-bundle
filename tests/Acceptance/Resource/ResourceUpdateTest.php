@@ -20,6 +20,8 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         self::assertSame('Changed title', $after['data']['attributes']['title']);
     }
 
+    #[Group('bundle-gap')]
+    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testAttributesAndRelationshipsTogether(): void
     {
         $payload = $this->patchPayload(['title' => 'Edited article', 'content' => 'Edited body', 'published-at' => null]);
