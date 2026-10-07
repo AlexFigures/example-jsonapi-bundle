@@ -10,6 +10,7 @@ use AlexFigures\Symfony\CustomRoute\Handler\CustomRouteHandlerInterface;
 use AlexFigures\Symfony\CustomRoute\Result\CustomRouteResult;
 use Doctrine\Persistence\ManagerRegistry;
 
+#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.explicit-type', path: '/cookbook/typed-features/{id}', handler: FeatureReadHandler::class, resourceType: 'feature-articles')]
 #[NoTransaction]
 final class FeatureReadHandler implements CustomRouteHandlerInterface
 {
@@ -21,7 +22,7 @@ final class FeatureReadHandler implements CustomRouteHandlerInterface
     {
         $transaction = $this->doctrine->getConnection('pgsql')->isTransactionActive();
         if ($context->hasResource()) {
-            return CustomRouteResult::resource($context->getResource())->withMeta(['transaction_active' => $transaction]);
+            return CustomRouteResult::resource($context->getResource())->withMeta(['transaction_active' => $transaction, 'mode' => $context->getParams()['mode'] ?? null, 'has_title' => $context->hasQueryParam('title')]);
         }
         $criteria = $context->criteria()->addFilter('title', 'eq', $context->getQueryParam('title', 'Alpha'))
             ->addCustomCondition(static function (object $qb): void {
@@ -29,6 +30,6 @@ final class FeatureReadHandler implements CustomRouteHandlerInterface
                 $qb->andWhere("$root.id > :cookbook_min_id")->setParameter('cookbook_min_id', 0);
             })->build();
         $slice = $context->getRepository()->findCollection('feature-articles', $criteria);
-        return CustomRouteResult::collection($slice->items, $slice->totalItems)->withMeta(['transaction_active' => $transaction]);
+        return CustomRouteResult::collection($slice->items, $slice->totalItems)->withMeta(['transaction_active' => $transaction, 'mode' => $context->getParams()['mode'] ?? null, 'has_title' => $context->hasQueryParam('title')]);
     }
 }

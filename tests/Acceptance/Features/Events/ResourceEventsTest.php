@@ -29,9 +29,10 @@ final class ResourceEventsTest extends AcceptanceTestCase
     }
 
     #[DataProvider('relationships')]
-    public function testRelationshipEvents(string $method, string $operation): void
+    public function testRelationshipEvents(string $method, string $operation, string $relationship): void
     {
-        $response = $this->requestJsonApi($method, $this->url().'/relationships/tags', ['data' => [$this->identifier('api', 'tags')]]);
+        $data = $relationship === 'author' ? $this->identifier('grace', 'authors') : [$this->identifier('api', 'tags')];
+        $response = $this->requestJsonApi($method, $this->url().'/relationships/'.$relationship, ['data' => $data]);
         self::assertSame(200, $response->getStatusCode());
         $events = json_decode((string) $response->headers->get('X-Cookbook-Events'), true, 512, JSON_THROW_ON_ERROR);
         self::assertContains($operation, array_column($events, 'operation'));
@@ -41,9 +42,9 @@ final class ResourceEventsTest extends AcceptanceTestCase
 
     public static function relationships(): iterable
     {
-        yield 'replace' => ['PATCH', 'replace'];
-        yield 'add' => ['POST', 'add'];
-        yield 'remove' => ['DELETE', 'remove'];
+        yield 'replace to-one' => ['PATCH', 'replace', 'author'];
+        yield 'add' => ['POST', 'add', 'tags'];
+        yield 'remove' => ['DELETE', 'remove', 'tags'];
     }
     public function testRejectedMutationProducesNoResourceNotification(): void
     {
@@ -51,6 +52,10 @@ final class ResourceEventsTest extends AcceptanceTestCase
         $this->assertJsonApiError($response, 422);
         $events = json_decode((string) $response->headers->get('X-Cookbook-Events', '[]'), true, 512, JSON_THROW_ON_ERROR);
         self::assertSame([], $events);
+        $response = $this->requestJsonApi('POST', $this->url().'/relationships/tags', ['data' => [['type' => 'tags', 'id' => '999999']]]);
+        $this->assertJsonApiError($response, 404);
+        $events = json_decode((string) $response->headers->get('X-Cookbook-Events', '[]'), true, 512, JSON_THROW_ON_ERROR);
+        self::assertSame([], $events, 'Failed association persistence must not emit committed relationship events.');
     }
 
 }

@@ -11,8 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 #[Group('extreme')]
 final class PaginationUnderJoinsTest extends TortureTestCase
 {
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('SCALABILITY-JOIN-PAGINATION')]
     public function testCartesianJoinsPaginateDistinctRoots(): void
     {
         $seen = [];

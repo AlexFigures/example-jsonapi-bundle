@@ -1,0 +1,11 @@
+imports:
+    - { resource: '../features_audit/config.yaml' }
+jsonapi:
+    profiles:
+        per_type:
+            feature-audit-notes: ['urn:jsonapi:profile:audit-trail']
+        audit_trail:
+            created_at: insertedAt
+            updated_at: modifiedAt
+            created_by: insertedBy
+            updated_by: modifiedBy

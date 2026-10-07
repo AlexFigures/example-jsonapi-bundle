@@ -10,12 +10,11 @@ use PHPUnit\Framework\Attributes\Group;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
+use Symfony\Component\Console\Tester\ApplicationTester;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 final class PublicConfigurationTest extends KernelTestCase
 {
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DX-PROFILE-COMMAND')]
     public function testProfileValidationCommandRunsFromConsumerContainer(): void
     {
         $kernel = self::bootKernel(['environment' => 'test', 'debug' => false]);
@@ -44,5 +43,20 @@ final class PublicConfigurationTest extends KernelTestCase
         yield 'docs theme' => ['features_invalid_theme', 'theme'];
         yield 'provider' => ['features_invalid_provider', 'provider'];
         yield 'linkage mode' => ['features_invalid_linkage', 'linkage_in_resource'];
+    }    #[DataProvider('invalidProfiles')]
+    public function testProfileValidationCommandRejectsUnknownAndInvalidAssignments(string $environment, string $diagnostic): void
+    {
+        $kernel = self::bootKernel(['environment' => $environment, 'debug' => false]);
+        $application = new Application($kernel);
+        $application->setAutoExit(false);
+        $tester = new ApplicationTester($application);
+        self::assertSame(1, $tester->run(['command' => 'jsonapi:validate-profiles']), $tester->getDisplay());
+        self::assertStringContainsString($diagnostic, $tester->getDisplay());
     }
+    public static function invalidProfiles(): iterable
+    {
+        yield 'unknown profile' => ['features_profile_unknown', 'urn:example:profile:unregistered'];
+        yield 'invalid requirements' => ['features_profile_requirements', 'feature-articles'];
+    }
+
 }

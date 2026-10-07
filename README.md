@@ -29,21 +29,10 @@ with a real identity provider. Run `composer test:production` for working publis
 contracts and `composer test:production:gaps` for missing capabilities. The
 walkthrough explains the responsibility boundaries; use the generated status report for currently open gaps.
 
-### B. I want to verify bundle behavior
-
-Use [tests/Acceptance](tests/Acceptance), [ACCEPTANCE.md](ACCEPTANCE.md),
-[acceptance-status.md](docs/acceptance-status.md), and the generated
-[matrix](docs/acceptance-matrix.md). `test` preserves the original protocol fixture
-surface; `publishing` exercises authentication and safe inputs against disposable
-test databases. Full-suite failures remain visible and classified.
-
 ### Feature cookbook
 
-Latest dependency verification: [remaining gaps and resolved contracts](docs/bundle-refresh.md).
-
-Start with the [public feature matrix](docs/feature-coverage.md),
-[OpenAPI comparison](docs/openapi-coverage.md), [configuration/DX audit](docs/configuration-dx-audit.md), [PR #67 checklist](docs/pr67-verification.md), and [feature iteration report](docs/feature-iteration.md).
-A passing example and a failing bundle contract have different labels in the reports.
+Use these application files and HTTP examples to learn the normal public integration.
+Release evidence and known gaps are linked in the verification path below.
 
 | Area | Application example | HTTP contract |
 |---|---|---|
@@ -74,6 +63,40 @@ Run `composer test:features` for all feature assertions (including known failure
 `composer test:features:gaps` selects marked contracts; these remain executable failures.
 The `features*` environments use disposable test databases and isolate configuration variants.
 The in-memory provider is enabled only in its dedicated environment; it is not a fallback for Doctrine defects.
+
+### Developing and verifying the bundle
+
+The fixed release workflow runs on the host (Python 3 + Docker Compose):
+
+```bash
+python3 tools/release-gate.py --run --update
+```
+
+It updates only the Composer dependency, resets generated test caches, runs full
+Acceptance (including Production and Features) and Torture, regenerates reports,
+and removes resolved gap markers while preserving assertions. Logs remain in
+`var/release-acceptance.log` and `var/release-torture.log`. Exit 1 means executable
+P0/P1 blockers or stale markers; exit 2 means incomplete/unclassified evidence.
+A green runtime gate still requires public API design review.
+
+Read [release gate](docs/release-gate.md), [current observed gaps](docs/current-gaps.json),
+[API freeze review](docs/public-api-freeze.md), then [Acceptance](ACCEPTANCE.md),
+[feature coverage](docs/feature-coverage.md), [reviewed contract boundaries](docs/feature-review.json), [coverage status meanings](docs/coverage-status.md), and [Torture](TORTURE.md).
+
+The [bundle implementation handoff](docs/bundle-implementation-gaps.md) is generated
+from current release evidence and lists the remaining gaps to implement before 1.0.
+The [228-entry PARTIAL review](docs/partial-review.md) records the outcome and
+consumer evidence for every entry in the original review set.
+[Historical metadata](docs/gap-history.json) does not classify fixed assertions as active gaps.
+To regenerate a summary from complete existing reports: `python3 tools/release-gate.py`.
+
+### B. I want to verify bundle behavior
+
+Use [tests/Acceptance](tests/Acceptance), [ACCEPTANCE.md](ACCEPTANCE.md),
+[acceptance-status.md](docs/acceptance-status.md), and the generated
+[matrix](docs/acceptance-matrix.md). `test` preserves the original protocol fixture
+surface; `publishing` exercises authentication and safe inputs against disposable
+test databases. Full-suite failures remain visible and classified.
 
 ### C. I want to inspect production edge cases
 

@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicValidationTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('ATOMIC-003')]
     public function testRefCannotContainBothIdAndLid(): void
     {
         // EXPECTED_BUNDLE_GAP ATOMIC-003: id and lid are exclusive target alternatives.
@@ -42,7 +41,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('hrefsBundleGaps')]
-    #[ExpectedBundleGap('ATOMIC-006', ['#1'])]
     public function testInvalidHrefBundleGap(string $href): void
     {
         $this->assertJsonApiError($this->atomic([['op' => 'remove', 'href' => $href]]), 400, '/atomic:operations/0/href');
@@ -53,7 +51,6 @@ final class AtomicValidationTest extends AcceptanceTestCase
         yield ['/outside/articles/1']; yield ['/api/articles/1/trailing']; yield ['%broken']; yield ['https://other.example/api/articles/1'];
     }
 
-    #[ExpectedBundleGap('ATOMIC-005')]
     public function testSameOriginAbsoluteHref(): void
     {
         $this->decodeJsonApi($this->atomic([['op' => 'update', 'href' => 'http://localhost'.$this->url(), 'data' => $this->patchPayload(['title' => 'Absolute target'])['data']]]));
@@ -61,14 +58,12 @@ final class AtomicValidationTest extends AcceptanceTestCase
         self::assertSame('Absolute target', $doc['data']['attributes']['title']);
     }
 
-    #[ExpectedBundleGap('ATOMIC-005')]
     public function testRelativeUriReference(): void
     {
         $this->decodeJsonApi($this->atomic([['op' => 'update', 'href' => 'articles/'.$this->ids['article-1'], 'data' => $this->patchPayload(['title' => 'Relative target'])['data']]]));
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', $this->url()));
         self::assertSame('Relative target', $doc['data']['attributes']['title']);
     }
-    #[ExpectedBundleGap('ATOMIC-010')]
     public function testAtomicClientIdPolicyMatchesOrdinaryCreates(): void
     {
         $data = $this->articlePayload()['data'];
@@ -76,28 +71,24 @@ final class AtomicValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->atomic([['op' => 'add', 'href' => '/api/articles', 'data' => $data]]), 403);
     }
 
-    #[ExpectedBundleGap('ATOMIC-009')]
     public function testAtomicReadonlyResourceCannotBeWritten(): void
     {
         $op = ['op' => 'update', 'ref' => $this->identifier('audit', 'audit-logs'), 'data' => ['type' => 'audit-logs', 'id' => $this->ids['audit'], 'attributes' => ['message' => 'Must not write']]];
         $this->assertJsonApiError($this->atomic([$op]), 403);
     }
 
-    #[ExpectedBundleGap('ATOMIC-011')]
     public function testAtomicUnknownAttributeIsRejected(): void
     {
         $data = $this->patchPayload(['secret' => 'Must not write'])['data'];
         $this->assertJsonApiError($this->atomic([['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $data]]), 400, '/atomic:operations/0/data/attributes/secret');
     }
 
-    #[ExpectedBundleGap('ATOMIC-011')]
     public function testAtomicFailurePointerIdentifiesOperationAndExternalField(): void
     {
         $data = $this->patchPayload(['title' => 'x'])['data'];
         $this->assertJsonApiError($this->atomic([['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $data]]), 422, '/atomic:operations/0/data/attributes/title');
     }
 
-    #[ExpectedBundleGap('ATOMIC-007')]
     public function testEmptyAtomicResultsMustBeObjects(): void
     {
         $response = $this->atomic([['op' => 'remove', 'ref' => $this->identifier('article-1', 'articles')]]);

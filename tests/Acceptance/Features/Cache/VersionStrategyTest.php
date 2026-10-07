@@ -11,8 +11,6 @@ final class VersionStrategyTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_cache_version'; }
     #[DataProvider('versions')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CACHE-VERSION-STRATEGY')]
     public function testConfiguredVersionStrategyUsesApplicationVersion(string $version, ?string $etag): void
     {
         $response = $this->requestJsonApi('GET', '/cookbook/cache-version/'.$version);

@@ -46,8 +46,6 @@ final class TransactionFailureTest extends TortureTestCase
         self::assertSame('Same', $this->decodeJsonApi($this->requestJsonApi('GET', '/api/tasks/1'))['data']['attributes']['title']);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('TRANSACTION-BOUNDARY')]
     public function testCrossShardAtomicIsRejectedByBundleBeforeMutation(): void
     {
         $response = $this->atomic([

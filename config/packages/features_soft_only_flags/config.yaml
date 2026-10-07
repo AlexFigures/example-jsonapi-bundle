@@ -1,0 +1,2 @@
+imports:
+    - { resource: '../features_soft_flags/config.yaml' }

@@ -23,7 +23,6 @@ final class AtomicUpdateTest extends AcceptanceTestCase
 
     public static function targets(): iterable { yield ['ref']; yield ['href']; }
 
-    #[ExpectedBundleGap('ATOMIC-002')]
     public function testUpdateTargetFromDataWithoutRefOrHref(): void
     {
         // EXPECTED_BUNDLE_GAP ATOMIC-002: use data.type and data.id.

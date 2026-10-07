@@ -275,3 +275,14 @@ endpoint must also change the path of the Atomic media channel if one is configu
 The HTTP disable/endpoint tests also check generated OpenAPI. Standard Atomic
 resource mutations do not invoke arbitrary publishing commands; multi-connection
 distributed transactions are not promised.
+
+## Frozen profile semantics
+
+| Option | Expected contract |
+|---|---|
+| `strategy: timestamp / boolean` | Deletion writes the configured timestamp or boolean field |
+| `default_visibility: exclude / include / only` | Ordinary reads respectively omit deleted rows, retain all rows, or return only deleted rows |
+| `query_flags` | Configured `with_deleted` / `only_deleted` names change visibility; obsolete hardcoded names do not |
+| `delete_semantics: soft / hard` | Soft persists the deletion marker; hard removes the row |
+
+The existing SoftDeleteConfigurationTest matrix freezes these semantics. Default audit CREATE/UPDATE is server policy and must work without client negotiation. Synchronous events are notifications, not exactly-once external delivery. `VersionResolverInterface` selects a representation; ETag version strategy selects cache/precondition validators.

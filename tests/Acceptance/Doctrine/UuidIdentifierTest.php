@@ -53,7 +53,6 @@ final class UuidIdentifierTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/subscriptions', $payload), 409);
     }
 
-    #[ExpectedBundleGap('UUID-001')]
     public function testClientAssignedDoctrineUuidObject(): void
     {
         $id = 'a0372535-84e4-4d24-b5ad-e4c29b0ad099';
@@ -64,13 +63,11 @@ final class UuidIdentifierTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/newsletters', $payload), 409);
     }
 
-    #[ExpectedBundleGap('UUID-002')]
     public function testMalformedUuidDoesNotLeakServerError(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/newsletters/not-a-uuid'), 400);
     }
 
-    #[ExpectedBundleGap('UUID-001')]
     public function testAtomicClientAssignedDoctrineUuidObject(): void
     {
         $id = 'a0372535-84e4-4d24-b5ad-e4c29b0ad099';

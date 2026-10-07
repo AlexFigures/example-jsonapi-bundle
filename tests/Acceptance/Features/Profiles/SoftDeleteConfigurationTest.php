@@ -16,8 +16,6 @@ final class SoftDeleteConfigurationTest extends AcceptanceTestCase
     private function headers(): array { return ['Accept' => self::MEDIA.';profile="urn:jsonapi:profile:soft-delete"']; }
 
     #[DataProvider('visibility')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('PROFILE-SOFT-VISIBILITY', ['include', 'only'])]
     public function testConfiguredVisibility(int $count): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', '/api/categories?page[size]=20', headers: $this->headers()));
@@ -32,8 +30,6 @@ final class SoftDeleteConfigurationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('deleteSemantics')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('PROFILE-SOFT-DELETE-SEMANTICS', ['soft'])]
     public function testDeleteSemanticsPersistExpectedState(bool $rowRemains): void
     {
         $response = $this->requestJsonApi('DELETE', '/api/categories/'.$this->ids['leaf'], headers: $this->headers());
@@ -51,8 +47,6 @@ final class SoftDeleteConfigurationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('flags')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('PROFILE-SOFT-QUERY-FLAGS')]
     public function testConfiguredQueryFlagIsConsumedBeforeWhitelist(string $flag, int $count): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', '/api/categories?'.http_build_query(['filter' => [$flag => 'true'], 'page' => ['size' => 20]]), headers: $this->headers()));
@@ -62,5 +56,6 @@ final class SoftDeleteConfigurationTest extends AcceptanceTestCase
     public static function flags(): iterable
     {
         yield 'flags' => ['includeArchived', 4];
+        yield 'only_flags' => ['onlyArchived', 1];
     }
 }

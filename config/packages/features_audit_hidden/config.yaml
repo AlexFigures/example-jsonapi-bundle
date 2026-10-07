@@ -1,0 +1,6 @@
+imports:
+    - { resource: '../features_audit/config.yaml' }
+jsonapi:
+    profiles:
+        audit_trail:
+            expose_in_meta: false

@@ -18,8 +18,6 @@ final class OpenApiTest extends AcceptanceTestCase
         return json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-OPERATIONS')]
     public function testGeneratedResourceOperations(): void
     {
         $spec = $this->specification();
@@ -34,8 +32,6 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertArrayNotHasKey('/api/author-publishing-statistics', $spec['paths']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-OPERATIONS')]
     public function testCustomOnlyResourceDoesNotAdvertiseCrud(): void
     {
         $spec = $this->specification();
@@ -43,8 +39,6 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertArrayNotHasKey('/api/author-publishing-statistics/{id}', $spec['paths']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-INHERITANCE')]
     public function testInheritedWhitelistIsExpandedInDocumentation(): void
     {
         $spec = $this->specification();
@@ -71,8 +65,6 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertEqualsCanonicalizing(['draft', 'published', 'archived'], $attributes['status']['enum']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-WRITABLE-SCHEMA')]
     public function testReadOnlyAttributesAreNotAdvertisedAsWritable(): void
     {
         $spec = $this->specification();
@@ -81,8 +73,6 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertTrue($attributes['updatedAt']['readOnly'] ?? false);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-PAGINATION-CONFIG')]
     public function testPaginationDocumentationUsesEffectiveConfiguration(): void
     {
         $spec = $this->specification();
@@ -114,8 +104,6 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertSame([['bearerAuth' => []]], $endpoint['security']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-ENDPOINT-EXAMPLES')]
     public function testPublicEndpointExamplesArePresentInSpec(): void
     {
         $spec = $this->specification();
@@ -131,8 +119,6 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertStringContainsString('SwaggerUI', (string) $response->getContent());
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-NEGOTIATION')]
     #[DataProvider('documentationMedia')]
     public function testDocumentationAcceptsItsNativeMediaType(string $url, string $media): void
     {
@@ -144,18 +130,28 @@ final class OpenApiTest extends AcceptanceTestCase
     {
         yield 'OpenAPI native' => ['/_jsonapi/openapi.json', 'application/vnd.oai.openapi+json'];
         yield 'OpenAPI JSON' => ['/_jsonapi/openapi.json', 'application/json'];
+        yield 'Schema native' => ['/_jsonapi/schemas', 'application/schema+json'];
+        yield 'Schema JSON' => ['/_jsonapi/schemas', 'application/json'];
         yield 'UI HTML' => ['/_jsonapi/docs', 'text/html'];
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CONFIG-JSON-SCHEMA')]
     public function testEnabledJsonSchemaRouteExists(): void
     {
         $response = $this->requestJsonApi('GET', '/_jsonapi/schemas', headers: ['Accept' => '*/*']);
         self::assertSame(200, $response->getStatusCode(), 'docs.generator.json_schema.enabled defaults to true; configured route must exist.');
+        $schema = json_decode((string) $response->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        self::assertSame('https://json-schema.org/draft/2020-12/schema', $schema['$schema']);
+        self::assertNotEmpty($schema['$defs']);
+        self::assertContains('urn:example:profile:cookbook', $schema['x-jsonapi-profiles']);
+        $check = function (array $node) use (&$check, $schema): void {
+            if (isset($node['$ref']) && str_starts_with($node['$ref'], '#')) {
+                self::assertStringStartsWith('#/$defs/', $node['$ref']);
+                self::assertArrayHasKey(substr($node['$ref'], strlen('#/$defs/')), $schema['$defs']);
+            }
+            foreach ($node as $child) { if (is_array($child)) { $check($child); } }
+        };
+        $check($schema);
     }
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DOCS-OPERATIONS')]
     public function testSelectiveOperationsMatchActualCollectionAndItemRoutes(): void
     {
         $spec = $this->specification();
@@ -166,4 +162,53 @@ final class OpenApiTest extends AcceptanceTestCase
         self::assertEqualsCanonicalizing(['get', 'patch'], $methods($spec['paths']['/api/feature-records/{id}']));
     }
 
+    #[DataProvider('operationResources')]
+    public function testHttpAllowAndOpenApiAdvertiseTheSameOperations(string $type, string $id): void
+    {
+        $spec = $this->specification();
+        foreach (['/api/'.$type => '/api/'.$type, '/api/'.$type.'/{id}' => '/api/'.$type.'/'.$id] as $path => $url) {
+            $response = $this->requestJsonApi('OPTIONS', $url);
+            $documented = array_values(array_intersect(array_keys($spec['paths'][$path] ?? []), ['get', 'post', 'patch', 'delete', 'put']));
+            if ($response->getStatusCode() === 404) {
+                self::assertSame([], $documented);
+                continue;
+            }
+            self::assertSame(204, $response->getStatusCode());
+            $actual = array_values(array_intersect(array_map('strtolower', array_map('trim', explode(',', (string) $response->headers->get('Allow')))), ['get', 'post', 'patch', 'delete', 'put']));
+            self::assertEqualsCanonicalizing($actual, $documented);
+        }
+    }
+    public static function operationResources(): iterable
+    {
+        yield 'full CRUD' => ['articles', '1'];
+        yield 'read only' => ['audit-logs', '1'];
+        yield 'selective' => ['feature-records', '1'];
+        yield 'custom only' => ['author-publishing-statistics', '1'];
+    }
+    public function testEveryCustomEndpointAttributeOptionIsRepresented(): void
+    {
+        $spec = $this->specification();
+        $endpoint = $spec['paths']['/cookbook/responses/{form}']['get'];
+        self::assertSame('Application controller using the public JSON:API response factory.', $endpoint['description']);
+        $parameters = array_column($endpoint['parameters'], null, 'name');
+        self::assertSame('Response form', $parameters['form']['description']);
+        self::assertTrue($parameters['form']['required']);
+        self::assertSame('resource', $parameters['form']['example']);
+        self::assertSame(['type' => 'string'], $parameters['include']['schema']);
+        self::assertSame('articles', $parameters['include']['example']);
+        self::assertSame('uuid', $parameters['X-Cookbook']['schema']['format']);
+        self::assertSame('string', $parameters['X-Cookbook']['schema']['type']);
+        self::assertFalse($endpoint['requestBody']['required']);
+        self::assertSame('Optional application input', $endpoint['requestBody']['description']);
+        self::assertSame(['type' => 'object'], $endpoint['requestBody']['content'][self::MEDIA]['schema']);
+        self::assertSame(['type' => 'object', 'properties' => ['queued' => ['type' => 'boolean']]], $endpoint['responses']['202']['content'][self::MEDIA]['schema']);
+        $response = $endpoint['responses']['200'];
+        self::assertSame('Author representation', $response['description']);
+        self::assertSame('Sequence', $response['headers']['X-Cookbook-Sequence']['description']);
+        self::assertSame(['type' => 'integer', 'format' => 'int64'], $response['headers']['X-Cookbook-Sequence']['schema']);
+        $example = $endpoint['requestBody']['content'][self::MEDIA]['examples']['sample'];
+        self::assertSame('Example input', $example['summary']);
+        self::assertSame('An author identifier', $example['description']);
+        self::assertSame(['data' => ['type' => 'authors']], $example['value']);
+    }
 }

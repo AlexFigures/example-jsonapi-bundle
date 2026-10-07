@@ -1,0 +1,9 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    media_types:
+        default:
+            request: { allowed: ['application/json'] }
+            response: { default: 'application/json', negotiable: ['application/json', 'application/vnd.api+json'] }

@@ -50,8 +50,6 @@ final class HandlerContractTest extends AcceptanceTestCase
         self::assertFalse($doc['meta']['transaction_active']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CUSTOM-ACTION-QUERY-PARAMETER')]
     public function testApplicationQueryParameterReachesCustomHandler(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/features-query?title=Alpha'));
@@ -85,8 +83,42 @@ final class HandlerContractTest extends AcceptanceTestCase
 
     public static function forms(): iterable
     {
+        yield 'created' => ['created', 201];
+        yield 'bad request' => ['bad-request', 400];
+        yield 'forbidden' => ['forbidden', 403];
+        yield 'not found' => ['not-found', 404];
+        yield 'unprocessable' => ['unprocessable', 422];
         yield 'accepted' => ['accepted', 202];
         yield 'no content' => ['no-content', 204];
         yield 'conflict' => ['conflict', 409];
+    }
+    public function testResultModifiersAndTypePredicates(): void
+    {
+        $response = $this->requestJsonApi('POST', '/cookbook/features/'.$this->articleId.'/command/modifiers');
+        $doc = $this->decodeJsonApi($response, 203);
+        self::assertSame(['first' => true, 'second' => true], $doc['meta']);
+        self::assertSame('/cookbook/help', $doc['links']['help']);
+        self::assertSame('yes', $response->headers->get('X-Cookbook-Result'));
+        $doc = $this->decodeJsonApi($this->requestJsonApi('POST', '/cookbook/features/'.$this->articleId.'/command/checks'));
+        self::assertSame(['resource' => true, 'collection' => true, 'error' => true, 'empty' => true], $doc['meta']);
+        $doc = $this->assertJsonApiError($this->requestJsonApi('POST', '/cookbook/features/'.$this->articleId.'/command/unprocessable'), 422);
+        self::assertSame('/data/attributes/title', $doc['errors'][0]['source']['pointer']);
+        $created = $this->requestJsonApi('POST', '/cookbook/features/'.$this->articleId.'/command/created');
+        self::assertSame('/api/feature-articles/'.$this->articleId, parse_url((string) $created->headers->get('Location'), PHP_URL_PATH));
+    }
+    public function testRouteDefaultsRequirementsPriorityAndLegacyController(): void
+    {
+        $doc = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/route-options/'.$this->articleId.'?title=Alpha'));
+        self::assertSame('normal', $doc['meta']['mode']);
+        self::assertTrue($doc['meta']['has_title']);
+        self::assertSame($this->articleId, $doc['data']['id']);
+        self::assertSame(404, $this->requestJsonApi('GET', '/cookbook/route-options/not-an-id/normal')->getStatusCode());
+        self::assertSame(404, $this->requestJsonApi('GET', '/cookbook/route-options/'.$this->articleId.'/123')->getStatusCode());
+        $priority = $this->decodeJsonApi($this->requestJsonApi('GET', '/api/feature-articles/priority'));
+        self::assertSame($this->articleId, $priority['data'][0]['id']);
+        $bound = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/typed-features/'.$this->articleId));
+        self::assertSame($this->articleId, $bound['data']['id']);
+        $legacy = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/legacy/'.$this->articleId));
+        self::assertSame($this->articleId, $legacy['data']['id']);
     }
 }

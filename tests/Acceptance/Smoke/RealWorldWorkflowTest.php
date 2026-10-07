@@ -11,8 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class RealWorldWorkflowTest extends AcceptanceTestCase
 {
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testPublishingWorkflow(): void
     {
         $create = function (string $type, array $attributes): array {

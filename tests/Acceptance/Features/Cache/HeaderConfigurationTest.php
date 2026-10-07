@@ -12,8 +12,6 @@ final class HeaderConfigurationTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_cache'; }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CACHE-SURROGATE-ROUTES')]
     public function testConfiguredCacheHeadersAndSurrogateResource(): void
     {
         $response = $this->requestJsonApi('GET', $this->url());
@@ -27,8 +25,6 @@ final class HeaderConfigurationTest extends AcceptanceTestCase
         self::assertStringContainsString('item-articles-'.$this->ids['article-1'], (string) $response->headers->get('X-Cache-Tags'));
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CACHE-SURROGATE-ROUTES')]
     public function testStrongCollectionValidatorAndCollectionKey(): void
     {
         $response = $this->requestJsonApi('GET', '/api/articles');

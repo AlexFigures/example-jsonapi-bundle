@@ -18,8 +18,6 @@ final class QueryValidationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('invalidQueriesBundleGaps')]
-    #[ExpectedBundleGap('QUERY-002', ['wrong operator shape'])]
-    #[ExpectedBundleGap('ERROR-001', ['unknown filter field'])]
     public function testQueryBoundaryBundleGap(string $query, ?string $parameter): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?'.$query), 400, parameter: $parameter);
@@ -66,39 +64,32 @@ final class QueryValidationTest extends AcceptanceTestCase
         yield ['sort=title&sort=-title'];
     }
 
-    #[ExpectedBundleGap('QUERY-001')]
     public function testMalformedPageListRejected(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?page[]=1'), 400, parameter: 'page');
     }
 
-    #[ExpectedBundleGap('QUERY-001')]
     public function testScalarPageRejected(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?page=1'), 400, parameter: 'page');
     }
 
-    #[ExpectedBundleGap('FILTER-005')]
     public function testEmptyInMatchesNothing(): void
     {
         $doc = $this->collection(['filter' => ['views' => ['in' => '']]]);
         self::assertSame([], $doc['data']);
     }
 
-    #[ExpectedBundleGap('FILTER-005')]
     public function testEmptyNotInMatchesEverything(): void
     {
         $doc = $this->collection(['filter' => ['views' => ['nin' => '']], 'page' => ['size' => 20]]);
         self::assertCount(12, $doc['data']);
     }
 
-    #[ExpectedBundleGap('QUERY-002')]
     public function testWrongIntegerOperandProducesClientError(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?filter[views][gt]=not-an-integer'), 400, parameter: 'filter');
     }
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('QUERY-002')]
     public function testExcessiveFilterDepthIsRejected(): void
     {
         $filter = ['views' => 10];
@@ -106,7 +97,6 @@ final class QueryValidationTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?'.http_build_query(['filter' => $filter])), 400, parameter: 'filter');
     }
 
-    #[ExpectedBundleGap('FILTER-002')]
     public function testBetweenRejectsExtraOperand(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/articles?filter[views][between][]=10&filter[views][between][]=20&filter[views][between][]=30'), 400, parameter: 'filter');

@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class DoctrineConstraintsTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('DOCTRINE-001')]
     public function testUniqueConstraintOnCreate(): void
     {
         $response = $this->requestJsonApi('POST', '/api/articles', $this->articlePayload(['slug' => 'article-01']));
@@ -20,7 +19,6 @@ final class DoctrineConstraintsTest extends AcceptanceTestCase
         self::assertCount(1, $doc['data']);
     }
 
-    #[ExpectedBundleGap('DOCTRINE-001')]
     public function testUniqueConstraintOnUpdate(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('PATCH', $this->url(), $this->patchPayload(['slug' => 'article-02'])), 409);
@@ -28,21 +26,18 @@ final class DoctrineConstraintsTest extends AcceptanceTestCase
         self::assertSame('article-01', $doc['data']['attributes']['slug']);
     }
 
-    #[ExpectedBundleGap('RELATIONSHIP-001')]
     public function testMissingRelationshipReference(): void
     {
         $payload = $this->articlePayload([], ['author' => ['data' => ['type' => 'authors', 'id' => '999999']]]);
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/articles', $payload), 404, '/data/relationships/author/data/id');
     }
 
-    #[ExpectedBundleGap('RELATIONSHIP-002')]
     public function testWrongRelationshipType(): void
     {
         $payload = $this->articlePayload([], ['author' => ['data' => $this->identifier('php', 'tags')]]);
         $this->assertJsonApiError($this->requestJsonApi('POST', '/api/articles', $payload), 409, '/data/relationships/author/data/type');
     }
 
-    #[ExpectedBundleGap('RELATIONSHIP-003')]
     public function testUnknownRelationship(): void
     {
         $payload = $this->articlePayload([], ['unknown' => ['data' => null]]);

@@ -12,8 +12,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 final class NativeOperatorsTest extends AcceptanceTestCase
 {
     #[DataProvider('nullOperators')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('FILTER-PUBLIC-NULL-NAMES')]
     public function testDocumentedNullOperatorNames(string $operator, array $sequences): void
     {
         $doc = $this->collection(['filter' => ['published-at' => [$operator => 'true']], 'sort' => 'views', 'page' => ['size' => 20]]);

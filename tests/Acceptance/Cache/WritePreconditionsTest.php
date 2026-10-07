@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class WritePreconditionsTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('CACHE-001')]
     public function testMatchingIfMatchAllowsUpdate(): void
     {
         $etag = $this->requestJsonApi('GET', $this->url())->headers->get('ETag');
@@ -19,7 +18,6 @@ final class WritePreconditionsTest extends AcceptanceTestCase
         self::assertSame('Concurrent update', $doc['data']['attributes']['title']);
     }
 
-    #[ExpectedBundleGap('CACHE-001')]
     public function testStaleIfMatchRejectsWithoutChangingState(): void
     {
         $response = $this->requestJsonApi('PATCH', $this->url(), $this->patchPayload(['title' => 'Must never persist']), ['If-Match' => '"stale"']);
@@ -28,7 +26,6 @@ final class WritePreconditionsTest extends AcceptanceTestCase
         self::assertSame('Shared title', $doc['data']['attributes']['title']);
     }
 
-    #[ExpectedBundleGap('CACHE-001')]
     public function testStaleIfMatchDoesNotDelete(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('DELETE', $this->url(), headers: ['If-Match' => '"stale"']), 412, header: 'If-Match');
@@ -40,8 +37,6 @@ final class WritePreconditionsTest extends AcceptanceTestCase
         $this->decodeJsonApi($this->requestJsonApi('PATCH', $this->url(), $this->patchPayload(['title' => 'Wildcard update']), ['If-Match' => '*']));
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CACHE-001')]
     public function testRequiredPrecondition(): void
     {
         // Activate the bundle's public configuration in a fresh kernel.

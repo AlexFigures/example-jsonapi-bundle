@@ -10,8 +10,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class ReadModelTest extends ProductionTestCase
 {
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CUSTOM-ACTION-READ-MODEL')]
     public function testAggregateResourceIsIndependentOfDoctrineWriteModel(): void
     {
         $doc = $this->decodeJsonApi($this->asUser('editor-a', 'GET', $this->url('ada', 'authors').'/publishing-statistics'));

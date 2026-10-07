@@ -22,8 +22,6 @@ final class AuditIdentityTest extends AcceptanceTestCase
         self::assertSame($updated['attributes'], $this->decodeJsonApi($this->requestJsonApi('GET', $url))['data']['attributes']);
         $this->assertJsonApiError($this->requestJsonApi('PATCH', $url, ['data' => ['type' => 'feature-memos', 'id' => $created['id'], 'attributes' => ['createdBy' => 'forged']]], ['Authorization' => 'Bearer editor-a', 'Accept' => self::MEDIA.';profile="urn:jsonapi:profile:audit-trail"']), 422);
     }
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('PROFILE-AUDIT-META')]
     public function testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('POST', '/api/feature-memos', ['data' => ['type' => 'feature-memos', 'attributes' => ['title' => 'Audit metadata memo']]], ['Authorization' => 'Bearer editor-a', 'Accept' => self::MEDIA.';profile="urn:jsonapi:profile:audit-trail"']), 201);
@@ -31,12 +29,16 @@ final class AuditIdentityTest extends AcceptanceTestCase
         self::assertStringContainsString('ada@example.test', json_encode($doc['data']['meta'], JSON_THROW_ON_ERROR));
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('PROFILE-DEFAULT-WRITE')]
     public function testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('POST', '/api/feature-memos', ['data' => ['type' => 'feature-memos', 'attributes' => ['title' => 'Default audit memo']]], ['Authorization' => 'Bearer editor-a']), 201);
         self::assertSame('ada@example.test', $doc['data']['attributes']['createdBy']);
+        self::assertNotEmpty($doc['data']['attributes']['createdAt']);
+        $id = $doc['data']['id'];
+        $updated = $this->decodeJsonApi($this->requestJsonApi('PATCH', '/api/feature-memos/'.$id, ['data' => ['type' => 'feature-memos', 'id' => $id, 'attributes' => ['title' => 'Default audit update']]], ['Authorization' => 'Bearer editor-b']))['data'];
+        self::assertSame('ada@example.test', $updated['attributes']['createdBy']);
+        self::assertSame('grace@example.test', $updated['attributes']['updatedBy']);
+        self::assertNotEmpty($updated['attributes']['updatedAt']);
     }
 
 }

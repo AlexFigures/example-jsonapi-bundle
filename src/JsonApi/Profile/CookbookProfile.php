@@ -8,7 +8,7 @@ use AlexFigures\Symfony\Profile\ProfileInterface;
 use AlexFigures\Symfony\Profile\ProfileContext;
 use AlexFigures\Symfony\Profile\Descriptor\ProfileDescriptor;
 use AlexFigures\Symfony\Profile\Validation\ProfileRequirements;
-use AlexFigures\Symfony\Profile\Hook\{DocumentHook, QueryHook, ReadHook, WriteHook, RelationshipHook, FetchPlanHookInterface};
+use AlexFigures\Symfony\Profile\Hook\{DocumentHook, QueryHook, ReadHook, WriteHook, RelationshipHook, ResourceMetaHookInterface, FilterParameterProviderInterface, RelationshipFetchRequirementsHookInterface};
 use AlexFigures\Symfony\Contract\Data\{ChangeSet, ResourceIdentifier};
 use AlexFigures\Symfony\Query\Criteria;
 use AlexFigures\Symfony\Resource\Metadata\ResourceMetadata;
@@ -16,18 +16,18 @@ use AlexFigures\Symfony\Http\Exception\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /** Opt-in representation policy. Mandatory authorization belongs outside negotiated profiles. */
-final class CookbookProfile implements ProfileInterface, DocumentHook, QueryHook, ReadHook, WriteHook, RelationshipHook, FetchPlanHookInterface
+final class CookbookProfile implements ProfileInterface, DocumentHook, QueryHook, ReadHook, WriteHook, RelationshipHook, ResourceMetaHookInterface, FilterParameterProviderInterface, RelationshipFetchRequirementsHookInterface
 {
     public const URI = 'urn:example:profile:cookbook';
 
     public function uri(): string { return self::URI; }
     public function descriptor(): ProfileDescriptor { return new ProfileDescriptor(self::URI, 'Cookbook hooks', '1.0'); }
     public function requirements(): ?ProfileRequirements { return null; }
-    public function hooks(): iterable { return [$this]; }
+    public function hooks(): iterable { return [$this, new CookbookCountPlan()]; }
 
     public function onParseQuery(ProfileContext $context, Request $request, Criteria $criteria): void
     {
-        $criteria->pagination->size = min(2, $criteria->pagination->size);
+        $criteria->pagination->size = min(isset($request->query->all()['filter']['cookbook_one']) ? 1 : 2, $criteria->pagination->size);
     }
 
     public function onBeforeFindCollection(ProfileContext $context, string $type, Criteria $criteria): void
@@ -40,14 +40,14 @@ final class CookbookProfile implements ProfileInterface, DocumentHook, QueryHook
         }
     }
 
-    public function onBeforeFindOne(ProfileContext $context, string $type, string $id, Criteria $criteria): void {}
+    public function onBeforeFindOne(ProfileContext $context, string $type, string $id, Criteria $criteria): void { if ($type === 'feature-memos') { throw new ForbiddenException('Cookbook profile hides memo items.'); } }
     public function onBeforeCreate(ProfileContext $context, string $type, ChangeSet $changeSet): void { $this->stamp($type, $changeSet); }
     public function onBeforeUpdate(ProfileContext $context, string $type, string $id, ChangeSet $changeSet): void { $this->stamp($type, $changeSet); }
-    public function onBeforeDelete(ProfileContext $context, string $type, string $id): void {}
+    public function onBeforeDelete(ProfileContext $context, string $type, string $id): void { if ($type === 'feature-memos') { throw new ForbiddenException('Cookbook profile protects memo deletion.'); } }
 
     private function stamp(string $type, ChangeSet $changes): void
     {
-        if ($type === 'articles' && isset($changes->attributes['title'])) {
+        if (in_array($type, ['articles', 'feature-memos'], true) && isset($changes->attributes['title'])) {
             $changes->attributes['title'] = 'Profile: '.$changes->attributes['title'];
         }
     }
@@ -65,8 +65,11 @@ final class CookbookProfile implements ProfileInterface, DocumentHook, QueryHook
             }
         }
     }
+    public function filterParameters(): array { return ['cookbook_one']; }
+    public function relationshipReads(ResourceMetadata $metadata): array { return $metadata->type === 'articles' ? array_fill_keys(array_keys($metadata->relationships), 'count') : []; }
+    public function onResourceMeta(ProfileContext $context, ResourceMetadata $metadata, array &$meta, object $model): void { $meta['cookbook_resource'] = $metadata->type; }
+
     public function onTopLevelMeta(ProfileContext $context, array &$meta): void { $meta['cookbook_profile'] = true; }
-    public function relationshipCounts(ResourceMetadata $metadata): array { return array_keys($metadata->relationships); }
 
     public function onBeforeRelReplaceToMany(ProfileContext $context, string $type, string $id, string $relationship, array $targets): void { $this->protect($relationship); }
     public function onBeforeRelReplaceToOne(ProfileContext $context, string $type, string $id, string $relationship, ?ResourceIdentifier $target): void { $this->protect($relationship); }

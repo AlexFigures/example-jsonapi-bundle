@@ -14,8 +14,6 @@ final class QueryAmplificationTest extends TortureTestCase
     public static function nodeCounts(): array { return ['100 nodes' => [100], '500 nodes' => [500], '1000 nodes' => [1000]]; }
 
     #[DataProvider('nodeCounts')]
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('SCALABILITY-FILTER-BUDGET')]
     public function testFilterNodeBudgetRejectsBeforeSql(int $nodes): void
     {
         $filter = ['or' => array_fill(0, $nodes, ['title' => 'Same'])];
@@ -23,7 +21,6 @@ final class QueryAmplificationTest extends TortureTestCase
         self::assertSame(0, $this->lastMetric()['query_count']);
     }
 
-    #[ExpectedTortureGap('SCALABILITY-FILTER-BUDGET')]
     public function testFilterDepthBudgetRejectsBeforeSql(): void
     {
         $filter = ['title' => 'Same'];
@@ -32,16 +29,12 @@ final class QueryAmplificationTest extends TortureTestCase
         self::assertSame(0, $this->lastMetric()['query_count']);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('SCALABILITY-FILTER-BUDGET')]
     public function testLargeInListCannotBypassComplexityBudget(): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/tasks?'.http_build_query(['filter' => ['title' => ['in' => array_fill(0, 500, 'Same')]]])), 400);
         self::assertSame(0, $this->lastMetric()['query_count']);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('SCALABILITY-JOIN-PAGINATION')]
     public function testReasonableBooleanAndRelationshipFilterWorks(): void
     {
         $doc = $this->collection(['filter' => ['and' => [['title' => 'Same'], ['or' => [['labels.name' => 'Label 1'], ['labels.name' => 'Label 2']]]]], 'sort' => 'id'], 'tasks');

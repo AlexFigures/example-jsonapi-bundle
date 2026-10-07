@@ -5,16 +5,21 @@ declare(strict_types=1);
 namespace App\JsonApi\DataLayer;
 
 use AlexFigures\Symfony\Contract\Data\{ResourceRepository, ResourceProcessor, RelationshipReader, Slice, SliceIds, ChangeSet};
-use AlexFigures\Symfony\Contract\Tx\TransactionManager;
+use AlexFigures\Symfony\Contract\Tx\ResourceWriteTransactionManagerInterface;
+use AlexFigures\Symfony\Contract\Data\RepresentationPreloaderInterface;
+use AlexFigures\Symfony\Query\Fetch\RelationshipReadMap;
+use Symfony\Component\HttpFoundation\Request;
 use AlexFigures\Symfony\Http\Exception\{NotFoundException, ConflictException, UnprocessableEntityException};
 use AlexFigures\Symfony\Query\{Criteria, Pagination};
 use App\FeatureMemory\MemoryArticle;
 
 /** A deterministic source, not a Doctrine adapter; reset on each kernel boot. */
-final class MemoryArticleProvider implements ResourceRepository, ResourceProcessor, RelationshipReader, TransactionManager
+final class MemoryArticleProvider implements ResourceRepository, ResourceProcessor, RelationshipReader, ResourceWriteTransactionManagerInterface, RepresentationPreloaderInterface
 {
     /** @var array<string, MemoryArticle> */
     private array $articles;
+    public array $writeScopes = [];
+    public int $preloadCalls = 0;
 
     public function __construct()
     {
@@ -99,6 +104,25 @@ final class MemoryArticleProvider implements ResourceRepository, ResourceProcess
     private function assertType(string $type): void
     {
         if ($type !== 'memory-articles') { throw new NotFoundException('The example source only serves memory-articles.'); }
+    }
+
+    public function transactionalWriteFor(string $type, string $dataClass, callable $callback): mixed
+    {
+        $this->writeScopes[] = [$type, $dataClass];
+        return $this->transactional($callback);
+    }
+
+    public function preload(string $type, array $models, Criteria $criteria, Request $request): RelationshipReadMap
+    {
+        ++$this->preloadCalls;
+        $map = new RelationshipReadMap();
+        foreach ($models as $article) {
+            $map->remember($type, $article->id, $article);
+            $targets = $article->related === null ? [] : [['type' => $type, 'id' => $article->related->id]];
+            $map->put($type, $article->id, 'related', $targets);
+            if ($article->related !== null) { $map->remember($type, $article->related->id, $article->related); }
+        }
+        return $map;
     }
 
     public function transactional(callable $callback): mixed

@@ -42,19 +42,16 @@ final class AtomicNegotiationTest extends AcceptanceTestCase
     {
         $this->decodeJsonApi($this->atomic([['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $this->patchPayload(['title' => 'Mixed atomic'])['data']]], ['Accept' => self::MEDIA.';foo=bar, '.self::ATOMIC]));
     }
-    #[ExpectedBundleGap('ATOMIC-012')]
     public function testEnabledAtomicExtensionWithStrictGlobalNegotiation(): void
     {
         $op = ['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $this->patchPayload(['title' => 'Strict atomic'])['data']];
         $this->decodeJsonApi($this->requestJsonApi('POST', '/api/strict-operations', ['atomic:operations' => [$op]], ['Content-Type' => self::ATOMIC, 'Accept' => self::ATOMIC]));
     }
 
-    #[ExpectedBundleGap('ATOMIC-013')]
     public function testWrongBaseMediaTypeWithAtomicExtIsRejected(): void
     {
         $this->assertJsonApiError($this->atomic([['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $this->patchPayload(['title' => 'Wrong media'])['data']]], ['Content-Type' => 'text/plain;ext="https://jsonapi.org/ext/atomic"']), 415);
     }
-    #[ExpectedBundleGap('ATOMIC-013')]
     public function testAtomicMediaParameterRejected(): void
     {
         $op = ['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $this->patchPayload(['title' => 'Unsupported parameter'])['data']];

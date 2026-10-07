@@ -12,8 +12,6 @@ use PHPUnit\Framework\TestCase;
 #[Group('extreme')]
 final class CompositeDiscoveryTest extends TestCase
 {
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('ARCHITECTURE-COMPOSITE-ID')]
     public function testUnsupportedCompositeIdIsRejectedDuringRouteDiscovery(): void
     {
         $kernel = new Kernel('torture_composite', false);

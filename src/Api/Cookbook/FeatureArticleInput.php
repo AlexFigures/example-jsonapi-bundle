@@ -10,4 +10,7 @@ final class FeatureArticleInput
 {
     #[Assert\Length(min: 20)]
     public string $title = '';
+
+    /** Existing resource association; generic linkage resolution stays in the bundle. */
+    public ?\App\PgEntity\Author $author = null;
 }

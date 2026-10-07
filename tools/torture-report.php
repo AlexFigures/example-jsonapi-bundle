@@ -6,6 +6,7 @@ use App\Tests\Torture\Support\ExpectedTortureGap;
 use PHPUnit\Framework\Attributes\{DataProvider, Group};
 
 require dirname(__DIR__).'/vendor/autoload.php';
+require __DIR__.'/report-evidence.php';
 $root = dirname(__DIR__);
 $xmlPath = $argv[1] ?? $root.'/var/torture/junit.xml';
 if (!is_file($xmlPath)) { throw new RuntimeException('Run the complete torture suite with --log-junit var/torture/junit.xml first.'); }
@@ -41,9 +42,20 @@ foreach (is_file($root.'/var/torture/scenarios.ndjson') ? file($root.'/var/tortu
 }
 $counts = ['PASS' => 0, 'BUNDLE_GAP' => 0, 'APPLICATION_POLICY' => 0, 'INFRASTRUCTURE_LIMIT' => 0, 'UNEXPECTED_FAILURE' => 0, 'SKIPPED' => 0];
 $scenarios = [];
+$executed = [];
 foreach (simplexml_load_file($xmlPath)->xpath('//testcase') as $test) {
     $key = (string) $test['class'].'::'.(string) $test['name'];
-    $info = $methods[explode(' with data set ', $key)[0]] ?? throw new RuntimeException('Unknown test '.$key);
+    if (isset($executed[$key])) { throw new RuntimeException('Duplicate JUnit case '.$key); }
+    $executed[$key] = true;
+    $methodKey = explode(' with data set ', $key)[0];
+    $info = $methods[$methodKey] ?? throw new RuntimeException('Unknown test '.$key);
+    $info['historical_gap_ids'] = [];
+    foreach ($gaps as $id => $gap) {
+        foreach ($gap['regression_tests'] ?? [] as $target) {
+            if ($target === $methodKey) { $info['historical_gap_ids'][] = $id; }
+        }
+    }
+    $info['historical_gap_ids'] = array_values(array_unique(array_merge($info['historical_gap_ids'], $info['gap_ids'])));
     $failed = isset($test->failure) || isset($test->error);
     $classification = isset($test->skipped) ? 'SKIPPED' : ($failed ? (in_array('torture-gap', $info['groups'], true) ? 'BUNDLE_GAP' : 'UNEXPECTED_FAILURE') : (in_array('application-policy', $info['groups'], true) ? 'APPLICATION_POLICY' : (in_array('infrastructure-limit', $info['groups'], true) ? 'INFRASTRUCTURE_LIMIT' : 'PASS')));
     if ($failed && $info['gap_ids'] !== []) {
@@ -57,7 +69,7 @@ foreach (simplexml_load_file($xmlPath)->xpath('//testcase') as $test) {
 }
 if (count($scenarios) !== $expected) { throw new RuntimeException(sprintf('Incomplete report: %d of %d cases. Run the full suite.', count($scenarios), $expected)); }
 foreach ($gaps as $id => &$gap) {
-    $matching = array_values(array_filter($scenarios, static fn (array $s): bool => in_array($id, $s['gap_ids'], true)));
+    $matching = array_values(array_filter($scenarios, static fn (array $s): bool => in_array($id, $s['historical_gap_ids'], true)));
     $gap['failing_cases'] = count(array_filter($matching, static fn (array $s): bool => $s['failure'] !== null));
     $gap['passing_cases'] = count($matching) - $gap['failing_cases'];
     $gap['status'] = $gap['failing_cases'] > 0 ? 'OPEN' : 'RESOLVED_ON_TESTED_REVISION';
@@ -67,7 +79,7 @@ foreach ($gaps as $id => &$gap) {
 unset($gap);
 $revision = Composer\InstalledVersions::getReference('alexfigures/symfony-jsonapi-bundle');
 $outcomes = array_count_values(array_column($scenarios, 'result'));
-$report = ['outcomes' => $outcomes, 'generated_at' => gmdate(DATE_ATOM), 'bundle_version' => Composer\InstalledVersions::getPrettyVersion('alexfigures/symfony-jsonapi-bundle'), 'bundle_revision' => $revision, 'counts' => $counts, 'gaps' => array_values($gaps), 'scenarios' => $scenarios];
+$report = ['evidence' => reportEvidence('torture', $xmlPath, $root.'/var/torture/scenarios.ndjson'), 'assertions' => array_sum(array_map(static fn ($test): int => (int) $test['assertions'], simplexml_load_file($xmlPath)->xpath('//testcase'))), 'outcomes' => $outcomes, 'generated_at' => gmdate(DATE_ATOM), 'bundle_version' => Composer\InstalledVersions::getPrettyVersion('alexfigures/symfony-jsonapi-bundle'), 'bundle_revision' => $revision, 'counts' => $counts, 'gaps' => array_values($gaps), 'scenarios' => $scenarios];
 file_put_contents($root.'/docs/performance-results.json', json_encode($report, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR)."\n");
 $escape = static fn (string $text): string => str_replace(["\n", '|'], [' ', '\\|'], $text);
 $markdown = "# Production torture results\n\nGenerated from complete JUnit and scenario HTTP metrics on bundle `$revision`.\n\n";
@@ -79,7 +91,7 @@ foreach ($scenarios as $scenario) {
     $values = static fn (string $key): string => implode(', ', array_column($http, $key));
     $markdown .= '| ['.$escape(substr($scenario['test'], strlen('App\\Tests\\Torture\\'))).'](../'.$scenario['file'].') | '.$scenario['result'].' / '.$scenario['classification'].' | '.$values('status').' | '.$values('query_count').' | '.$values('wall_ms').' | '.implode(', ', array_map(static fn (array $m): float => round($m['peak_bytes'] / 1048576, 1), $http)).' | '.$values('response_bytes').' | '.implode(', ', array_map(static fn (array $m): int => $m['dataset']['tasks'] ?? 0, $http))." |\n";
 }
-$markdown .= "\n## Bundle gap inventory\n\nPassing historical markers are retained as evidence, not counted as open gaps. Failure details and physical connection/transaction metrics are in `performance-results.json`.\n\n";
+$markdown .= "\n## Bundle gap inventory\n\nResolved markers are removed; regression assertions and historical test references remain. Failure details and physical connection/transaction metrics are in `performance-results.json`.\n\n";
 foreach ($gaps as $gap) {
     $markdown .= '### '.$gap['id'].' — '.$gap['status']."\n\n".$gap['category'].' · '.$gap['priority'].' · '.$gap['failing_cases']." failing cases.\n\nExpected: ".$gap['expected']."\n\nBundle subsystem: ".$gap['subsystem'].".\n\n";
     if (isset($gap['current'])) { $markdown .= 'Current interpretation: '.$gap['current']."\n\n"; }

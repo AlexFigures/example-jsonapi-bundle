@@ -9,8 +9,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class ExtensibilityTest extends ProductionTestCase
 {
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('EXTENSIBILITY-PROFILE-DI')]
     public function testPublicProfileSupportsConstructorInjectedUserContext(): void
     {
         self::ensureKernelShutdown();

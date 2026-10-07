@@ -23,8 +23,6 @@ final class TypedProviderTest extends AcceptanceTestCase
     }
 
     #[DataProvider('types')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DX-TYPED-PERSISTER-DISPATCH')]
     public function testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites(string $type, string $id, string $title): void
     {
         $response = $this->requestJsonApi('POST', '/api/'.$type, ['data' => ['type' => $type, 'attributes' => ['title' => 'Command']]]);

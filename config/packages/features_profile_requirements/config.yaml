@@ -1,0 +1,8 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    profiles:
+        per_type:
+            feature-articles: ['urn:jsonapi:profile:audit-trail']

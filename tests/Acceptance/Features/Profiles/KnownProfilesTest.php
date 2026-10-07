@@ -22,5 +22,7 @@ final class KnownProfilesTest extends AcceptanceTestCase
         self::assertSame(2, $doc['data']['relationships']['tags']['meta']['count']);
         foreach (explode(' ', $profiles) as $profile) { self::assertStringContainsString($profile, (string) $response->headers->get('Content-Type')); }
         self::assertContains('Accept', $response->getVary());
+        self::assertNotEmpty($response->headers->get('Link'));
+        self::assertStringContainsString('rel="profile"', (string) $response->headers->get('Link'));
     }
 }

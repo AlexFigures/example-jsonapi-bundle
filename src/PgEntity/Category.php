@@ -20,7 +20,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[SortableFields(['id', 'name'])]
-#[\AlexFigures\Symfony\Profile\Attribute\SoftDeletable]
+#[\AlexFigures\Symfony\Profile\Attribute\SoftDeletable(deletedByField: 'removedBy')]
 #[ORM\Entity]
 #[ORM\Table(name: 'categories')]
 #[JsonApiResource(type: 'categories', normalizationContext: ['groups' => ['categories:read']], denormalizationContext: ['groups' => ['categories:write']])]
@@ -105,6 +105,10 @@ class Category
     #[ORM\Column(type: 'datetime_immutable', nullable: true)]
     #[JsonApiAttribute, Groups(['categories:read'])]
     private ?\DateTimeImmutable $deletedAt = null;
+
+    /** Deletion actor is server-owned application audit data. */
+    #[ORM\Column(length: 255, nullable: true)]
+    public ?string $removedBy = null;
 
     public function getDeletedAt(): ?\DateTimeImmutable
     {

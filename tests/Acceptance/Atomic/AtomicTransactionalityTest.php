@@ -27,7 +27,6 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
     }
 
     #[DataProvider('failuresBundleGaps')]
-    #[ExpectedBundleGap('DOCTRINE-001', ['#1'])]
     public function testEarlierCreateIsRolledBackBundleGap(string $failure, int $status): void
     {
         $first = ['op' => 'update', 'ref' => $this->identifier('article-1', 'articles'), 'data' => $this->patchPayload(['title' => 'Must roll back'])['data']];
@@ -48,7 +47,6 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
         yield ['validation',422]; yield ['unique',409]; yield ['unknown resource',404]; yield ['invalid relationship',404];
     }
 
-    #[ExpectedBundleGap('ATOMIC-008')]
     public function testSuccessfulBatchOrderAndMixedEmptyResults(): void
     {
         $ops = [
@@ -65,7 +63,6 @@ final class AtomicTransactionalityTest extends AcceptanceTestCase
         self::assertSame('Final version', $after['data']['attributes']['title']);
         $this->assertJsonApiError($this->requestJsonApi('GET', $this->url('article-12')), 404);
     }
-    #[ExpectedBundleGap('ATOMIC-VALIDATION-BOUNDARY')]
     public function testMixedManagerBatchIsRejectedBeforeAnyMutation(): void
     {
         $ops = [

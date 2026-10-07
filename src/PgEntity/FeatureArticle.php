@@ -18,11 +18,14 @@ use Doctrine\ORM\Mapping as ORM;
 /** Isolated metadata cookbook resource; the production Article contract stays unchanged. */
 #[ORM\Entity]
 #[ORM\Table(name: 'feature_articles')]
-#[JsonApiResource(type: 'feature-articles', normalizationContext: ['groups' => ['feature:read']], denormalizationContext: ['groups' => ['feature:write']], writeRequests: ['create' => \App\Api\Cookbook\FeatureArticleInput::class], versionResolver: \App\Api\Cookbook\FeatureVersionResolver::class)]
+#[JsonApiResource(type: 'feature-articles', relationshipPolicies: ['source' => \AlexFigures\Symfony\Resource\Metadata\RelationshipLinkingPolicy::VERIFY], normalizationContext: ['groups' => ['feature:read']], denormalizationContext: ['groups' => ['feature:write']], writeRequests: ['create' => \App\Api\Cookbook\FeatureArticleInput::class, 'update' => \App\Api\Cookbook\FeatureArticleUpdateInput::class], versionResolver: \App\Api\Cookbook\FeatureVersionResolver::class)]
 #[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.read', path: '/cookbook/features/{id}/read', handler: \App\Api\Cookbook\FeatureReadHandler::class)]
 #[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.query', path: '/cookbook/features-query', handler: \App\Api\Cookbook\FeatureReadHandler::class)]
 #[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.command', path: '/cookbook/features/{id}/command/{form}', methods: ['POST'], handler: \App\Api\Cookbook\FeatureCommandHandler::class)]
 #[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.scoped', path: '/cookbook/features/{id}/scoped/{scope}', handler: \App\Api\Cookbook\ScopedTransactionHandler::class)]
+#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.options', path: '/cookbook/route-options/{id}/{mode}', handler: \App\Api\Cookbook\FeatureReadHandler::class, defaults: ['mode' => 'normal'], requirements: ['id' => '\\d+', 'mode' => '[a-z]+'], description: 'Read with route defaults and requirements', priority: 20)]
+#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.priority', path: '/api/feature-articles/priority', handler: \App\Api\Cookbook\FeatureReadHandler::class, priority: 50)]
+#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.legacy', path: '/cookbook/legacy/{id}', controller: \App\Controller\FeatureLegacyController::class)]
 #[FilterableFields([
     new FilterableField('source', inherit: true),
     new FilterableField('priority-search', operators: ['eq']),

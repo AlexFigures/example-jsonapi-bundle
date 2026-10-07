@@ -44,7 +44,6 @@ final class SortingTest extends AcceptanceTestCase
         self::assertCount(12, array_unique(array_merge(array_column($first['data'], 'id'), array_column($last['data'], 'id'))));
     }
 
-    #[ExpectedBundleGap('ALIAS-001')]
     public function testNullableAliasSort(): void
     {
         $doc = $this->collection(['sort' => 'published-at,id', 'page' => ['size' => 20]]);
@@ -52,7 +51,6 @@ final class SortingTest extends AcceptanceTestCase
         $values = array_column(array_column($doc['data'], 'attributes'), 'published-at');
         self::assertCount(6, array_filter($values, static fn ($v): bool => $v === null));
     }
-    #[ExpectedBundleGap('SORT-001')]
     public function testImplicitIdTiebreakerSurvivesUpdates(): void
     {
         $this->decodeJsonApi($this->requestJsonApi('PATCH', $this->url(), $this->patchPayload(['content' => 'Physical row changed'])));

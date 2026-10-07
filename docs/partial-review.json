@@ -1,0 +1,2293 @@
+{
+  "baseline_count": 228,
+  "baseline_features": [
+    "Contract/Data/ExistenceChecker",
+    "Contract/Data/RepresentationPreloaderInterface",
+    "Contract/Data/SliceIds",
+    "Contract/Data/WriteConcurrencyGuardInterface",
+    "Contract/Resource/ResourceMetadataInterface",
+    "Contract/Tx/ResourceWriteTransactionManagerInterface",
+    "Contract/Tx/TransactionManager",
+    "CustomRoute/Context/CustomRouteContext::criteria",
+    "CustomRoute/Context/CustomRouteContext::hasQueryParam",
+    "CustomRoute/Context/CustomRouteContext::hasResource",
+    "CustomRoute/Result/CustomRouteResult::accepted",
+    "CustomRoute/Result/CustomRouteResult::badRequest",
+    "CustomRoute/Result/CustomRouteResult::collection",
+    "CustomRoute/Result/CustomRouteResult::conflict",
+    "CustomRoute/Result/CustomRouteResult::created",
+    "CustomRoute/Result/CustomRouteResult::forbidden",
+    "CustomRoute/Result/CustomRouteResult::isCollection",
+    "CustomRoute/Result/CustomRouteResult::isError",
+    "CustomRoute/Result/CustomRouteResult::isNoContent",
+    "CustomRoute/Result/CustomRouteResult::isResource",
+    "CustomRoute/Result/CustomRouteResult::noContent",
+    "CustomRoute/Result/CustomRouteResult::notFound",
+    "CustomRoute/Result/CustomRouteResult::resource",
+    "CustomRoute/Result/CustomRouteResult::unprocessable",
+    "CustomRoute/Result/CustomRouteResult::withHeader",
+    "CustomRoute/Result/CustomRouteResult::withLinks",
+    "CustomRoute/Result/CustomRouteResult::withMeta",
+    "CustomRoute/Result/CustomRouteResult::withStatus",
+    "Docs/Attribute/OpenApiEndpoint",
+    "Docs/Attribute/OpenApiEndpoint::$deprecated",
+    "Docs/Attribute/OpenApiEndpoint::$description",
+    "Docs/Attribute/OpenApiEndpoint::$examples",
+    "Docs/Attribute/OpenApiEndpoint::$operationId",
+    "Docs/Attribute/OpenApiEndpoint::$parameters",
+    "Docs/Attribute/OpenApiEndpoint::$requestBody",
+    "Docs/Attribute/OpenApiEndpoint::$responses",
+    "Docs/Attribute/OpenApiEndpoint::$security",
+    "Docs/Attribute/OpenApiEndpoint::$summary",
+    "Docs/Attribute/OpenApiEndpoint::$tags",
+    "Docs/Attribute/OpenApiExample",
+    "Docs/Attribute/OpenApiExample::$description",
+    "Docs/Attribute/OpenApiExample::$summary",
+    "Docs/Attribute/OpenApiExample::$value",
+    "Docs/Attribute/OpenApiHeader",
+    "Docs/Attribute/OpenApiHeader::$description",
+    "Docs/Attribute/OpenApiHeader::$format",
+    "Docs/Attribute/OpenApiHeader::$type",
+    "Docs/Attribute/OpenApiParameter",
+    "Docs/Attribute/OpenApiParameter::$description",
+    "Docs/Attribute/OpenApiParameter::$example",
+    "Docs/Attribute/OpenApiParameter::$format",
+    "Docs/Attribute/OpenApiParameter::$in",
+    "Docs/Attribute/OpenApiParameter::$name",
+    "Docs/Attribute/OpenApiParameter::$required",
+    "Docs/Attribute/OpenApiParameter::$schema",
+    "Docs/Attribute/OpenApiParameter::$type",
+    "Docs/Attribute/OpenApiRequestBody",
+    "Docs/Attribute/OpenApiRequestBody::$contentType",
+    "Docs/Attribute/OpenApiRequestBody::$description",
+    "Docs/Attribute/OpenApiRequestBody::$required",
+    "Docs/Attribute/OpenApiRequestBody::$schema",
+    "Docs/Attribute/OpenApiResponse",
+    "Docs/Attribute/OpenApiResponse::$contentType",
+    "Docs/Attribute/OpenApiResponse::$description",
+    "Docs/Attribute/OpenApiResponse::$headers",
+    "Docs/Attribute/OpenApiResponse::$schema",
+    "Docs/Attribute/OpenApiResponse::$schemaRef",
+    "Filter/Handler/FilterHandlerInterface",
+    "Filter/Handler/SortHandlerInterface",
+    "Filter/Operator/AbstractOperator",
+    "Filter/Operator/BetweenOperator",
+    "Filter/Operator/EqualOperator",
+    "Filter/Operator/GreaterOrEqualOperator",
+    "Filter/Operator/GreaterThanOperator",
+    "Filter/Operator/ILikeOperator",
+    "Filter/Operator/InOperator",
+    "Filter/Operator/IsNullOperator",
+    "Filter/Operator/LessOrEqualOperator",
+    "Filter/Operator/LessThanOperator",
+    "Filter/Operator/LikeOperator",
+    "Filter/Operator/NotEqualOperator",
+    "Filter/Operator/NotInOperator",
+    "Filter/Operator/Operator",
+    "Filter/Operator/Registry",
+    "Http/Response/JsonApiResponseFactory::accepted",
+    "Http/Response/JsonApiResponseFactory::collection",
+    "Http/Response/JsonApiResponseFactory::created",
+    "Http/Response/JsonApiResponseFactory::error",
+    "Http/Response/JsonApiResponseFactory::noContent",
+    "Http/Response/JsonApiResponseFactory::resource",
+    "Http/Response/JsonApiResponseFactory::validationErrors",
+    "Profile/Attribute/Auditable",
+    "Profile/Attribute/Auditable::$createdAtField",
+    "Profile/Attribute/Auditable::$createdByField",
+    "Profile/Attribute/Auditable::$updatedAtField",
+    "Profile/Attribute/Auditable::$updatedByField",
+    "Profile/Attribute/SoftDeletable",
+    "Profile/Attribute/SoftDeletable::$deletedAtField",
+    "Profile/Attribute/SoftDeletable::$deletedByField",
+    "Profile/Hook/DocumentHook",
+    "Profile/Hook/FilterParameterProviderInterface",
+    "Profile/Hook/QueryHook",
+    "Profile/Hook/RelationshipFetchRequirementsHookInterface",
+    "Profile/Hook/ResourceMetaHookInterface",
+    "Profile/Hook/WriteHook",
+    "Profile/ProfileInterface::descriptor",
+    "Profile/ProfileInterface::hooks",
+    "Profile/ProfileInterface::requirements",
+    "Profile/ProfileInterface::uri",
+    "Resource/Attribute/Attribute",
+    "Resource/Attribute/Attribute::$name",
+    "Resource/Attribute/FilterableField",
+    "Resource/Attribute/FilterableField::$customHandler",
+    "Resource/Attribute/FilterableField::$except",
+    "Resource/Attribute/FilterableField::$field",
+    "Resource/Attribute/FilterableField::$inherit",
+    "Resource/Attribute/FilterableField::$operators",
+    "Resource/Attribute/FilterableFields",
+    "Resource/Attribute/FilterableFields::$fields",
+    "Resource/Attribute/Id",
+    "Resource/Attribute/JsonApiCustomRoute",
+    "Resource/Attribute/JsonApiCustomRoute::$controller",
+    "Resource/Attribute/JsonApiCustomRoute::$defaults",
+    "Resource/Attribute/JsonApiCustomRoute::$description",
+    "Resource/Attribute/JsonApiCustomRoute::$handler",
+    "Resource/Attribute/JsonApiCustomRoute::$methods",
+    "Resource/Attribute/JsonApiCustomRoute::$name",
+    "Resource/Attribute/JsonApiCustomRoute::$path",
+    "Resource/Attribute/JsonApiCustomRoute::$priority",
+    "Resource/Attribute/JsonApiCustomRoute::$requirements",
+    "Resource/Attribute/JsonApiCustomRoute::$resourceType",
+    "Resource/Attribute/JsonApiResource",
+    "Resource/Attribute/JsonApiResource::$dataClass",
+    "Resource/Attribute/JsonApiResource::$denormalizationContext",
+    "Resource/Attribute/JsonApiResource::$description",
+    "Resource/Attribute/JsonApiResource::$exposeId",
+    "Resource/Attribute/JsonApiResource::$normalizationContext",
+    "Resource/Attribute/JsonApiResource::$operations",
+    "Resource/Attribute/JsonApiResource::$readProjection",
+    "Resource/Attribute/JsonApiResource::$relationshipPolicies",
+    "Resource/Attribute/JsonApiResource::$routePrefix",
+    "Resource/Attribute/JsonApiResource::$type",
+    "Resource/Attribute/JsonApiResource::$viewClass",
+    "Resource/Attribute/Relationship",
+    "Resource/Attribute/Relationship::$inverse",
+    "Resource/Attribute/Relationship::$linkingPolicy",
+    "Resource/Attribute/Relationship::$propertyPath",
+    "Resource/Attribute/Relationship::$targetType",
+    "Resource/Attribute/Relationship::$toMany",
+    "Resource/Attribute/SortableField",
+    "Resource/Attribute/SortableField::$customHandler",
+    "Resource/Attribute/SortableField::$except",
+    "Resource/Attribute/SortableField::$field",
+    "Resource/Attribute/SortableField::$inherit",
+    "Resource/Attribute/SortableFields",
+    "Resource/Attribute/SortableFields::$fields",
+    "Resource/Definition/ResourceDefinition",
+    "Resource/Definition/ResourceOperation",
+    "Resource/Definition/ResourceOperation::CREATE",
+    "Resource/Definition/ResourceOperation::DELETE",
+    "Resource/Definition/ResourceOperation::INDEX",
+    "Resource/Definition/ResourceOperation::SHOW",
+    "Resource/Definition/ResourceOperation::UPDATE",
+    "Resource/Mapper/DefaultWriteMapper",
+    "Resource/Mapper/WriteMapperInterface",
+    "Resource/Metadata/RelationshipLinkingPolicy",
+    "Resource/Metadata/RelationshipLinkingPolicy::REFERENCE",
+    "Resource/Metadata/RelationshipLinkingPolicy::VERIFY",
+    "Resource/Registry/CustomRouteRegistry",
+    "Resource/Registry/CustomRouteRegistryInterface",
+    "Resource/Registry/ResourceRegistry",
+    "Resource/Registry/ResourceRegistryInterface",
+    "ServiceTag/jsonapi.filter.handler",
+    "ServiceTag/jsonapi.profile",
+    "ServiceTag/jsonapi.resource",
+    "jsonapi.cache.conditional.enable_if_match",
+    "jsonapi.cache.conditional.enable_if_modified_since",
+    "jsonapi.cache.conditional.enable_if_none_match",
+    "jsonapi.cache.conditional.enable_if_unmodified_since",
+    "jsonapi.cache.conditional.require_if_match_on_write",
+    "jsonapi.cache.etag.include_query_shape",
+    "jsonapi.data_layer.processor",
+    "jsonapi.data_layer.provider",
+    "jsonapi.data_layer.relationship_reader",
+    "jsonapi.data_layer.repository",
+    "jsonapi.data_layer.transaction_manager",
+    "jsonapi.docs.generator.json_schema.include_profiles",
+    "jsonapi.docs.generator.openapi.enabled",
+    "jsonapi.docs.generator.openapi.route",
+    "jsonapi.docs.generator.openapi.servers.*",
+    "jsonapi.docs.generator.openapi.title",
+    "jsonapi.docs.generator.openapi.version",
+    "jsonapi.docs.ui.enabled",
+    "jsonapi.docs.ui.route",
+    "jsonapi.docs.ui.spec_url",
+    "jsonapi.docs.ui.theme",
+    "jsonapi.limits.include_max_depth",
+    "jsonapi.limits.include_max_paths",
+    "jsonapi.media_type",
+    "jsonapi.media_types.channels.*.request.allowed.*",
+    "jsonapi.media_types.channels.*.response.default",
+    "jsonapi.media_types.channels.*.response.negotiable.*",
+    "jsonapi.media_types.channels.*.scope.attribute",
+    "jsonapi.media_types.channels.*.scope.path_prefix",
+    "jsonapi.media_types.channels.*.scope.route_name",
+    "jsonapi.media_types.default.request.allowed.*",
+    "jsonapi.media_types.default.response.default",
+    "jsonapi.media_types.default.response.negotiable.*",
+    "jsonapi.pagination.default_size",
+    "jsonapi.pagination.max_size",
+    "jsonapi.performance.head_enabled",
+    "jsonapi.profiles.audit_trail.created_at",
+    "jsonapi.profiles.audit_trail.created_by",
+    "jsonapi.profiles.audit_trail.updated_at",
+    "jsonapi.profiles.audit_trail.updated_by",
+    "jsonapi.profiles.enabled_by_default.*",
+    "jsonapi.profiles.negotiation.echo_profiles_in_content_type",
+    "jsonapi.profiles.negotiation.link_header",
+    "jsonapi.profiles.negotiation.require_known_profiles",
+    "jsonapi.profiles.per_type.*.*",
+    "jsonapi.profiles.rel_counts.compute_in_related_endpoints",
+    "jsonapi.profiles.rel_counts.relationship_meta_key",
+    "jsonapi.profiles.soft_delete.field",
+    "jsonapi.profiles.soft_delete.query_flags.only_deleted",
+    "jsonapi.relationships.write_response",
+    "jsonapi.resource_paths.*",
+    "jsonapi.write.allow_relationship_writes",
+    "jsonapi.write.client_generated_ids.*"
+  ],
+  "baseline_evidence": "226 committed PARTIAL rows plus two newly inventoried public interfaces marked PARTIAL during the e0b6f9 refresh.",
+  "features": [
+    {
+      "feature": "Contract/Data/ExistenceChecker",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ExistenceChecker",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Existing and missing targets are checked externally across create/update and Atomic relationship writes; no query-count claim about custom checkers."
+    },
+    {
+      "feature": "Contract/Data/RepresentationPreloaderInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RepresentationPreloaderInterface",
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "gap_status": "OPEN",
+      "finding": "Public preloader return DTO must be a supported consumer contract; runtime custom-provider preload coverage remains green."
+    },
+    {
+      "feature": "Contract/Data/SliceIds",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\SliceIds",
+      "status": "COVERED_GREEN",
+      "test": "Relationships/RelatedResourcesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Related collection transport retains paginated target identities and totals."
+    },
+    {
+      "feature": "Contract/Data/WriteConcurrencyGuardInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\WriteConcurrencyGuardInterface",
+      "status": "COVERED_GREEN",
+      "test": "Production/ConcurrencyAndAtomicTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Current-validator check and mutation share protection; overlapping writers are also checked in Torture."
+    },
+    {
+      "feature": "Contract/Resource/ResourceMetadataInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Resource\\ResourceMetadataInterface",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "DOCS-METADATA-CONTRACT",
+      "gap_status": "OPEN",
+      "finding": "The published default metadata implementation must satisfy its public interface."
+    },
+    {
+      "feature": "Contract/Tx/ResourceWriteTransactionManagerInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\ResourceWriteTransactionManagerInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Application provider implements resource-scoped transaction support; failing second Atomic write rolls back the first."
+    },
+    {
+      "feature": "Contract/Tx/TransactionManager",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\TransactionManager",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Context/CustomRouteContext::criteria",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Context/CustomRouteContext::hasQueryParam",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Context/CustomRouteContext::hasResource",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::accepted",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::badRequest",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::collection",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::conflict",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::created",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::forbidden",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isCollection",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isError",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isNoContent",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::isResource",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::noContent",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::notFound",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::resource",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::unprocessable",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withHeader",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withLinks",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withMeta",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "CustomRoute/Result/CustomRouteResult::withStatus",
+      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$deprecated",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$examples",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$operationId",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$parameters",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$requestBody",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$responses",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$security",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$summary",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiEndpoint::$tags",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample::$summary",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiExample::$value",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader::$format",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiHeader::$type",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$example",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$format",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$in",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$name",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$required",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$schema",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiParameter::$type",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$contentType",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$required",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiRequestBody::$schema",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$contentType",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$description",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$headers",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$schema",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Docs/Attribute/OpenApiResponse::$schemaRef",
+      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Handler/FilterHandlerInterface",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\FilterHandlerInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/SearchCompositionTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Handler/SortHandlerInterface",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\SortHandlerInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/AbstractOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\AbstractOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/BetweenOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\BetweenOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/EqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\EqualOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/GreaterOrEqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterOrEqualOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/GreaterThanOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterThanOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/ILikeOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\ILikeOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/InOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\InOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/IsNullOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\IsNullOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/LessOrEqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessOrEqualOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/LessThanOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessThanOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/LikeOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LikeOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/NotEqualOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotEqualOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/NotInOperator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotInOperator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/Operator",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Operator",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Filter/Operator/Registry",
+      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Registry",
+      "status": "COVERED_GREEN",
+      "test": "Query/FilteringTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::accepted",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::collection",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::created",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::error",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::noContent",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::resource",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Http/Response/JsonApiResponseFactory::validationErrors",
+      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/ResponseFactoryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$createdAtField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$createdByField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$updatedAtField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    {
+      "feature": "Profile/Attribute/Auditable::$updatedByField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    {
+      "feature": "Profile/Attribute/SoftDeletable",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Non-default deletion field and boolean strategy work; timestamp visibility/delete/query-flag variants have separate regression scenarios."
+    },
+    {
+      "feature": "Profile/Attribute/SoftDeletable::$deletedAtField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Non-default deletion field and boolean strategy work; timestamp visibility/delete/query-flag variants have separate regression scenarios."
+    },
+    {
+      "feature": "Profile/Attribute/SoftDeletable::$deletedByField",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/SoftDeleteActorTest.php",
+      "gap": "PROFILE-SOFT-DELETE-ACTOR-META",
+      "gap_status": "OPEN",
+      "finding": "Application supplies deletion actor; negotiated documented soft-delete metadata honors the configured actor field."
+    },
+    {
+      "feature": "Profile/Hook/DocumentHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\DocumentHook",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/Hook/FilterParameterProviderInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\FilterParameterProviderInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Application implementation has an observable negotiated filter flag or resource-meta effect through HTTP."
+    },
+    {
+      "feature": "Profile/Hook/QueryHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\QueryHook",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/Hook/RelationshipFetchRequirementsHookInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\RelationshipFetchRequirementsHookInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/Hook/ResourceMetaHookInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ResourceMetaHookInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Application implementation has an observable negotiated filter flag or resource-meta effect through HTTP."
+    },
+    {
+      "feature": "Profile/Hook/WriteHook",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\WriteHook",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/ProfileInterface::descriptor",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "COVERED_GREEN",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/ProfileInterface::hooks",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "COVERED_GREEN",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/ProfileInterface::requirements",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "COVERED_GREEN",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/ProfileInterface::uri",
+      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "status": "COVERED_GREEN",
+      "test": "Production/ExtensibilityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Attribute",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
+      "status": "COVERED_GREEN",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Attribute::$name",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
+      "status": "COVERED_GREEN",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$customHandler",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$except",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$field",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$inherit",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableField::$operators",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableFields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/FilterableFields::$fields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Id",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Id",
+      "status": "COVERED_GREEN",
+      "test": "Mapping/FieldAliasesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$controller",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$defaults",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$description",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The configured description reaches the injected public route registry through HTTP."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$handler",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$methods",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$name",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$path",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$priority",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$requirements",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiCustomRoute::$resourceType",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "status": "COVERED_GREEN",
+      "test": "Features/CustomRoutes/HandlerContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-ROUTE-PREFIX",
+      "gap_status": "OPEN",
+      "finding": "Resource metadata options are individually inventoried; the aggregate API is not fully conformant while routePrefix and other listed options fail."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$dataClass",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "DTO resources use an explicit entity dataClass and retain identity and root order."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$denormalizationContext",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Production/WriteSurfaceTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Serializer read/write groups enforce the server-owned attribute boundary through generated HTTP routes."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$description",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Resource description reaches OpenAPI resource tags (asserted before the exposeId failure)."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$exposeId",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "DOCS-EXPOSE-ID-CONTRACT",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$normalizationContext",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Production/WriteSurfaceTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Serializer read/write groups enforce the server-owned attribute boundary through generated HTTP routes."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$operations",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$readProjection",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$relationshipPolicies",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-RELATIONSHIP-POLICIES",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$routePrefix",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-ROUTE-PREFIX",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$type",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Resource/ResourceReadTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Resource type is the stable JSON:API transport identity."
+    },
+    {
+      "feature": "Resource/Attribute/JsonApiResource::$viewClass",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$inverse",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$linkingPolicy",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$propertyPath",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$targetType",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/Relationship::$toMany",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/PathAliasTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$customHandler",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$except",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$field",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableField::$inherit",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableFields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Attribute/SortableFields::$fields",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Definition/ResourceDefinition",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceDefinition",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Entity/DTO/CUSTOM projection definitions are exercised via generated collection/item transport; representation version selection has its own explicit gap."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::CREATE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::DELETE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::INDEX",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::SHOW",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Definition/ResourceOperation::UPDATE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Mapper/DefaultWriteMapper",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\DefaultWriteMapper",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ApplicationWriteMapperTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Public mapper decoration and constructor DI compose with CREATE, UPDATE and validation without replacing generated transport."
+    },
+    {
+      "feature": "Resource/Mapper/WriteMapperInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\WriteMapperInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ApplicationWriteMapperTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Public mapper decoration and constructor DI compose with CREATE, UPDATE and validation without replacing generated transport."
+    },
+    {
+      "feature": "Resource/Metadata/RelationshipLinkingPolicy",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Metadata/RelationshipLinkingPolicy::REFERENCE",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Metadata/RelationshipLinkingPolicy::VERIFY",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Resource/Registry/CustomRouteRegistry",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistry",
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "gap_status": "OPEN",
+      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+    },
+    {
+      "feature": "Resource/Registry/CustomRouteRegistryInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistryInterface",
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "gap_status": "OPEN",
+      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+    },
+    {
+      "feature": "Resource/Registry/ResourceRegistry",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistry",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "gap_status": "OPEN",
+      "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
+    },
+    {
+      "feature": "Resource/Registry/ResourceRegistryInterface",
+      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistryInterface",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "gap_status": "OPEN",
+      "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.filter.handler",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/HandlerPriorityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.profile",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.resource",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-TAG-DISCOVERY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_match",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_modified_since",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_none_match",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.enable_if_unmodified_since",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.cache.conditional.require_if_match_on_write",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.cache.etag.include_query_shape",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/QueryShapeTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.data_layer.processor",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.data_layer.provider",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.data_layer.relationship_reader",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.data_layer.repository",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.data_layer.transaction_manager",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.generator.json_schema.include_profiles",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/SchemaProfilesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.route",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.servers.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.title",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.generator.openapi.version",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.ui.enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.ui.route",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.ui.spec_url",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.docs.ui.theme",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.limits.include_max_depth",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/IncludeLimitsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.limits.include_max_paths",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/IncludeLimitsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_type",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.request.allowed.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.response.default",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.response.negotiable.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.scope.attribute",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.scope.path_prefix",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_types.channels.*.scope.route_name",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.media_types.default.request.allowed.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.media_types.default.response.default",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.media_types.default.response.negotiable.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.pagination.default_size",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Query/PaginationTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.pagination.max_size",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Query/PaginationTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.performance.head_enabled",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DisabledHeadTest.php",
+      "gap": "CONFIG-HEAD-DISABLED",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.created_at",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.created_by",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.updated_at",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.audit_trail.updated_by",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/AuditIdentityTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.enabled_by_default.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.negotiation.echo_profiles_in_content_type",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.negotiation.link_header",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.negotiation.require_known_profiles",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.per_type.*.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.rel_counts.compute_in_related_endpoints",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/RelatedCountOptionsTest.php",
+      "gap": "PROFILE-REL-COUNT-RELATED-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.profiles.rel_counts.relationship_meta_key",
+      "public_api": "Configuration",
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "PROFILE-REL-COUNT-CONFIG",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.field",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.profiles.soft_delete.query_flags.only_deleted",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.relationships.write_response",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/RepresentationModesTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.resource_paths.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Configuration/ResourceDiscoveryTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "jsonapi.write.allow_relationship_writes",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/WriteConfigurationTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
+    },
+    {
+      "feature": "jsonapi.write.client_generated_ids.*",
+      "public_api": "Configuration",
+      "status": "COVERED_GREEN",
+      "test": "Resource/ResourceCreateTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
+    }
+  ],
+  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+  "outcomes": {
+    "COVERED_GREEN": 204,
+    "COVERED_GAP": 24
+  }
+}

@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class ToOneRelationshipTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('RELATIONSHIP-005')]
     public function testReadLinkageAndRelatedResource(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', $this->url().'/relationships/author'));
@@ -51,8 +50,6 @@ final class ToOneRelationshipTest extends AcceptanceTestCase
     }
 
     #[DataProvider('invalidLinkageBundleGaps')]
-    #[ExpectedBundleGap('RELATIONSHIP-001', ['#1'])]
-    #[ExpectedBundleGap('RELATIONSHIP-004', ['#3'])]
     public function testInvalidLinkageBundleGap(string $case, int $status, ?string $pointer): void
     {
         $data = match ($case) {

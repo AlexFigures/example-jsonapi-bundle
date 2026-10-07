@@ -19,11 +19,6 @@ final class FilteringTest extends AcceptanceTestCase
     }
 
     #[DataProvider('filtersBundleGaps')]
-    #[ExpectedBundleGap('FILTER-001', ['neq public operator', 'ne'])]
-    #[ExpectedBundleGap('FILTER-002', ['between'])]
-    #[ExpectedBundleGap('FILTER-003', ['null', 'not null'])]
-    #[ExpectedBundleGap('FILTER-004', ['ilike'])]
-    #[ExpectedBundleGap('ALIAS-001', ['datetime alias'])]
     public function testSupportedOperatorsBundleGap(array $filter, array $sequences): void
     {
         $doc = $this->collection(['filter' => $filter, 'sort' => 'views', 'page' => ['size' => 20]]);

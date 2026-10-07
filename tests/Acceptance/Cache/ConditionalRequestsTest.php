@@ -47,7 +47,6 @@ final class ConditionalRequestsTest extends AcceptanceTestCase
         yield ['sort=-title']; yield ['page[number]=2'];
     }
 
-    #[ExpectedBundleGap('CACHE-002')]
     public function testLastModifiedUsesConfiguredEntityField(): void
     {
         $first = $this->requestJsonApi('GET', $this->url());

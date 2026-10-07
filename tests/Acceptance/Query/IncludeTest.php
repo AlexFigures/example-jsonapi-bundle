@@ -49,7 +49,6 @@ final class IncludeTest extends AcceptanceTestCase
         yield ['author,author', ['authors']];
     }
 
-    #[ExpectedBundleGap('INCLUDE-001')]
     public function testNullableInclude(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', $this->url('article-12').'?include=editor'));

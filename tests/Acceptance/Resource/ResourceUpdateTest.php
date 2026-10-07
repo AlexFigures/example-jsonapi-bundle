@@ -20,8 +20,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         self::assertSame('Changed title', $after['data']['attributes']['title']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('WRITE-MODEL-SERIALIZER-METADATA')]
     public function testAttributesAndRelationshipsTogether(): void
     {
         $payload = $this->patchPayload(['title' => 'Edited article', 'content' => 'Edited body', 'published-at' => null]);
@@ -32,7 +30,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         self::assertSame($this->ids['grace'], $doc['data']['relationships']['author']['data']['id']);
     }
 
-    #[ExpectedBundleGap('WRITE-001')]
     public function testEmptyAttributeObjectIsValid(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('PATCH', $this->url(), $this->patchPayload(new \stdClass())));
@@ -73,7 +70,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         $payload['data']['id'] = '999999';
         $this->assertJsonApiError($this->requestJsonApi('PATCH', '/api/articles/999999', $payload), 404);
     }
-    #[ExpectedBundleGap('RELATIONSHIP-001')]
     public function testUnknownRelatedResourceInPatch(): void
     {
         $payload = $this->patchPayload(['title' => 'Still valid']);
@@ -81,7 +77,6 @@ final class ResourceUpdateTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->requestJsonApi('PATCH', $this->url(), $payload), 404, '/data/relationships/editor/data/id');
     }
 
-    #[ExpectedBundleGap('RELATIONSHIP-002')]
     public function testWrongRelatedTypeInPatch(): void
     {
         $payload = $this->patchPayload(['title' => 'Still valid']);

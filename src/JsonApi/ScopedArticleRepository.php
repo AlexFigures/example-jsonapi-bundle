@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace App\JsonApi;
 
 use AlexFigures\Symfony\Contract\Data\{ResourceRepository, Slice};
+use AlexFigures\Symfony\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface;
 use AlexFigures\Symfony\Query\Criteria;
 use App\Security\PublishingRules;
+use Doctrine\ORM\QueryBuilder;
 
-/** Add policy, delegate all generic query behavior to the bundle. */
-final class ScopedArticleRepository implements ResourceRepository
+/** Add policy, delegate generic query behavior. Optional query-plan forwarding must
+ * carry the same visibility predicate; its @internal bundle API needs a freeze decision.
+ */
+final class ScopedArticleRepository implements ResourceRepository, DoctrineCollectionQueryProviderInterface
 {
     public function __construct(private ResourceRepository $inner, private PublishingRules $rules)
     {
@@ -20,6 +24,17 @@ final class ScopedArticleRepository implements ResourceRepository
         $criteria = clone $criteria;
         $this->rules->onBeforeFindCollection($type, $criteria);
         return $this->inner->findCollection($type, $criteria);
+    }
+
+    public function collectionQuery(string $type, Criteria $criteria): ?QueryBuilder
+    {
+        $criteria = clone $criteria;
+        $this->rules->onBeforeFindCollection($type, $criteria);
+        if (!$this->inner instanceof DoctrineCollectionQueryProviderInterface) {
+            return null;
+        }
+
+        return $this->inner->collectionQuery($type, $criteria);
     }
 
     public function findOne(string $type, string $id, Criteria $criteria): ?object

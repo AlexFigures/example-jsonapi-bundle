@@ -1,10 +1,9 @@
 {
-  "bundle_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
   "counts": {
-    "COVERED_GREEN": 92,
-    "PARTIAL": 226,
+    "COVERED_GREEN": 302,
+    "COVERED_GAP": 27,
     "CONFIG_ONLY": 17,
-    "COVERED_GAP": 8,
     "DOCUMENTATION_ONLY": 2,
     "NOT_APPLICABLE": 1
   },
@@ -15,87 +14,98 @@
       "status": "COVERED_GREEN",
       "test": "Protocol/ContentNegotiationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_types.default.request.allowed.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "jsonapi.media_types.default.response.default",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "jsonapi.media_types.default.response.negotiable.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "jsonapi.media_types.channels.*.scope.path_prefix",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_types.channels.*.scope.route_name",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_types.channels.*.scope.attribute",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_types.channels.*.request.allowed.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_types.channels.*.response.default",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_types.channels.*.response.negotiable.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.media_type",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/ContentNegotiationTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DefaultMediaPolicyTest.php",
+      "gap": "MEDIA-DEFAULT-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "jsonapi.route_prefix",
@@ -103,95 +113,107 @@
       "status": "COVERED_GREEN",
       "test": "Resource/ResourceReadTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.resource_paths.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/DataLayer/TypedProviderTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Configuration/ResourceDiscoveryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.data_layer.provider",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.data_layer.repository",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.data_layer.processor",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.data_layer.relationship_reader",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.data_layer.transaction_manager",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "DATA-LAYER-CUSTOM-ATOMIC",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.pagination.default_size",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/PaginationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.pagination.max_size",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/PaginationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.write.allow_relationship_writes",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Resource/ResourceCreateTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/WriteConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
     },
     {
       "feature": "jsonapi.write.client_generated_ids.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Resource/ResourceCreateTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
     },
     {
       "feature": "jsonapi.relationships.write_response",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/RepresentationModesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.relationships.linkage_in_resource",
@@ -199,7 +221,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/RepresentationModesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.relationships.unplanned_read_policy",
@@ -207,7 +230,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/UnplannedRelationshipTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.errors.expose_debug_meta",
@@ -215,7 +239,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Protocol/ErrorConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.errors.add_correlation_id",
@@ -223,7 +248,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Protocol/ErrorConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.errors.default_title_map",
@@ -231,7 +257,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Protocol/ErrorConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.errors.locale",
@@ -239,6 +266,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -247,15 +275,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/DisabledCacheTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.etag.strategy",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Cache/VersionStrategyTest.php",
       "gap": "CACHE-VERSION-STRATEGY",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.etag.hash_algo",
@@ -263,7 +293,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.etag.weak_for_collections",
@@ -271,15 +302,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.etag.include_query_shape",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Cache/QueryShapeTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.last_modified.resource_field",
@@ -287,7 +320,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/LastModifiedConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.last_modified.per_type.*",
@@ -295,15 +329,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/LastModifiedConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.last_modified.collections_max_of",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Cache/DisabledCollectionLastModifiedTest.php",
       "gap": "CACHE-COLLECTION-LAST-MODIFIED",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.headers.public",
@@ -311,7 +347,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.headers.max_age",
@@ -319,7 +356,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.headers.s_maxage",
@@ -327,7 +365,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.headers.stale_while_revalidate",
@@ -335,7 +374,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.headers.stale_if_error",
@@ -343,7 +383,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.headers.add_age",
@@ -351,7 +392,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.vary.accept",
@@ -359,7 +401,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.vary.accept_language",
@@ -367,7 +410,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.surrogate_keys.enabled",
@@ -375,7 +419,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "CACHE-SURROGATE-ROUTES",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.surrogate_keys.header_name",
@@ -383,7 +428,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "CACHE-SURROGATE-ROUTES",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.surrogate_keys.format.resource",
@@ -391,7 +437,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "CACHE-SURROGATE-ROUTES",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.surrogate_keys.format.collection",
@@ -399,7 +446,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "CACHE-SURROGATE-ROUTES",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.surrogate_keys.format.relationship",
@@ -407,55 +455,62 @@
       "status": "COVERED_GREEN",
       "test": "Features/Cache/HeaderConfigurationTest.php",
       "gap": "CACHE-SURROGATE-ROUTES",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.conditional.enable_if_none_match",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Cache/WritePreconditionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.conditional.enable_if_modified_since",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Cache/WritePreconditionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.conditional.enable_if_match",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Cache/WritePreconditionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.conditional.enable_if_unmodified_since",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Cache/WritePreconditionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.cache.conditional.require_if_match_on_write",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Cache/WritePreconditionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Cache/ConditionalSwitchesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.include_max_depth",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Query/IncludeTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/IncludeLimitsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.filter_max_depth",
@@ -463,7 +518,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/StructuralLimitsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.filter_max_nodes",
@@ -471,7 +527,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/StructuralLimitsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.filter_max_operands",
@@ -479,15 +536,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/StructuralLimitsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.include_max_paths",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Query/IncludeTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/IncludeLimitsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.fields_max_total",
@@ -495,7 +554,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/DocumentBudgetTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.page_max_size",
@@ -503,7 +563,8 @@
       "status": "COVERED_GREEN",
       "test": "Query/PaginationTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.included_max_resources",
@@ -511,7 +572,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/DocumentBudgetTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.limits.relationship_max_identifiers",
@@ -519,7 +581,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/IdentifierBudgetTest.php",
       "gap": "RELATIONSHIP-BUDGET-ENDPOINT",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.limits.complexity_budget",
@@ -527,7 +590,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/StructuralLimitsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.performance.doctrine.enable_query_cache",
@@ -535,6 +599,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -543,6 +608,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -551,6 +617,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -559,6 +626,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -567,7 +635,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.performance.doctrine.default_fetch",
@@ -575,15 +644,17 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
       "feature": "jsonapi.performance.head_enabled",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Protocol/HeadTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Protocol/DisabledHeadTest.php",
+      "gap": "CONFIG-HEAD-DISABLED",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "jsonapi.dx.dev_toolbar",
@@ -591,6 +662,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -599,6 +671,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -607,6 +680,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -615,6 +689,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -623,6 +698,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -631,6 +707,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -639,47 +716,53 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
       "feature": "jsonapi.docs.generator.openapi.enabled",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/RedocTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.generator.openapi.route",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/RedocTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.generator.openapi.title",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/RedocTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.generator.openapi.version",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/RedocTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.generator.openapi.servers.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/RedocTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/OpenApiTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.generator.json_schema.enabled",
@@ -687,7 +770,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "CONFIG-JSON-SCHEMA",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.docs.generator.json_schema.route",
@@ -695,47 +779,53 @@
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "CONFIG-JSON-SCHEMA",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.docs.generator.json_schema.include_profiles",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/OpenApiTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/SchemaProfilesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.ui.enabled",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/DisabledUiTest.php",
-      "gap": "DOCS-NEGOTIATION",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.ui.route",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/DisabledUiTest.php",
-      "gap": "DOCS-NEGOTIATION",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.ui.spec_url",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/DisabledUiTest.php",
-      "gap": "DOCS-NEGOTIATION",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.docs.ui.theme",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/DisabledUiTest.php",
-      "gap": "DOCS-NEGOTIATION",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Docs/RedocTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.release.semver",
@@ -743,6 +833,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -751,6 +842,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -759,6 +851,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -767,6 +860,7 @@
       "status": "CONFIG_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
     },
     {
@@ -775,7 +869,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/DisabledAtomicTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.atomic.endpoint",
@@ -783,7 +878,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/EndpointTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.atomic.require_ext_header",
@@ -791,7 +887,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/ConfigurationMatrixTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.atomic.max_operations",
@@ -799,7 +896,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/ConfigurationMatrixTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.atomic.return_policy",
@@ -807,7 +905,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/ConfigurationMatrixTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.atomic.allow_href",
@@ -815,7 +914,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/ConfigurationMatrixTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.atomic.lid.accept_in_resource_and_identifier",
@@ -823,55 +923,62 @@
       "status": "COVERED_GREEN",
       "test": "Features/Atomic/ConfigurationMatrixTest.php",
       "gap": "ATOMIC-LID-CONFIG",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.negotiation.require_known_profiles",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.negotiation.echo_profiles_in_content_type",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.negotiation.link_header",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.enabled_by_default.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.per_type.*.*",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.field",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
-      "gap": "PROFILE-SOFT-VISIBILITY",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.strategy",
@@ -879,7 +986,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/BooleanSoftDeleteTest.php",
       "gap": "PROFILE-SOFT-BOOLEAN",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.default_visibility",
@@ -887,7 +995,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
       "gap": "PROFILE-SOFT-VISIBILITY",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.query_flags.with_deleted",
@@ -895,15 +1004,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
       "gap": "PROFILE-SOFT-QUERY-FLAGS",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.query_flags.only_deleted",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
-      "gap": "PROFILE-SOFT-VISIBILITY",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.delete_semantics",
@@ -911,327 +1022,368 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
       "gap": "PROFILE-SOFT-DELETE-SEMANTICS",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.audit_trail.created_at",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditIdentityTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.audit_trail.updated_at",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditIdentityTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.audit_trail.created_by",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditIdentityTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.audit_trail.updated_by",
       "public_api": "Configuration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditIdentityTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "jsonapi.profiles.audit_trail.expose_in_meta",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditIdentityTest.php",
       "gap": "PROFILE-AUDIT-META",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.rel_counts.relationship_meta_key",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/NegotiationOptionsTest.php",
+      "gap": "PROFILE-REL-COUNT-CONFIG",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "jsonapi.profiles.rel_counts.compute_in_related_endpoints",
       "public_api": "Configuration",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/RelatedCountOptionsTest.php",
+      "gap": "PROFILE-REL-COUNT-RELATED-POLICY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Attribute/Attribute",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Mapping/FieldAliasesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Attribute::$name",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Mapping/FieldAliasesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableField",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableField::$field",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableField::$operators",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableField::$customHandler",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableField::$inherit",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableField::$except",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableFields",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/FilterableFields::$fields",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Id",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Id",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Mapping/FieldAliasesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$name",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$path",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$methods",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$handler",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$controller",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$resourceType",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$defaults",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$requirements",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$description",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
-      "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The configured description reaches the injected public route registry through HTTP."
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$priority",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-ROUTE-PREFIX",
+      "gap_status": "OPEN",
+      "finding": "Resource metadata options are individually inventoried; the aggregate API is not fully conformant while routePrefix and other listed options fail."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$type",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Resource/ResourceReadTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Resource type is the stable JSON:API transport identity."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$normalizationContext",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Production/WriteSurfaceTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Serializer read/write groups enforce the server-owned attribute boundary through generated HTTP routes."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$denormalizationContext",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Production/WriteSurfaceTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Serializer read/write groups enforce the server-owned attribute boundary through generated HTTP routes."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$routePrefix",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-ROUTE-PREFIX",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$description",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Resource description reaches OpenAPI resource tags (asserted before the exposeId failure)."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$exposeId",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "DOCS-EXPOSE-ID-CONTRACT",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$operations",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$dataClass",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "DTO resources use an explicit entity dataClass and retain identity and root order."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$viewClass",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$readProjection",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$fieldMap",
@@ -1239,15 +1391,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$relationshipPolicies",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "PARTIAL",
-      "test": "Mapping/FieldAliasesTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-RELATIONSHIP-POLICIES",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$writeRequests",
@@ -1255,7 +1409,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "WRITE-REQUEST-DTO",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$versionResolver",
@@ -1263,423 +1418,476 @@
       "status": "COVERED_GAP",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "VERSION-RESOLVER-CONTEXT",
-      "finding": "See gap inventory."
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Attribute/Relationship",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Relationship::$toMany",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Relationship::$inverse",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Relationship::$targetType",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Relationship::$linkingPolicy",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/Relationship::$propertyPath",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableField",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableField::$field",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableField::$customHandler",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableField::$inherit",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableField::$except",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableFields",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Attribute/SortableFields::$fields",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
-      "status": "PARTIAL",
-      "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$summary",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$description",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$requestBody",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$responses",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$tags",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$parameters",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$operationId",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$security",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$deprecated",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$examples",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiExample",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiExample::$summary",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiExample::$value",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiExample::$description",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader::$description",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader::$type",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader::$format",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$name",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$in",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$description",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$required",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$type",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$format",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$schema",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$example",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$contentType",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$schema",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$required",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$description",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$description",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$contentType",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$schema",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$schemaRef",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$headers",
       "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/ChangeSet",
@@ -1687,15 +1895,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/ExistenceChecker",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ExistenceChecker",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Existing and missing targets are checked externally across create/update and Atomic relationship writes; no query-count claim about custom checkers."
     },
     {
       "feature": "Contract/Data/RelationshipBatchReaderInterface",
@@ -1703,7 +1913,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/BatchRelationshipReaderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/RelationshipReader",
@@ -1711,7 +1922,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/RelationshipUpdater",
@@ -1719,15 +1931,17 @@
       "status": "COVERED_GREEN",
       "test": "Production/RelationshipPolicyTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/RepresentationPreloaderInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RepresentationPreloaderInterface",
-      "status": "PARTIAL",
-      "test": "Features/DataLayer/BatchRelationshipReaderTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "gap_status": "OPEN",
+      "finding": "Public preloader return DTO must be a supported consumer contract; runtime custom-provider preload coverage remains green."
     },
     {
       "feature": "Contract/Data/ResourceIdentifier",
@@ -1735,15 +1949,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/ResourcePersister",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ResourcePersister",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/TypedProviderTest.php",
       "gap": "DX-TYPED-PERSISTER-DISPATCH",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Contract/Data/ResourceProcessor",
@@ -1751,7 +1967,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/ResourceRepository",
@@ -1759,7 +1976,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/Slice",
@@ -1767,15 +1985,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/SliceIds",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\SliceIds",
-      "status": "PARTIAL",
-      "test": "Features/Relationships/RootJoinPaginationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Relationships/RelatedResourcesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Related collection transport retains paginated target identities and totals."
     },
     {
       "feature": "Contract/Data/TypedRelationshipReader",
@@ -1783,6 +2003,7 @@
       "status": "DOCUMENTATION_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md."
     },
     {
@@ -1791,15 +2012,17 @@
       "status": "DOCUMENTATION_ONLY",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md."
     },
     {
       "feature": "Contract/Data/TypedResourcePersister",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedResourcePersister",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/TypedProviderTest.php",
       "gap": "DX-TYPED-PERSISTER-DISPATCH",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Contract/Data/TypedResourceRepository",
@@ -1807,23 +2030,26 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/TypedProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/WriteConcurrencyGuardInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\WriteConcurrencyGuardInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Production/ConcurrencyAndAtomicTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Current-validator check and mutation share protection; overlapping writers are also checked in Torture."
     },
     {
       "feature": "Contract/Resource/ResourceMetadataInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Resource\\ResourceMetadataInterface",
-      "status": "PARTIAL",
-      "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "DOCS-METADATA-CONTRACT",
+      "gap_status": "OPEN",
+      "finding": "The published default metadata implementation must satisfy its public interface."
     },
     {
       "feature": "Contract/Tx/NullTransactionManager",
@@ -1831,7 +2057,17 @@
       "status": "NOT_APPLICABLE",
       "test": "",
       "gap": "",
+      "gap_status": null,
       "finding": "Value/default implementation without a separate application-facing HTTP operation."
+    },
+    {
+      "feature": "Contract/Tx/ResourceWriteTransactionManagerInterface",
+      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\ResourceWriteTransactionManagerInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Application provider implements resource-scoped transaction support; failing second Atomic write rolls back the first."
     },
     {
       "feature": "Contract/Tx/ScopedTransactionManagerInterface",
@@ -1839,23 +2075,26 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Tx/TransactionManager",
       "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\TransactionManager",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/Hook/DocumentHook",
       "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\DocumentHook",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/Hook/FetchPlanHookInterface",
@@ -1863,23 +2102,26 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/Hook/FilterParameterProviderInterface",
       "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\FilterParameterProviderInterface",
-      "status": "PARTIAL",
-      "test": "Features/Profiles/SoftDeleteConfigurationTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Application implementation has an observable negotiated filter flag or resource-meta effect through HTTP."
     },
     {
       "feature": "Profile/Hook/QueryHook",
       "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\QueryHook",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/Hook/ReadHook",
@@ -1887,15 +2129,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "PROFILE-READ-HOOK",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Profile/Hook/RelationshipFetchRequirementsHookInterface",
       "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\RelationshipFetchRequirementsHookInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/Hook/RelationshipHook",
@@ -1903,79 +2147,98 @@
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "PROFILE-RELATIONSHIP-HOOK",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
+    },
+    {
+      "feature": "Profile/Hook/ResourceMetaHookInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ResourceMetaHookInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Application implementation has an observable negotiated filter flag or resource-meta effect through HTTP."
     },
     {
       "feature": "Profile/Hook/WriteHook",
       "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\WriteHook",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/Attribute/Auditable",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "gap_status": "OPEN",
+      "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/SoftDeletable",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Non-default deletion field and boolean strategy work; timestamp visibility/delete/query-flag variants have separate regression scenarios."
     },
     {
       "feature": "Profile/Attribute/SoftDeletable::$deletedAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Non-default deletion field and boolean strategy work; timestamp visibility/delete/query-flag variants have separate regression scenarios."
     },
     {
       "feature": "Profile/Attribute/SoftDeletable::$deletedByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
-      "status": "PARTIAL",
-      "test": "Profiles/ProfileTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/SoftDeleteActorTest.php",
+      "gap": "PROFILE-SOFT-DELETE-ACTOR-META",
+      "gap_status": "OPEN",
+      "finding": "Application supplies deletion actor; negotiated documented soft-delete metadata honors the configured actor field."
     },
     {
       "feature": "Bridge/Symfony/Routing/Attribute/MediaChannel",
@@ -1983,7 +2246,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "MEDIA-CHANNEL-ROUTING",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Bridge/Symfony/Routing/Attribute/MediaChannel::$name",
@@ -1991,7 +2255,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Protocol/MediaChannelsTest.php",
       "gap": "MEDIA-CHANNEL-ROUTING",
-      "finding": "See gap inventory."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Events/RelationshipChangedEvent",
@@ -1999,7 +2264,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Events/ResourceEventsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Events/ResourceChangedEvent",
@@ -2007,167 +2273,188 @@
       "status": "COVERED_GREEN",
       "test": "Features/Events/ResourceEventsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Metadata/RelationshipLinkingPolicy",
       "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
-      "status": "PARTIAL",
-      "test": "Relationships/ToOneRelationshipTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Metadata/RelationshipLinkingPolicy::REFERENCE",
       "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
-      "status": "PARTIAL",
-      "test": "Relationships/ToOneRelationshipTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Metadata/RelationshipLinkingPolicy::VERIFY",
       "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
-      "status": "PARTIAL",
-      "test": "Relationships/ToOneRelationshipTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/AbstractOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\AbstractOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/BetweenOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\BetweenOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/EqualOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\EqualOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/GreaterOrEqualOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterOrEqualOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/GreaterThanOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterThanOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/ILikeOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\ILikeOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/InOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\InOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/IsNullOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\IsNullOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/LessOrEqualOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessOrEqualOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/LessThanOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessThanOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/LikeOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LikeOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/NotEqualOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotEqualOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/NotInOperator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotInOperator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/Operator",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Operator",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Operator/Registry",
       "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Registry",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Handler/FilterHandlerInterface",
       "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\FilterHandlerInterface",
-      "status": "PARTIAL",
-      "test": "Production/QueryScopeTest.php",
+      "status": "COVERED_GREEN",
+      "test": "Features/Filtering/SearchCompositionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Filter/Handler/SortHandlerInterface",
       "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\SortHandlerInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Handler/CustomRouteHandlerInterface",
@@ -2175,7 +2462,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Handler/CustomRouteHandlerRegistry",
@@ -2183,7 +2471,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Attribute/NoTransaction",
@@ -2191,7 +2480,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ReadProjection",
@@ -2199,7 +2489,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ReadProjection::ENTITY",
@@ -2207,7 +2498,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ReadProjection::DTO",
@@ -2215,7 +2507,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ReadProjection::CUSTOM",
@@ -2223,63 +2516,71 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ResourceDefinition",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceDefinition",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "Entity/DTO/CUSTOM projection definitions are exercised via generated collection/item transport; representation version selection has its own explicit gap."
     },
     {
       "feature": "Resource/Definition/ResourceOperation",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
-      "status": "PARTIAL",
-      "test": "Protocol/OperationRestrictionsTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ResourceOperation::INDEX",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
-      "status": "PARTIAL",
-      "test": "Protocol/OperationRestrictionsTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ResourceOperation::SHOW",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
-      "status": "PARTIAL",
-      "test": "Protocol/OperationRestrictionsTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ResourceOperation::CREATE",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
-      "status": "PARTIAL",
-      "test": "Protocol/OperationRestrictionsTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ResourceOperation::UPDATE",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
-      "status": "PARTIAL",
-      "test": "Protocol/OperationRestrictionsTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/ResourceOperation::DELETE",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
-      "status": "PARTIAL",
-      "test": "Protocol/OperationRestrictionsTest.php",
-      "gap": "DOCS-OPERATIONS",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/SelectiveOperationsTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Definition/VersionDefinition",
@@ -2287,7 +2588,8 @@
       "status": "COVERED_GAP",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "VERSION-RESOLVER-CONTEXT",
-      "finding": "See gap inventory."
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Definition/VersionResolverInterface",
@@ -2295,7 +2597,8 @@
       "status": "COVERED_GAP",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "VERSION-RESOLVER-CONTEXT",
-      "finding": "See gap inventory."
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "Resource/Mapper/DefaultReadMapper",
@@ -2303,15 +2606,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Mapper/DefaultWriteMapper",
       "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\DefaultWriteMapper",
-      "status": "PARTIAL",
-      "test": "Features/Mapping/PublicInputAndVersionTest.php",
-      "gap": "WRITE-REQUEST-DTO",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ApplicationWriteMapperTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Public mapper decoration and constructor DI compose with CREATE, UPDATE and validation without replacing generated transport."
     },
     {
       "feature": "Resource/Mapper/ReadMapperInterface",
@@ -2319,247 +2624,278 @@
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Resource/Mapper/WriteMapperInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\WriteMapperInterface",
-      "status": "PARTIAL",
-      "test": "Features/Mapping/PublicInputAndVersionTest.php",
-      "gap": "WRITE-REQUEST-DTO",
-      "finding": "See gap inventory."
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ApplicationWriteMapperTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "Public mapper decoration and constructor DI compose with CREATE, UPDATE and validation without replacing generated transport."
     },
     {
       "feature": "Resource/Registry/CustomRouteRegistry",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistry",
-      "status": "PARTIAL",
-      "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "gap_status": "OPEN",
+      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
     },
     {
       "feature": "Resource/Registry/CustomRouteRegistryInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistryInterface",
-      "status": "PARTIAL",
-      "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "gap_status": "OPEN",
+      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
     },
     {
       "feature": "Resource/Registry/ResourceRegistry",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistry",
-      "status": "PARTIAL",
-      "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "gap_status": "OPEN",
+      "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
     },
     {
       "feature": "Resource/Registry/ResourceRegistryInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistryInterface",
-      "status": "PARTIAL",
-      "test": "Features/DataLayer/CustomProviderTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "gap_status": "OPEN",
+      "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
     },
     {
       "feature": "Profile/ProfileInterface::uri",
       "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
-      "gap": "EXTENSIBILITY-PROFILE-DI",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/ProfileInterface::descriptor",
       "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
-      "gap": "EXTENSIBILITY-PROFILE-DI",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/ProfileInterface::hooks",
       "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
-      "gap": "EXTENSIBILITY-PROFILE-DI",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Profile/ProfileInterface::requirements",
       "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
-      "gap": "EXTENSIBILITY-PROFILE-DI",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Context/CustomRouteContext::hasResource",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Context/CustomRouteContext::hasQueryParam",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Context/CustomRouteContext::criteria",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
-      "gap": "CUSTOM-ACTION-QUERY-PARAMETER",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::resource",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::collection",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::noContent",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::accepted",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::created",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::badRequest",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::forbidden",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::notFound",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::conflict",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::unprocessable",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withMeta",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withLinks",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withStatus",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withHeader",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isError",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isResource",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isCollection",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isNoContent",
       "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Query/CriteriaBuilder::addFilter",
@@ -2567,7 +2903,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Query/CriteriaBuilder::addCustomCondition",
@@ -2575,7 +2912,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "CustomRoute/Query/CriteriaBuilder::build",
@@ -2583,63 +2921,71 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::resource",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::created",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::collection",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::noContent",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::accepted",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::error",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::validationErrors",
       "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withMeta",
@@ -2647,7 +2993,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withLinks",
@@ -2655,7 +3002,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withHeader",
@@ -2663,7 +3011,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withStatus",
@@ -2671,7 +3020,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withInclude",
@@ -2679,7 +3029,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withSparseFieldsets",
@@ -2687,7 +3038,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withTotalItems",
@@ -2695,7 +3047,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::withRequest",
@@ -2703,7 +3056,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Http/Response/JsonApiResponseBuilder::build",
@@ -2711,39 +3065,44 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.profile",
       "public_api": "Symfony tagged service registration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.resource",
       "public_api": "Symfony tagged service registration",
-      "status": "PARTIAL",
-      "test": "Features/Docs/OpenApiTest.php",
-      "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-TAG-DISCOVERY",
+      "gap_status": "OPEN",
+      "finding": "See current-gaps.json for observed failures."
     },
     {
       "feature": "ServiceTag/jsonapi.filter.operator",
       "public_api": "Symfony tagged service registration",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
-      "gap": "EXTENSIBILITY-CUSTOM-OPERATOR",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.filter.handler",
       "public_api": "Symfony tagged service registration",
-      "status": "PARTIAL",
+      "status": "COVERED_GREEN",
       "test": "Features/Filtering/HandlerPriorityTest.php",
-      "gap": "FILTER-HANDLER-LOGICAL-COMPOSITION",
-      "finding": "See gap inventory."
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.sort.handler",
@@ -2751,7 +3110,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.relationship_batch_reader",
@@ -2759,7 +3119,17 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/BatchRelationshipReaderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.persister",
+      "public_api": "Symfony tagged service registration",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedProviderTest.php",
+      "gap": "DX-TYPED-PERSISTER-DISPATCH",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "ServiceTag/jsonapi.resource_repository",
@@ -2767,7 +3137,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/TypedProviderTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.custom_route_handler",
@@ -2775,7 +3146,8 @@
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
-      "finding": "Variant coverage must be read from the referenced assertions; PARTIAL is not full conformance."
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     }
   ]
 }

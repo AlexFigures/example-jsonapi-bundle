@@ -1,0 +1,87 @@
+{
+  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+  "readiness": "BLOCKED",
+  "acceptance": {
+    "PASS": 644,
+    "FAIL": 21,
+    "SKIP": 0
+  },
+  "acceptance_assertions": 6718,
+  "torture_assertions": 4185,
+  "subsets": {
+    "Production": {
+      "PASS": 76
+    },
+    "Features": {
+      "PASS": 251,
+      "FAIL": 21
+    }
+  },
+  "torture": {
+    "PASS": 62
+  },
+  "open_gaps": [
+    "VERSION-RESOLVER-CONTEXT",
+    "RESOURCE-ROUTE-PREFIX",
+    "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+    "CONFIG-HEAD-DISABLED",
+    "PROFILE-REL-COUNT-CONFIG",
+    "PROFILE-REL-COUNT-RELATED-POLICY",
+    "RESOURCE-RELATIONSHIP-POLICIES",
+    "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+    "DOCS-EXPOSE-ID-CONTRACT",
+    "RESOURCE-TAG-DISCOVERY",
+    "MEDIA-DEFAULT-POLICY",
+    "DOCS-METADATA-CONTRACT",
+    "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+    "PROFILE-SOFT-DELETE-ACTOR-META"
+  ],
+  "blockers": [
+    "VERSION-RESOLVER-CONTEXT",
+    "RESOURCE-ROUTE-PREFIX",
+    "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+    "RESOURCE-RELATIONSHIP-POLICIES",
+    "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+    "DOCS-EXPOSE-ID-CONTRACT",
+    "RESOURCE-TAG-DISCOVERY",
+    "MEDIA-DEFAULT-POLICY",
+    "DOCS-METADATA-CONTRACT",
+    "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
+  ],
+  "new_regressions": [],
+  "stale_markers": [],
+  "feature_statuses": {
+    "COVERED_GREEN": 302,
+    "COVERED_GAP": 27,
+    "CONFIG_ONLY": 17,
+    "DOCUMENTATION_ONLY": 2,
+    "NOT_APPLICABLE": 1
+  },
+  "public_api_decisions": [
+    {
+      "surface": "TypedResourcePersister",
+      "status": "DESIGN_DECISION",
+      "direction": "Retain currently working typed persister API or publish an explicit modern replacement before freeze."
+    },
+    {
+      "surface": "TypedRelationshipReader / TypedRelationshipUpdater",
+      "status": "DESIGN_DECISION",
+      "direction": "Implement documented typed dispatch or deprecate/remove inactive declarations."
+    },
+    {
+      "surface": "RelationshipReadMap in public batch/hook signatures",
+      "status": "DESIGN_DECISION",
+      "direction": "Expose a supported public DTO or remove internal types from public signatures."
+    },
+    {
+      "surface": "dx.* / errors.locale / inactive Doctrine performance options",
+      "status": "DESIGN_DECISION",
+      "direction": "Implement externally verified behavior or remove/deprecate CONFIG_ONLY promises."
+    },
+    {
+      "surface": "DoctrineCollectionQueryProviderInterface and ResourceRepositoryLocator::getRepositoryForType",
+      "status": "DESIGN_DECISION",
+      "direction": "The tenant-safe query-plan bridge meets measured query budgets, but currently requires an @internal capability and locator method. Publish a stable decorator/provider contract or document that applications must return null and accept the higher-query fallback."
+    }
+  ]
+}

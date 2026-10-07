@@ -44,5 +44,9 @@ final class PaginationTest extends AcceptanceTestCase
         $doc = $this->collection(['filter' => ['title' => 'absent']]);
         self::assertSame([], $doc['data']);
         self::assertNull($doc['links']['next'] ?? null);
+    }    public function testConfiguredDefaultPageSizeAppliesWithoutClientParameter(): void
+    {
+        self::assertCount(5, $this->collection()['data']);
     }
+
 }

@@ -1,0 +1,13 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    performance: { head_enabled: false }
+    write: { allow_relationship_writes: false }
+    cache:
+        conditional:
+            enable_if_none_match: false
+            enable_if_modified_since: false
+            enable_if_match: false
+            enable_if_unmodified_since: false

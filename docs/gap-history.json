@@ -1,0 +1,2440 @@
+{
+  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+  "revision_semantics": "Verification snapshots, not fix commits; null first_seen means exact historical first observation is unknown.",
+  "history": [
+    {
+      "id": "CONTENT-NEGOTIATION-001",
+      "area": "content negotiation",
+      "expected": "Ignore invalid Accept candidates when a valid JSON:API candidate remains.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Parse candidates independently in ContentNegotiationSubscriber.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/ContentNegotiationTest::testMixedValidInvalidCandidates"
+        }
+      ],
+      "historical_observation": "406 for both candidate orders and unsupported-extension fallback.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CONTENT-NEGOTIATION-002",
+      "area": "content negotiation",
+      "expected": "Treat q-values as HTTP metadata; respect unacceptable q=0.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Separate Accept quality values from JSON:API media parameters.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/ContentNegotiationTest::testQualityValues"
+        }
+      ],
+      "historical_observation": "q=1 and q=0.8 return 406; q=0 already returns 406.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-001",
+      "area": "Atomic Operations",
+      "expected": "Infer add target from data.type without ref/href. Domain-invalid title-only articles reach 422 validation.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AtomicValidator target inference.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicCreateTest::testCanonicalAddWithoutRefOrHref"
+        },
+        {
+          "test": "Atomic/AtomicCreateTest::testTitleOnlyCanonicalAddReachesDomainValidation"
+        }
+      ],
+      "historical_observation": "400 missing target before domain validation.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-002",
+      "area": "Atomic Operations",
+      "expected": "Infer update target from data.type and data.id.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AtomicValidator target inference.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicUpdateTest::testUpdateTargetFromDataWithoutRefOrHref"
+        }
+      ],
+      "historical_observation": "400 missing target.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-003",
+      "area": "Atomic Operations",
+      "expected": "Reject ref with both id and lid.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AtomicRequestParser exclusive identifier validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testRefCannotContainBothIdAndLid"
+        }
+      ],
+      "historical_observation": "200 accepts the id and ignores lid.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-004",
+      "area": "Atomic Operations",
+      "expected": "Return generated IDs and resolve lids after persisting generated-ID resources.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "AddHandler/OperationDispatcher flush and lid resolution ordering.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicCreateTest::testCreateUsingHrefAndGeneratedId"
+        },
+        {
+          "test": "Atomic/AtomicLidTest::testLocalIdsAcrossCreateAndRelationshipOperations"
+        }
+      ],
+      "historical_observation": "400 Unable to resolve resource identifier for persisted model, before operation flush.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-005",
+      "area": "Atomic Operations",
+      "expected": "Accept same-origin absolute and path-relative URI references.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "AtomicValidator URI-reference resolution and same-origin checks.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testSameOriginAbsoluteHref"
+        },
+        {
+          "test": "Atomic/AtomicValidationTest::testRelativeUriReference"
+        }
+      ],
+      "historical_observation": "400 rejects absolute URLs and references without leading slash.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-006",
+      "area": "Atomic Operations",
+      "expected": "Reject href with unrecognized trailing path segments.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "AtomicValidator must consume and validate the entire href.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testInvalidHrefBundleGap",
+          "datasets": [
+            "#1"
+          ]
+        }
+      ],
+      "historical_observation": "200 ignores trailing path segments and removes the resource.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-007",
+      "area": "Atomic Operations",
+      "expected": "Serialize empty atomic result entries as JSON objects.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "ResultBuilder empty object serialization.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testEmptyAtomicResultsMustBeObjects"
+        }
+      ],
+      "historical_observation": "200 emits [] entries instead of {}.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-008",
+      "area": "Atomic Operations",
+      "expected": "Return each operation representation at its position in the batch.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Snapshot operation outcomes before processing later mutations.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicTransactionalityTest::testSuccessfulBatchOrderAndMixedEmptyResults"
+        }
+      ],
+      "historical_observation": "Earlier update result reflects the final mutable entity state.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-009",
+      "area": "Atomic Operations",
+      "expected": "Apply read-only operation policy to atomic resource updates.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Atomic execution must enforce ResourceOperation restrictions.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicReadonlyResourceCannotBeWritten"
+        }
+      ],
+      "historical_observation": "422 serializer rejection instead of policy 403; operation authorization is bypassed.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-010",
+      "area": "Atomic Operations",
+      "expected": "Apply the configured client-generated ID policy to atomic creates.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Atomic AddHandler must apply WriteConfig client-ID policy.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicClientIdPolicyMatchesOrdinaryCreates"
+        }
+      ],
+      "historical_observation": "500 attempts to assign a string to a generated integer ID.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-011",
+      "area": "errors",
+      "expected": "Use /atomic:operations/N/data/... pointers in atomic errors.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Rebase write/validation error pointers onto their atomic operation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicUnknownAttributeIsRejected"
+        },
+        {
+          "test": "Atomic/AtomicValidationTest::testAtomicFailurePointerIdentifiesOperationAndExternalField"
+        }
+      ],
+      "historical_observation": "Errors contain ordinary /data/... pointers.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-012",
+      "area": "content negotiation",
+      "expected": "Recognize the enabled Atomic extension with strict global negotiation.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Connect enabled extensions to global media-type negotiation.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Atomic/AtomicNegotiationTest::testEnabledAtomicExtensionWithStrictGlobalNegotiation"
+        }
+      ],
+      "historical_observation": "415 rejects all extensions before AtomicController. A public channel isolates Atomic execution tests.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-013",
+      "area": "content negotiation",
+      "expected": "Atomic negotiation rejects incorrect base media types and unsupported Content-Type parameters.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Use a shared structured media-type parser for Atomic requests.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Atomic/AtomicNegotiationTest::testWrongBaseMediaTypeWithAtomicExtIsRejected"
+        },
+        {
+          "test": "Atomic/AtomicNegotiationTest::testAtomicMediaParameterRejected"
+        }
+      ],
+      "historical_observation": "AtomicController accepts text/plain with atomic ext and JSON:API atomic with charset.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CACHE-001",
+      "area": "cache/preconditions",
+      "expected": "Evaluate write preconditions before mutation; matching GET ETag permits a write.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "CachePreconditionsSubscriber currently runs at kernel.response; move write checks before persistence.",
+      "priority": "P0",
+      "tests": [
+        {
+          "test": "Cache/WritePreconditionsTest::testMatchingIfMatchAllowsUpdate"
+        },
+        {
+          "test": "Cache/WritePreconditionsTest::testStaleIfMatchRejectsWithoutChangingState"
+        },
+        {
+          "test": "Cache/WritePreconditionsTest::testStaleIfMatchDoesNotDelete"
+        },
+        {
+          "test": "Cache/WritePreconditionsTest::testRequiredPrecondition"
+        }
+      ],
+      "historical_observation": "Valid If-Match gets 412; stale/missing conditions return 412/428 after changes have already persisted.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CACHE-002",
+      "area": "cache/preconditions",
+      "expected": "Resolve Last-Modified from the configured updatedAt field.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "LastModifiedResolver must use resource metadata/configuration.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Cache/ConditionalRequestsTest::testLastModifiedUsesConfiguredEntityField"
+        }
+      ],
+      "historical_observation": "Header uses current wall-clock time instead of the entity timestamp.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCTRINE-001",
+      "area": "Doctrine",
+      "expected": "Map unique violations to JSON:API 409 and roll back the transaction.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Map database exceptions raised inside DoctrineTransactionManager and Atomic dispatch.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testUniqueConstraintOnCreate"
+        },
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testUniqueConstraintOnUpdate"
+        },
+        {
+          "test": "Atomic/AtomicTransactionalityTest::testEarlierCreateIsRolledBackBundleGap",
+          "datasets": [
+            "#1"
+          ]
+        }
+      ],
+      "historical_observation": "500 escapes from transaction/flush; rollback checks themselves pass.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCTRINE-002",
+      "area": "Doctrine",
+      "expected": "Report FK restriction as JSON:API 422 and retain the parent.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "DatabaseErrorMapper integration at transaction flush/delete.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Resource/ResourceDeleteTest::testForeignKeyRestrictionIsAnErrorDocument"
+        }
+      ],
+      "historical_observation": "500 from an unmapped Doctrine FK exception.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "RELATIONSHIP-001",
+      "area": "errors",
+      "expected": "Point missing related identifiers at the public linkage id member.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "RelationshipResolver and relationship endpoint error pointers.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testMissingRelationshipReference"
+        },
+        {
+          "test": "Resource/ResourceUpdateTest::testUnknownRelatedResourceInPatch"
+        },
+        {
+          "test": "Relationships/ToOneRelationshipTest::testInvalidLinkageBundleGap",
+          "datasets": [
+            "#1"
+          ]
+        }
+      ],
+      "historical_observation": "404 pointer omits /data/id or refers to the relationship rather than its identifier.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "RELATIONSHIP-002",
+      "area": "relationships",
+      "expected": "Use consistent 409 for linkage resource-type conflicts in ordinary create/update requests.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Unify resource-write and relationship endpoint type-conflict validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testWrongRelationshipType"
+        },
+        {
+          "test": "Resource/ResourceUpdateTest::testWrongRelatedTypeInPatch"
+        }
+      ],
+      "historical_observation": "Relationship endpoints use 409, resource writes use 422.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "RELATIONSHIP-003",
+      "area": "relationships",
+      "expected": "Reject unknown relationship writes with 400.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "InputDocumentValidator relationship whitelist.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineConstraintsTest::testUnknownRelationship"
+        }
+      ],
+      "historical_observation": "201 silently discards unknown relationship names.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "RELATIONSHIP-004",
+      "area": "relationships",
+      "expected": "Reject null on required author with a client validation error.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate required relationship metadata before persistence.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Relationships/ToOneRelationshipTest::testInvalidLinkageBundleGap",
+          "datasets": [
+            "#3"
+          ]
+        }
+      ],
+      "historical_observation": "500 DB not-null violation when clearing required relationship.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "RELATIONSHIP-005",
+      "area": "relationships",
+      "expected": "Provide a related link in the linkage document as an application navigation contract.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Linkage document navigation links.",
+      "priority": "P2",
+      "tests": [
+        {
+          "test": "Relationships/ToOneRelationshipTest::testReadLinkageAndRelatedResource"
+        }
+      ],
+      "historical_observation": "The resource relationship object has related, but its standalone linkage document omits it.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "HTTP-001",
+      "area": "HEAD/OPTIONS",
+      "expected": "HEAD sends GET-compatible ETag and an empty body.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Generate validators from GET representation before stripping HEAD body.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/HeadTest::testHeadHasGetHeadersAndNoBody"
+        }
+      ],
+      "historical_observation": "Bodies are empty, but HEAD ETags differ from GET for all route categories.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "HTTP-002",
+      "area": "HEAD/OPTIONS",
+      "expected": "Generated OPTIONS routes execute and report cardinality-aware Allow methods.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Register OptionsController and exclude POST/DELETE for to-one relationships.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/OptionsTest::testAllowHeader"
+        },
+        {
+          "test": "Protocol/OperationRestrictionsTest::testReadonlyOptions"
+        }
+      ],
+      "historical_observation": "500: OptionsController has constructor arguments but is not registered in the container.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "FILTER-001",
+      "area": "filtering",
+      "expected": "Support registered neq and documented ne not-equals operators.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Align FilterParser, operator registry and filter whitelist.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "neq public operator",
+            "ne"
+          ]
+        }
+      ],
+      "historical_observation": "neq is rejected by parser; ne reaches an unknown compiler operator and returns 500.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "FILTER-002",
+      "area": "filtering",
+      "expected": "Compile supported between filters and reject extra operands.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Handle Between AST and require exactly two operands.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "between"
+          ]
+        },
+        {
+          "test": "Query/QueryValidationTest::testBetweenRejectsExtraOperand"
+        }
+      ],
+      "historical_observation": "500: Between AST is unsupported by DoctrineFilterCompiler.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "FILTER-003",
+      "area": "filtering",
+      "expected": "Compile isnull true/false through configured nullable field aliases.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Handle NullCheck AST and resolve attribute aliases.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "null",
+            "not null"
+          ]
+        }
+      ],
+      "historical_observation": "500: NullCheck AST is unsupported by DoctrineFilterCompiler.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "FILTER-004",
+      "area": "filtering",
+      "expected": "Execute PostgreSQL ilike with the app's installed DBAL 4.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Update Doctrine ILikeFunction platform detection for DBAL 4.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "ilike"
+          ]
+        }
+      ],
+      "historical_observation": "500: PostgreSQL platform no longer has getName().",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "FILTER-005",
+      "area": "filtering",
+      "expected": "Define empty IN as no matches and empty NOT IN as all matches.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate/coerce set operands; compile deliberate empty-set semantics.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testEmptyInMatchesNothing"
+        },
+        {
+          "test": "Query/QueryValidationTest::testEmptyNotInMatchesEverything"
+        }
+      ],
+      "historical_observation": "500 for empty string operands on the integer field.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ALIAS-001",
+      "area": "aliases",
+      "expected": "Translate external attribute aliases for filter and sort.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "ResourceMetadata.resolveFieldPath must map attribute names as well as relationships.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/FilteringTest::testSupportedOperatorsBundleGap",
+          "datasets": [
+            "datetime alias"
+          ]
+        },
+        {
+          "test": "Query/SortingTest::testNullableAliasSort"
+        }
+      ],
+      "historical_observation": "500: published-at is emitted as a DQL path instead of publishedAt.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "QUERY-001",
+      "area": "query parsing",
+      "expected": "Reject malformed page lists and report source.parameter=page.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "QueryParser pagination member shape validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testMalformedPageListRejected"
+        },
+        {
+          "test": "Query/QueryValidationTest::testScalarPageRejected"
+        }
+      ],
+      "historical_observation": "page[]=1 succeeds; scalar page error uses a different source parameter.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "QUERY-002",
+      "area": "query parsing",
+      "expected": "Reject invalid operand objects/types and excessive filter depth at HTTP boundary.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Bound and type-check parsed filter operands before Doctrine.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testQueryBoundaryBundleGap",
+          "datasets": [
+            "wrong operator shape"
+          ]
+        },
+        {
+          "test": "Query/QueryValidationTest::testWrongIntegerOperandProducesClientError"
+        },
+        {
+          "test": "Query/QueryValidationTest::testExcessiveFilterDepthIsRejected"
+        }
+      ],
+      "historical_observation": "Object operand and deep groups succeed; invalid integer operand leaks a DB 500.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ERROR-001",
+      "area": "errors",
+      "expected": "Provide a stable nonempty title for query errors.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Complete ErrorMapper title mapping for query whitelist errors.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/QueryValidationTest::testQueryBoundaryBundleGap",
+          "datasets": [
+            "unknown filter field"
+          ]
+        }
+      ],
+      "historical_observation": "Unknown filter field response has code/status/source but no title.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ERROR-002",
+      "area": "errors",
+      "expected": "Report malformed to-one resource linkage as JSON:API 400 with public data pointer.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate resource relationship cardinality/shape before resolving.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Protocol/ErrorDocumentTest::testMalformedRelationshipDataPointsToData"
+        }
+      ],
+      "historical_observation": "500 for array linkage in a resource create document.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "INCLUDE-001",
+      "area": "compound documents",
+      "expected": "When include is requested and the nullable relationship is empty, emit included: [].",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "DocumentBuilder requested-but-empty include handling.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/IncludeTest::testNullableInclude"
+        }
+      ],
+      "historical_observation": "The included member is omitted.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "WRITE-001",
+      "area": "writes",
+      "expected": "Accept empty attributes object in a partial PATCH.",
+      "category": "MUST_CONFORMANCE",
+      "bundle_change_required": "Preserve JSON object/array distinction in request validation.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Resource/ResourceUpdateTest::testEmptyAttributeObjectIsValid"
+        }
+      ],
+      "historical_observation": "400: associative decoding conflates {} with [].",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-001",
+      "area": "profiles",
+      "expected": "Apply per-type default relationship count profile.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Per-type ProfileContext activation in DocumentBuilder.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Profiles/ProfileTest::testProfileEnabledByDefaultForTags"
+        }
+      ],
+      "historical_observation": "No count metadata for tags without Accept profile; negotiated profile works.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-002",
+      "area": "profiles",
+      "expected": "Negotiated soft-delete profile excludes archived categories on collection/item reads.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Integrate soft-delete query hooks with Doctrine collection and item reads.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Profiles/ProfileTest::testSoftDeleteProfileExcludesArchivedCategory"
+        }
+      ],
+      "historical_observation": "Archived categories remain visible.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-003",
+      "area": "profiles",
+      "expected": "Negotiated audit profile advances and persists updatedAt on writes.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Integrate audit WriteHook into resource processors/controllers.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Profiles/ProfileTest::testAuditTrailProfileUpdatesTimestamp"
+        }
+      ],
+      "historical_observation": "Timestamp remains the seeded value; write hooks are not integrated.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "SORT-001",
+      "area": "sorting",
+      "expected": "Implicit ID tiebreaker keeps tied title pagination deterministic after updates.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Append a stable identifier ordering when absent from client sorting.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Query/SortingTest::testImplicitIdTiebreakerSurvivesUpdates"
+        }
+      ],
+      "historical_observation": "Tied rows reverse after an unrelated row update.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "UUID-001",
+      "area": "Doctrine UUID identifiers",
+      "expected": "Client-supplied UUID strings create resources with a typed Symfony Uuid identifier through ordinary POST and Atomic add.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Doctrine processors must convert client identifiers using mapped Doctrine/Serializer types before PropertyAccessor assignment.",
+      "priority": "P1",
+      "tests": [
+        {
+          "test": "Doctrine/UuidIdentifierTest::testClientAssignedDoctrineUuidObject"
+        },
+        {
+          "test": "Doctrine/UuidIdentifierTest::testAtomicClientAssignedDoctrineUuidObject"
+        }
+      ],
+      "historical_observation": "Both requests return 500 because client ID assignment passes a string to setId(Uuid). Constructor-generated UUID objects and UUID string identifiers work.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "UUID-002",
+      "area": "Doctrine UUID identifiers",
+      "expected": "A malformed identifier in a UUID resource URL produces a JSON:API 400 client error.",
+      "category": "DESIRED_CAPABILITY",
+      "bundle_change_required": "Validate mapped UUID identifiers at the HTTP boundary or translate Doctrine UID conversion errors into JSON:API client errors.",
+      "priority": "P2",
+      "tests": [
+        {
+          "test": "Doctrine/UuidIdentifierTest::testMalformedUuidDoesNotLeakServerError"
+        }
+      ],
+      "historical_observation": "GET /api/newsletters/not-a-uuid returns 500 when Doctrine UuidType rejects the identifier. A valid nonexistent UUID correctly returns 404.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "EXTENSIBILITY-PROFILE-DI",
+      "area": "Production profile dependency injection",
+      "expected": "A tagged public ProfileInterface service can use required constructor injection and the HTTP application still boots.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Symfony service construction is part of the public extension integration. Application policies need injected context; they must not be forced into service-location or mutable global state.",
+      "bundle_change_required": "Support dependency-injected profile services during validation; obtain static descriptors without constructing unconfigured application services.",
+      "tests": [
+        {
+          "test": "Production/ExtensibilityTest::testPublicProfileSupportsConstructorInjectedUserContext"
+        }
+      ],
+      "historical_observation": "Container validation reports the registered profile as missing when it has a required constructor dependency; HTTP cannot start.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "QUERY-SCOPE-GRAPH",
+      "area": "Production ownership scope across graph reads",
+      "expected": "Application-owned Article scope applies before pagination to INDEX, related collections, includes and relationship linkage; foreign objects and identifiers are not exposed.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "why_bundle": "Choosing visibility is application policy. Consistently invoking a public query-scope extension across every generated graph read is bundle infrastructure; post-filtering hydrated pages or replacing include/linkage engines would hide the missing seam.",
+      "bundle_change_required": "Provide one mandatory resource query/visibility extension used for root queries, relationship pagination, identifier discovery and includes, independent of client profile negotiation.",
+      "tests": [
+        {
+          "test": "Production/QueryScopeTest::testRelatedCollectionCannotLeakForeignArticles"
+        },
+        {
+          "test": "Production/QueryScopeTest::testIncludesCannotLeakForeignArticles"
+        },
+        {
+          "test": "Production/QueryScopeTest::testRelationshipLinkageCannotLeakForeignIdentifiers"
+        }
+      ],
+      "historical_observation": "ResourceRepository decoration scopes INDEX/SHOW and DTO projections, but related collections, includes and linkage bypass that scope and expose Grace articles to editor A.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CUSTOM-ACTION-READ-MODEL",
+      "area": "Custom-route-only aggregate read model",
+      "expected": "A custom handler can serialize a registered non-Doctrine aggregate resource with operations=[] using its custom GET route, without requiring fictitious generated CRUD routes.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "The aggregate SQL and authorization are application-owned. Resource serialization and link generation must support the public custom-route/read-model contract without forcing unrelated persistence routes.",
+      "bundle_change_required": "Support canonical/self link metadata for custom-route-only resources or safely serialize resources without a generated SHOW route.",
+      "tests": [
+        {
+          "test": "Production/ReadModelTest::testAggregateResourceIsIndependentOfDoctrineWriteModel"
+        }
+      ],
+      "historical_observation": "CustomRouteResult::resource attempts to generate jsonapi.author-publishing-statistics.show although SHOW is disabled; the aggregate endpoint returns 500.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "WRITE-MODEL-SERIALIZER-METADATA",
+      "area": "Symfony external serializer mapping",
+      "expected": "The bundle honors effective Symfony Serializer metadata, including configured environment-specific YAML write groups; original wide-surface test contracts remain executable while publishing uses attribute-only safe groups.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Resolving effective Symfony Serializer input metadata is generic transport integration. Consumers should not need to duplicate serializer mapping in bundle internals or replace generic deserialization. Production attribute groups already enforce the safe surface correctly.",
+      "bundle_change_required": "Use effective Symfony serializer metadata consistently when determining allowed input fields, including external mapping paths and inherited metadata.",
+      "tests": [
+        {
+          "test": "Doctrine/DoctrineTypesTest::testWriteTypesRoundTrip"
+        },
+        {
+          "test": "Resource/ResourceCreateTest::testAllWritableAttributesAndRelationships"
+        },
+        {
+          "test": "Resource/ResourceUpdateTest::testAttributesAndRelationshipsTogether"
+        },
+        {
+          "test": "Smoke/RealWorldWorkflowTest::testPublishingWorkflow"
+        },
+        {
+          "test": "Mapping/FieldAliasesTest::testReadAndWriteAlias"
+        }
+      ],
+      "historical_observation": "Symfony debug:serializer reports articles:write for the configured test fields, but generated JSON:API writes reject views/status/published-at as extra attributes (422). Five original desired round-trip/workflow assertions fail without being changed.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-VALIDATION-BOUNDARY",
+      "area": "Existing mixed-manager validation expectation",
+      "expected": "Reject a batch spanning independent PostgreSQL and MySQL connections with 409 unsupported-transaction-boundary before either operation mutates storage, including when a later operation would fail validation.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "The bundle must detect incompatible transaction boundaries before executing any operation; distributed transactions are outside its contract.",
+      "bundle_change_required": "No change required on the tested revision; keep early rejection and single-connection rollback guarantees.",
+      "tests": [
+        {
+          "test": "Atomic/AtomicTransactionalityTest::testMixedManagerBatchIsRejectedBeforeAnyMutation"
+        }
+      ],
+      "historical_observation": "409 unsupported-transaction-boundary; both resources remain unchanged. The user confirmed this single-connection contract; earlier 422 business-validation precedence is no longer required.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "EXTENSIBILITY-CUSTOM-OPERATOR",
+      "area": "Public feature conformance",
+      "expected": "Registered custom filter operators execute through HTTP parser and Doctrine compilation.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Public operator registry must participate in parser validation; application must not replace generic parser.",
+      "bundle_change_required": "Public operator registry must participate in parser validation; application must not replace generic parser.",
+      "tests": [
+        {
+          "test": "Features/Filtering/InheritanceAndExtensionsTest::testPublicQueryExtensions",
+          "datasets": [
+            "custom operator",
+            "logical custom operator",
+            "bound SQL literal"
+          ]
+        }
+      ],
+      "historical_observation": "400 Unsupported operator starts_with before registered operator invocation.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCS-OPERATIONS",
+      "area": "Public feature conformance",
+      "expected": "OpenAPI advertises only enabled resource operations.",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P1",
+      "why_bundle": "OpenAPI generator must honor ResourceOperation metadata.",
+      "bundle_change_required": "OpenAPI generator must honor ResourceOperation metadata.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testGeneratedResourceOperations"
+        },
+        {
+          "test": "Features/Docs/OpenApiTest::testCustomOnlyResourceDoesNotAdvertiseCrud"
+        },
+        {
+          "test": "Features/Docs/OpenApiTest::testSelectiveOperationsMatchActualCollectionAndItemRoutes"
+        }
+      ],
+      "historical_observation": "Read-only audit-logs advertises POST.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCS-NEGOTIATION",
+      "area": "Public feature conformance",
+      "expected": "Documentation endpoints accept their native response media types with strict negotiation enabled.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Bundle-owned documentation routes must integrate with negotiation policy without consumer route replacements.",
+      "bundle_change_required": "Bundle-owned documentation routes must integrate with negotiation policy without consumer route replacements.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testDocumentationAcceptsItsNativeMediaType"
+        }
+      ],
+      "historical_observation": "OpenAPI returns 406 for Accept application/json; UI returns 406 for text/html.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CONFIG-JSON-SCHEMA",
+      "area": "Public feature conformance",
+      "expected": "Enabled JSON Schema generator exposes its configured HTTP route.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "Public configuration must have a working external contract or be removed/deprecated clearly.",
+      "bundle_change_required": "Public configuration must have a working external contract or be removed/deprecated clearly.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testEnabledJsonSchemaRouteExists"
+        }
+      ],
+      "historical_observation": "Default enabled schema endpoint returns 404; schema configuration has no routing implementation.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CUSTOM-ACTION-QUERY-PARAMETER",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Custom handlers receive application query parameters alongside JSON:API criteria.",
+      "why_bundle": "Expose a per-route query allowlist or documented parsing seam.",
+      "bundle_change_required": "Expose a per-route query allowlist or documented parsing seam.",
+      "tests": [
+        {
+          "test": "Features/CustomRoutes/HandlerContractTest::testApplicationQueryParameterReachesCustomHandler"
+        }
+      ],
+      "historical_observation": "Query parser rejects title before CustomRouteContext::getQueryParam can consume it.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-READ-HOOK",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "Negotiated public ReadHook restricts collection before pagination.",
+      "why_bundle": "Generated repositories must invoke public read hooks with negotiated context.",
+      "bundle_change_required": "Generated repositories must invoke public read hooks with negotiated context.",
+      "tests": [
+        {
+          "test": "Features/Profiles/PublicHooksTest::testDocumentQueryAndReadHooksCompose"
+        }
+      ],
+      "historical_observation": "QueryHook caps page size, but ReadHook custom condition is ignored: views 10/20 instead of 100/110.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-RELATIONSHIP-HOOK",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "Negotiated RelationshipHook can reject associations before mutation.",
+      "why_bundle": "All generated relationship writes must invoke public relationship hooks before persistence.",
+      "bundle_change_required": "All generated relationship writes must invoke public relationship hooks before persistence.",
+      "tests": [
+        {
+          "test": "Features/Profiles/PublicHooksTest::testRelationshipHookRejectsBeforePersistence"
+        }
+      ],
+      "historical_observation": "PATCH succeeds 200 and changes author despite hook throwing ForbiddenException.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "WRITE-REQUEST-DTO",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Operation-specific writeRequests input class validates incoming attributes.",
+      "why_bundle": "Make public operation input metadata participate in normal validation/denormalization; document supported keys.",
+      "bundle_change_required": "Make public operation input metadata participate in normal validation/denormalization; document supported keys.",
+      "tests": [
+        {
+          "test": "Features/Mapping/PublicInputAndVersionTest::testOperationSpecificInputClassIsValidated"
+        }
+      ],
+      "historical_observation": "Short title receives 201; configured DTO Length(min:20) ignored.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "VERSION-RESOLVER-CONTEXT",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "VersionResolver receives negotiated profile and selects the configured DTO mapping.",
+      "why_bundle": "Carry request ProfileContext into public representation-definition resolution.",
+      "bundle_change_required": "Carry request ProfileContext into public representation-definition resolution.",
+      "tests": [
+        {
+          "test": "Features/Mapping/PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation"
+        },
+        {
+          "test": "Features/Mapping/PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields"
+        }
+      ],
+      "severity_reason": "A promised public representation-selection API returns 500 on generated SHOW/INDEX/related transport; stabilize the contract or remove the advertised capability before 1.0.",
+      "historical_observation": "Negotiated alternate representation returns JSON:API 500 through SHOW, INDEX and related collection; sparse INDEX and included-resource cases pass.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation",
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"",
+        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\""
+      ],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "DX-PROFILE-COMMAND",
+      "area": "Public feature conformance",
+      "category": "DX_GAP",
+      "priority": "P2",
+      "expected": "Documented jsonapi:validate-profiles command is registered.",
+      "why_bundle": "Register the public command and document availability/dependencies.",
+      "bundle_change_required": "Register the public command and document availability/dependencies.",
+      "tests": [
+        {
+          "test": "Features/Configuration/PublicConfigurationTest::testProfileValidationCommandRunsFromConsumerContainer"
+        }
+      ],
+      "historical_observation": "Symfony Console has no jsonapi namespace despite command class present.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "FILTER-PUBLIC-NULL-NAMES",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Public FilterableField null/nnull operators execute as null checks.",
+      "why_bundle": "Align parser operator vocabulary with public metadata and docs.",
+      "bundle_change_required": "Align parser operator vocabulary with public metadata and docs.",
+      "tests": [
+        {
+          "test": "Features/Filtering/NativeOperatorsTest::testDocumentedNullOperatorNames"
+        }
+      ],
+      "historical_observation": "Both names return400 unsupported operator; isnull alias works.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "RELATIONSHIP-BUDGET-ENDPOINT",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "Relationship identifier budget applies to standalone linkage endpoints.",
+      "why_bundle": "Enforce the same budget before legacy relationship identifier reads.",
+      "bundle_change_required": "Enforce the same budget before legacy relationship identifier reads.",
+      "tests": [
+        {
+          "test": "Features/Relationships/IdentifierBudgetTest::testOversizedRelationshipIsRejectedWithoutTruncation",
+          "datasets": [
+            "linkage endpoint"
+          ]
+        }
+      ],
+      "historical_observation": "Root/include reject oversized tags, standalone linkage returns200 with all identifiers.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CACHE-SURROGATE-ROUTES",
+      "area": "Public feature conformance",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Generated resource/collection routes emit configured surrogate keys.",
+      "why_bundle": "Resolve resource identity from public route metadata consistently for all generated routes.",
+      "bundle_change_required": "Resolve resource identity from public route metadata consistently for all generated routes.",
+      "tests": [
+        {
+          "test": "Features/Cache/HeaderConfigurationTest::testConfiguredCacheHeadersAndSurrogateResource"
+        },
+        {
+          "test": "Features/Cache/HeaderConfigurationTest::testStrongCollectionValidatorAndCollectionKey"
+        }
+      ],
+      "historical_observation": "No X-Cache-Tags header; builder recognizes legacy generic names rather than generated resource-specific names.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCS-INHERITANCE",
+      "area": "Public feature conformance",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "OpenAPI expands inherited filter/sort whitelists including aliases and exclusions.",
+      "why_bundle": "Document effective whitelist rather than raw inheritance declarations.",
+      "bundle_change_required": "Document effective whitelist rather than raw inheritance declarations.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testInheritedWhitelistIsExpandedInDocumentation"
+        }
+      ],
+      "historical_observation": "Spec advertises relationship root author rather than executable author.name/email fields.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCS-WRITABLE-SCHEMA",
+      "area": "Public feature conformance",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P1",
+      "expected": "OpenAPI schema distinguishes server-owned attributes from writable inputs.",
+      "why_bundle": "Generate operation input schemas or readOnly/writeOnly from effective serializer metadata.",
+      "bundle_change_required": "Generate operation input schemas or readOnly/writeOnly from effective serializer metadata.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testReadOnlyAttributesAreNotAdvertisedAsWritable"
+        }
+      ],
+      "historical_observation": "createdAt/updatedAt lack readOnly despite HTTP rejecting client writes.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCS-PAGINATION-CONFIG",
+      "area": "Public feature conformance",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "OpenAPI pagination defaults/limits equal effective application configuration.",
+      "why_bundle": "Read effective public pagination/limits configuration during generation.",
+      "bundle_change_required": "Read effective public pagination/limits configuration during generation.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testPaginationDocumentationUsesEffectiveConfiguration"
+        }
+      ],
+      "historical_observation": "Spec default20/max100 while runtime configuration default5/max20.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ATOMIC-LID-CONFIG",
+      "area": "Atomic configuration",
+      "expected": "Setting lid.accept_in_resource_and_identifier=false rejects resource and identifier lids.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "why_bundle": "Enforcing a public Atomic protocol configuration is transport infrastructure.",
+      "bundle_change_required": "Apply lid policy consistently to data resources as well as operation refs.",
+      "tests": [
+        {
+          "test": "Features/Atomic/ConfigurationMatrixTest::testAtomicConfigurationGuards",
+          "datasets": [
+            "lid"
+          ]
+        }
+      ],
+      "historical_observation": "Atomic add accepts data.lid and creates the Author with200 despite the disabled policy.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-SOFT-VISIBILITY",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Soft-delete default_visibility include/only controls visible rows.",
+      "why_bundle": "Wire public visibility configuration into the negotiated query hook.",
+      "bundle_change_required": "Wire public visibility configuration into the negotiated query hook.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteConfigurationTest::testConfiguredVisibility",
+          "datasets": [
+            "include",
+            "only"
+          ]
+        }
+      ],
+      "historical_observation": "Both include and only return the default three undeleted categories.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-SOFT-DELETE-SEMANTICS",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P1",
+      "expected": "delete_semantics=soft retains the row and records deletion state.",
+      "why_bundle": "Implement the declared generic deletion policy or explicitly remove/deprecate the misleading option.",
+      "bundle_change_required": "Implement the declared generic deletion policy or explicitly remove/deprecate the misleading option.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteConfigurationTest::testDeleteSemanticsPersistExpectedState",
+          "datasets": [
+            "soft"
+          ]
+        }
+      ],
+      "historical_observation": "DELETE204 physically removes the category despite configured soft semantics.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-SOFT-QUERY-FLAGS",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Configured soft-delete flags are consumed as profile query controls.",
+      "why_bundle": "Connect public flag names with query parsing and whitelist handling.",
+      "bundle_change_required": "Connect public flag names with query parsing and whitelist handling.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteConfigurationTest::testConfiguredQueryFlagIsConsumedBeforeWhitelist"
+        }
+      ],
+      "historical_observation": "includeArchived returns400 filter-not-allowed before the profile can consume it.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "PROFILE-SOFT-BOOLEAN",
+      "area": "Public configuration interoperability",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "expected": "strategy=boolean excludes true deletion markers and retains false markers.",
+      "why_bundle": "Compile configured strategy using boolean predicates and validate compatible metadata.",
+      "bundle_change_required": "Compile configured strategy using boolean predicates and validate compatible metadata.",
+      "tests": [
+        {
+          "test": "Features/Profiles/BooleanSoftDeleteTest::testBooleanStrategyExcludesOnlyMarkedRows"
+        }
+      ],
+      "historical_observation": "Boolean strategy still uses IS NULL; both nonnullable false/true records disappear.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "MEDIA-CHANNEL-ROUTING",
+      "area": "Public configuration interoperability",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P2",
+      "expected": "Route-name and attribute channels select configured request/response policy.",
+      "why_bundle": "Resolve routing/MediaChannel metadata before selecting scoped negotiation policy.",
+      "bundle_change_required": "Resolve routing/MediaChannel metadata before selecting scoped negotiation policy.",
+      "tests": [
+        {
+          "test": "Features/Protocol/MediaChannelsTest::testPublicChannelScopeAndResponse",
+          "datasets": [
+            "route",
+            "attribute"
+          ]
+        }
+      ],
+      "historical_observation": "Path channel works; route/attribute POST application/json returns415 using default policy.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DOCS-ENDPOINT-EXAMPLES",
+      "area": "OpenAPI endpoint attributes",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Public OpenApiEndpoint examples/OpenApiExample values appear in the generated HTTP specification.",
+      "why_bundle": "Interpreting public documentation attributes is the bundle generator responsibility.",
+      "bundle_change_required": "Serialize configured named examples at the appropriate OpenAPI request/response media location.",
+      "tests": [
+        {
+          "test": "Features/Docs/OpenApiTest::testPublicEndpointExamplesArePresentInSpec"
+        }
+      ],
+      "historical_observation": "Summary, parameters, schemaRef, headers and security are emitted; examples silently disappear.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "DX-TYPED-PERSISTER-DISPATCH",
+      "area": "typed data layer",
+      "expected": "Documented jsonapi.persister tagged TypedResourcePersister implementations handle generated create routes independently for multiple resource types.",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P1",
+      "why_bundle": "The bundle advertises the public legacy contract and tag; independent consumers need a supported typed write registration path or an explicit documented migration to ResourceProcessor. Reimplementing dispatch in the application would hide this mismatch.",
+      "bundle_change_required": "Provide and document an active typed write contract/registration seam, or deprecate obsolete persister/tag examples with an executable migration example.",
+      "tests": [
+        {
+          "test": "Features/DataLayer/TypedProviderTest::testDocumentedTypedPersisterRegistrationHandlesGeneratedWrites"
+        }
+      ],
+      "historical_observation": "Typed repository reads succeed, but both typed create routes return JSON:API 500; current ResourceProcessor dispatch ignores the documented legacy persister registration.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "CACHE-VERSION-STRATEGY",
+      "area": "HTTP caching",
+      "expected": "cache.etag.strategy=version uses X-Resource-Version supplied by the application; no version produces no ETag.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "Selecting the configured ETag generator belongs to bundle configuration, not application alias replacement.",
+      "bundle_change_required": "Wire the version strategy through the public configuration and document the response-version header contract.",
+      "tests": [
+        {
+          "test": "Features/Cache/VersionStrategyTest::testConfiguredVersionStrategyUsesApplicationVersion"
+        }
+      ],
+      "historical_observation": "The configured strategy still generates body-hash ETags, including when no version header is present.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "PROFILE-DEFAULT-WRITE",
+      "area": "profile lifecycle",
+      "expected": "Per-type default profiles execute write hooks without an explicit Accept profile; application identity is recorded on create.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "why_bundle": "Default-profile selection must apply consistently to read and write lifecycle hooks. Applications should not require clients to request server audit policy.",
+      "bundle_change_required": "Resolve default and per-type profiles before write-hook execution on generated mutations.",
+      "tests": [
+        {
+          "test": "Features/Profiles/AuditIdentityTest::testPerTypeDefaultProfileAppliesToWriteHooksWithoutExplicitNegotiation"
+        }
+      ],
+      "historical_observation": "Explicitly negotiated builtin audit records createdBy/updatedBy, but per_type default alone creates the memo with createdBy=null.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "FILTER-HANDLER-LOGICAL-COMPOSITION",
+      "area": "custom filter composition",
+      "expected": "Custom predicates retain their AST position in AND, both OR orders and nested alternatives, with bound parameters.",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "why_bundle": "The public imperative FilterHandlerInterface cannot naturally contribute a predicate at its AST position. Rebuilding logical query compilation in the application would replace generic bundle behavior.",
+      "bundle_change_required": "Expose an expression/predicate custom-filter contract that composes at the original logical AST position, including bound parameters and error mapping.",
+      "tests": [
+        {
+          "test": "Features/Filtering/SearchCompositionTest::testHandlerInsideOrPreservesAlternativeNormalPredicate"
+        }
+      ],
+      "historical_observation": "search=No such term OR views=10 returns zero resources rather than article-1; the handler adds its predicate as a global AND condition.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "DATA-LAYER-CUSTOM-ATOMIC",
+      "area": "custom data provider and Atomic",
+      "expected": "A resource-only Atomic batch uses the configured custom processor/transaction manager; a business failure rolls back the earlier mutation and returns 422.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P1",
+      "why_bundle": "A supported custom provider must boot the resource-only Atomic dispatcher without requiring an application dummy implementation for an unused optional relationship write service.",
+      "bundle_change_required": "Provide valid custom-provider fallback services and avoid mandatory initialization of unused relationship capabilities for standard Atomic resource mutations.",
+      "tests": [
+        {
+          "test": "Features/DataLayer/CustomProviderTest::testAtomicBusinessFailureRollsBackEarlierCustomProviderMutation"
+        }
+      ],
+      "historical_observation": "Atomic controller returns500 before executing the batch: custom-provider services reference the nonexistent AlexFigures\\Symfony\\Contract\\Data\\NullRelationshipUpdater class.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CACHE-COLLECTION-LAST-MODIFIED",
+      "area": "Last-Modified configuration",
+      "expected": "collections_max_of=false disables automatically computed collection Last-Modified, while item validators remain available.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "This is bundle-owned public configuration; implementing an application substitute would hide its missing behavior.",
+      "bundle_change_required": "Honor the documented configuration or explicitly remove/deprecate the unsupported option with a migration contract.",
+      "tests": [
+        {
+          "test": "Features/Cache/DisabledCollectionLastModifiedTest::testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator"
+        }
+      ],
+      "historical_observation": "collections_max_of is accepted but only appears in configuration; runtime always computes a maximum.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "PROFILE-AUDIT-META",
+      "area": "Audit profile metadata",
+      "expected": "expose_in_meta=true exposes server-owned audit information in negotiated resource metadata.",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P2",
+      "why_bundle": "This is bundle-owned public configuration; implementing an application substitute would hide its missing behavior.",
+      "bundle_change_required": "Honor the documented configuration or explicitly remove/deprecate the unsupported option with a migration contract.",
+      "tests": [
+        {
+          "test": "Features/Profiles/AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation"
+        }
+      ],
+      "historical_observation": "The public AuditTrailDocumentHook is a placeholder; the option has no observable effect.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "RESOURCE-ROUTE-PREFIX",
+      "area": "Resource mapping",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "JsonApiResource.routePrefix overrides the global prefix for generated routes and representation links.",
+      "bundle_change_required": "Honor the resource-specific route prefix consistently in generated routes and links.",
+      "tests": [
+        {
+          "test": "Features/Mapping/ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "GET /reference/routed-articles/1 returns 404 despite resource routePrefix=/reference.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/reference\\/routed-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/reference\\/routed-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Auditable renamed timestamp/user fields are honored on CREATE and UPDATE.",
+      "bundle_change_required": "Auditable renamed timestamp/user fields are honored on CREATE and UPDATE.",
+      "tests": [
+        {
+          "test": "Features/Profiles/AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "Renamed insertedBy remains null on CREATE; equivalent configuration mapping passes.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\"\nFailed asserting that null is identical to 'ada@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\"\nFailed asserting that null is identical to 'ada@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\""
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "CONFIG-HEAD-DISABLED",
+      "area": "Reviewed public feature contract",
+      "priority": "P2",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "expected": "head_enabled=false disables HEAD and OPTIONS no longer advertises it.",
+      "bundle_change_required": "head_enabled=false disables HEAD and OPTIONS no longer advertises it.",
+      "tests": [
+        {
+          "test": "Features/Protocol/DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "HEAD returns 200 despite explicit false.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees\nFailed asserting that 200 is identical to 405.\n\n/srv/app/tests/Acceptance/Features/Protocol/DisabledHeadTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees\nFailed asserting that 200 is identical to 405.\n\n/srv/app/tests/Acceptance/Features/Protocol/DisabledHeadTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "PROFILE-REL-COUNT-CONFIG",
+      "area": "Reviewed public feature contract",
+      "priority": "P2",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "expected": "rel_counts.relationship_meta_key names count metadata consistently.",
+      "bundle_change_required": "rel_counts.relationship_meta_key names count metadata consistently.",
+      "tests": [
+        {
+          "test": "Features/Profiles/NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "cardinality key absent; default count key still used.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed\nFailed asserting that an array has the key 'cardinality'.\n\n/srv/app/tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed\nFailed asserting that an array has the key 'cardinality'.\n\n/srv/app/tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "PROFILE-REL-COUNT-RELATED-POLICY",
+      "area": "Reviewed public feature contract",
+      "priority": "P2",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "expected": "compute_in_related_endpoints=false suppresses relationship count computation/exposure on related endpoints.",
+      "bundle_change_required": "compute_in_related_endpoints=false suppresses relationship count computation/exposure on related endpoints.",
+      "tests": [
+        {
+          "test": "Features/Profiles/RelatedCountOptionsTest::testRelatedEndpointCountPolicy"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "count is still present when false; true case passes.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\"\nFailed asserting that an array does not have the key 'count'.\n\n/srv/app/tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\"\nFailed asserting that an array does not have the key 'count'.\n\n/srv/app/tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\""
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "RESOURCE-RELATIONSHIP-POLICIES",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Resource-level relationshipPolicies apply when no per-relationship policy is specified.",
+      "bundle_change_required": "Resource-level relationshipPolicies apply when no per-relationship policy is specified.",
+      "tests": [
+        {
+          "test": "Features/Mapping/RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "Resource map declares VERIFY but effective relationship metadata stays REFERENCE.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'verify'\n+'reference'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'verify'\n+'reference'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Registering a DTO projection must not replace the primary entity resource in getByClass.",
+      "bundle_change_required": "Registering a DTO projection must not replace the primary entity resource in getByClass.",
+      "tests": [
+        {
+          "test": "Features/Mapping/RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "FeatureArticle class resolves to feature-custom-summaries instead of feature-articles.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'feature-articles'\n+'feature-custom-summaries'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'feature-articles'\n+'feature-custom-summaries'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "DOCS-EXPOSE-ID-CONTRACT",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DOCUMENTATION_GAP",
+      "expected": "Read resource OpenAPI keeps id required/non-null even if exposeId=false; transport identity remains valid.",
+      "bundle_change_required": "Read resource OpenAPI keeps id required/non-null even if exposeId=false; transport identity remains valid.",
+      "tests": [
+        {
+          "test": "Features/Mapping/ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "HTTP returns valid id but schema omits id from required.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation\nFailed asserting that an array contains 'id'.\n\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation\nFailed asserting that an array contains 'id'.\n\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "RESOURCE-TAG-DISCOVERY",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DX_GAP",
+      "expected": "jsonapi.resource service registration composes with directory discovery.",
+      "bundle_change_required": "jsonapi.resource service registration composes with directory discovery.",
+      "tests": [
+        {
+          "test": "Features/Mapping/ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "Tagged resource outside discovery paths has no generated route: 404.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/api\\/tagged-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:46\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/api\\/tagged-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:46\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "MEDIA-DEFAULT-POLICY",
+      "area": "Media type configuration",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P1",
+      "expected": "Configured default request/response media policies apply consistently to generated reads and writes; explicit negotiation remains authoritative.",
+      "bundle_change_required": "Resolve request and response media policy uniformly for generated resource routes, including default and negotiated cases.",
+      "tests": [
+        {
+          "test": "Features/Protocol/DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy"
+        },
+        {
+          "test": "Features/Protocol/DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "Configured application/json request policy is rejected with 415 on generated writes; response defaults stay application/vnd.api+json instead of configured application/json.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"",
+        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\""
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "DOCS-METADATA-CONTRACT",
+      "area": "Public metadata interface",
+      "category": "DX_GAP",
+      "priority": "P1",
+      "expected": "Default ResourceMetadata implementation fulfills the published ResourceMetadataInterface contract.",
+      "bundle_change_required": "Make the default metadata implementation conform to its published interface or correct/remove the claim and provide a supported implementation seam.",
+      "tests": [
+        {
+          "test": "Features/Mapping/RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "The concrete default ResourceMetadata does not implement the public interface promised by its API documentation.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract\nResourceMetadataInterface promises an attribute-based default implementation.\nFailed asserting that false is true.\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract\nResourceMetadataInterface promises an attribute-based default implementation.\nFailed asserting that false is true.\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "area": "Public extension signatures",
+      "category": "DX_GAP",
+      "priority": "P1",
+      "expected": "Consumer-facing extension contracts use public stable DTOs or public supported replacements.",
+      "bundle_change_required": "Promote stable DTOs or replace the public signatures before 1.0; avoid requiring application code to depend on @internal types.",
+      "tests": [
+        {
+          "test": "Features/Configuration/PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
+      "historical_observation": "Batch-reader and custom-route registry signatures expose types marked @internal.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/**\\n\n * Metadata for a custom JSON:API route.\\n\n *\\n\n * @internal\\n\n */' [ASCII](length: 64) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/**\\n\n * Metadata for a custom JSON:API route.\\n\n *\\n\n * @internal\\n\n */' [ASCII](length: 64) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"",
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"",
+        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\""
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "PROFILE-SOFT-DELETE-ACTOR-META",
+      "area": "Soft-delete public attribute",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Negotiated soft-delete resource metadata exposes an application-supplied deletion actor using SoftDeletable.deletedByField.",
+      "bundle_change_required": "Honor the documented actor metadata mapping or remove the unsupported promise/attribute option before 1.0. Actor assignment remains application policy.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata"
+        }
+      ],
+      "first_seen_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "historical_observation": "Document hook is a documented placeholder; actor metadata is absent.",
+      "actual": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata\nThe documented soft-delete metadata must honor deletedByField; actor assignment itself remains application policy.\nFailed asserting that null is identical to 'editor@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php:23\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "status": "OPEN",
+      "current_evidence": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata\nThe documented soft-delete metadata must honor deletedByField; actor assignment itself remains application policy.\nFailed asserting that null is identical to 'editor@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php:23\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+      ],
+      "verified_tests": [
+        "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata"
+      ],
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": null
+    },
+    {
+      "id": "PERFORMANCE-NPLUS1",
+      "category": "PERFORMANCE_GAP",
+      "priority": "P1",
+      "expected": "Bounded page 5/20 query growth and preserved plain/include/related absolute query budgets.",
+      "current": "All six fixed release scenarios pass in the complete Torture run after explicit tenant-safe query-plan forwarding. Prior page 5/20 counts were constant; the excess was fallback overhead, not proven linear N+1. Public capability stability remains a design decision.",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testCollectionWithoutIncludeHasBoundedQueryShape",
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testIncludeQueryCountDoesNotGrowWithPageSize",
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testRelatedCollectionQueryCountIsBounded"
+      ],
+      "subsystem": "Doctrine reads and tenant-safe query-plan forwarding",
+      "failing_cases": 0,
+      "passing_cases": 5,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testCollectionWithoutIncludeHasBoundedQueryShape",
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testIncludeQueryCountDoesNotGrowWithPageSize with data set \"to-one\"",
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testIncludeQueryCountDoesNotGrowWithPageSize with data set \"to-many\"",
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testIncludeQueryCountDoesNotGrowWithPageSize with data set \"nested\"",
+        "App\\Tests\\Torture\\Performance\\NPlusOneAndCardinalityTest::testRelatedCollectionQueryCountIsBounded"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "SCALABILITY-FILTER-BUDGET",
+      "category": "SCALABILITY_GAP",
+      "priority": "P1",
+      "expected": "Reject excessive filter trees and operand lists before SQL.",
+      "subsystem": "Criteria complexity enforcement",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testFilterDepthBudgetRejectsBeforeSql",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testFilterNodeBudgetRejectsBeforeSql",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testLargeInListCannotBypassComplexityBudget"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 5,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testFilterNodeBudgetRejectsBeforeSql with data set \"100 nodes\"",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testFilterNodeBudgetRejectsBeforeSql with data set \"500 nodes\"",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testFilterNodeBudgetRejectsBeforeSql with data set \"1000 nodes\"",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testFilterDepthBudgetRejectsBeforeSql",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testLargeInListCannotBypassComplexityBudget"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "SCALABILITY-JOIN-PAGINATION",
+      "category": "SCALABILITY_GAP",
+      "priority": "P1",
+      "expected": "Paginate distinct roots across multiple to-many joins without omissions.",
+      "subsystem": "Doctrine collection paginator",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Extreme\\PaginationUnderJoinsTest::testCartesianJoinsPaginateDistinctRoots",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testReasonableBooleanAndRelationshipFilterWorks"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 2,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Extreme\\PaginationUnderJoinsTest::testCartesianJoinsPaginateDistinctRoots",
+        "App\\Tests\\Torture\\Extreme\\QueryAmplificationTest::testReasonableBooleanAndRelationshipFilterWorks"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "SCALABILITY-INCLUDE-AMPLIFICATION",
+      "category": "SCALABILITY_GAP",
+      "priority": "P1",
+      "expected": "Stop include traversal at the cap before mass hydration.",
+      "subsystem": "Include traversal and limits",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Performance\\HighCardinalityTest::testDenseIncludeIsRejectedBeforeMassHydration"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 1,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Performance\\HighCardinalityTest::testDenseIncludeIsRejectedBeforeMassHydration"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "ARCHITECTURE-COMPOSITE-ID",
+      "category": "ARCHITECTURE_GAP",
+      "priority": "P1",
+      "expected": "Reject unsupported composite identifiers during resource/route discovery with a diagnostic.",
+      "subsystem": "Doctrine metadata discovery",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Extreme\\CompositeDiscoveryTest::testUnsupportedCompositeIdIsRejectedDuringRouteDiscovery"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 1,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Extreme\\CompositeDiscoveryTest::testUnsupportedCompositeIdIsRejectedDuringRouteDiscovery"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CONSISTENCY-ETAG",
+      "category": "CONSISTENCY_GAP",
+      "priority": "P0",
+      "expected": "Two writers with the same validator produce one success and one 412 without loser mutation.",
+      "subsystem": "Write preconditions and optimistic concurrency",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testConcurrentIfMatchAllowsOneWriterOnly"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 1,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testConcurrentIfMatchAllowsOneWriterOnly"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "CONSISTENCY-UNIQUE-RACE",
+      "category": "CONSISTENCY_GAP",
+      "priority": "P0",
+      "expected": "Unique create race yields 201 and JSON:API 409, with exactly one row.",
+      "subsystem": "Doctrine constraint error translation",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testConcurrentUniqueCreateHasOneConflictAndOneRow"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 1,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testConcurrentUniqueCreateHasOneConflictAndOneRow"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "TRANSACTION-BOUNDARY",
+      "category": "TRANSACTION_BOUNDARY",
+      "priority": "P0",
+      "expected": "Reject Atomic batches spanning independent managers/shards before mutation.",
+      "subsystem": "Atomic transaction boundary discovery",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testCrossManagerAtomicRejectedBeforeFirstMutation",
+        "App\\Tests\\Torture\\Chaos\\TransactionFailureTest::testCrossShardAtomicIsRejectedByBundleBeforeMutation"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 2,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testCrossManagerAtomicRejectedBeforeFirstMutation",
+        "App\\Tests\\Torture\\Chaos\\TransactionFailureTest::testCrossShardAtomicIsRejectedByBundleBeforeMutation"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    },
+    {
+      "id": "TRANSACTION-SECOND-COMMIT",
+      "category": "TRANSACTION_BOUNDARY",
+      "priority": "P0",
+      "expected": "A single-connection PostgreSQL Atomic batch commits only PostgreSQL, succeeds even when an unused MySQL commit would fail, and persists its final state.",
+      "subsystem": "Transaction runner manager enlistment",
+      "current": "The scoped transaction provider does not enlist the unrelated MySQL connection.",
+      "interpretation": "Cross-connection Atomic must be rejected before mutation; same-connection Atomic must preserve all-or-nothing rollback. No distributed transaction is required.",
+      "regression_tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testSingleManagerAtomicDoesNotCommitUnrelatedConnection"
+      ],
+      "failing_cases": 0,
+      "passing_cases": 1,
+      "status": "RESOLVED",
+      "tests": [
+        "App\\Tests\\Torture\\Chaos\\ConsistencyAndFailureTest::testSingleManagerAtomicDoesNotCommitUnrelatedConnection"
+      ],
+      "current_evidence": [],
+      "actual": [],
+      "first_seen_revision": null,
+      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
+    }
+  ]
+}

@@ -49,8 +49,6 @@ final class CustomProviderTest extends AcceptanceTestCase
         self::assertSame(204, $this->requestJsonApi('DELETE', '/api/memory-articles/one')->getStatusCode());
         $this->assertJsonApiError($this->requestJsonApi('GET', '/api/memory-articles/one'), 404);
     }
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('DATA-LAYER-CUSTOM-ATOMIC')]
     public function testAtomicBusinessFailureRollsBackEarlierCustomProviderMutation(): void
     {
         $this->client->disableReboot();
@@ -58,6 +56,17 @@ final class CustomProviderTest extends AcceptanceTestCase
         $this->assertJsonApiError($this->atomic([$operation('one', 'Must roll back'), $operation('two', '')]), 422);
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', '/api/memory-articles/one'));
         self::assertSame('In-memory article', $doc['data']['attributes']['title']);
+    }
+    public function testApplicationWriteTransactionCapabilityAndPreloaderAreUsed(): void
+    {
+        $response = $this->requestJsonApi('POST', '/api/memory-articles', ['data' => ['type' => 'memory-articles', 'attributes' => ['title' => 'Scoped adapter write']]]);
+        $this->decodeJsonApi($response, 201);
+        self::assertSame([['memory-articles', \App\FeatureMemory\MemoryArticle::class]], json_decode($response->headers->get('X-Example-Write-Scopes'), true, 512, JSON_THROW_ON_ERROR));
+        $response = $this->requestJsonApi('GET', '/api/memory-articles/one?include=related');
+        $doc = $this->decodeJsonApi($response);
+        self::assertSame('two', $doc['data']['relationships']['related']['data']['id']);
+        self::assertSame('two', $doc['included'][0]['id']);
+        self::assertGreaterThanOrEqual(1, (int) $response->headers->get('X-Example-Preloads'));
     }
 
 }

@@ -14,8 +14,6 @@ final class BooleanSoftDeleteTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_soft_boolean'; }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('PROFILE-SOFT-BOOLEAN')]
     public function testBooleanStrategyExcludesOnlyMarkedRows(): void
     {
         $em = self::getContainer()->get(ManagerRegistry::class)->getManagerForClass(FeatureMemo::class);

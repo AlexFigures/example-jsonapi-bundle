@@ -28,7 +28,6 @@ final class OperationRestrictionsTest extends AcceptanceTestCase
 
     public static function writes(): iterable { yield ['POST']; yield ['PATCH']; yield ['DELETE']; }
 
-    #[ExpectedBundleGap('HTTP-002')]
     public function testReadonlyOptions(): void
     {
         foreach (['/api/audit-logs', $this->url('audit', 'audit-logs')] as $url) {

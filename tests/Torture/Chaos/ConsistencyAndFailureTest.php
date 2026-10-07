@@ -39,8 +39,6 @@ final class ConsistencyAndFailureTest extends TortureTestCase
         self::assertSame('Fresh primary write', $created['data']['attributes']['name']);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('CONSISTENCY-ETAG')]
     public function testConcurrentIfMatchAllowsOneWriterOnly(): void
     {
         $get = $this->requestJsonApi('GET', '/api/tasks/1');
@@ -58,7 +56,6 @@ final class ConsistencyAndFailureTest extends TortureTestCase
         self::assertSame($winner[0]['body']['data']['attributes']['title'], $final['data']['attributes']['title']);
     }
 
-    #[ExpectedTortureGap('CONSISTENCY-UNIQUE-RACE')]
     public function testConcurrentUniqueCreateHasOneConflictAndOneRow(): void
     {
         $results = $this->concurrent([
@@ -72,8 +69,6 @@ final class ConsistencyAndFailureTest extends TortureTestCase
         self::assertSame([201, 409], $statuses);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('TRANSACTION-BOUNDARY')]
     public function testCrossManagerAtomicRejectedBeforeFirstMutation(): void
     {
         $operations = [
@@ -93,7 +88,6 @@ final class ConsistencyAndFailureTest extends TortureTestCase
         self::assertStringNotContainsString('symfony', json_encode($document, JSON_THROW_ON_ERROR));
     }
 
-    #[ExpectedTortureGap('TRANSACTION-SECOND-COMMIT')]
     public function testSingleManagerAtomicDoesNotCommitUnrelatedConnection(): void
     {
         $response = $this->atomic([['op' => 'update', 'ref' => ['type' => 'projects', 'id' => 'p-1'], 'data' => ['type' => 'projects', 'attributes' => ['name' => 'Scoped commit']]]], ['X-Torture-Fault' => 'commit:mysql']);

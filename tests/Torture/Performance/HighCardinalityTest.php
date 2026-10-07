@@ -39,8 +39,6 @@ final class HighCardinalityTest extends TortureTestCase
         self::assertLessThan($always['rows_fetched'], $this->lastMetric()['rows_fetched']);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('SCALABILITY-INCLUDE-AMPLIFICATION')]
     public function testDenseIncludeIsRejectedBeforeMassHydration(): void
     {
         $registry = self::getContainer()->get(\Doctrine\Persistence\ManagerRegistry::class);

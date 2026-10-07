@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicCreateTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('ATOMIC-004')]
     public function testCreateUsingHrefAndGeneratedId(): void
     {
         $doc = $this->decodeJsonApi($this->atomic([['op' => 'add', 'href' => '/api/articles', 'data' => $this->articlePayload()['data']]]));
@@ -23,7 +22,6 @@ final class AtomicCreateTest extends AcceptanceTestCase
         self::assertSame('New article', $after['data']['attributes']['title']);
     }
 
-    #[ExpectedBundleGap('ATOMIC-001')]
     public function testCanonicalAddWithoutRefOrHref(): void
     {
         // EXPECTED_BUNDLE_GAP ATOMIC-001: target inferred from data.type.
@@ -32,7 +30,6 @@ final class AtomicCreateTest extends AcceptanceTestCase
         self::assertNotSame('', $doc['atomic:results'][0]['data']['id']);
     }
 
-    #[ExpectedBundleGap('ATOMIC-001')]
     public function testTitleOnlyCanonicalAddReachesDomainValidation(): void
     {
         // EXPECTED_BUNDLE_GAP ATOMIC-001: this exact transport shape is valid.

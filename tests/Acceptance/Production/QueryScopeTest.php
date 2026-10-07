@@ -31,6 +31,12 @@ final class QueryScopeTest extends ProductionTestCase
         self::assertCount(12, $all['data']);
     }
 
+    public function testShowCannotReadForeignArticle(): void
+    {
+        $this->assertJsonApiError($this->asUser('editor-a', 'GET', $this->url('article-9')), 403);
+        self::assertSame($this->ids['article-9'], $this->decodeJsonApi($this->asUser('editor-b', 'GET', $this->url('article-9')))['data']['id']);
+    }
+
     public function testClientFilterCannotOverrideScope(): void
     {
         $doc = $this->decodeJsonApi($this->asUser('editor-a', 'GET', '/api/articles?filter[author.name]=Grace%20Hopper'));
@@ -68,16 +74,12 @@ final class QueryScopeTest extends ProductionTestCase
         self::assertArrayNotHasKey('content', $doc['data'][0]['attributes']);
         $this->assertJsonApiError($this->asUser('editor-a', 'GET', $this->url('article-9', 'article-summaries')), 403);
     }
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('QUERY-SCOPE-GRAPH')]
     public function testRelatedCollectionCannotLeakForeignArticles(): void
     {
         $doc = $this->decodeJsonApi($this->asUser('editor-a', 'GET', $this->url('grace', 'authors').'/articles'));
         self::assertSame([], array_column($doc['data'], 'id'), 'Related collections must honor the same application scope as INDEX.');
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('QUERY-SCOPE-GRAPH')]
     public function testIncludesCannotLeakForeignArticles(): void
     {
         $doc = $this->decodeJsonApi($this->asUser('editor-a', 'GET', $this->url('grace', 'authors').'?include=articles'));
@@ -86,8 +88,6 @@ final class QueryScopeTest extends ProductionTestCase
         self::assertSame([], $doc['data']['relationships']['articles']['data'], 'Linkage must not disclose forbidden article identifiers.');
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('QUERY-SCOPE-GRAPH')]
     public function testRelationshipLinkageCannotLeakForeignIdentifiers(): void
     {
         $doc = $this->decodeJsonApi($this->asUser('editor-a', 'GET', $this->url('grace', 'authors').'/relationships/articles'));

@@ -1,5 +1,5 @@
 {
-    "bundle_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
+    "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
     "features": [
         {
             "feature": "jsonapi.strict_content_negotiation",
@@ -1142,6 +1142,11 @@
             "kind": "public_type"
         },
         {
+            "feature": "Contract/Tx/ResourceWriteTransactionManagerInterface",
+            "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\ResourceWriteTransactionManagerInterface",
+            "kind": "public_type"
+        },
+        {
             "feature": "Contract/Tx/ScopedTransactionManagerInterface",
             "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\ScopedTransactionManagerInterface",
             "kind": "public_type"
@@ -1184,6 +1189,11 @@
         {
             "feature": "Profile/Hook/RelationshipHook",
             "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\RelationshipHook",
+            "kind": "public_type"
+        },
+        {
+            "feature": "Profile/Hook/ResourceMetaHookInterface",
+            "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ResourceMetaHookInterface",
             "kind": "public_type"
         },
         {
@@ -1718,6 +1728,11 @@
         },
         {
             "feature": "ServiceTag/jsonapi.relationship_batch_reader",
+            "public_api": "Symfony tagged service registration",
+            "kind": "service_tag"
+        },
+        {
+            "feature": "ServiceTag/jsonapi.persister",
             "public_api": "Symfony tagged service registration",
             "kind": "service_tag"
         },

@@ -39,7 +39,6 @@ final class ContentNegotiationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('mixedCandidates')]
-    #[ExpectedBundleGap('CONTENT-NEGOTIATION-001')]
     public function testMixedValidInvalidCandidates(string $accept): void
     {
         // EXPECTED_BUNDLE_GAP CONTENT-NEGOTIATION-001: ignore invalid candidates.
@@ -54,7 +53,6 @@ final class ContentNegotiationTest extends AcceptanceTestCase
     }
 
     #[DataProvider('qualityValues')]
-    #[ExpectedBundleGap('CONTENT-NEGOTIATION-002')]
     public function testQualityValues(string $accept, int $status): void
     {
         // EXPECTED_BUNDLE_GAP CONTENT-NEGOTIATION-002: q is HTTP negotiation metadata.

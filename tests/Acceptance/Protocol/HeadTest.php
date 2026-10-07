@@ -12,7 +12,6 @@ use PHPUnit\Framework\Attributes\Group;
 final class HeadTest extends AcceptanceTestCase
 {
     #[DataProvider('routeCategories')]
-    #[ExpectedBundleGap('HTTP-001')]
     public function testHeadHasGetHeadersAndNoBody(string $suffix): void
     {
         $url = $suffix === 'collection' ? '/api/articles' : $this->url().$suffix;

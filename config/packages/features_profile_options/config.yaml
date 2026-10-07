@@ -1,0 +1,9 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    profiles:
+        enabled_by_default: ['urn:example:profile:cookbook']
+        negotiation: { echo_profiles_in_content_type: false, link_header: false }
+        rel_counts: { relationship_meta_key: cardinality }

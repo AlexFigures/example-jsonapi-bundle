@@ -28,8 +28,6 @@ final class InheritanceAndExtensionsTest extends AcceptanceTestCase
     }
 
     #[DataProvider('queries')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('EXTENSIBILITY-CUSTOM-OPERATOR', ['custom operator', 'logical custom operator', 'bound SQL literal'])]
     public function testPublicQueryExtensions(array $query, array $titles): void
     {
         $document = $this->decodeJsonApi($this->requestJsonApi('GET', '/api/feature-articles?'.http_build_query($query)));

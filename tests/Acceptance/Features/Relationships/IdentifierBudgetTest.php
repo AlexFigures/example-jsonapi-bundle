@@ -14,8 +14,6 @@ final class IdentifierBudgetTest extends AcceptanceTestCase
     protected function environment(): string { return 'features_identifier_budget'; }
 
     #[DataProvider('paths')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('RELATIONSHIP-BUDGET-ENDPOINT', ['linkage endpoint'])]
     public function testOversizedRelationshipIsRejectedWithoutTruncation(string $suffix): void
     {
         $this->assertJsonApiError($this->requestJsonApi('GET', $this->url().$suffix), 400);

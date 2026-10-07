@@ -15,3 +15,9 @@ jsonapi:
     profiles:
         per_type:
             tags: []
+services:
+    AlexFigures\Symfony\Contract\Data\RepresentationPreloaderInterface: '@App\JsonApi\DataLayer\MemoryArticleProvider'
+    cookbook.memory_probe:
+        class: App\EventSubscriber\MemoryProviderProbe
+        autowire: true
+        tags: [{ name: kernel.event_listener, event: kernel.response, method: onResponse, priority: -100 }]

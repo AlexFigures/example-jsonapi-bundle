@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Torture\Performance;
 
-use App\Tests\Torture\Support\{ExpectedTortureGap, TortureTestCase};
+use App\Tests\Torture\Support\TortureTestCase;
 use PHPUnit\Framework\Attributes\{DataProvider, Group};
 
 #[Group('performance')]
@@ -13,8 +13,6 @@ final class NPlusOneAndCardinalityTest extends TortureTestCase
     protected string $dataset = 'small';
     protected ?int $rows = 1000;
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('PERFORMANCE-NPLUS1')]
     public function testCollectionWithoutIncludeHasBoundedQueryShape(): void
     {
         $this->collection(['page' => ['size' => 5]], 'tasks');
@@ -25,8 +23,6 @@ final class NPlusOneAndCardinalityTest extends TortureTestCase
         self::assertGreaterThan(0, $this->lastMetric()['response_bytes']);
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('PERFORMANCE-NPLUS1')]
     #[DataProvider('includeCases')]
     public function testIncludeQueryCountDoesNotGrowWithPageSize(string $include, int $budget): void
     {
@@ -42,11 +38,12 @@ final class NPlusOneAndCardinalityTest extends TortureTestCase
         return ['to-one' => ['project,assignee', 18], 'to-many' => ['labels,attachments', 24], 'nested' => ['project.organization,project.memberships.user', 32]];
     }
 
-    #[Group('torture-gap')]
-    #[ExpectedTortureGap('PERFORMANCE-NPLUS1')]
     public function testRelatedCollectionQueryCountIsBounded(): void
     {
+        $this->decodeJsonApi($this->requestJsonApi('GET', '/api/projects/p-1/tasks?page[size]=5&sort=id'));
+        $small = $this->lastMetric()['query_count'];
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', '/api/projects/p-1/tasks?page[size]=20&sort=id'));
+        self::assertLessThanOrEqual($small + 10, $this->lastMetric()['query_count']);
         self::assertCount(20, $doc['data']);
         self::assertLessThanOrEqual(15, $this->lastMetric()['query_count']);
     }

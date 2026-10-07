@@ -1,0 +1,9 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+services:
+    cookbook.application_write_mapper:
+        class: App\JsonApi\DataLayer\CookbookWriteMapper
+        decorates: AlexFigures\Symfony\Resource\Mapper\WriteMapperInterface
+        arguments: ['@cookbook.application_write_mapper.inner', 'Edited: ']

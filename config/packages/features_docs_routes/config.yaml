@@ -1,0 +1,10 @@
+imports:
+    - { resource: '../features/framework.yaml' }
+    - { resource: '../features/doctrine.yaml' }
+    - { resource: '../features/services.yaml' }
+jsonapi:
+    docs:
+        generator:
+            openapi: { route: '/reference/openapi.json' }
+            json_schema: { route: '/reference/schema.json' }
+        ui: { route: '/reference/docs', spec_url: '/reference/openapi.json' }

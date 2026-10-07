@@ -1,0 +1,197 @@
+{
+  "purpose": "Reviewed bounded consumer contracts for the former PARTIAL inventory; green never means every combinatorial permutation.",
+  "features": {
+    "jsonapi.write.allow_relationship_writes": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/WriteConfigurationTest.php",
+      "gap": "",
+      "contract": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
+    },
+    "jsonapi.write.client_generated_ids.*": {
+      "status": "COVERED_GREEN",
+      "test": "Resource/ResourceCreateTest.php",
+      "gap": "",
+      "contract": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
+    },
+    "Resource/Attribute/JsonApiCustomRoute::$description": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "",
+      "contract": "The configured description reaches the injected public route registry through HTTP."
+    },
+    "Resource/Attribute/JsonApiResource": {
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "RESOURCE-ROUTE-PREFIX",
+      "contract": "Resource metadata options are individually inventoried; the aggregate API is not fully conformant while routePrefix and other listed options fail."
+    },
+    "Resource/Attribute/JsonApiResource::$type": {
+      "status": "COVERED_GREEN",
+      "test": "Resource/ResourceReadTest.php",
+      "gap": "",
+      "contract": "Resource type is the stable JSON:API transport identity."
+    },
+    "Resource/Attribute/JsonApiResource::$normalizationContext": {
+      "status": "COVERED_GREEN",
+      "test": "Production/WriteSurfaceTest.php",
+      "gap": "",
+      "contract": "Serializer read/write groups enforce the server-owned attribute boundary through generated HTTP routes."
+    },
+    "Resource/Attribute/JsonApiResource::$denormalizationContext": {
+      "status": "COVERED_GREEN",
+      "test": "Production/WriteSurfaceTest.php",
+      "gap": "",
+      "contract": "Serializer read/write groups enforce the server-owned attribute boundary through generated HTTP routes."
+    },
+    "Resource/Attribute/JsonApiResource::$description": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ResourceOptionsTest.php",
+      "gap": "",
+      "contract": "Resource description reaches OpenAPI resource tags (asserted before the exposeId failure)."
+    },
+    "Resource/Attribute/JsonApiResource::$dataClass": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "contract": "DTO resources use an explicit entity dataClass and retain identity and root order."
+    },
+    "Contract/Data/ExistenceChecker": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Relationships/LinkingPoliciesTest.php",
+      "gap": "",
+      "contract": "Existing and missing targets are checked externally across create/update and Atomic relationship writes; no query-count claim about custom checkers."
+    },
+    "Contract/Data/RepresentationPreloaderInterface": {
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "contract": "Public preloader return DTO must be a supported consumer contract; runtime custom-provider preload coverage remains green."
+    },
+    "Contract/Data/SliceIds": {
+      "status": "COVERED_GREEN",
+      "test": "Relationships/RelatedResourcesTest.php",
+      "gap": "",
+      "contract": "Related collection transport retains paginated target identities and totals."
+    },
+    "Contract/Data/WriteConcurrencyGuardInterface": {
+      "status": "COVERED_GREEN",
+      "test": "Production/ConcurrencyAndAtomicTest.php",
+      "gap": "",
+      "contract": "Current-validator check and mutation share protection; overlapping writers are also checked in Torture."
+    },
+    "Contract/Resource/ResourceMetadataInterface": {
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "DOCS-METADATA-CONTRACT",
+      "contract": "The published default metadata implementation must satisfy its public interface."
+    },
+    "Contract/Tx/ResourceWriteTransactionManagerInterface": {
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "contract": "Application provider implements resource-scoped transaction support; failing second Atomic write rolls back the first."
+    },
+    "Profile/Hook/FilterParameterProviderInterface": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "contract": "Application implementation has an observable negotiated filter flag or resource-meta effect through HTTP."
+    },
+    "Profile/Hook/ResourceMetaHookInterface": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
+      "gap": "",
+      "contract": "Application implementation has an observable negotiated filter flag or resource-meta effect through HTTP."
+    },
+    "Profile/Attribute/Auditable": {
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "contract": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    "Profile/Attribute/Auditable::$createdAtField": {
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "contract": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    "Profile/Attribute/Auditable::$updatedAtField": {
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "contract": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    "Profile/Attribute/Auditable::$createdByField": {
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "contract": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    "Profile/Attribute/Auditable::$updatedByField": {
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/AuditFieldNamesTest.php",
+      "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "contract": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
+    },
+    "Profile/Attribute/SoftDeletable": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
+      "gap": "",
+      "contract": "Non-default deletion field and boolean strategy work; timestamp visibility/delete/query-flag variants have separate regression scenarios."
+    },
+    "Profile/Attribute/SoftDeletable::$deletedAtField": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/BooleanSoftDeleteTest.php",
+      "gap": "",
+      "contract": "Non-default deletion field and boolean strategy work; timestamp visibility/delete/query-flag variants have separate regression scenarios."
+    },
+    "Profile/Attribute/SoftDeletable::$deletedByField": {
+      "status": "COVERED_GAP",
+      "test": "Features/Profiles/SoftDeleteActorTest.php",
+      "gap": "PROFILE-SOFT-DELETE-ACTOR-META",
+      "contract": "Application supplies deletion actor; negotiated documented soft-delete metadata honors the configured actor field."
+    },
+    "Resource/Definition/ResourceDefinition": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ConstructorAndProjectionTest.php",
+      "gap": "",
+      "contract": "Entity/DTO/CUSTOM projection definitions are exercised via generated collection/item transport; representation version selection has its own explicit gap."
+    },
+    "Resource/Mapper/DefaultWriteMapper": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ApplicationWriteMapperTest.php",
+      "gap": "",
+      "contract": "Public mapper decoration and constructor DI compose with CREATE, UPDATE and validation without replacing generated transport."
+    },
+    "Resource/Mapper/WriteMapperInterface": {
+      "status": "COVERED_GREEN",
+      "test": "Features/Mapping/ApplicationWriteMapperTest.php",
+      "gap": "",
+      "contract": "Public mapper decoration and constructor DI compose with CREATE, UPDATE and validation without replacing generated transport."
+    },
+    "Resource/Registry/CustomRouteRegistry": {
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "contract": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+    },
+    "Resource/Registry/CustomRouteRegistryInterface": {
+      "status": "COVERED_GAP",
+      "test": "Features/Configuration/PublicSignatureTest.php",
+      "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "contract": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+    },
+    "Resource/Registry/ResourceRegistry": {
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "contract": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
+    },
+    "Resource/Registry/ResourceRegistryInterface": {
+      "status": "COVERED_GAP",
+      "test": "Features/Mapping/RegistryContractTest.php",
+      "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "contract": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
+    }
+  }
+}

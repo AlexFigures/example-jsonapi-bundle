@@ -11,8 +11,6 @@ final class DisabledCollectionLastModifiedTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_lastmodified_off'; }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('CACHE-COLLECTION-LAST-MODIFIED')]
     public function testDisablingCollectionMaximumDoesNotSynthesizeCollectionValidator(): void
     {
         $item = $this->requestJsonApi('GET', $this->url());

@@ -41,15 +41,15 @@ final class FeatureCookbookController
         operationId: 'cookbookResponse',
         tags: ['Cookbook'],
         parameters: [
-            new OpenApiParameter('form', 'path', required: true),
-            new OpenApiParameter('include', 'query'),
-            new OpenApiParameter('X-Cookbook', 'header'),
+            new OpenApiParameter('form', 'path', description: 'Response form', required: true, example: 'resource'),
+            new OpenApiParameter('include', 'query', description: 'Related resources', schema: ['type' => 'string'], example: 'articles'),
+            new OpenApiParameter('X-Cookbook', 'header', description: 'Caller label', type: 'string', format: 'uuid'),
         ],
-        requestBody: new OpenApiRequestBody('application/vnd.api+json', ['type' => 'object']),
-        responses: [200 => new OpenApiResponse('Author representation', contentType: 'application/vnd.api+json', schemaRef: '#/components/schemas/AuthorsResource', headers: ['X-Cookbook' => new OpenApiHeader('Example header')])],
+        requestBody: new OpenApiRequestBody('application/vnd.api+json', ['type' => 'object'], required: false, description: 'Optional application input'),
+        responses: [202 => new OpenApiResponse('Accepted inline', contentType: 'application/vnd.api+json', schema: ['type' => 'object', 'properties' => ['queued' => ['type' => 'boolean']]]), 200 => new OpenApiResponse('Author representation', contentType: 'application/vnd.api+json', schemaRef: '#/components/schemas/AuthorsResource', headers: ['X-Cookbook' => new OpenApiHeader('Example header'), 'X-Cookbook-Sequence' => new OpenApiHeader('Sequence', type: 'integer', format: 'int64')])],
         security: [['bearerAuth' => []]],
         deprecated: true,
-        examples: ['sample' => new OpenApiExample('Example input', ['data' => ['type' => 'authors']])],
+        examples: ['sample' => new OpenApiExample('Example input', ['data' => ['type' => 'authors']], description: 'An author identifier')],
     )]
     public function response(string $form, Request $request): Response
     {
@@ -76,6 +76,6 @@ final class FeatureCookbookController
             'accepted' => $this->responses->accepted('authors', $author),
             default => $this->responses->resource('authors', $author),
         };
-        return $builder->withMeta(['cookbook' => true])->withHeader('X-Cookbook', 'yes')->withRequest($request)->build();
+        return $builder->withMeta(['cookbook' => true])->withHeader('X-Cookbook', 'yes')->withHeader('X-Cookbook-Sequence', '7')->withRequest($request)->build();
     }
 }

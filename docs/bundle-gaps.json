@@ -943,16 +943,20 @@
       "id": "VERSION-RESOLVER-CONTEXT",
       "area": "Public feature conformance",
       "category": "DESIRED_CAPABILITY",
-      "priority": "P2",
+      "priority": "P1",
       "expected": "VersionResolver receives negotiated profile and selects the configured DTO mapping.",
-      "current": "GET returns original title despite profile requesting alternate representation.",
+      "current": "Negotiated alternate representation returns JSON:API 500 through SHOW, INDEX and related collection; sparse INDEX and included-resource cases pass.",
       "why_bundle": "Carry request ProfileContext into public representation-definition resolution.",
       "bundle_change_required": "Carry request ProfileContext into public representation-definition resolution.",
       "tests": [
         {
           "test": "Features/Mapping/PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation"
+        },
+        {
+          "test": "Features/Mapping/PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields"
         }
-      ]
+      ],
+      "severity_reason": "A promised public representation-selection API returns 500 on generated SHOW/INDEX/related transport; stabilize the contract or remove the advertised capability before 1.0."
     },
     {
       "id": "DX-PROFILE-COMMAND",
@@ -1232,7 +1236,7 @@
     {
       "id": "FILTER-HANDLER-LOGICAL-COMPOSITION",
       "area": "custom filter composition",
-      "expected": "A custom search predicate inside OR preserves the alternative ordinary filter branch.",
+      "expected": "Custom predicates retain their AST position in AND, both OR orders and nested alternatives, with bound parameters.",
       "current": "search=No such term OR views=10 returns zero resources rather than article-1; the handler adds its predicate as a global AND condition.",
       "category": "DESIRED_CAPABILITY",
       "priority": "P1",
@@ -1288,6 +1292,204 @@
           "test": "Features/Profiles/AuditIdentityTest::testConfiguredAuditMetaIsExposedOnNegotiatedRepresentation"
         }
       ]
+    },
+    {
+      "id": "RESOURCE-ROUTE-PREFIX",
+      "area": "Resource mapping",
+      "category": "DESIRED_CAPABILITY",
+      "priority": "P1",
+      "expected": "JsonApiResource.routePrefix overrides the global prefix for generated routes and representation links.",
+      "current": "GET /reference/routed-articles/1 returns 404 despite resource routePrefix=/reference.",
+      "bundle_change_required": "Honor the resource-specific route prefix consistently in generated routes and links.",
+      "tests": [
+        {
+          "test": "Features/Mapping/ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Auditable renamed timestamp/user fields are honored on CREATE and UPDATE.",
+      "current": "Renamed insertedBy remains null on CREATE; equivalent configuration mapping passes.",
+      "bundle_change_required": "Auditable renamed timestamp/user fields are honored on CREATE and UPDATE.",
+      "tests": [
+        {
+          "test": "Features/Profiles/AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "CONFIG-HEAD-DISABLED",
+      "area": "Reviewed public feature contract",
+      "priority": "P2",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "expected": "head_enabled=false disables HEAD and OPTIONS no longer advertises it.",
+      "current": "HEAD returns 200 despite explicit false.",
+      "bundle_change_required": "head_enabled=false disables HEAD and OPTIONS no longer advertises it.",
+      "tests": [
+        {
+          "test": "Features/Protocol/DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "PROFILE-REL-COUNT-CONFIG",
+      "area": "Reviewed public feature contract",
+      "priority": "P2",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "expected": "rel_counts.relationship_meta_key names count metadata consistently.",
+      "current": "cardinality key absent; default count key still used.",
+      "bundle_change_required": "rel_counts.relationship_meta_key names count metadata consistently.",
+      "tests": [
+        {
+          "test": "Features/Profiles/NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "PROFILE-REL-COUNT-RELATED-POLICY",
+      "area": "Reviewed public feature contract",
+      "priority": "P2",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "expected": "compute_in_related_endpoints=false suppresses relationship count computation/exposure on related endpoints.",
+      "current": "count is still present when false; true case passes.",
+      "bundle_change_required": "compute_in_related_endpoints=false suppresses relationship count computation/exposure on related endpoints.",
+      "tests": [
+        {
+          "test": "Features/Profiles/RelatedCountOptionsTest::testRelatedEndpointCountPolicy"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "RESOURCE-RELATIONSHIP-POLICIES",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Resource-level relationshipPolicies apply when no per-relationship policy is specified.",
+      "current": "Resource map declares VERIFY but effective relationship metadata stays REFERENCE.",
+      "bundle_change_required": "Resource-level relationshipPolicies apply when no per-relationship policy is specified.",
+      "tests": [
+        {
+          "test": "Features/Mapping/RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Registering a DTO projection must not replace the primary entity resource in getByClass.",
+      "current": "FeatureArticle class resolves to feature-custom-summaries instead of feature-articles.",
+      "bundle_change_required": "Registering a DTO projection must not replace the primary entity resource in getByClass.",
+      "tests": [
+        {
+          "test": "Features/Mapping/RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "DOCS-EXPOSE-ID-CONTRACT",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DOCUMENTATION_GAP",
+      "expected": "Read resource OpenAPI keeps id required/non-null even if exposeId=false; transport identity remains valid.",
+      "current": "HTTP returns valid id but schema omits id from required.",
+      "bundle_change_required": "Read resource OpenAPI keeps id required/non-null even if exposeId=false; transport identity remains valid.",
+      "tests": [
+        {
+          "test": "Features/Mapping/ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "RESOURCE-TAG-DISCOVERY",
+      "area": "Reviewed public feature contract",
+      "priority": "P1",
+      "category": "DX_GAP",
+      "expected": "jsonapi.resource service registration composes with directory discovery.",
+      "current": "Tagged resource outside discovery paths has no generated route: 404.",
+      "bundle_change_required": "jsonapi.resource service registration composes with directory discovery.",
+      "tests": [
+        {
+          "test": "Features/Mapping/ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "MEDIA-DEFAULT-POLICY",
+      "area": "Media type configuration",
+      "category": "CONFIG_IMPLEMENTATION_GAP",
+      "priority": "P1",
+      "expected": "Configured default request/response media policies apply consistently to generated reads and writes; explicit negotiation remains authoritative.",
+      "current": "Configured application/json request policy is rejected with 415 on generated writes; response defaults stay application/vnd.api+json instead of configured application/json.",
+      "bundle_change_required": "Resolve request and response media policy uniformly for generated resource routes, including default and negotiated cases.",
+      "tests": [
+        {
+          "test": "Features/Protocol/DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy"
+        },
+        {
+          "test": "Features/Protocol/DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "DOCS-METADATA-CONTRACT",
+      "area": "Public metadata interface",
+      "category": "DX_GAP",
+      "priority": "P1",
+      "expected": "Default ResourceMetadata implementation fulfills the published ResourceMetadataInterface contract.",
+      "current": "The concrete default ResourceMetadata does not implement the public interface promised by its API documentation.",
+      "bundle_change_required": "Make the default metadata implementation conform to its published interface or correct/remove the claim and provide a supported implementation seam.",
+      "tests": [
+        {
+          "test": "Features/Mapping/RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
+      "area": "Public extension signatures",
+      "category": "DX_GAP",
+      "priority": "P1",
+      "expected": "Consumer-facing extension contracts use public stable DTOs or public supported replacements.",
+      "current": "Batch-reader and custom-route registry signatures expose types marked @internal.",
+      "bundle_change_required": "Promote stable DTOs or replace the public signatures before 1.0; avoid requiring application code to depend on @internal types.",
+      "tests": [
+        {
+          "test": "Features/Configuration/PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto"
+        }
+      ],
+      "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
+    },
+    {
+      "id": "PROFILE-SOFT-DELETE-ACTOR-META",
+      "area": "Soft-delete public attribute",
+      "category": "DOCUMENTATION_GAP",
+      "priority": "P2",
+      "expected": "Negotiated soft-delete resource metadata exposes an application-supplied deletion actor using SoftDeletable.deletedByField.",
+      "current": "Document hook is a documented placeholder; actor metadata is absent.",
+      "bundle_change_required": "Honor the documented actor metadata mapping or remove the unsupported promise/attribute option before 1.0. Actor assignment remains application policy.",
+      "tests": [
+        {
+          "test": "Features/Profiles/SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata"
+        }
+      ],
+      "first_seen_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0"
     }
   ]
 }

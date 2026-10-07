@@ -29,8 +29,6 @@ final class ConfigurationMatrixTest extends AcceptanceTestCase
     }
 
     #[DataProvider('restrictions')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('ATOMIC-LID-CONFIG', ['lid'])]
     public function testAtomicConfigurationGuards(string $case): void
     {
         if ($case === 'max') {

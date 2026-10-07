@@ -11,7 +11,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class AtomicLidTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('ATOMIC-004')]
     public function testLocalIdsAcrossCreateAndRelationshipOperations(): void
     {
         $article = $this->articlePayload()['data'];
