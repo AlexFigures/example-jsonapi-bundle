@@ -1,12 +1,12 @@
 {
     "evidence": {
         "verified": true,
-        "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-        "junit_sha256": "4f1d95f63e0c67569931166be4626c42944d52077f13d392d4c08095f911eba7",
-        "trace_sha256": "2ce0047a386af983bd4553cc18a0b2a0c0cb74acb62b1f80905c8e1e920f7b27"
+        "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+        "junit_sha256": "c1253e0f2ad57a3bfd0d7a7d64bdc2093804cf02fb5ce8689f9897fdbd1c56ee",
+        "trace_sha256": "972c0f6da899fd662a3a66b48954980b7513907fe42739462822eb56ce45fb80"
     },
-    "assertions": 6718,
-    "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+    "assertions": 6806,
+    "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
     "gap_summary": [
         {
             "id": "CONTENT-NEGOTIATION-001",
@@ -409,14 +409,10 @@
         },
         {
             "id": "VERSION-RESOLVER-CONTEXT",
-            "status": "OPEN",
-            "passing_cases": 2,
-            "failing_cases": 3,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation",
-                "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"",
-                "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\""
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 5,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "DX-PROFILE-COMMAND",
@@ -567,133 +563,102 @@
         },
         {
             "id": "RESOURCE-ROUTE-PREFIX",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-            "status": "OPEN",
-            "passing_cases": 1,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\""
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "CONFIG-HEAD-DISABLED",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "PROFILE-REL-COUNT-CONFIG",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "PROFILE-REL-COUNT-RELATED-POLICY",
-            "status": "OPEN",
-            "passing_cases": 1,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\""
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 2,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "RESOURCE-RELATIONSHIP-POLICIES",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "DOCS-EXPOSE-ID-CONTRACT",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "RESOURCE-TAG-DISCOVERY",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "MEDIA-DEFAULT-POLICY",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 4,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"",
-                "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"",
-                "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"",
-                "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\""
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 4,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "DOCS-METADATA-CONTRACT",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 3,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"",
-                "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"",
-                "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\""
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
         },
         {
             "id": "PROFILE-SOFT-DELETE-ACTOR-META",
-            "status": "OPEN",
-            "passing_cases": 0,
-            "failing_cases": 1,
-            "current_failures": [
-                "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata"
-            ]
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 1,
+            "failing_cases": 0,
+            "current_failures": []
         }
     ],
     "phpunit_version": "11.5.56",
     "php_version": "8.3.35",
     "counts": {
-        "stable_pass": 644,
+        "stable_pass": 666,
         "gap_pass": 0,
-        "gap_fail": 21,
+        "gap_fail": 0,
         "unexpected_fail": 0,
         "skipped": 0
     },
@@ -3003,14 +2968,12 @@
             "file": "tests/Acceptance/Features/Configuration/PublicSignatureTest.php",
             "expected_statuses": [],
             "current_statuses": [],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -3019,14 +2982,12 @@
             "file": "tests/Acceptance/Features/Configuration/PublicSignatureTest.php",
             "expected_statuses": [],
             "current_statuses": [],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -3035,14 +2996,24 @@
             "file": "tests/Acceptance/Features/Configuration/PublicSignatureTest.php",
             "expected_statuses": [],
             "current_statuses": [],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "DX-PUBLIC-SIGNATURE-INTERNAL-DTO"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/**\\n\n * Metadata for a custom JSON:API route.\\n\n *\\n\n * @internal\\n\n */' [ASCII](length: 64) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDecoratorQueryPlanCapabilityIsPublic",
+            "test": "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testDecoratorQueryPlanCapabilityIsPublic",
+            "file": "tests/Acceptance/Features/Configuration/PublicSignatureTest.php",
+            "expected_statuses": [],
+            "current_statuses": [],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
         },
         {
             "area": "Features",
@@ -5204,17 +5175,14 @@
                 200
             ],
             "current_statuses": [
-                200,
-                500
+                200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "VERSION-RESOLVER-CONTEXT"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "VERSION-RESOLVER-CONTEXT"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5225,16 +5193,14 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "VERSION-RESOLVER-CONTEXT"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "VERSION-RESOLVER-CONTEXT"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5281,16 +5247,14 @@
                 200
             ],
             "current_statuses": [
-                500
+                200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "VERSION-RESOLVER-CONTEXT"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "VERSION-RESOLVER-CONTEXT"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5406,14 +5370,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "RESOURCE-RELATIONSHIP-POLICIES"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "RESOURCE-RELATIONSHIP-POLICIES"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'verify'\n+'reference'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5426,14 +5388,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "RESOURCE-REGISTRY-PROJECTION-COLLISION"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "RESOURCE-REGISTRY-PROJECTION-COLLISION"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'feature-articles'\n+'feature-custom-summaries'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5446,14 +5406,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "DOCS-METADATA-CONTRACT"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "DOCS-METADATA-CONTRACT"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract\nResourceMetadataInterface promises an attribute-based default implementation.\nFailed asserting that false is true.\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5465,16 +5423,15 @@
                 404
             ],
             "current_statuses": [
+                200,
                 404
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "RESOURCE-ROUTE-PREFIX"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "RESOURCE-ROUTE-PREFIX"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/reference\\/routed-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5488,14 +5445,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "DOCS-EXPOSE-ID-CONTRACT"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "DOCS-EXPOSE-ID-CONTRACT"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation\nFailed asserting that an array contains 'id'.\n\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5506,16 +5461,14 @@
                 200
             ],
             "current_statuses": [
-                404
+                200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "RESOURCE-TAG-DISCOVERY"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "RESOURCE-TAG-DISCOVERY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/api\\/tagged-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:46\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5715,16 +5668,15 @@
                 201
             ],
             "current_statuses": [
-                201
+                201,
+                200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "PROFILE-AUDIT-ATTRIBUTE-FIELDS"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "PROFILE-AUDIT-ATTRIBUTE-FIELDS"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\"\nFailed asserting that null is identical to 'ada@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -5899,14 +5851,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "PROFILE-REL-COUNT-CONFIG"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "PROFILE-REL-COUNT-CONFIG"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed\nFailed asserting that an array has the key 'cardinality'.\n\n/srv/app/tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6153,14 +6103,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "PROFILE-REL-COUNT-RELATED-POLICY"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "PROFILE-REL-COUNT-RELATED-POLICY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\"\nFailed asserting that an array does not have the key 'count'.\n\n/srv/app/tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6173,14 +6121,12 @@
             "current_statuses": [
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "PROFILE-SOFT-DELETE-ACTOR-META"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "PROFILE-SOFT-DELETE-ACTOR-META"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata\nThe documented soft-delete metadata must honor deletedByField; actor assignment itself remains application policy.\nFailed asserting that null is identical to 'editor@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php:23\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6317,16 +6263,17 @@
                 512
             ],
             "current_statuses": [
-                200
+                200,
+                201,
+                415,
+                406
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "MEDIA-DEFAULT-POLICY"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "MEDIA-DEFAULT-POLICY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6341,16 +6288,17 @@
                 512
             ],
             "current_statuses": [
-                200
+                200,
+                201,
+                415,
+                406
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "MEDIA-DEFAULT-POLICY"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "MEDIA-DEFAULT-POLICY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6364,16 +6312,16 @@
                 512
             ],
             "current_statuses": [
-                415
+                201,
+                415,
+                406
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "MEDIA-DEFAULT-POLICY"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "MEDIA-DEFAULT-POLICY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6387,16 +6335,16 @@
                 512
             ],
             "current_statuses": [
-                415
+                201,
+                415,
+                406
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "MEDIA-DEFAULT-POLICY"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "MEDIA-DEFAULT-POLICY"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",
@@ -6408,16 +6356,16 @@
                 405
             ],
             "current_statuses": [
+                405,
+                204,
                 200
             ],
-            "result": "FAIL",
-            "bundle_gaps": [
-                "CONFIG-HEAD-DISABLED"
-            ],
+            "result": "PASS",
+            "bundle_gaps": [],
             "historical_gaps": [
                 "CONFIG-HEAD-DISABLED"
             ],
-            "failure": "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees\nFailed asserting that 200 is identical to 405.\n\n/srv/app/tests/Acceptance/Features/Protocol/DisabledHeadTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
+            "failure": null
         },
         {
             "area": "Features",

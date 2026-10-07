@@ -18,7 +18,6 @@ final class NegotiationOptionsTest extends AcceptanceTestCase
         self::assertStringNotContainsString('profile=', (string) $response->headers->get('Content-Type'));
         self::assertFalse($response->headers->has('Link'));
     }
-    #[ExpectedBundleGap('PROFILE-REL-COUNT-CONFIG')]
     public function testCustomRelationshipCountKeyIsUsed(): void
     {
         $doc = $this->decodeJsonApi($this->requestJsonApi('GET', $this->url(), headers: ['Accept' => self::MEDIA.';profile="urn:jsonapi:profile:rel-counts"']));

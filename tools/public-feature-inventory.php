@@ -51,6 +51,11 @@ foreach (['Profile/ProfileInterface', 'CustomRoute/Context/CustomRouteContext', 
     }
 }
 $tags = [];
+$features[] = [
+    'feature' => 'Http/Response/JsonApiErrorBuilder::withLinks',
+    'public_api' => \AlexFigures\Symfony\Http\Response\JsonApiErrorBuilder::class,
+    'kind' => 'public_method',
+];
 foreach (glob($bundle.'/config/*.php') as $file) {
     preg_match_all("/tagged_(?:iterator|locator)\\('([^']+)'/", file_get_contents($file), $matches);
     foreach ($matches[1] as $tag) { $tags[$tag] = true; }

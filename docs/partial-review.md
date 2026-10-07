@@ -1,16 +1,16 @@
 # Completed review of 228 PARTIAL entries
 
-Tested revision: `8750b80831dba484f3de0ff55c345fec5fdc29e0`.
+Tested revision: `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`.
 
-Each original row now has evidence or an executable gap. Results: {'COVERED_GREEN': 204, 'COVERED_GAP': 24}. Green proves the linked bounded assertion contract, not every theoretical permutation.
+Each original row now has evidence or an executable gap. Results: {'COVERED_GREEN': 228}. Green proves the linked bounded assertion contract, not every theoretical permutation.
 
 | Original feature | Reviewed status | Consumer evidence | Gap |
 |---|---|---|---|
 | Contract/Data/ExistenceChecker | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php) | — |
-| Contract/Data/RepresentationPreloaderInterface | COVERED_GAP | [test](../tests/Acceptance/Features/Configuration/PublicSignatureTest.php) | DX-PUBLIC-SIGNATURE-INTERNAL-DTO |
+| Contract/Data/RepresentationPreloaderInterface | COVERED_GREEN | [test](../tests/Acceptance/Features/Configuration/PublicSignatureTest.php) | DX-PUBLIC-SIGNATURE-INTERNAL-DTO |
 | Contract/Data/SliceIds | COVERED_GREEN | [test](../tests/Acceptance/Relationships/RelatedResourcesTest.php) | — |
 | Contract/Data/WriteConcurrencyGuardInterface | COVERED_GREEN | [test](../tests/Acceptance/Production/ConcurrencyAndAtomicTest.php) | — |
-| Contract/Resource/ResourceMetadataInterface | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | DOCS-METADATA-CONTRACT |
+| Contract/Resource/ResourceMetadataInterface | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | DOCS-METADATA-CONTRACT |
 | Contract/Tx/ResourceWriteTransactionManagerInterface | COVERED_GREEN | [test](../tests/Acceptance/Features/DataLayer/CustomProviderTest.php) | — |
 | Contract/Tx/TransactionManager | COVERED_GREEN | [test](../tests/Acceptance/Features/DataLayer/CustomProviderTest.php) | — |
 | CustomRoute/Context/CustomRouteContext::criteria | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php) | — |
@@ -97,14 +97,14 @@ Each original row now has evidence or an executable gap. Results: {'COVERED_GREE
 | Http/Response/JsonApiResponseFactory::noContent | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php) | — |
 | Http/Response/JsonApiResponseFactory::resource | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php) | — |
 | Http/Response/JsonApiResponseFactory::validationErrors | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/ResponseFactoryTest.php) | — |
-| Profile/Attribute/Auditable | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
-| Profile/Attribute/Auditable::$createdAtField | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
-| Profile/Attribute/Auditable::$createdByField | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
-| Profile/Attribute/Auditable::$updatedAtField | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
-| Profile/Attribute/Auditable::$updatedByField | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
+| Profile/Attribute/Auditable | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
+| Profile/Attribute/Auditable::$createdAtField | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
+| Profile/Attribute/Auditable::$createdByField | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
+| Profile/Attribute/Auditable::$updatedAtField | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
+| Profile/Attribute/Auditable::$updatedByField | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php) | PROFILE-AUDIT-ATTRIBUTE-FIELDS |
 | Profile/Attribute/SoftDeletable | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/BooleanSoftDeleteTest.php) | — |
 | Profile/Attribute/SoftDeletable::$deletedAtField | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/BooleanSoftDeleteTest.php) | — |
-| Profile/Attribute/SoftDeletable::$deletedByField | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php) | PROFILE-SOFT-DELETE-ACTOR-META |
+| Profile/Attribute/SoftDeletable::$deletedByField | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php) | PROFILE-SOFT-DELETE-ACTOR-META |
 | Profile/Hook/DocumentHook | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/PublicHooksTest.php) | — |
 | Profile/Hook/FilterParameterProviderInterface | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/PublicHooksTest.php) | — |
 | Profile/Hook/QueryHook | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/PublicHooksTest.php) | — |
@@ -137,16 +137,16 @@ Each original row now has evidence or an executable gap. Results: {'COVERED_GREE
 | Resource/Attribute/JsonApiCustomRoute::$priority | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php) | — |
 | Resource/Attribute/JsonApiCustomRoute::$requirements | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php) | — |
 | Resource/Attribute/JsonApiCustomRoute::$resourceType | COVERED_GREEN | [test](../tests/Acceptance/Features/CustomRoutes/HandlerContractTest.php) | — |
-| Resource/Attribute/JsonApiResource | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | RESOURCE-ROUTE-PREFIX |
+| Resource/Attribute/JsonApiResource | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | RESOURCE-ROUTE-PREFIX |
 | Resource/Attribute/JsonApiResource::$dataClass | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php) | — |
 | Resource/Attribute/JsonApiResource::$denormalizationContext | COVERED_GREEN | [test](../tests/Acceptance/Production/WriteSurfaceTest.php) | — |
 | Resource/Attribute/JsonApiResource::$description | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | — |
-| Resource/Attribute/JsonApiResource::$exposeId | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | DOCS-EXPOSE-ID-CONTRACT |
+| Resource/Attribute/JsonApiResource::$exposeId | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | DOCS-EXPOSE-ID-CONTRACT |
 | Resource/Attribute/JsonApiResource::$normalizationContext | COVERED_GREEN | [test](../tests/Acceptance/Production/WriteSurfaceTest.php) | — |
 | Resource/Attribute/JsonApiResource::$operations | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/SelectiveOperationsTest.php) | — |
 | Resource/Attribute/JsonApiResource::$readProjection | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php) | — |
-| Resource/Attribute/JsonApiResource::$relationshipPolicies | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | RESOURCE-RELATIONSHIP-POLICIES |
-| Resource/Attribute/JsonApiResource::$routePrefix | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | RESOURCE-ROUTE-PREFIX |
+| Resource/Attribute/JsonApiResource::$relationshipPolicies | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | RESOURCE-RELATIONSHIP-POLICIES |
+| Resource/Attribute/JsonApiResource::$routePrefix | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | RESOURCE-ROUTE-PREFIX |
 | Resource/Attribute/JsonApiResource::$type | COVERED_GREEN | [test](../tests/Acceptance/Resource/ResourceReadTest.php) | — |
 | Resource/Attribute/JsonApiResource::$viewClass | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ConstructorAndProjectionTest.php) | — |
 | Resource/Attribute/Relationship | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/PathAliasTest.php) | — |
@@ -174,13 +174,13 @@ Each original row now has evidence or an executable gap. Results: {'COVERED_GREE
 | Resource/Metadata/RelationshipLinkingPolicy | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php) | — |
 | Resource/Metadata/RelationshipLinkingPolicy::REFERENCE | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php) | — |
 | Resource/Metadata/RelationshipLinkingPolicy::VERIFY | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/LinkingPoliciesTest.php) | — |
-| Resource/Registry/CustomRouteRegistry | COVERED_GAP | [test](../tests/Acceptance/Features/Configuration/PublicSignatureTest.php) | DX-PUBLIC-SIGNATURE-INTERNAL-DTO |
-| Resource/Registry/CustomRouteRegistryInterface | COVERED_GAP | [test](../tests/Acceptance/Features/Configuration/PublicSignatureTest.php) | DX-PUBLIC-SIGNATURE-INTERNAL-DTO |
-| Resource/Registry/ResourceRegistry | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | RESOURCE-REGISTRY-PROJECTION-COLLISION |
-| Resource/Registry/ResourceRegistryInterface | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | RESOURCE-REGISTRY-PROJECTION-COLLISION |
+| Resource/Registry/CustomRouteRegistry | COVERED_GREEN | [test](../tests/Acceptance/Features/Configuration/PublicSignatureTest.php) | DX-PUBLIC-SIGNATURE-INTERNAL-DTO |
+| Resource/Registry/CustomRouteRegistryInterface | COVERED_GREEN | [test](../tests/Acceptance/Features/Configuration/PublicSignatureTest.php) | DX-PUBLIC-SIGNATURE-INTERNAL-DTO |
+| Resource/Registry/ResourceRegistry | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | RESOURCE-REGISTRY-PROJECTION-COLLISION |
+| Resource/Registry/ResourceRegistryInterface | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/RegistryContractTest.php) | RESOURCE-REGISTRY-PROJECTION-COLLISION |
 | ServiceTag/jsonapi.filter.handler | COVERED_GREEN | [test](../tests/Acceptance/Features/Filtering/HandlerPriorityTest.php) | — |
 | ServiceTag/jsonapi.profile | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/PublicHooksTest.php) | — |
-| ServiceTag/jsonapi.resource | COVERED_GAP | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | RESOURCE-TAG-DISCOVERY |
+| ServiceTag/jsonapi.resource | COVERED_GREEN | [test](../tests/Acceptance/Features/Mapping/ResourceOptionsTest.php) | RESOURCE-TAG-DISCOVERY |
 | jsonapi.cache.conditional.enable_if_match | COVERED_GREEN | [test](../tests/Acceptance/Features/Cache/ConditionalSwitchesTest.php) | — |
 | jsonapi.cache.conditional.enable_if_modified_since | COVERED_GREEN | [test](../tests/Acceptance/Features/Cache/ConditionalSwitchesTest.php) | — |
 | jsonapi.cache.conditional.enable_if_none_match | COVERED_GREEN | [test](../tests/Acceptance/Features/Cache/ConditionalSwitchesTest.php) | — |
@@ -204,19 +204,19 @@ Each original row now has evidence or an executable gap. Results: {'COVERED_GREE
 | jsonapi.docs.ui.theme | COVERED_GREEN | [test](../tests/Acceptance/Features/Docs/RedocTest.php) | — |
 | jsonapi.limits.include_max_depth | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/IncludeLimitsTest.php) | — |
 | jsonapi.limits.include_max_paths | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/IncludeLimitsTest.php) | — |
-| jsonapi.media_type | COVERED_GAP | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
+| jsonapi.media_type | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
 | jsonapi.media_types.channels.*.request.allowed.* | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) | — |
 | jsonapi.media_types.channels.*.response.default | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) | — |
 | jsonapi.media_types.channels.*.response.negotiable.* | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) | — |
 | jsonapi.media_types.channels.*.scope.attribute | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) | — |
 | jsonapi.media_types.channels.*.scope.path_prefix | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) | — |
 | jsonapi.media_types.channels.*.scope.route_name | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/MediaChannelsTest.php) | — |
-| jsonapi.media_types.default.request.allowed.* | COVERED_GAP | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
-| jsonapi.media_types.default.response.default | COVERED_GAP | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
-| jsonapi.media_types.default.response.negotiable.* | COVERED_GAP | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
+| jsonapi.media_types.default.request.allowed.* | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
+| jsonapi.media_types.default.response.default | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
+| jsonapi.media_types.default.response.negotiable.* | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php) | MEDIA-DEFAULT-POLICY |
 | jsonapi.pagination.default_size | COVERED_GREEN | [test](../tests/Acceptance/Query/PaginationTest.php) | — |
 | jsonapi.pagination.max_size | COVERED_GREEN | [test](../tests/Acceptance/Query/PaginationTest.php) | — |
-| jsonapi.performance.head_enabled | COVERED_GAP | [test](../tests/Acceptance/Features/Protocol/DisabledHeadTest.php) | CONFIG-HEAD-DISABLED |
+| jsonapi.performance.head_enabled | COVERED_GREEN | [test](../tests/Acceptance/Features/Protocol/DisabledHeadTest.php) | CONFIG-HEAD-DISABLED |
 | jsonapi.profiles.audit_trail.created_at | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditIdentityTest.php) | — |
 | jsonapi.profiles.audit_trail.created_by | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditIdentityTest.php) | — |
 | jsonapi.profiles.audit_trail.updated_at | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/AuditIdentityTest.php) | — |
@@ -226,8 +226,8 @@ Each original row now has evidence or an executable gap. Results: {'COVERED_GREE
 | jsonapi.profiles.negotiation.link_header | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php) | — |
 | jsonapi.profiles.negotiation.require_known_profiles | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php) | — |
 | jsonapi.profiles.per_type.*.* | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php) | — |
-| jsonapi.profiles.rel_counts.compute_in_related_endpoints | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php) | PROFILE-REL-COUNT-RELATED-POLICY |
-| jsonapi.profiles.rel_counts.relationship_meta_key | COVERED_GAP | [test](../tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php) | PROFILE-REL-COUNT-CONFIG |
+| jsonapi.profiles.rel_counts.compute_in_related_endpoints | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php) | PROFILE-REL-COUNT-RELATED-POLICY |
+| jsonapi.profiles.rel_counts.relationship_meta_key | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php) | PROFILE-REL-COUNT-CONFIG |
 | jsonapi.profiles.soft_delete.field | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php) | — |
 | jsonapi.profiles.soft_delete.query_flags.only_deleted | COVERED_GREEN | [test](../tests/Acceptance/Features/Profiles/SoftDeleteConfigurationTest.php) | — |
 | jsonapi.relationships.write_response | COVERED_GREEN | [test](../tests/Acceptance/Features/Relationships/RepresentationModesTest.php) | — |

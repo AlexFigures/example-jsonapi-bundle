@@ -2,28 +2,32 @@
   "decisions": [
     {
       "surface": "TypedResourcePersister",
-      "status": "DESIGN_DECISION",
-      "direction": "Retain currently working typed persister API or publish an explicit modern replacement before freeze."
+      "status": "RESOLVED",
+      "direction": "Current @api declaration and public extension index explicitly retain the existing persister API and type dispatch adapter; two-type HTTP writes remain regression coverage.",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "surface": "TypedRelationshipReader / TypedRelationshipUpdater",
       "status": "DESIGN_DECISION",
-      "direction": "Implement documented typed dispatch or deprecate/remove inactive declarations."
+      "direction": "Latest bundle documents active typed dispatch through supports(sourceType) and relationship reader/updater tags. Dedicated two-type external dispatch verification is still needed; the previous claim of no active seam is obsolete."
     },
     {
       "surface": "RelationshipReadMap in public batch/hook signatures",
-      "status": "DESIGN_DECISION",
-      "direction": "Expose a supported public DTO or remove internal types from public signatures."
+      "status": "RESOLVED",
+      "direction": "RelationshipReadMap and CustomRouteMetadata are explicitly public @api DTOs; public signature regression tests retain the consumer contract.",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "surface": "dx.* / errors.locale / inactive Doctrine performance options",
-      "status": "DESIGN_DECISION",
-      "direction": "Implement externally verified behavior or remove/deprecate CONFIG_ONLY promises."
+      "status": "RESOLVED",
+      "direction": "Inactive dx configuration, errors.locale and the five inactive Doctrine options are explicitly deprecated as unimplemented. CONFIG_ONLY inventory entries remain historical/deprecated surface, not stable working features.",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "surface": "DoctrineCollectionQueryProviderInterface and ResourceRepositoryLocator::getRepositoryForType",
-      "status": "DESIGN_DECISION",
-      "direction": "The tenant-safe query-plan bridge meets measured query budgets, but currently requires an @internal capability and locator method. Publish a stable decorator/provider contract or document that applications must return null and accept the higher-query fallback."
+      "status": "RESOLVED",
+      "direction": "The capability, locator and getRepositoryForType method are now explicit @api. Safe tenant/scope forwarding and null fallback remain required and externally tested.",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     }
   ]
 }

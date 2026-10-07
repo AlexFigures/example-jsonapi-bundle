@@ -9,7 +9,6 @@ use App\Tests\Acceptance\Support\{AcceptanceTestCase, ExpectedBundleGap};
 final class DisabledHeadTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_switches_off'; }
-    #[ExpectedBundleGap('CONFIG-HEAD-DISABLED')]
     public function testDisabledHeadIsUnavailableAndOptionsAgrees(): void
     {
         self::assertSame(405, $this->requestJsonApi('HEAD', $this->url())->getStatusCode());

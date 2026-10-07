@@ -10,7 +10,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 final class DefaultMediaPolicyTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_media_'.$this->dataName(); }
-    #[ExpectedBundleGap('MEDIA-DEFAULT-POLICY')]
     #[DataProvider('policies')]
     public function testConfiguredDefaultMediaRequestAndResponsePolicy(string $mode): void
     {
@@ -30,8 +29,7 @@ final class DefaultMediaPolicyTest extends AcceptanceTestCase
             self::assertStringStartsWith(self::MEDIA, (string) $negotiated->headers->get('Content-Type'));
         }
     }
-    public static function policies(): iterable { yield 'default' => ['default']; yield 'legacy' => ['legacy']; }    #[ExpectedBundleGap('MEDIA-DEFAULT-POLICY')]
-    #[DataProvider('policies')]
+    public static function policies(): iterable { yield 'default' => ['default']; yield 'legacy' => ['legacy']; }    #[DataProvider('policies')]
     public function testConfiguredRequestPolicyAppliesToGeneratedWrites(string $mode): void
     {
         $body = ['data' => ['type' => 'authors', 'attributes' => ['name' => 'Media author', 'email' => 'media@example.test']]];

@@ -10,7 +10,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 final class AuditFieldNamesTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_audit_'.$this->dataName(); }
-    #[ExpectedBundleGap('PROFILE-AUDIT-ATTRIBUTE-FIELDS', ['attribute'])]
     #[DataProvider('mappings')]
     public function testCustomAuditFieldNamesTrackCreateAndUpdate(string $mode): void
     {

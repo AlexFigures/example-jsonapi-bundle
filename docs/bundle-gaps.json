@@ -1490,6 +1490,21 @@
         }
       ],
       "first_seen_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0"
+    },
+    {
+      "id": "ERROR-LINKS-TYPE",
+      "area": "JSON:API optional error links",
+      "priority": "P2",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Application-supplied problem type is serialized as errors[].links.type; optional about identifies the occurrence, both coexist, and omission remains valid. The same contract applies to every validation error.",
+      "current": "ResponseFactory error()->withLinks stores type/about at document level; errors[].links.type is absent for single and multiple errors.",
+      "why_bundle": "The application chooses documentation URIs; the bundle owns JSON:API error object construction and serialization. The optional member is not required on every error, but an explicitly supplied error link must be representable through the public API.",
+      "bundle_change_required": "Provide a public error-link input supporting type and about and preserve them per error through response serialization. An explicitly separate API for document-level links is fine; do not require application-built JSON responses. Adapt this consumer fixture if the supported API deliberately changes.",
+      "tests": [
+        {
+          "test": "Protocol/ErrorTypeLinksTest::testApplicationErrorTypeLinkIsSerializedOnEachError"
+        }
+      ]
     }
   ]
 }

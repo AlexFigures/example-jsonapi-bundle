@@ -11,7 +11,6 @@ final class SoftDeleteActorTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_soft_include'; }
 
-    #[ExpectedBundleGap('PROFILE-SOFT-DELETE-ACTOR-META')]
     public function testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata(): void
     {
         self::getContainer()->get(ManagerRegistry::class)->getConnection('pgsql')->executeStatement(

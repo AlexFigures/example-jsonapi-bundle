@@ -1,10 +1,9 @@
 {
-  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+  "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
   "counts": {
-    "COVERED_GREEN": 302,
-    "COVERED_GAP": 27,
+    "COVERED_GREEN": 330,
     "CONFIG_ONLY": 17,
-    "DOCUMENTATION_ONLY": 2,
+    "NOT_COVERED": 4,
     "NOT_APPLICABLE": 1
   },
   "features": [
@@ -20,29 +19,29 @@
     {
       "feature": "jsonapi.media_types.default.request.allowed.*",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.media_types.default.response.default",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.media_types.default.response.negotiable.*",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.media_types.channels.*.scope.path_prefix",
@@ -101,11 +100,11 @@
     {
       "feature": "jsonapi.media_type",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.route_prefix",
@@ -267,7 +266,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.cache.enabled",
@@ -600,7 +599,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.performance.doctrine.query_cache_pool",
@@ -609,7 +608,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.performance.doctrine.enable_second_level_cache",
@@ -618,7 +617,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.performance.doctrine.hydrate_partial_by_fields",
@@ -627,7 +626,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.performance.doctrine.collection_sort_policy",
@@ -645,16 +644,16 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.performance.head_enabled",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DisabledHeadTest.php",
       "gap": "CONFIG-HEAD-DISABLED",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.dx.dev_toolbar",
@@ -663,7 +662,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.dx.sandbox.enabled",
@@ -672,7 +671,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.dx.sandbox.route",
@@ -681,7 +680,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.dx.doctor.enabled",
@@ -690,7 +689,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.dx.doctor.rules.*",
@@ -699,7 +698,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.dx.maker.defaults.namespace",
@@ -708,7 +707,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.dx.maker.defaults.resource_type_prefix",
@@ -717,7 +716,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.docs.generator.openapi.enabled",
@@ -834,7 +833,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.release.bc_policy",
@@ -843,7 +842,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.release.min_php",
@@ -852,7 +851,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.release.min_symfony",
@@ -861,7 +860,7 @@
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Source audit: schema/parameter storage exists, no corresponding feature implementation located."
+      "finding": "Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately."
     },
     {
       "feature": "jsonapi.atomic.enabled",
@@ -1073,20 +1072,20 @@
     {
       "feature": "jsonapi.profiles.rel_counts.relationship_meta_key",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "PROFILE-REL-COUNT-CONFIG",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.rel_counts.compute_in_related_endpoints",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/RelatedCountOptionsTest.php",
       "gap": "PROFILE-REL-COUNT-RELATED-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/Attribute",
@@ -1289,10 +1288,10 @@
     {
       "feature": "Resource/Attribute/JsonApiResource",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-ROUTE-PREFIX",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Resource metadata options are individually inventoried; the aggregate API is not fully conformant while routePrefix and other listed options fail."
     },
     {
@@ -1325,11 +1324,11 @@
     {
       "feature": "Resource/Attribute/JsonApiResource::$routePrefix",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-ROUTE-PREFIX",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$description",
@@ -1343,11 +1342,11 @@
     {
       "feature": "Resource/Attribute/JsonApiResource::$exposeId",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "DOCS-EXPOSE-ID-CONTRACT",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$operations",
@@ -1397,11 +1396,11 @@
     {
       "feature": "Resource/Attribute/JsonApiResource::$relationshipPolicies",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-RELATIONSHIP-POLICIES",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$writeRequests",
@@ -1415,11 +1414,11 @@
     {
       "feature": "Resource/Attribute/JsonApiResource::$versionResolver",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "VERSION-RESOLVER-CONTEXT",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/Relationship",
@@ -1937,10 +1936,10 @@
     {
       "feature": "Contract/Data/RepresentationPreloaderInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RepresentationPreloaderInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Public preloader return DTO must be a supported consumer contract; runtime custom-provider preload coverage remains green."
     },
     {
@@ -2000,20 +1999,20 @@
     {
       "feature": "Contract/Data/TypedRelationshipReader",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedRelationshipReader",
-      "status": "DOCUMENTATION_ONLY",
+      "status": "NOT_COVERED",
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md."
+      "finding": "No independent execution evidence yet."
     },
     {
       "feature": "Contract/Data/TypedRelationshipUpdater",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\TypedRelationshipUpdater",
-      "status": "DOCUMENTATION_ONLY",
+      "status": "NOT_COVERED",
       "test": "",
       "gap": "",
       "gap_status": null,
-      "finding": "Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md."
+      "finding": "No independent execution evidence yet."
     },
     {
       "feature": "Contract/Data/TypedResourcePersister",
@@ -2045,10 +2044,10 @@
     {
       "feature": "Contract/Resource/ResourceMetadataInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Resource\\ResourceMetadataInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "DOCS-METADATA-CONTRACT",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "The published default metadata implementation must satisfy its public interface."
     },
     {
@@ -2083,6 +2082,15 @@
       "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\TransactionManager",
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
+      "gap": "",
+      "gap_status": null,
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
+    },
+    {
+      "feature": "Profile/Hook/ContextualFetchPlanHookInterface",
+      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ContextualFetchPlanHookInterface",
+      "status": "COVERED_GREEN",
+      "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
       "gap_status": null,
       "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
@@ -2171,46 +2179,46 @@
     {
       "feature": "Profile/Attribute/Auditable",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
@@ -2234,10 +2242,10 @@
     {
       "feature": "Profile/Attribute/SoftDeletable::$deletedByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteActorTest.php",
       "gap": "PROFILE-SOFT-DELETE-ACTOR-META",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Application supplies deletion actor; negotiated documented soft-delete metadata honors the configured actor field."
     },
     {
@@ -2585,20 +2593,20 @@
     {
       "feature": "Resource/Definition/VersionDefinition",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\VersionDefinition",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "VERSION-RESOLVER-CONTEXT",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Definition/VersionResolverInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\VersionResolverInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/PublicInputAndVersionTest.php",
       "gap": "VERSION-RESOLVER-CONTEXT",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Mapper/DefaultReadMapper",
@@ -2639,37 +2647,37 @@
     {
       "feature": "Resource/Registry/CustomRouteRegistry",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistry",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "gap_status": "OPEN",
-      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Registry reads and public registration signature are externally demonstrated; CustomRouteMetadata is now a supported @api DTO."
     },
     {
       "feature": "Resource/Registry/CustomRouteRegistryInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistryInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "gap_status": "OPEN",
-      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Registry reads and public registration signature are externally demonstrated; CustomRouteMetadata is now a supported @api DTO."
     },
     {
       "feature": "Resource/Registry/ResourceRegistry",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistry",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
     },
     {
       "feature": "Resource/Registry/ResourceRegistryInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistryInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
     },
     {
@@ -3080,11 +3088,11 @@
     {
       "feature": "ServiceTag/jsonapi.resource",
       "public_api": "Symfony tagged service registration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-TAG-DISCOVERY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "ServiceTag/jsonapi.filter.operator",
@@ -3130,6 +3138,24 @@
       "gap": "DX-TYPED-PERSISTER-DISPATCH",
       "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.relationship_reader",
+      "public_api": "Symfony tagged service registration",
+      "status": "NOT_COVERED",
+      "test": "",
+      "gap": "",
+      "gap_status": null,
+      "finding": "No independent execution evidence yet."
+    },
+    {
+      "feature": "ServiceTag/jsonapi.relationship_updater",
+      "public_api": "Symfony tagged service registration",
+      "status": "NOT_COVERED",
+      "test": "",
+      "gap": "",
+      "gap_status": null,
+      "finding": "No independent execution evidence yet."
     },
     {
       "feature": "ServiceTag/jsonapi.resource_repository",

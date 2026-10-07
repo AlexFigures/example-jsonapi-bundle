@@ -244,10 +244,10 @@
     {
       "feature": "Contract/Data/RepresentationPreloaderInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RepresentationPreloaderInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Public preloader return DTO must be a supported consumer contract; runtime custom-provider preload coverage remains green."
     },
     {
@@ -271,10 +271,10 @@
     {
       "feature": "Contract/Resource/ResourceMetadataInterface",
       "public_api": "AlexFigures\\Symfony\\Contract\\Resource\\ResourceMetadataInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "DOCS-METADATA-CONTRACT",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "The published default metadata implementation must satisfy its public interface."
     },
     {
@@ -1054,46 +1054,46 @@
     {
       "feature": "Profile/Attribute/Auditable",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedAtField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Default audit mapping works; attribute-selected custom timestamp/user fields must compose like configuration-selected fields."
     },
     {
@@ -1117,10 +1117,10 @@
     {
       "feature": "Profile/Attribute/SoftDeletable::$deletedByField",
       "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteActorTest.php",
       "gap": "PROFILE-SOFT-DELETE-ACTOR-META",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Application supplies deletion actor; negotiated documented soft-delete metadata honors the configured actor field."
     },
     {
@@ -1414,10 +1414,10 @@
     {
       "feature": "Resource/Attribute/JsonApiResource",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-ROUTE-PREFIX",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Resource metadata options are individually inventoried; the aggregate API is not fully conformant while routePrefix and other listed options fail."
     },
     {
@@ -1450,11 +1450,11 @@
     {
       "feature": "Resource/Attribute/JsonApiResource::$exposeId",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "DOCS-EXPOSE-ID-CONTRACT",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$normalizationContext",
@@ -1486,20 +1486,20 @@
     {
       "feature": "Resource/Attribute/JsonApiResource::$relationshipPolicies",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-RELATIONSHIP-POLICIES",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$routePrefix",
       "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-ROUTE-PREFIX",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$type",
@@ -1747,37 +1747,37 @@
     {
       "feature": "Resource/Registry/CustomRouteRegistry",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistry",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "gap_status": "OPEN",
-      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Registry reads and public registration signature are externally demonstrated; CustomRouteMetadata is now a supported @api DTO."
     },
     {
       "feature": "Resource/Registry/CustomRouteRegistryInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistryInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "gap_status": "OPEN",
-      "finding": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Registry reads and public registration signature are externally demonstrated; CustomRouteMetadata is now a supported @api DTO."
     },
     {
       "feature": "Resource/Registry/ResourceRegistry",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistry",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
     },
     {
       "feature": "Resource/Registry/ResourceRegistryInterface",
       "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistryInterface",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
-      "gap_status": "OPEN",
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
       "finding": "Type/class lookup and enumeration work except primary entity lookup colliding with a registered projection."
     },
     {
@@ -1801,11 +1801,11 @@
     {
       "feature": "ServiceTag/jsonapi.resource",
       "public_api": "Symfony tagged service registration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-TAG-DISCOVERY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.cache.conditional.enable_if_match",
@@ -2017,11 +2017,11 @@
     {
       "feature": "jsonapi.media_type",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.media_types.channels.*.request.allowed.*",
@@ -2080,29 +2080,29 @@
     {
       "feature": "jsonapi.media_types.default.request.allowed.*",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.media_types.default.response.default",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.media_types.default.response.negotiable.*",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DefaultMediaPolicyTest.php",
       "gap": "MEDIA-DEFAULT-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.pagination.default_size",
@@ -2125,11 +2125,11 @@
     {
       "feature": "jsonapi.performance.head_enabled",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Protocol/DisabledHeadTest.php",
       "gap": "CONFIG-HEAD-DISABLED",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.audit_trail.created_at",
@@ -2215,20 +2215,20 @@
     {
       "feature": "jsonapi.profiles.rel_counts.compute_in_related_endpoints",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/RelatedCountOptionsTest.php",
       "gap": "PROFILE-REL-COUNT-RELATED-POLICY",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.rel_counts.relationship_meta_key",
       "public_api": "Configuration",
-      "status": "COVERED_GAP",
+      "status": "COVERED_GREEN",
       "test": "Features/Profiles/NegotiationOptionsTest.php",
       "gap": "PROFILE-REL-COUNT-CONFIG",
-      "gap_status": "OPEN",
-      "finding": "See current-gaps.json for observed failures."
+      "gap_status": "RESOLVED_ON_TESTED_REVISION",
+      "finding": "Historical gap resolved; the bounded consumer contract remains a regression assertion."
     },
     {
       "feature": "jsonapi.profiles.soft_delete.field",
@@ -2285,9 +2285,8 @@
       "finding": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
     }
   ],
-  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+  "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
   "outcomes": {
-    "COVERED_GREEN": 204,
-    "COVERED_GAP": 24
+    "COVERED_GREEN": 228
   }
 }

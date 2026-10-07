@@ -12,7 +12,6 @@ use Doctrine\Persistence\ManagerRegistry;
 final class ResourceOptionsTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_resource_options'; }
-    #[ExpectedBundleGap('RESOURCE-ROUTE-PREFIX')]
     public function testResourceRoutePrefixOverridesGlobalPrefixAndLinks(): void
     {
         $em = self::getContainer()->get(ManagerRegistry::class)->getManagerForClass(FeatureArticle::class);
@@ -21,8 +20,7 @@ final class ResourceOptionsTest extends AcceptanceTestCase
         self::assertSame('Routed article', $doc['data']['attributes']['title']);
         self::assertSame('/reference/routed-articles/'.$article->id, parse_url($doc['data']['links']['self'], PHP_URL_PATH));
         self::assertSame(404, $this->requestJsonApi('GET', '/api/routed-articles/'.$article->id)->getStatusCode());
-    }    #[ExpectedBundleGap('DOCS-EXPOSE-ID-CONTRACT')]
-    public function testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation(): void
+    }    public function testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation(): void
     {
         $em = self::getContainer()->get(ManagerRegistry::class)->getManagerForClass(FeatureArticle::class);
         $article = new FeatureArticle(); $article->title = 'Identity article'; $em->persist($article); $em->flush();
@@ -38,7 +36,6 @@ final class ResourceOptionsTest extends AcceptanceTestCase
         self::assertContains('id', $schema['required']);
         self::assertFalse($schema['properties']['id']['nullable'] ?? false);
     }
-    #[ExpectedBundleGap('RESOURCE-TAG-DISCOVERY')]
     public function testExplicitResourceServiceTagWorksOutsideDiscoveryPaths(): void
     {
         $em = self::getContainer()->get(ManagerRegistry::class)->getManagerForClass(FeatureArticle::class);

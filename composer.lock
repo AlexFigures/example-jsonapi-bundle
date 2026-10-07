@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/AlexFigures/jsonapi-symfony.git",
-                "reference": "8750b80831dba484f3de0ff55c345fec5fdc29e0"
+                "reference": "b5e5e3ccbc96954e6b66fee40c931dac651ba00a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AlexFigures/jsonapi-symfony/zipball/8750b80831dba484f3de0ff55c345fec5fdc29e0",
-                "reference": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+                "url": "https://api.github.com/repos/AlexFigures/jsonapi-symfony/zipball/b5e5e3ccbc96954e6b66fee40c931dac651ba00a",
+                "reference": "b5e5e3ccbc96954e6b66fee40c931dac651ba00a",
                 "shasum": ""
             },
             "require": {
@@ -88,7 +88,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-06T11:43:30+00:00"
+            "time": "2026-10-07T10:02:18+00:00"
         },
         {
             "name": "doctrine/collections",

@@ -10,8 +10,8 @@ use AlexFigures\Symfony\Query\Criteria;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-/** Tenant policy adapter. The optional query-plan bridge currently uses an @internal
- * bundle capability; see docs/public-api-freeze.md before adopting it as a stable API.
+/** Tenant policy adapter. Forward the public optional query-plan capability only
+ * after tenant validation and authoritative provider selection.
  */
 final class TenantRepository implements ResourceRepository, DoctrineCollectionQueryProviderInterface
 {

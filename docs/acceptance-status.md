@@ -4,7 +4,7 @@
 
 Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes documentation/contract drift or discoverability. `DX_GAP` describes public integration ergonomics/tooling. `CONFIG_IMPLEMENTATION_GAP` identifies accepted configuration with no corresponding runtime implementation.
 
-Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit 11.5.56.
+Baseline: bundle `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`, PHP 8.3.35, PHPUnit 11.5.56.
 
 ## CONTENT-NEGOTIATION-001 — content negotiation
 
@@ -677,10 +677,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## VERSION-RESOLVER-CONTEXT — Public feature conformance
 
-**DESIRED_CAPABILITY · P1**. Observed: 3 failing / 5 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 5 cases.
 
 - Expected: VersionResolver receives negotiated profile and selects the configured DTO mapping.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Negotiated alternate representation returns JSON:API 500 through SHOW, INDEX and related collection; sparse INDEX and included-resource cases pass.
 - Bundle change: Carry request ProfileContext into public representation-definition resolution.
 - Tests:
@@ -943,10 +943,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## RESOURCE-ROUTE-PREFIX — Resource mapping
 
-**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 1 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 1 cases.
 
 - Expected: JsonApiResource.routePrefix overrides the global prefix for generated routes and representation links.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: GET /reference/routed-articles/1 returns 404 despite resource routePrefix=/reference.
 - Bundle change: Honor the resource-specific route prefix consistently in generated routes and links.
 - Tests:
@@ -954,10 +954,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## PROFILE-AUDIT-ATTRIBUTE-FIELDS — Reviewed public feature contract
 
-**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 2 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 2 cases.
 
 - Expected: Auditable renamed timestamp/user fields are honored on CREATE and UPDATE.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Renamed insertedBy remains null on CREATE; equivalent configuration mapping passes.
 - Bundle change: Auditable renamed timestamp/user fields are honored on CREATE and UPDATE.
 - Tests:
@@ -965,10 +965,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## CONFIG-HEAD-DISABLED — Reviewed public feature contract
 
-**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 1 failing / 1 cases.
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
 
 - Expected: head_enabled=false disables HEAD and OPTIONS no longer advertises it.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: HEAD returns 200 despite explicit false.
 - Bundle change: head_enabled=false disables HEAD and OPTIONS no longer advertises it.
 - Tests:
@@ -976,10 +976,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## PROFILE-REL-COUNT-CONFIG — Reviewed public feature contract
 
-**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 1 failing / 1 cases.
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
 
 - Expected: rel_counts.relationship_meta_key names count metadata consistently.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: cardinality key absent; default count key still used.
 - Bundle change: rel_counts.relationship_meta_key names count metadata consistently.
 - Tests:
@@ -987,10 +987,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## PROFILE-REL-COUNT-RELATED-POLICY — Reviewed public feature contract
 
-**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 1 failing / 2 cases.
+**CONFIG_IMPLEMENTATION_GAP · P2**. Observed: 0 failing / 2 cases.
 
 - Expected: compute_in_related_endpoints=false suppresses relationship count computation/exposure on related endpoints.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: count is still present when false; true case passes.
 - Bundle change: compute_in_related_endpoints=false suppresses relationship count computation/exposure on related endpoints.
 - Tests:
@@ -998,10 +998,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## RESOURCE-RELATIONSHIP-POLICIES — Reviewed public feature contract
 
-**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 1 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 1 cases.
 
 - Expected: Resource-level relationshipPolicies apply when no per-relationship policy is specified.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Resource map declares VERIFY but effective relationship metadata stays REFERENCE.
 - Bundle change: Resource-level relationshipPolicies apply when no per-relationship policy is specified.
 - Tests:
@@ -1009,10 +1009,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## RESOURCE-REGISTRY-PROJECTION-COLLISION — Reviewed public feature contract
 
-**DESIRED_CAPABILITY · P1**. Observed: 1 failing / 1 cases.
+**DESIRED_CAPABILITY · P1**. Observed: 0 failing / 1 cases.
 
 - Expected: Registering a DTO projection must not replace the primary entity resource in getByClass.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: FeatureArticle class resolves to feature-custom-summaries instead of feature-articles.
 - Bundle change: Registering a DTO projection must not replace the primary entity resource in getByClass.
 - Tests:
@@ -1020,10 +1020,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## DOCS-EXPOSE-ID-CONTRACT — Reviewed public feature contract
 
-**DOCUMENTATION_GAP · P1**. Observed: 1 failing / 1 cases.
+**DOCUMENTATION_GAP · P1**. Observed: 0 failing / 1 cases.
 
 - Expected: Read resource OpenAPI keeps id required/non-null even if exposeId=false; transport identity remains valid.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: HTTP returns valid id but schema omits id from required.
 - Bundle change: Read resource OpenAPI keeps id required/non-null even if exposeId=false; transport identity remains valid.
 - Tests:
@@ -1031,10 +1031,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## RESOURCE-TAG-DISCOVERY — Reviewed public feature contract
 
-**DX_GAP · P1**. Observed: 1 failing / 1 cases.
+**DX_GAP · P1**. Observed: 0 failing / 1 cases.
 
 - Expected: jsonapi.resource service registration composes with directory discovery.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Tagged resource outside discovery paths has no generated route: 404.
 - Bundle change: jsonapi.resource service registration composes with directory discovery.
 - Tests:
@@ -1042,10 +1042,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## MEDIA-DEFAULT-POLICY — Media type configuration
 
-**CONFIG_IMPLEMENTATION_GAP · P1**. Observed: 4 failing / 4 cases.
+**CONFIG_IMPLEMENTATION_GAP · P1**. Observed: 0 failing / 4 cases.
 
 - Expected: Configured default request/response media policies apply consistently to generated reads and writes; explicit negotiation remains authoritative.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Configured application/json request policy is rejected with 415 on generated writes; response defaults stay application/vnd.api+json instead of configured application/json.
 - Bundle change: Resolve request and response media policy uniformly for generated resource routes, including default and negotiated cases.
 - Tests:
@@ -1054,10 +1054,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## DOCS-METADATA-CONTRACT — Public metadata interface
 
-**DX_GAP · P1**. Observed: 1 failing / 1 cases.
+**DX_GAP · P1**. Observed: 0 failing / 1 cases.
 
 - Expected: Default ResourceMetadata implementation fulfills the published ResourceMetadataInterface contract.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: The concrete default ResourceMetadata does not implement the public interface promised by its API documentation.
 - Bundle change: Make the default metadata implementation conform to its published interface or correct/remove the claim and provide a supported implementation seam.
 - Tests:
@@ -1065,10 +1065,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## DX-PUBLIC-SIGNATURE-INTERNAL-DTO — Public extension signatures
 
-**DX_GAP · P1**. Observed: 3 failing / 3 cases.
+**DX_GAP · P1**. Observed: 0 failing / 3 cases.
 
 - Expected: Consumer-facing extension contracts use public stable DTOs or public supported replacements.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Batch-reader and custom-route registry signatures expose types marked @internal.
 - Bundle change: Promote stable DTOs or replace the public signatures before 1.0; avoid requiring application code to depend on @internal types.
 - Tests:
@@ -1076,10 +1076,10 @@ Baseline: bundle `8750b80831dba484f3de0ff55c345fec5fdc29e0`, PHP 8.3.35, PHPUnit
 
 ## PROFILE-SOFT-DELETE-ACTOR-META — Soft-delete public attribute
 
-**DOCUMENTATION_GAP · P2**. Observed: 1 failing / 1 cases.
+**DOCUMENTATION_GAP · P2**. Observed: 0 failing / 1 cases.
 
 - Expected: Negotiated soft-delete resource metadata exposes an application-supplied deletion actor using SoftDeletable.deletedByField.
-- Current on tested revision: OPEN; see observed failures in acceptance-results.json.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
 - Historical baseline: Document hook is a documented placeholder; actor metadata is absent.
 - Bundle change: Honor the documented actor metadata mapping or remove the unsupported promise/attribute option before 1.0. Actor assignment remains application policy.
 - Tests:

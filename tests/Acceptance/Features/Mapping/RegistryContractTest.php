@@ -23,18 +23,15 @@ final class RegistryContractTest extends AcceptanceTestCase
         self::assertNotContains('articles.publish', $meta['resource_route_names']);
         self::assertSame('Read with route defaults and requirements', $meta['description']);
     }
-    #[ExpectedBundleGap('RESOURCE-RELATIONSHIP-POLICIES')]
     public function testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship(): void
     {
         $meta = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/resource-registry'))['meta'];
         self::assertSame('verify', strtolower($meta['source_policy']));
-    }    #[ExpectedBundleGap('RESOURCE-REGISTRY-PROJECTION-COLLISION')]
-    public function testProjectionDoesNotReplacePrimaryEntityClassRegistration(): void
+    }    public function testProjectionDoesNotReplacePrimaryEntityClassRegistration(): void
     {
         $meta = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/resource-registry'))['meta'];
         self::assertSame('feature-articles', $meta['primary_class_type']);
     }
-    #[ExpectedBundleGap('DOCS-METADATA-CONTRACT')]
     public function testDocumentedDefaultMetadataImplementsPublicMetadataContract(): void
     {
         $meta = $this->decodeJsonApi($this->requestJsonApi('GET', '/cookbook/resource-registry'))['meta'];

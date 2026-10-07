@@ -4,6 +4,7 @@ from pathlib import Path
 inventory=json.loads(Path('docs/public-feature-inventory.json').read_text())
 # Evidence points to independent application tests, never bundle-owned unit tests.
 rules=[
+('Http/Response/JsonApiErrorBuilder::withLinks','Protocol/ErrorTypeLinksTest.php','COVERED_GAP','ERROR-LINKS-TYPE'),
 ('Contract/Tx/ResourceWriteTransactionManagerInterface','Features/DataLayer/TypedProviderTest.php','PARTIAL',''),
 ('Profile/Hook/ResourceMetaHookInterface','Features/Profiles/AuditIdentityTest.php','PARTIAL',''),
 ('ServiceTag/jsonapi.persister','Features/DataLayer/TypedProviderTest.php','COVERED_GAP','DX-TYPED-PERSISTER-DISPATCH'),
@@ -47,8 +48,8 @@ rules=[
 ('jsonapi.profiles.audit_trail.expose_in_meta','Features/Profiles/AuditIdentityTest.php','COVERED_GAP','PROFILE-AUDIT-META'),
 ('jsonapi.profiles.audit_trail.','Features/Profiles/AuditIdentityTest.php','COVERED_GREEN',''),
 ('Contract/Data/TypedResourcePersister','Features/DataLayer/TypedProviderTest.php','COVERED_GAP','DX-TYPED-PERSISTER-DISPATCH'),
-('Contract/Data/TypedRelationshipReader','','DOCUMENTATION_ONLY',''),
-('Contract/Data/TypedRelationshipUpdater','','DOCUMENTATION_ONLY',''),
+('Contract/Data/TypedRelationshipReader','','NOT_COVERED',''),
+('Contract/Data/TypedRelationshipUpdater','','NOT_COVERED',''),
 ('Resource/Mapper/WriteMapperInterface','Features/Mapping/PublicInputAndVersionTest.php','PARTIAL','WRITE-REQUEST-DTO'),
 ('Resource/Mapper/DefaultWriteMapper','Features/Mapping/PublicInputAndVersionTest.php','PARTIAL','WRITE-REQUEST-DTO'),
 ('Contract/Data/RelationshipBatchReaderInterface','Features/DataLayer/BatchRelationshipReaderTest.php','COVERED_GREEN',''),
@@ -176,7 +177,7 @@ for item in inventory['features']:
  if status=='NOT_APPLICABLE': finding='Value/default implementation without a separate application-facing HTTP operation.'
  elif status=='DOCUMENTATION_ONLY': finding='Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md.'
  elif status=='NOT_COVERED': finding='No independent execution evidence yet.'
- elif status=='CONFIG_ONLY': finding='Source audit: schema/parameter storage exists, no corresponding feature implementation located.'
+ elif status=='CONFIG_ONLY': finding='Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately.'
  elif gap and gap_states.get(gap)=='RESOLVED_ON_TESTED_REVISION': finding='Historical gap resolved; the bounded consumer contract remains a regression assertion.'
  else: finding='See current-gaps.json for observed failures.' if gap else 'The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation.'
  if name in reviewed: finding=reviewed[name]['contract']
@@ -186,7 +187,7 @@ lines=['# Public feature coverage','',f"Installed bundle: `{inventory['bundle_re
 for r in rows:
  evidence=('[test](../tests/Acceptance/'+r['test']+')' if r['test'] else '—')
  lines.append('| '+' | '.join([r['feature'],r['public_api'],r['test'].split('/')[0] if r['test'] else ('Source audit' if r['status'] in ['CONFIG_ONLY','DOCUMENTATION_ONLY','NOT_APPLICABLE'] else 'Pending'),evidence,r['status'],r['gap'] or '—',r['finding']])+' |')
-lines+=['', '## Reviewed contract boundaries', '', 'The former 228 PARTIAL entries have been reviewed against explicit consumer assertions. Exact residual decisions and their semantic bounds are recorded in [feature-review.json](feature-review.json); the generator applies these decisions reproducibly. A green row proves the linked bounded contract, not all theoretical permutations. Runtime/DX failures remain COVERED_GAP; inactive surfaces remain CONFIG_ONLY or DOCUMENTATION_ONLY and require implementation or removal before the public API freeze.', '', 'Cross-connection Atomic is intentionally unsupported and must reject before mutation. NOT is not a supported HTTP filter AST; its controlled rejection is a regression test. Side-effect delivery and domain-specific actor assignment remain application policy. Tenant-safe query-plan forwarding meets the retained Torture budgets, but the currently internal capability/locator contract requires a bundle API design decision.', '']
+lines+=['', '## Reviewed contract boundaries', '', 'The former 228 PARTIAL entries have been reviewed against explicit consumer assertions. Exact residual decisions and their semantic bounds are recorded in [feature-review.json](feature-review.json); the generator applies these decisions reproducibly. A green row proves the linked bounded contract, not all theoretical permutations. Runtime/DX failures remain COVERED_GAP; inactive surfaces remain CONFIG_ONLY or DOCUMENTATION_ONLY and require implementation or removal before the public API freeze.', '', 'Cross-connection Atomic is intentionally unsupported and must reject before mutation. NOT is not a supported HTTP filter AST; its controlled rejection is a regression test. Side-effect delivery and domain-specific actor assignment remain application policy. Tenant-safe query-plan forwarding meets the retained Torture budgets; capability and locator selection are explicit public @api contracts protected by PublicSignatureTest.', '']
 Path('docs/feature-coverage.md').write_text('\n'.join(lines).rstrip()+'\n')
 Path('docs/feature-coverage.json').write_text(json.dumps(dict(bundle_revision=inventory['bundle_revision'],counts=dict(counts),features=rows),indent=2)+'\n')
 print(dict(counts))

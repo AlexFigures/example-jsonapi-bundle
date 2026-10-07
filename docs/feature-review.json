@@ -173,13 +173,13 @@
       "status": "COVERED_GAP",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "contract": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+      "contract": "Registry reads and public registration signature are externally demonstrated; CustomRouteMetadata is now a supported @api DTO."
     },
     "Resource/Registry/CustomRouteRegistryInterface": {
       "status": "COVERED_GAP",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
-      "contract": "Registry reads are externally demonstrated, but its registration signature requires an internal DTO."
+      "contract": "Registry reads and public registration signature are externally demonstrated; CustomRouteMetadata is now a supported @api DTO."
     },
     "Resource/Registry/ResourceRegistry": {
       "status": "COVERED_GAP",

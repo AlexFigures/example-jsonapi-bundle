@@ -10,7 +10,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 final class RelatedCountOptionsTest extends AcceptanceTestCase
 {
     protected function environment(): string { return 'features_counts_'.$this->dataName(); }
-    #[ExpectedBundleGap('PROFILE-REL-COUNT-RELATED-POLICY', ['off'])]
     #[DataProvider('modes')]
     public function testRelatedEndpointCountPolicy(bool $enabled): void
     {

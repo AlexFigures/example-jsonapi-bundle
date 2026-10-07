@@ -11,7 +11,7 @@ use App\Security\PublishingRules;
 use Doctrine\ORM\QueryBuilder;
 
 /** Add policy, delegate generic query behavior. Optional query-plan forwarding must
- * carry the same visibility predicate; its @internal bundle API needs a freeze decision.
+ * carry the same visibility predicate through the public optional bundle capability.
  */
 final class ScopedArticleRepository implements ResourceRepository, DoctrineCollectionQueryProviderInterface
 {

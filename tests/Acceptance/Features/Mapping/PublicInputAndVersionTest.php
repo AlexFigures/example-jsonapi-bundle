@@ -27,8 +27,6 @@ final class PublicInputAndVersionTest extends AcceptanceTestCase
         self::assertSame('A sufficiently long input title', $doc['data']['attributes']['title']);
     }
 
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('VERSION-RESOLVER-CONTEXT')]
     public function testNegotiatedVersionChangesRepresentation(): void
     {
         $em = self::getContainer()->get(ManagerRegistry::class)->getManagerForClass(FeatureArticle::class);
@@ -44,8 +42,6 @@ final class PublicInputAndVersionTest extends AcceptanceTestCase
         self::assertSame($normal['data']['id'], $version['data']['id']);
     }
     #[DataProvider('representationChannels')]
-    #[Group('bundle-gap')]
-    #[ExpectedBundleGap('VERSION-RESOLVER-CONTEXT', ['collection', 'related'])]
     public function testVersionSelectionComposesAcrossCollectionsIncludesAndFields(string $channel): void
     {
         $em = self::getContainer()->get(ManagerRegistry::class)->getManagerForClass(FeatureArticle::class);

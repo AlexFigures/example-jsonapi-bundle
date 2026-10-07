@@ -1,5 +1,5 @@
 {
-    "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+    "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
     "features": [
         {
             "feature": "jsonapi.strict_content_negotiation",
@@ -1157,6 +1157,11 @@
             "kind": "public_type"
         },
         {
+            "feature": "Profile/Hook/ContextualFetchPlanHookInterface",
+            "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ContextualFetchPlanHookInterface",
+            "kind": "public_type"
+        },
+        {
             "feature": "Profile/Hook/DocumentHook",
             "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\DocumentHook",
             "kind": "public_type"
@@ -1733,6 +1738,16 @@
         },
         {
             "feature": "ServiceTag/jsonapi.persister",
+            "public_api": "Symfony tagged service registration",
+            "kind": "service_tag"
+        },
+        {
+            "feature": "ServiceTag/jsonapi.relationship_reader",
+            "public_api": "Symfony tagged service registration",
+            "kind": "service_tag"
+        },
+        {
+            "feature": "ServiceTag/jsonapi.relationship_updater",
             "public_api": "Symfony tagged service registration",
             "kind": "service_tag"
         },

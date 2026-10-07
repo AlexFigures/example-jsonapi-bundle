@@ -1,6 +1,6 @@
 # PR #67 independent verification
 
-Tested bundle: `8750b80831dba484f3de0ff55c345fec5fdc29e0`. Generated from complete HTTP/kernel Acceptance and Torture evidence. No distributed transaction promise; independent connections reject before mutation.
+Tested bundle: `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`. Generated from complete HTTP/kernel Acceptance and Torture evidence. No distributed transaction promise; independent connections reject before mutation.
 
 | External contract | Executable evidence | Result |
 |---|---|---|

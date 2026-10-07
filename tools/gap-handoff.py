@@ -23,7 +23,7 @@ for g in sorted(current['gaps'], key=lambda x: (x['priority'], x['id'])):
         lines += ['- `' + (t['test'] if isinstance(t, dict) else t) + '`' for t in tests]
         lines += ['']
 lines += ['## Производительность и решения перед 1.0', '',
-          '`PERFORMANCE-NPLUS1` закрывается только по сохранённым assertions полного прогона. Tenant-safe query-plan bridge передаёт ограничения обоих декораторов; прежний постоянный перерасход не доказывал линейного N+1. Для этого bridge сейчас используется @internal capability/locator, поэтому стабильный публичный контракт всё ещё требует решения владельцев бандла.', '',
+          '`PERFORMANCE-NPLUS1` закрывается только по сохранённым assertions полного прогона. Tenant-safe query-plan bridge передаёт ограничения обоих декораторов; прежний постоянный перерасход не доказывал линейного N+1. Capability и выбор provider через locator теперь явно помечены @api; публичный статус проверяется PublicSignatureTest, поведение — полным Torture-прогоном.', '',
           'Свежие измерения внешнего приложения:', '',
           '| Сценарий | Запросы: page 5 / page 20 | Бюджет |', '|---|---|---|']
 performance = json.loads((root / 'docs/performance-results.json').read_text())
@@ -34,6 +34,7 @@ for s in performance['scenarios']:
     lines.append('| '+name+' | '+' / '.join(str(m['query_count']) for m in s['http'])+' | '+str(budget)+' |')
 lines += ['', 'Публичные inactive surfaces требуют реализации либо удаления/депрекации до freeze; это отдельные design findings, а не дополнительные HTTP-сбои:', '']
 for d in gate['public_api_decisions']:
+    if d['status'] != 'DESIGN_DECISION': continue
     lines.append('- **' + d['surface'] + '**: ' + d['direction'])
 lines += ['', 'Намеренное ограничение: Atomic поддерживает одну транзакционную границу. Batch через независимые соединения должен отвергаться до первой мутации; распределённая транзакция не требуется.', '']
 (root / 'docs/bundle-implementation-gaps.md').write_text('\n'.join(lines))

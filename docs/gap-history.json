@@ -1,5 +1,5 @@
 {
-  "bundle_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+  "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
   "revision_semantics": "Verification snapshots, not fix commits; null first_seen means exact historical first observation is unknown.",
   "history": [
     {
@@ -20,7 +20,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -41,7 +41,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -65,7 +65,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -86,7 +86,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -107,7 +107,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -131,7 +131,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -155,7 +155,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -179,7 +179,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -200,7 +200,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -221,7 +221,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -242,7 +242,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -263,7 +263,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -287,7 +287,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -308,7 +308,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -332,7 +332,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -362,7 +362,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -383,7 +383,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -413,7 +413,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -434,7 +434,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -464,7 +464,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -488,7 +488,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -509,7 +509,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -533,7 +533,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -554,7 +554,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -575,7 +575,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -599,7 +599,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -624,7 +624,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -651,7 +651,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -676,7 +676,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -700,7 +700,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -724,7 +724,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -751,7 +751,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -775,7 +775,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -805,7 +805,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -829,7 +829,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -850,7 +850,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -871,7 +871,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -892,7 +892,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -913,7 +913,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -934,7 +934,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -955,7 +955,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -976,7 +976,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1000,7 +1000,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1021,7 +1021,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1043,7 +1043,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1071,7 +1071,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1093,7 +1093,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1127,7 +1127,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1149,7 +1149,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1176,7 +1176,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1204,7 +1204,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1226,7 +1226,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1248,7 +1248,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1270,7 +1270,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1292,7 +1292,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1314,7 +1314,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1336,7 +1336,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1357,25 +1357,13 @@
       ],
       "severity_reason": "A promised public representation-selection API returns 500 on generated SHOW/INDEX/related transport; stabilize the contract or remove the advertised capability before 1.0.",
       "historical_observation": "Negotiated alternate representation returns JSON:API 500 through SHOW, INDEX and related collection; sparse INDEX and included-resource cases pass.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\"\n{\"errors\":[{\"status\":\"500\",\"code\":\"internal-server-error\",\"id\":\"<uuid>\",\"title\":\"Internal server error\",\"detail\":\"An unexpected error occurred.\"}]}\nFailed asserting that 500 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/PublicInputAndVersionTest.php:60\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testNegotiatedVersionChangesRepresentation",
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"collection\"",
-        "App\\Tests\\Acceptance\\Features\\Mapping\\PublicInputAndVersionTest::testVersionSelectionComposesAcrossCollectionsIncludesAndFields with data set \"related\""
-      ],
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "DX-PROFILE-COMMAND",
@@ -1396,7 +1384,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1418,7 +1406,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1443,7 +1431,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1468,7 +1456,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1490,7 +1478,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1512,7 +1500,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1534,7 +1522,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1559,7 +1547,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1585,7 +1573,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1610,7 +1598,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1632,7 +1620,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1654,7 +1642,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1680,7 +1668,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1702,7 +1690,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1724,7 +1712,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1746,7 +1734,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1768,7 +1756,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1790,7 +1778,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1812,7 +1800,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1834,7 +1822,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1856,7 +1844,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1873,18 +1861,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "GET /reference/routed-articles/1 returns 404 despite resource routePrefix=/reference.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/reference\\/routed-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/reference\\/routed-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:20\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testResourceRoutePrefixOverridesGlobalPrefixAndLinks"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
@@ -1900,18 +1882,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "Renamed insertedBy remains null on CREATE; equivalent configuration mapping passes.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\"\nFailed asserting that null is identical to 'ada@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\"\nFailed asserting that null is identical to 'ada@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/AuditFieldNamesTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\AuditFieldNamesTest::testCustomAuditFieldNamesTrackCreateAndUpdate with data set \"attribute\""
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "CONFIG-HEAD-DISABLED",
@@ -1927,18 +1903,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "HEAD returns 200 despite explicit false.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees\nFailed asserting that 200 is identical to 405.\n\n/srv/app/tests/Acceptance/Features/Protocol/DisabledHeadTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees\nFailed asserting that 200 is identical to 405.\n\n/srv/app/tests/Acceptance/Features/Protocol/DisabledHeadTest.php:15\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DisabledHeadTest::testDisabledHeadIsUnavailableAndOptionsAgrees"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "PROFILE-REL-COUNT-CONFIG",
@@ -1954,18 +1924,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "cardinality key absent; default count key still used.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed\nFailed asserting that an array has the key 'cardinality'.\n\n/srv/app/tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed\nFailed asserting that an array has the key 'cardinality'.\n\n/srv/app/tests/Acceptance/Features/Profiles/NegotiationOptionsTest.php:25\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\NegotiationOptionsTest::testCustomRelationshipCountKeyIsUsed"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "PROFILE-REL-COUNT-RELATED-POLICY",
@@ -1981,18 +1945,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "count is still present when false; true case passes.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\"\nFailed asserting that an array does not have the key 'count'.\n\n/srv/app/tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\"\nFailed asserting that an array does not have the key 'count'.\n\n/srv/app/tests/Acceptance/Features/Profiles/RelatedCountOptionsTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\RelatedCountOptionsTest::testRelatedEndpointCountPolicy with data set \"off\""
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "RESOURCE-RELATIONSHIP-POLICIES",
@@ -2008,18 +1966,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "Resource map declares VERIFY but effective relationship metadata stays REFERENCE.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'verify'\n+'reference'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'verify'\n+'reference'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:30\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testResourceLevelRelationshipPolicyAppliesToUnspecifiedRelationship"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
@@ -2035,18 +1987,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "FeatureArticle class resolves to feature-custom-summaries instead of feature-articles.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'feature-articles'\n+'feature-custom-summaries'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration\nFailed asserting that two strings are identical.\n--- Expected\n+++ Actual\n@@ @@\n-'feature-articles'\n+'feature-custom-summaries'\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:35\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testProjectionDoesNotReplacePrimaryEntityClassRegistration"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "DOCS-EXPOSE-ID-CONTRACT",
@@ -2062,18 +2008,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "HTTP returns valid id but schema omits id from required.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation\nFailed asserting that an array contains 'id'.\n\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation\nFailed asserting that an array contains 'id'.\n\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:38\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExposeIdFalseDoesNotMakeProtocolIdentityOptionalInDocumentation"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "RESOURCE-TAG-DISCOVERY",
@@ -2089,18 +2029,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "Tagged resource outside discovery paths has no generated route: 404.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/api\\/tagged-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:46\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths\n{\"errors\":[{\"status\":\"404\",\"code\":\"resource-not-found\",\"id\":\"<uuid>\",\"title\":\"Resource not found\",\"detail\":\"No route found for \\u0022GET http:\\/\\/localhost\\/api\\/tagged-articles\\/1\\u0022\"}]}\nFailed asserting that 404 is identical to 200.\n\n/srv/app/tests/Acceptance/Support/AcceptanceTestCase.php:70\n/srv/app/tests/Acceptance/Features/Mapping/ResourceOptionsTest.php:46\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\ResourceOptionsTest::testExplicitResourceServiceTagWorksOutsideDiscoveryPaths"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "MEDIA-DEFAULT-POLICY",
@@ -2119,27 +2053,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "Configured application/json request policy is rejected with 415 on generated writes; response defaults stay application/vnd.api+json instead of configured application/json.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"\nFailed asserting that 'application/vnd.api+json' starts with \"application/json\".\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:19\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\"\n{\"errors\":[{\"status\":\"415\",\"code\":\"unsupported-media-type\",\"id\":\"<uuid>\",\"title\":\"Unsupported media type\",\"detail\":\"The Content-Type \\u0022application\\/json\\u0022 is not supported. Expected application\\/vnd.api+json.\",\"source\":{\"header\":\"Content-Type\"}}]}\nFailed asserting that 415 is identical to 201.\n\n/srv/app/tests/Acceptance/Features/Protocol/DefaultMediaPolicyTest.php:39\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"default\"",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredDefaultMediaRequestAndResponsePolicy with data set \"legacy\"",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"default\"",
-        "App\\Tests\\Acceptance\\Features\\Protocol\\DefaultMediaPolicyTest::testConfiguredRequestPolicyAppliesToGeneratedWrites with data set \"legacy\""
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "DOCS-METADATA-CONTRACT",
@@ -2155,18 +2074,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "The concrete default ResourceMetadata does not implement the public interface promised by its API documentation.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract\nResourceMetadataInterface promises an attribute-based default implementation.\nFailed asserting that false is true.\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract\nResourceMetadataInterface promises an attribute-based default implementation.\nFailed asserting that false is true.\n\n/srv/app/tests/Acceptance/Features/Mapping/RegistryContractTest.php:41\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Mapping\\RegistryContractTest::testDocumentedDefaultMetadataImplementsPublicMetadataContract"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
@@ -2182,24 +2095,12 @@
       ],
       "first_seen_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a",
       "historical_observation": "Batch-reader and custom-route registry signatures expose types marked @internal.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/**\\n\n * Metadata for a custom JSON:API route.\\n\n *\\n\n * @internal\\n\n */' [ASCII](length: 64) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/** @internal Request-local results. Never installs partial ORM collections. */' [ASCII](length: 79) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104",
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\"\nPublic extension signatures require a supported DTO contract or a public replacement.\nFailed asserting that '/**\\n\n * Metadata for a custom JSON:API route.\\n\n *\\n\n * @internal\\n\n */' [ASCII](length: 64) does not contain \"@internal\" [ASCII](length: 9).\n\n/srv/app/tests/Acceptance/Features/Configuration/PublicSignatureTest.php:22\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"batch reader return\"",
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"preloader return\"",
-        "App\\Tests\\Acceptance\\Features\\Configuration\\PublicSignatureTest::testPublicExtensionSignatureUsesSupportedDto with data set \"custom route registry addRoute\""
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "PROFILE-SOFT-DELETE-ACTOR-META",
@@ -2215,18 +2116,12 @@
       ],
       "first_seen_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
       "historical_observation": "Document hook is a documented placeholder; actor metadata is absent.",
-      "actual": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata\nThe documented soft-delete metadata must honor deletedByField; actor assignment itself remains application policy.\nFailed asserting that null is identical to 'editor@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php:23\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "status": "OPEN",
-      "current_evidence": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata\nThe documented soft-delete metadata must honor deletedByField; actor assignment itself remains application policy.\nFailed asserting that null is identical to 'editor@example.test'.\n\n/srv/app/tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php:23\n/srv/app/vendor/phpunit/phpunit/phpunit:104"
-      ],
-      "verified_tests": [
-        "App\\Tests\\Acceptance\\Features\\Profiles\\SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata"
-      ],
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
-      "resolved_revision": null
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
       "id": "PERFORMANCE-NPLUS1",
@@ -2253,7 +2148,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -2280,7 +2175,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2303,7 +2198,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2324,7 +2219,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2345,7 +2240,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2366,7 +2261,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2387,7 +2282,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2410,7 +2305,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2433,7 +2328,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "8750b80831dba484f3de0ff55c345fec5fdc29e0",
+      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     }
   ]
