@@ -34,7 +34,9 @@ python3 tools/release-gate.py --run --clean-install
 
 Use `--update` to update the bundle within the explicit manifest constraint. To test a different commit or published version, prepare that constraint first, resolve and commit the lock. Release proof uses the actual Composer package, not a local checkout.
 
-The clean install uses unique empty Docker volumes for vendor and Symfony cache, leaving existing directories intact. It executes Composer install, check-platform-reqs, validate --strict, application boot, full Acceptance (including Production/Features), and full blocking Torture. Each CI branch obtains its PHP runtime from its pinned target; a mismatched compat branch name fails. Tests recreate disposable schemas. PostgreSQL database creation is idempotent in the common gate; MySQL test databases are initialized by docker/mysql/init.sql.
+The clean install uses unique empty Docker volumes for vendor and Symfony cache, leaving existing directories intact. It executes Composer install, check-platform-reqs, strict schema/lock validation, application boot, full Acceptance (including Production/Features), and full blocking Torture. Each CI branch obtains its PHP runtime from its pinned target; a mismatched compat branch name fails. Tests recreate disposable schemas. PostgreSQL database creation is idempotent in the common gate; MySQL test databases are initialized by docker/mysql/init.sql.
+
+Release mode uses `composer validate --strict --no-check-all`: exact published-version constraints are intentional, so only Composer’s overly strict/loose constraint recommendations are excluded. JSON/schema checks, lock freshness, runtime requirements and exact installed package/version checks remain active.
 
 `var/release-run.json` records the current attempt separately from committed earlier reports. Installation/boot errors write NO-GO with `complete_evidence: false`; an old GO artifact cannot certify a failed new attempt.
 
