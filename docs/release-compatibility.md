@@ -4,7 +4,7 @@ Generated from complete external suite evidence. This is a platform result, not 
 
 Result: **GO** (RELEASE).
 
-Example revision: `adb7d942468742bc31a72004479e85b63d73ddc8`; dirty source snapshot: False.
+Example revision: `b926488caeb9d10c4bd5645293aee97623ec7bd6`; dirty source snapshot: False.
 Contract SHA-256: `780dad2babaa94e1de3f99df10e6a05d198e847f0c1f9756cbd0da5a5cfdbd10`.
 Bundle revision: `96a1530f3155ddf001b7d1e48fd33e375c382d85`.
 

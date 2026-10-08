@@ -27,7 +27,7 @@
       "install_path": "/srv/app/vendor/composer/../alexfigures/symfony-jsonapi-bundle"
     }
   },
-  "example_revision": "adb7d942468742bc31a72004479e85b63d73ddc8",
+  "example_revision": "b926488caeb9d10c4bd5645293aee97623ec7bd6",
   "example_dirty": false,
   "lock_sha256": "f8485562ba3a1c70e42a1c1d46917fbb04bae65a1535d0c4f946efd2bdffe059",
   "composer_sha256": "2bc32bd7dc59c631d9546440b4b2e9b3ec831299400d6642a82905882e36d0e3",
@@ -37,12 +37,12 @@
     "mode": "release",
     "bundle_revision": null
   },
-  "recorded_at": "2026-10-08T11:07:54.105897+00:00",
+  "recorded_at": "2026-10-08T11:09:01.661963+00:00",
   "clean_install": {
-    "vendor_volume": "jsonapi-vendor-98b5f3b4e0e54b7686b9948e98136a36",
-    "cache_volume": "jsonapi-cache-98b5f3b4e0e54b7686b9948e98136a36",
+    "vendor_volume": "jsonapi-vendor-9cf74dadab7a4c92888f429d52611012",
+    "cache_volume": "jsonapi-cache-9cf74dadab7a4c92888f429d52611012",
     "lock_sha256": "f8485562ba3a1c70e42a1c1d46917fbb04bae65a1535d0c4f946efd2bdffe059",
-    "time": "2026-10-08T11:07:51.218343+00:00"
+    "time": "2026-10-08T11:08:59.728253+00:00"
   },
   "suites": {
     "Acceptance": {
@@ -66,12 +66,12 @@
   "reasons": [],
   "provenance": {
     "acceptance": {
-      "junit_sha256": "7832965828685a637bb75d611aea99d7d937c8683b1ce0073374593f88d6ca93",
-      "trace_sha256": "3eb84d7b521cdcf30891e38fe237dbaaa4617bd26b7cd311d4753190c0d3ae0c"
+      "junit_sha256": "d025eee2fff4a75eb0586f44ef5a1a96363ec16dbd348e2d402f4df4508e6c93",
+      "trace_sha256": "1179f565cfff69eea79d5bb498b987bb941628c2589e8e3bd7a24116f0ccbd67"
     },
     "torture": {
-      "junit_sha256": "afcf4a5572022898109c27e659a32f93a2ae34a1e614b9333db586513ad9fe4d",
-      "trace_sha256": "5fe66d95203feaa7a2bff57a1d2fae22a98fe3bfbdaabf41eab38c3747dd9f85"
+      "junit_sha256": "4fb8ac159500edd18cf420363ec8fdaa2e8be07448dbe51dc02852a5e781e810",
+      "trace_sha256": "fa2efa5a9595596613dc35bd5ebb37952706db3110a9ac8fd5d2ca6ab24017eb"
     }
   },
   "evidence_kind": "RELEASE"
