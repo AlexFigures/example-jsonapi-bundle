@@ -2,8 +2,8 @@
     "evidence": {
         "verified": true,
         "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
-        "junit_sha256": "7832965828685a637bb75d611aea99d7d937c8683b1ce0073374593f88d6ca93",
-        "trace_sha256": "3eb84d7b521cdcf30891e38fe237dbaaa4617bd26b7cd311d4753190c0d3ae0c"
+        "junit_sha256": "cc4378e7f6629122b5667a66a7cd6bcfc995fd7fd7bd70148dc65605c800a646",
+        "trace_sha256": "675d3ed447cff8e03ea1d33f7716d3092abea24618a2ea602178a739c804609d"
     },
     "assertions": 7127,
     "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
@@ -661,7 +661,7 @@
         }
     ],
     "phpunit_version": "11.5.57",
-    "php_version": "8.2.34",
+    "php_version": "8.4.26",
     "counts": {
         "stable_pass": 683,
         "gap_pass": 0,

@@ -4,17 +4,17 @@ Generated from complete external suite evidence. This is a platform result, not 
 
 Result: **GO** (RELEASE).
 
-Example revision: `b926488caeb9d10c4bd5645293aee97623ec7bd6`; dirty source snapshot: False.
+Example revision: `e5640a0adbef5f1cffc3ec0950423a4269d6bdfa`; dirty source snapshot: False.
 Contract SHA-256: `780dad2babaa94e1de3f99df10e6a05d198e847f0c1f9756cbd0da5a5cfdbd10`.
 Bundle revision: `96a1530f3155ddf001b7d1e48fd33e375c382d85`.
 
 | Installed dependency | Actual version |
 |---|---|
-| PHP | 8.2.34 |
-| symfony/framework-bundle | v7.4.20 |
+| PHP | 8.4.26 |
+| symfony/framework-bundle | v8.1.8 |
 | doctrine/orm | 3.7.4 |
 | doctrine/dbal | 4.5.0 |
-| doctrine/doctrine-bundle | 2.19.1 |
+| doctrine/doctrine-bundle | 3.3.2 |
 | alexfigures/symfony-jsonapi-bundle | v1.0.0-RC |
 
 | Suite | Result |
