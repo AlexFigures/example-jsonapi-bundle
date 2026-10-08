@@ -2,8 +2,8 @@
     "evidence": {
         "verified": true,
         "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
-        "junit_sha256": "4aed6439717ff9449f237ec6cc12226e5f21c22d7046499bfd08ba664b201529",
-        "trace_sha256": "fd6e3f7afc93fc455760a95e76cab0d4677efc704572d80e31f282f933a0d096"
+        "junit_sha256": "7832965828685a637bb75d611aea99d7d937c8683b1ce0073374593f88d6ca93",
+        "trace_sha256": "3eb84d7b521cdcf30891e38fe237dbaaa4617bd26b7cd311d4753190c0d3ae0c"
     },
     "assertions": 7127,
     "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",

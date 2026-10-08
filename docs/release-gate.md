@@ -25,7 +25,7 @@ None.
 
 ## Public API decisions and inactive configuration
 
-See [public-api-freeze.md](public-api-freeze.md) and [configuration-dx-audit.md](history/configuration-dx-audit.md). CONFIG_ONLY/DOCUMENTATION_ONLY surfaces are not advertised as working features. The former PARTIAL inventory has been reviewed into bounded executable contracts and explicit gaps; see [feature-review.json](feature-review.json) and [coverage status meanings](coverage-status.md). Aggregate case counts alone do not prove all theoretical feature combinations.
+See [public-api-freeze.md](public-api-freeze.md) and [historical configuration audit](history/configuration-dx-audit.md). CONFIG_ONLY/DOCUMENTATION_ONLY surfaces are not advertised as working features. The former PARTIAL inventory has been reviewed into bounded executable contracts and explicit gaps; see [feature-review.json](feature-review.json) and [coverage status meanings](coverage-status.md). Aggregate case counts alone do not prove all theoretical feature combinations.
 
 ## Performance blockers
 
@@ -33,4 +33,4 @@ None observed in the fixed Torture release set.
 
 ## 1.0 release readiness
 
-**REVIEW_REQUIRED**. P0/P1 executable blockers: none. Passing runtime tests never automatically authorize API freeze; outstanding public API design decisions require bundle-owner review.
+**GO**. P0/P1 executable blockers: none. Passing runtime tests never automatically authorize API freeze; published RC/final verification and release-owner approval remain separate.

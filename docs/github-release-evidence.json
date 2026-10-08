@@ -1,0 +1,118 @@
+{
+  "bundle": "v1.0.0-RC",
+  "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
+  "runs": [
+    {
+      "target": "main",
+      "run_id": 37767998934,
+      "url": "https://github.com/AlexFigures/example-jsonapi-bundle/actions/runs/37767998934",
+      "conclusion": "success",
+      "artifact_id": 11545973033,
+      "artifact_sha256": "35c724cc70fd5d3680a155561cb05a8a3ccbff045cadeff25156c3549d304ce5",
+      "archive": "release-evidence/v1.0.0-rc/main.zip",
+      "example_revision": "adb7d942468742bc31a72004479e85b63d73ddc8",
+      "example_dirty": false,
+      "php": "8.2.34",
+      "symfony": "v7.4.20",
+      "suites": {
+        "Acceptance": {
+          "PASS": 683,
+          "SKIP": 0
+        },
+        "Production": {
+          "PASS": 82
+        },
+        "Features": {
+          "PASS": 280
+        },
+        "Torture": {
+          "PASS": 62
+        }
+      }
+    },
+    {
+      "target": "sf74",
+      "run_id": 37767998693,
+      "url": "https://github.com/AlexFigures/example-jsonapi-bundle/actions/runs/37767998693",
+      "conclusion": "success",
+      "artifact_id": 11546746767,
+      "artifact_sha256": "9254163a7f167cad1ade142f6507fb824a8f44a008230eff7a3a5b72db4b790d",
+      "archive": "release-evidence/v1.0.0-rc/sf74.zip",
+      "example_revision": "b926488caeb9d10c4bd5645293aee97623ec7bd6",
+      "example_dirty": false,
+      "php": "8.2.34",
+      "symfony": "v7.4.20",
+      "suites": {
+        "Acceptance": {
+          "PASS": 683,
+          "SKIP": 0
+        },
+        "Production": {
+          "PASS": 82
+        },
+        "Features": {
+          "PASS": 280
+        },
+        "Torture": {
+          "PASS": 62
+        }
+      }
+    },
+    {
+      "target": "sf81",
+      "run_id": 37767998616,
+      "url": "https://github.com/AlexFigures/example-jsonapi-bundle/actions/runs/37767998616",
+      "conclusion": "success",
+      "artifact_id": 11545883296,
+      "artifact_sha256": "b8021203c1772d67d38958d6b5ab51500d6b7d7b423f4f58bb8c7d7b8e8dc943",
+      "archive": "release-evidence/v1.0.0-rc/sf81.zip",
+      "example_revision": "e5640a0adbef5f1cffc3ec0950423a4269d6bdfa",
+      "example_dirty": false,
+      "php": "8.4.26",
+      "symfony": "v8.1.8",
+      "suites": {
+        "Acceptance": {
+          "PASS": 683,
+          "SKIP": 0
+        },
+        "Production": {
+          "PASS": 82
+        },
+        "Features": {
+          "PASS": 280
+        },
+        "Torture": {
+          "PASS": 62
+        }
+      }
+    },
+    {
+      "target": "sf82",
+      "run_id": 37767998002,
+      "url": "https://github.com/AlexFigures/example-jsonapi-bundle/actions/runs/37767998002",
+      "conclusion": "success",
+      "artifact_id": 11547237149,
+      "artifact_sha256": "84aa593ff598628510483304310f7f93d6191c3104ee29ad2bd12f6f3e64c9ca",
+      "archive": "release-evidence/v1.0.0-rc/sf82.zip",
+      "example_revision": "ea91e6df68c9429000a861aec1702315d5f3d33f",
+      "example_dirty": true,
+      "php": "8.4.26",
+      "symfony": "8.2.x-dev",
+      "suites": {
+        "Acceptance": {
+          "PASS": 683,
+          "SKIP": 0
+        },
+        "Production": {
+          "PASS": 82
+        },
+        "Features": {
+          "PASS": 280
+        },
+        "Torture": {
+          "PASS": 62
+        }
+      }
+    }
+  ]
+}

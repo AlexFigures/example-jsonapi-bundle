@@ -1,6 +1,6 @@
 # Version-pinned external consumers
 
-`main` is the canonical Symfony **7.4 / PHP 8.2** reference application during pre-RC stabilization. It replaces the unsupported formal 7.3 fixture. Move main to 8.1/8.4 only after the published bundle permits that platform and the full external gate passes. Main always has one explicit platform; it is not a multi-version Composer mix.
+`main` is the canonical Symfony **7.4 / PHP 8.2** reference application for the published RC. It replaces the unsupported formal 7.3 fixture. Move main to 8.1/8.4 only after the published bundle permits that platform and the full external gate passes. Main always has one explicit platform; it is not a multi-version Composer mix.
 
 The target definitions in [targets.json](../compatibility/targets.json) describe independent compatibility branches. All branches share application code and executable assertions. Platform-only changes are composer.json/lock, compatibility/platform.json, Docker runtime and documented normal framework migrations. Do not cherry-pick report PASS values from another branch.
 
@@ -63,6 +63,6 @@ Current facts are generated in [compatibility-matrix.md](compatibility-matrix.md
 
 The workflow in [.github/workflows/compatibility.yml](../.github/workflows/compatibility.yml) runs the same command on main and compat branches and uploads evidence even on failure. A local run does not count as an Actions run. Its publication and actual GitHub result must be linked before claiming CI verification.
 
-The three locked fixture branches are now published in [the repository](https://github.com/AlexFigures/example-jsonapi-bundle/branches). The [Actions workflow](https://github.com/AlexFigures/example-jsonapi-bundle/actions/workflows/compatibility.yml) is running the real gate; check its individual platform runs and uploaded artifacts before claiming GitHub CI success.
+The three locked fixture branches are now published in [the repository](https://github.com/AlexFigures/example-jsonapi-bundle/branches). The [Actions workflow](https://github.com/AlexFigures/example-jsonapi-bundle/actions/workflows/compatibility.yml) passed the full published-RC gate on main and all three branches. Exact runs, artifact hashes and retained archives are in [GitHub release evidence](github-release-evidence.md).
 
 Packagist now publishes `v1.0.0-RC`, pointing at bundle commit `96a1530f3155ddf001b7d1e48fd33e375c382d85`. Use the exact constraint `1.0.0-RC` and release-mode fixtures; stabilization evidence from `dev-main` remains archived separately. Immutable evidence tags are created only after a fresh published-package run succeeds.
