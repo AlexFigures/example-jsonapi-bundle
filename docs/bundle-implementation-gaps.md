@@ -4,9 +4,9 @@
 
 Источник: полный независимый прогон приложения; [current-gaps.json](current-gaps.json) содержит только актуальные наблюдаемые гэпы.
 
-Acceptance: {'PASS': 680, 'SKIP': 0}. Torture: {'PASS': 62}. Новых неклассифицированных регрессий: 0.
+Acceptance: {'PASS': 683, 'SKIP': 0}. Torture: {'PASS': 62}. Новых неклассифицированных регрессий: 0.
 
-Feature inventory: {'COVERED_GREEN': 332, 'NOT_COVERED': 4, 'NOT_APPLICABLE': 1}. PARTIAL — 0; ограниченные доказанные контракты описаны в [feature-review.json](feature-review.json).
+Feature inventory: {'COVERED_GREEN': 336, 'NOT_APPLICABLE': 1}. PARTIAL — 0; ограниченные доказанные контракты описаны в [feature-review.json](feature-review.json).
 
 ## Производительность и решения перед 1.0
 
@@ -24,6 +24,5 @@ Feature inventory: {'COVERED_GREEN': 332, 'NOT_COVERED': 4, 'NOT_APPLICABLE': 1}
 
 Публичные inactive surfaces требуют реализации либо удаления/депрекации до freeze; это отдельные design findings, а не дополнительные HTTP-сбои:
 
-- **TypedRelationshipReader / TypedRelationshipUpdater**: Latest bundle documents active typed dispatch through supports(sourceType) and relationship reader/updater tags. Dedicated two-type external dispatch verification is still needed; the previous claim of no active seam is obsolete.
 
 Намеренное ограничение: Atomic поддерживает одну транзакционную границу. Batch через независимые соединения должен отвергаться до первой мутации; распределённая транзакция не требуется.

@@ -74,5 +74,6 @@
       "trace_sha256": "70e37fa7e39e1513ac1c8e2f05de9a5b5f9376290a0e4c2fa27bbbc62d17faa6"
     }
   },
-  "evidence_kind": "STABILIZATION"
+  "evidence_kind": "STABILIZATION",
+  "scope_note": "Diagnostic pre-final suite snapshot. Final committed-source evidence replaces this result; the PHP 8.2 production proxy warmup issue was fixed afterward."
 }

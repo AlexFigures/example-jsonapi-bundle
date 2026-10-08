@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /** Observable local side effect; deliberately not an API resource or external delivery. */
 #[ORM\Entity]
 #[ORM\Table(name: 'publication_notifications')]
-final class PublicationNotification
+class PublicationNotification
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column]
     public ?int $id = null;

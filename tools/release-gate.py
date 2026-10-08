@@ -167,7 +167,7 @@ def generate(previous):
                 lines.append('| ' + ' | '.join([g['id'], g['category'], g['expected'].replace('|', '\\|'), link]) + ' |')
         if not any(g.get('priority') == priority for g in opened): lines += ['None.']
         lines += ['']
-    lines += ['## Public API decisions and inactive configuration', '', 'See [public-api-freeze.md](public-api-freeze.md) and [configuration-dx-audit.md](configuration-dx-audit.md). CONFIG_ONLY/DOCUMENTATION_ONLY surfaces are not advertised as working features. The former PARTIAL inventory has been reviewed into bounded executable contracts and explicit gaps; see [feature-review.json](feature-review.json) and [coverage status meanings](coverage-status.md). Aggregate case counts alone do not prove all theoretical feature combinations.', '', '## Performance blockers', '', ', '.join(g['id'] for g in blockers if g['category'] == 'PERFORMANCE_GAP') or 'None observed in the fixed Torture release set.', '', '## 1.0 release readiness', '', f'**{readiness}**. P0/P1 executable blockers: ' + (', '.join(g['id'] for g in blockers) or 'none') + '. Passing runtime tests never automatically authorize API freeze; outstanding public API design decisions require bundle-owner review.', '']
+    lines += ['## Public API decisions and inactive configuration', '', 'See [public-api-freeze.md](public-api-freeze.md) and [historical configuration audit](history/configuration-dx-audit.md). CONFIG_ONLY/DOCUMENTATION_ONLY surfaces are not advertised as working features. The former PARTIAL inventory has been reviewed into bounded executable contracts and explicit gaps; see [feature-review.json](feature-review.json) and [coverage status meanings](coverage-status.md). Aggregate case counts alone do not prove all theoretical feature combinations.', '', '## Performance blockers', '', ', '.join(g['id'] for g in blockers if g['category'] == 'PERFORMANCE_GAP') or 'None observed in the fixed Torture release set.', '', '## 1.0 release readiness', '', f'**{readiness}**. P0/P1 executable blockers: ' + (', '.join(g['id'] for g in blockers) or 'none') + '. Passing runtime tests never automatically authorize API freeze; published RC/final verification and release-owner approval remain separate.', '']
     if any(g['id'] == 'PERFORMANCE-NPLUS1' for g in opened):
         lines += ['The page 5/20 growth guards pass on this revision; retained absolute query budgets fail. The stable historical ID is not evidence of current linear N+1 growth.', '']
     (ROOT / 'docs/release-gate.md').write_text('\n'.join(lines))
@@ -225,7 +225,7 @@ def main():
             platform['bundle_revision'] = current_revision()
             compatibility.write('compatibility/platform.json', platform)
         if args.clean_install or compatibility.read('compatibility/platform.json')['mode'] == 'release': compatibility.clean_install()
-        for check in [['docker', 'compose', 'exec', '-T', 'php', 'composer', 'validate', '--strict'], php('bin/console', 'about', '--env=test'), php('tools/dev-http-smoke.php')]:
+        for check in [['docker', 'compose', 'exec', '-T', 'php', 'composer', 'validate', '--strict'], php('bin/console', 'about', '--env=test'), php('bin/console', 'about', '--env=prod'), php('tools/dev-http-smoke.php')]:
             if command(check): return 2
         tested_revision = current_revision()
         environment = compatibility.capture_environment()

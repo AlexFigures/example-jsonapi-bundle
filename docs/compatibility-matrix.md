@@ -4,7 +4,7 @@ Only exact executed environments produce PASS. SUPPORTED requires a successful s
 
 | Target branch | PHP | Symfony | Bundle | Acceptance | Torture | Status |
 |---|---|---|---|---|---|---|
-| [compat/symfony-7.4-php-8.2](compatibility-evidence/sf74.json) | 8.2.34 | v7.4.20 | dev-main | {'PASS': 680, 'SKIP': 0} | {'PASS': 62} | FORWARD TESTED / DEV |
+| [compat/symfony-7.4-php-8.2](compatibility-evidence/sf74.json) | 8.2.34 | v7.4.20 | dev-main | {'PASS': 683, 'SKIP': 0} | {'PASS': 62} | STABILIZATION TESTED |
 | compat/symfony-8.1-php-8.4 | 8.4.26 | 8.1.* | pending | not executed | not executed | PREPARED / no support claim |
 | compat/symfony-8.2-php-8.4 | 8.4.26 | 8.2.*@dev | pending | not executed | not executed | PREPARED / no support claim |
 
