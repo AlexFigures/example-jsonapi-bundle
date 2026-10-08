@@ -59,4 +59,6 @@ Current facts are generated in [compatibility-matrix.md](compatibility-matrix.md
 
 The workflow in [.github/workflows/compatibility.yml](../.github/workflows/compatibility.yml) runs the same command on main and compat branches and uploads evidence even on failure. A local run does not count as an Actions run. Its publication and actual GitHub result must be linked before claiming CI verification.
 
-At the last external check on 2026-10-08 the remote repository had no compatibility workflow, and Packagist listed only 0.1.x releases (latest v0.1.26), without a published 1.0 RC. RC proof and immutable release tags therefore remain pending the real package publication. Check package availability again before preparing release mode.
+The three locked fixture branches are now published in [the repository](https://github.com/AlexFigures/example-jsonapi-bundle/branches). The [Actions workflow](https://github.com/AlexFigures/example-jsonapi-bundle/actions/workflows/compatibility.yml) is running the real gate; check its individual platform runs and uploaded artifacts before claiming GitHub CI success.
+
+Packagist was checked on 2026-10-08 and listed only 0.1.x releases (latest v0.1.26), without a published 1.0 RC. RC proof and immutable release tags remain pending the real package publication. Check package availability again before preparing release mode.
