@@ -4,11 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90c8e8e3f077992a810c547659edc460",
+    "content-hash": "04ba7782fc32481b437efce8bf68e6ed",
     "packages": [
         {
             "name": "alexfigures/symfony-jsonapi-bundle",
-            "version": "dev-main",
+            "version": "v1.0.0-RC",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AlexFigures/jsonapi-symfony.git",
@@ -53,7 +53,6 @@
                 "doctrine/dbal": "Built-in Doctrine provider: DBAL 3.8+ / 4.3+; see tested compatibility matrix.",
                 "doctrine/orm": "Built-in Doctrine provider: ORM 3.x (see tested compatibility matrix)."
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -6751,7 +6750,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "alexfigures/symfony-jsonapi-bundle": 20
+        "alexfigures/symfony-jsonapi-bundle": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,

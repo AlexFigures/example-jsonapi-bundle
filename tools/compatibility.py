@@ -48,7 +48,9 @@ def execute(args):
 
 def prepare(target, bundle, mode, output=None):
     definition = read('compatibility/targets.json')[target]
-    if mode == 'release' and not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d+)?', bundle, re.I):
+    if mode == 'release':
+        bundle = bundle[1:] if bundle.startswith('v') else bundle
+    if mode == 'release' and not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d*)?', bundle, re.I):
         raise SystemExit('Release mode requires an exact published 1.x version, not a branch/path.')
     if mode == 'stabilization' and not re.fullmatch(r'dev-[^#]+#[0-9a-f]{40}', bundle):
         raise SystemExit('Stabilization mode requires dev-branch#exact-40-character-commit.')
@@ -91,6 +93,9 @@ def activate_fixture(target):
     package = next(p for p in lock['packages'] if p['name'] == BUNDLE)
     if platform['mode'] == 'stabilization' and package['source']['reference'] != platform['bundle_revision']:
         raise SystemExit('Fixture lock disagrees with the expected bundle revision.')
+    composer = json.loads((fixture / 'composer.json').read_text())
+    if platform['mode'] == 'release' and package['version'].lstrip('v').lower() != composer['require'][BUNDLE].lower():
+        raise SystemExit('Fixture lock does not contain the exact published release constraint.')
     for filename in ['composer.json', 'composer.lock']:
         shutil.copyfile(fixture / filename, ROOT / filename)
     shutil.copyfile(fixture / 'platform.json', ROOT / 'compatibility/platform.json')
@@ -186,7 +191,7 @@ def evaluate(gate, environment):
     if any(r.get('type') == 'path' for r in composer.get('repositories', []) if isinstance(r, dict)) or package.get('dist', {}).get('type') == 'path':
         problems.append('Local path installation is not release evidence')
     if platform['mode'] == 'release':
-        if not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d+)?', constraint, re.I) or package['version'].lstrip('v').lower() != constraint.lower():
+        if not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d*)?', constraint, re.I) or package['version'].lstrip('v').lower() != constraint.lower():
             problems.append('Release mode did not install the exact published package version')
         if not environment['clean_install']:
             problems.append('Release mode requires a proven fresh package installation')

@@ -9,7 +9,7 @@
     "php": "^8.4",
     "ext-ctype": "*",
     "ext-iconv": "*",
-    "alexfigures/symfony-jsonapi-bundle": "dev-main",
+    "alexfigures/symfony-jsonapi-bundle": "1.0.0-RC",
     "doctrine/dbal": "^4.5",
     "doctrine/doctrine-bundle": "^3.0",
     "doctrine/orm": "^3.7.2",
