@@ -38,6 +38,14 @@ class CompatibilityProofTest(unittest.TestCase):
         self.gate['acceptance']['FAIL'] = 1
         self.assertTrue(compat.evaluate(self.gate, self.environment))
 
+    def test_unverified_public_surface_prevents_compatibility_go(self):
+        self.gate['feature_statuses'] = {'COVERED_GREEN': 332, 'NOT_COVERED': 4}
+        self.assertTrue(compat.evaluate(self.gate, self.environment))
+
+    def test_torture_skip_cannot_certify_a_platform(self):
+        self.gate['torture']['SKIP'] = 1
+        self.assertTrue(compat.evaluate(self.gate, self.environment))
+
     def test_source_or_lock_drift_rejects_old_evidence(self):
         (compat.ROOT / 'composer.lock').write_text('{}')
         # Restore valid structure with a different version; the digest must still reject it.

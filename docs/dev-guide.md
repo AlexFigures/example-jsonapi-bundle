@@ -68,10 +68,12 @@ The HTTP AST supports AND/OR. To-many sorting needs an explicit policy and deter
 
 Article declares a literal `/api/articles/{id}/publish` custom route and [PublishArticle](../src/Application/Article/PublishArticle.php) implements `CustomRouteHandlerInterface`. It receives `CustomRouteContext`, authorizes the operation, invokes the domain transition, flushes through Doctrine and returns `CustomRouteResult`. [Registration](../config/services.yaml) uses `jsonapi.custom_route_handler`.
 
-Read [PublishArticleTest](../tests/Acceptance/Production/PublishArticleTest.php) for the complete CREATE → PATCH → publish journey. With an article ID printed by setup, use the real fixture ID rather than assuming `1`:
+Read [PublishArticleTest](../tests/Acceptance/Production/PublishArticleTest.php) for the complete CREATE → PATCH → publish journey. Resolve a real scoped article ID from HTTP rather than assuming `1`:
 
 ```bash
-ARTICLE_ID=REPLACE_WITH_ARTICLE_1_ID_FROM_SETUP
+ARTICLE_ID=$(curl --fail-with-body -sS -g 'http://localhost:8080/api/articles?sort=id&page[size]=1' \
+  -H 'Authorization: Bearer editor-a' -H 'Accept: application/vnd.api+json' \
+  | python3 -c 'import json,sys; print(json.load(sys.stdin)["data"][0]["id"])')
 curl --fail-with-body -X POST "http://localhost:8080/api/articles/$ARTICLE_ID/publish" \
   -H 'Authorization: Bearer editor-a' -H 'Accept: application/vnd.api+json' \
   -H 'Content-Type: application/vnd.api+json'
@@ -107,6 +109,8 @@ curl --fail-with-body 'http://localhost:8080/api/operations' \
 
 Atomic supports generic resource/relationship add/update/remove, not a custom `publish` operation. A batch crossing independent database connections rejects before mutation; there is no distributed transaction promise. Same-connection failures roll back earlier writes. [ConcurrencyAndAtomicTest](../tests/Acceptance/Production/ConcurrencyAndAtomicTest.php) exercises stale ETags and overlapping writes: one writer succeeds, the other receives 412. Fetch the current ETag and send `If-Match` when updating the protected resource.
 
+To repeat the guide's real HTTP publishing journey after setup on disposable demo databases, run `docker compose exec -T php php tools/dev-guide-smoke.php`. It validates reads, query extensions, create/PATCH/publish and Atomic using generated IDs and unique author emails.
+
 ## 10. Run tests and generate evidence
 
 ```bash
@@ -114,6 +118,7 @@ docker compose exec -T php composer test:production:full
 docker compose exec -T php composer test:features
 docker compose exec -T php php bin/phpunit tests/Acceptance/Features/DataLayer/TypedRelationshipTest.php
 python3 -m unittest discover -s tests/Tooling
+python3 tools/check-doc-links.py
 python3 tools/release-gate.py --run --clean-install
 ```
 

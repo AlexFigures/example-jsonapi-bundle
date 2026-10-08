@@ -2,18 +2,18 @@
 
 ## Project Structure & Module Organization
 
-This PHP 8.2+ / Symfony 7.3 demo integrates `alexfigures/symfony-jsonapi-bundle` with two Doctrine entity managers. PostgreSQL resources (`Author`, `Article`) live in `src/PgEntity`; MySQL resources (`Comment`) live in `src/MysqlEntity`. Keep entities in the directory and namespace mapped to their database. Comments reference articles through `articleId` across databases.
+This PHP 8.2+ / Symfony 7.4 demo integrates `alexfigures/symfony-jsonapi-bundle` with two Doctrine entity managers. PostgreSQL resources (`Author`, `Article`) live in `src/PgEntity`; MySQL resources (`Comment`) live in `src/MysqlEntity`. Keep entities in the directory and namespace mapped to their database. Comments reference articles through `articleId` across databases.
 
-`config/packages/` contains framework, Doctrine, and JSON:API configuration; `config/routes.yaml` imports generated API routes. Integration tests live in `tests/Integration/`. `public/index.php` is the HTTP entry point, and `docker/` holds Nginx configuration. There is no frontend build pipeline.
+`config/packages/` contains framework, Doctrine, and JSON:API configuration; `config/routes.yaml` imports generated API routes. HTTP tests live in `tests/Acceptance/`; production fault tests live in `tests/Torture/`. `public/index.php` is the HTTP entry point, and `docker/` holds the PHP image and database initialization. There is no frontend build pipeline.
 
 ## Build, Test, and Development Commands
 
-- `docker compose up -d`: start PHP-FPM, PostgreSQL, MySQL, and Nginx; access the application at `http://localhost:8080`.
+- `docker compose up -d`: start PHP development server, PostgreSQL, and MySQL; access the application at `http://localhost:8080`.
 - `docker compose exec php composer install`: install locked dependencies and run Symfony's cache/assets scripts.
 - `docker compose exec php php bin/console doctrine:database:create --connection=pgsql`: create the PostgreSQL database; repeat with `--connection=mysql`.
 - `docker compose exec php php bin/console doctrine:schema:update --force --em=pgsql`: prepare the demo schema; repeat with `--em=mysql`.
 - `docker compose exec php php bin/console cache:clear`: refresh Symfony's cache after configuration changes.
-- `docker compose exec php ./vendor/bin/phpunit tests/Integration`: run integration tests explicitly.
+- `docker compose exec php ./vendor/bin/phpunit tests/Acceptance`: run integration tests explicitly.
 
 ## Coding Style & Naming Conventions
 

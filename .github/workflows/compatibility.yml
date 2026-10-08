@@ -34,7 +34,9 @@ jobs:
         run: python3 tools/release-gate.py --run --clean-install
       - name: Tooling safety tests
         if: always()
-        run: python3 -m unittest discover -s tests/Tooling
+        run: |
+          python3 -m unittest discover -s tests/Tooling
+          python3 tools/check-doc-links.py
       - name: Publish proof and raw failures
         if: always()
         uses: actions/upload-artifact@v4

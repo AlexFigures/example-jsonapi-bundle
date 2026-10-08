@@ -1,4 +1,4 @@
-> Historical report. Earlier findings and failures are retained for context; current evidence is in [release gate](../release-gate.md).
+> Historical iteration report; current evidence is in [release gate](../release-gate.md).
 
 # PR #67 independent verification
 

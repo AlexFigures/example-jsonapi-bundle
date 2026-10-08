@@ -1,9 +1,9 @@
 {
-  "php": "8.2.34",
+  "php": "8.4.26",
   "packages": {
     "symfony/framework-bundle": {
-      "version": "v7.4.20",
-      "revision": "99786f9338c24770ce4de6a95d049675aa75b129",
+      "version": "v8.1.8",
+      "revision": "78c28ec21e3ef4bd8a72de949d0ea2dead1e3f95",
       "install_path": "/srv/app/vendor/composer/../symfony/framework-bundle"
     },
     "doctrine/orm": {
@@ -17,8 +17,8 @@
       "install_path": "/srv/app/vendor/composer/../doctrine/dbal"
     },
     "doctrine/doctrine-bundle": {
-      "version": "2.19.1",
-      "revision": "72b53688c30451a7c65addd50b2167d31459724a",
+      "version": "3.3.2",
+      "revision": "e6cd6aca912a5701fdc9bf4f0ad8f18f3f1448ed",
       "install_path": "/srv/app/vendor/composer/../doctrine/doctrine-bundle"
     },
     "alexfigures/symfony-jsonapi-bundle": {
@@ -27,22 +27,22 @@
       "install_path": "/srv/app/vendor/composer/../alexfigures/symfony-jsonapi-bundle"
     }
   },
-  "example_revision": "e2dc660b9013951090014372e65fe20cfc7912e8",
+  "example_revision": "0fb1e3da2aecb707fda5085d017937b7c13f703b",
   "example_dirty": true,
-  "lock_sha256": "bfd5bf8da728aad79f2af73bc258833847c654ff5a54ec4a32e5c2a12942b475",
-  "composer_sha256": "620bf911213001a8d05ab54e0d1518349fc3dcfcea5fcfd49a89eda8b2338e7c",
+  "lock_sha256": "79d6302949ec95a9dcb63eef8b49029f24ab72d1af3a5c9aad8058f4351a6898",
+  "composer_sha256": "b5e1fda3f66099ac79cafa7a95a6d2266f4d589010744a2133f4f9d0b9192439",
   "contract_sha256": "73e5f2e934984189714e71f96df8608ece8e6ffdcf87db869d76ded3d333ed1b",
   "platform": {
-    "target": "sf74",
+    "target": "sf81",
     "mode": "stabilization",
     "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85"
   },
-  "recorded_at": "2026-10-08T09:53:26.888871+00:00",
+  "recorded_at": "2026-10-08T09:53:25.234366+00:00",
   "clean_install": {
-    "vendor_volume": "jsonapi-vendor-f87def13c4804baf83f759b104ebe08a",
-    "cache_volume": "jsonapi-cache-f87def13c4804baf83f759b104ebe08a",
-    "lock_sha256": "bfd5bf8da728aad79f2af73bc258833847c654ff5a54ec4a32e5c2a12942b475",
-    "time": "2026-10-08T09:53:24.488075+00:00"
+    "vendor_volume": "jsonapi-vendor-5201e9f16e78435394f2934f81165138",
+    "cache_volume": "jsonapi-cache-5201e9f16e78435394f2934f81165138",
+    "lock_sha256": "79d6302949ec95a9dcb63eef8b49029f24ab72d1af3a5c9aad8058f4351a6898",
+    "time": "2026-10-08T09:53:23.003844+00:00"
   },
   "suites": {
     "Acceptance": {
@@ -66,12 +66,12 @@
   "reasons": [],
   "provenance": {
     "acceptance": {
-      "junit_sha256": "4aed6439717ff9449f237ec6cc12226e5f21c22d7046499bfd08ba664b201529",
-      "trace_sha256": "fd6e3f7afc93fc455760a95e76cab0d4677efc704572d80e31f282f933a0d096"
+      "junit_sha256": "f166c4a6e4c4e1a6189ca6c0fa71c4f6ed3b1a87299c6f7c5b90f0a6297373cc",
+      "trace_sha256": "32acd275473f5c048e061b58d41605dcf0e4075f918207a9e0d55fb65768d380"
     },
     "torture": {
-      "junit_sha256": "962b3fb80e713ffd35d2bc1026255e81d77ea8848c9ba9b530ba6c7fba395473",
-      "trace_sha256": "70e37fa7e39e1513ac1c8e2f05de9a5b5f9376290a0e4c2fa27bbbc62d17faa6"
+      "junit_sha256": "ac02799a626cbbb09ede7ea721da620fcbd3b7412e19934f992d8462248b09f7",
+      "trace_sha256": "8cd00aa40a74ff220711ecf0db7d49764bb9c4710d0ebf9b905867bf73a927c6"
     }
   },
   "evidence_kind": "STABILIZATION"

@@ -1,8 +1,7 @@
 {
   "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
   "counts": {
-    "COVERED_GREEN": 332,
-    "NOT_COVERED": 4,
+    "COVERED_GREEN": 336,
     "NOT_APPLICABLE": 1
   },
   "features": [
@@ -1845,20 +1844,20 @@
     {
       "feature": "Contract/Data/TypedRelationshipReader",
       "public_api": "AlexFigures\\JsonApi\\Contract\\Data\\TypedRelationshipReader",
-      "status": "NOT_COVERED",
-      "test": "",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedRelationshipTest.php",
       "gap": "",
       "gap_status": null,
-      "finding": "No independent execution evidence yet."
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/TypedRelationshipUpdater",
       "public_api": "AlexFigures\\JsonApi\\Contract\\Data\\TypedRelationshipUpdater",
-      "status": "NOT_COVERED",
-      "test": "",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedRelationshipTest.php",
       "gap": "",
       "gap_status": null,
-      "finding": "No independent execution evidence yet."
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "Contract/Data/TypedResourcePersister",
@@ -3006,20 +3005,20 @@
     {
       "feature": "ServiceTag/jsonapi.relationship_reader",
       "public_api": "Symfony tagged service registration",
-      "status": "NOT_COVERED",
-      "test": "",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedRelationshipTest.php",
       "gap": "",
       "gap_status": null,
-      "finding": "No independent execution evidence yet."
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.relationship_updater",
       "public_api": "Symfony tagged service registration",
-      "status": "NOT_COVERED",
-      "test": "",
+      "status": "COVERED_GREEN",
+      "test": "Features/DataLayer/TypedRelationshipTest.php",
       "gap": "",
       "gap_status": null,
-      "finding": "No independent execution evidence yet."
+      "finding": "The linked independent consumer assertions define the verified contract; no claim of every combinatorial permutation."
     },
     {
       "feature": "ServiceTag/jsonapi.resource_repository",
