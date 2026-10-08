@@ -32,12 +32,6 @@ rules=[
 ('jsonapi.cache.enabled','Features/Cache/DisabledCacheTest.php','COVERED_GREEN',''),
 ('jsonapi.limits.fields_max_total','Features/Relationships/DocumentBudgetTest.php','COVERED_GREEN',''),
 ('jsonapi.limits.included_max_resources','Features/Relationships/DocumentBudgetTest.php','COVERED_GREEN',''),
-('jsonapi.performance.doctrine.enable_query_cache','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.query_cache_pool','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.enable_second_level_cache','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.hydrate_partial_by_fields','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.default_fetch','','CONFIG_ONLY',''),
-('jsonapi.errors.locale','','CONFIG_ONLY',''),
 ('jsonapi.errors.','Features/Protocol/ErrorConfigurationTest.php','COVERED_GREEN',''),
 ('jsonapi.cache.etag.strategy','Features/Cache/VersionStrategyTest.php','COVERED_GAP','CACHE-VERSION-STRATEGY'),
 ('jsonapi.cache.etag.include_query_shape','Features/Cache/QueryShapeTest.php','COVERED_GREEN',''),
@@ -97,8 +91,6 @@ rules=[
 ('jsonapi.docs.generator.json_schema.', 'Features/Docs/OpenApiTest.php','COVERED_GAP','CONFIG-JSON-SCHEMA'),
 ('jsonapi.docs.generator.openapi.', 'Features/Docs/OpenApiTest.php','COVERED_GREEN',''),
 ('jsonapi.docs.ui.', 'Features/Docs/RedocTest.php','COVERED_GREEN',''),
-('jsonapi.dx.', '', 'CONFIG_ONLY',''),
-('jsonapi.release.', '', 'CONFIG_ONLY',''),
 ('jsonapi.profiles.soft_delete.strategy','Features/Profiles/BooleanSoftDeleteTest.php','COVERED_GAP','PROFILE-SOFT-BOOLEAN'),
 ('jsonapi.profiles.soft_delete.default_visibility','Features/Profiles/SoftDeleteConfigurationTest.php','COVERED_GAP','PROFILE-SOFT-VISIBILITY'),
 ('jsonapi.profiles.soft_delete.delete_semantics','Features/Profiles/SoftDeleteConfigurationTest.php','COVERED_GAP','PROFILE-SOFT-DELETE-SEMANTICS'),
@@ -177,7 +169,7 @@ for item in inventory['features']:
   test,status,gap=review['test'],review['status'],review['gap']
  if gap and gap_states.get(gap)=='RESOLVED_ON_TESTED_REVISION' and status=='COVERED_GAP': status='COVERED_GREEN'
  if status=='NOT_APPLICABLE': finding='Value/default implementation without a separate application-facing HTTP operation.'
- elif status=='DOCUMENTATION_ONLY': finding='Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md.'
+ elif status=='DOCUMENTATION_ONLY': finding='Public legacy interface claims typed dispatch but has no discovered active registration path; see docs/history/configuration-dx-audit.md.'
  elif status=='NOT_COVERED': finding='No independent execution evidence yet.'
  elif status=='CONFIG_ONLY': finding='Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately.'
  elif gap and gap_states.get(gap)=='RESOLVED_ON_TESTED_REVISION': finding='Historical gap resolved; the bounded consumer contract remains a regression assertion.'

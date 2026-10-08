@@ -21,8 +21,8 @@
     {
       "surface": "dx.* / errors.locale / inactive Doctrine performance options",
       "status": "RESOLVED",
-      "direction": "Inactive dx configuration, errors.locale and the five inactive Doctrine options are explicitly deprecated as unimplemented. CONFIG_ONLY inventory entries remain historical/deprecated surface, not stable working features.",
-      "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
+      "direction": "Inactive declarations were removed from the current public configuration inventory. The earlier audit is retained in docs/history; removed declarations are not advertised as supported features.",
+      "resolved_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85"
     },
     {
       "surface": "DoctrineCollectionQueryProviderInterface and ResourceRepositoryLocator::getRepositoryForType",
