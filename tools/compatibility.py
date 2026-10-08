@@ -48,7 +48,9 @@ def execute(args):
 
 def prepare(target, bundle, mode, output=None):
     definition = read('compatibility/targets.json')[target]
-    if mode == 'release' and not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d+)?', bundle, re.I):
+    if mode == 'release':
+        bundle = bundle.removeprefix('v')
+    if mode == 'release' and not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d*)?', bundle, re.I):
         raise SystemExit('Release mode requires an exact published 1.x version, not a branch/path.')
     if mode == 'stabilization' and not re.fullmatch(r'dev-[^#]+#[0-9a-f]{40}', bundle):
         raise SystemExit('Stabilization mode requires dev-branch#exact-40-character-commit.')
@@ -186,7 +188,7 @@ def evaluate(gate, environment):
     if any(r.get('type') == 'path' for r in composer.get('repositories', []) if isinstance(r, dict)) or package.get('dist', {}).get('type') == 'path':
         problems.append('Local path installation is not release evidence')
     if platform['mode'] == 'release':
-        if not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d+)?', constraint, re.I) or package['version'].lstrip('v').lower() != constraint.lower():
+        if not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d*)?', constraint, re.I) or package['version'].lstrip('v').lower() != constraint.lower():
             problems.append('Release mode did not install the exact published package version')
         if not environment['clean_install']:
             problems.append('Release mode requires a proven fresh package installation')
