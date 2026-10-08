@@ -66,3 +66,14 @@ class CompatibilityProofTest(unittest.TestCase):
         (compat.ROOT / 'composer.lock').write_text(json.dumps({'packages': [{'name': compat.BUNDLE, 'version': 'v1.0.0-RC'}]}))
         self.environment.update(platform={'target': 'sf74', 'mode': 'release'}, lock_sha256=compat.digest('composer.lock'), composer_sha256=compat.digest('composer.json'), clean_install={'vendor_volume': 'fresh'})
         self.assertEqual([], compat.evaluate(self.gate, self.environment))
+
+    def test_release_fixture_cannot_activate_a_stabilization_lock(self):
+        fixture = compat.ROOT / 'compatibility/fixtures/sf74'
+        fixture.mkdir(parents=True)
+        (fixture / 'platform.json').write_text('{"mode":"release"}')
+        (fixture / 'composer.json').write_text(json.dumps({'require': {compat.BUNDLE: '1.0.0-RC'}}))
+        (fixture / 'composer.lock').write_text(json.dumps({'packages': [{'name': compat.BUNDLE, 'version': 'dev-main'}]}))
+        original = (compat.ROOT / 'composer.json').read_text()
+        with self.assertRaises(SystemExit):
+            compat.activate_fixture('sf74')
+        self.assertEqual(original, (compat.ROOT / 'composer.json').read_text())
