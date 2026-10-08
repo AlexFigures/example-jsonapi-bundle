@@ -49,7 +49,7 @@ def execute(args):
 def prepare(target, bundle, mode, output=None):
     definition = read('compatibility/targets.json')[target]
     if mode == 'release':
-        bundle = bundle.removeprefix('v')
+        bundle = bundle[1:] if bundle.startswith('v') else bundle
     if mode == 'release' and not re.fullmatch(r'1\.\d+\.\d+(?:-RC\d*)?', bundle, re.I):
         raise SystemExit('Release mode requires an exact published 1.x version, not a branch/path.')
     if mode == 'stabilization' and not re.fullmatch(r'dev-[^#]+#[0-9a-f]{40}', bundle):

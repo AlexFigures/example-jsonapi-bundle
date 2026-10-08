@@ -1,5 +1,5 @@
 {
   "target": "sf82",
-  "mode": "stabilization",
-  "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85"
+  "mode": "release",
+  "bundle_revision": null
 }
