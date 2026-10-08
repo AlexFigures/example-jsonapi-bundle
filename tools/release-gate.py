@@ -227,7 +227,12 @@ def main():
             platform['bundle_revision'] = current_revision()
             compatibility.write('compatibility/platform.json', platform)
         if args.clean_install or compatibility.read('compatibility/platform.json')['mode'] == 'release': compatibility.clean_install()
-        for check in [['docker', 'compose', 'exec', '-T', 'php', 'composer', 'validate', '--strict'], php('bin/console', 'about', '--env=test'), php('bin/console', 'about', '--env=prod'), php('tools/dev-http-smoke.php')]:
+        validation = ['docker', 'compose', 'exec', '-T', 'php', 'composer', 'validate', '--strict']
+        if compatibility.read('compatibility/platform.json')['mode'] == 'release':
+            # Exact published versions are intentional consumer fixtures. Schema,
+            # lock freshness and other warnings remain strict; runtime checks stay active.
+            validation.append('--no-check-all')
+        for check in [validation, php('bin/console', 'about', '--env=test'), php('bin/console', 'about', '--env=prod'), php('tools/dev-http-smoke.php')]:
             if command(check): return 2
         tested_revision = current_revision()
         environment = compatibility.capture_environment()
