@@ -93,6 +93,9 @@ def activate_fixture(target):
     package = next(p for p in lock['packages'] if p['name'] == BUNDLE)
     if platform['mode'] == 'stabilization' and package['source']['reference'] != platform['bundle_revision']:
         raise SystemExit('Fixture lock disagrees with the expected bundle revision.')
+    composer = json.loads((fixture / 'composer.json').read_text())
+    if platform['mode'] == 'release' and package['version'].lstrip('v').lower() != composer['require'][BUNDLE].lower():
+        raise SystemExit('Fixture lock does not contain the exact published release constraint.')
     for filename in ['composer.json', 'composer.lock']:
         shutil.copyfile(fixture / filename, ROOT / filename)
     shutil.copyfile(fixture / 'platform.json', ROOT / 'compatibility/platform.json')
