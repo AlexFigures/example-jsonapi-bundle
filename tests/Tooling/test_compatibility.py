@@ -60,3 +60,9 @@ class CompatibilityProofTest(unittest.TestCase):
         self.assertTrue(compat.evaluate(self.gate, self.environment))
         self.environment['clean_install'] = {'vendor_volume': 'fresh'}
         self.assertEqual([], compat.evaluate(self.gate, self.environment))
+
+    def test_exact_published_rc_without_a_numeric_suffix_is_valid(self):
+        (compat.ROOT / 'composer.json').write_text(json.dumps({'require': {compat.BUNDLE: '1.0.0-RC'}}))
+        (compat.ROOT / 'composer.lock').write_text(json.dumps({'packages': [{'name': compat.BUNDLE, 'version': 'v1.0.0-RC'}]}))
+        self.environment.update(platform={'target': 'sf74', 'mode': 'release'}, lock_sha256=compat.digest('composer.lock'), composer_sha256=compat.digest('composer.json'), clean_install={'vendor_volume': 'fresh'})
+        self.assertEqual([], compat.evaluate(self.gate, self.environment))
