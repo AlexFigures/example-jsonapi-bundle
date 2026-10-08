@@ -45,8 +45,8 @@ GO is a **platform execution** result: correct actual runtime and installed pack
 ## RC and final evidence
 
 1. Verify an exact stabilization commit on all required locked branches; optionally run sf82 forward. Report each platform's GO/NO-GO.
-2. After the bundle publishes 1.0.0-RC1, prepare each branch with `--mode release --bundle 1.0.0-RC1`, resolve its lock through Composer, commit and perform the fresh-install full gate.
-3. Commit resulting reports and use `python3 tools/compatibility.py --tag bundle-1.0.0-rc1-sf74` (and sf81/sf82 only when verified). The helper rejects non-release, failed or dirty evidence and existing tags; it does not push.
+2. After the bundle publishes 1.0.0-RC, prepare each branch with `--mode release --bundle 1.0.0-RC`, resolve its lock through Composer, commit and perform the fresh-install full gate.
+3. Commit resulting reports and use `python3 tools/compatibility.py --tag bundle-1.0.0-rc-sf74` (and sf81/sf82 only when verified). The helper rejects non-release, failed or dirty evidence and existing tags; it does not push.
 4. After publishing 1.0.0, repeat with the actual final package and `bundle-1.0.0-sf74` / `sf81` tags. RC evidence does not substitute for final package installation.
 
 No final/RC tags are created during pre-release preparation. Tags identify an immutable example commit, published bundle version and platform. Compare contract digests and reviewed normal migration diffs when merging proofs across branches. Never merge another branch's Composer lock over the current platform.
@@ -63,4 +63,4 @@ The workflow in [.github/workflows/compatibility.yml](../.github/workflows/compa
 
 The three locked fixture branches are now published in [the repository](https://github.com/AlexFigures/example-jsonapi-bundle/branches). The [Actions workflow](https://github.com/AlexFigures/example-jsonapi-bundle/actions/workflows/compatibility.yml) is running the real gate; check its individual platform runs and uploaded artifacts before claiming GitHub CI success.
 
-Packagist was checked on 2026-10-08 and listed only 0.1.x releases (latest v0.1.26), without a published 1.0 RC. RC proof and immutable release tags remain pending the real package publication. Check package availability again before preparing release mode.
+Packagist now publishes `v1.0.0-RC`, pointing at bundle commit `96a1530f3155ddf001b7d1e48fd33e375c382d85`. Use the exact constraint `1.0.0-RC` and release-mode fixtures; stabilization evidence from `dev-main` remains archived separately. Immutable evidence tags are created only after a fresh published-package run succeeds.

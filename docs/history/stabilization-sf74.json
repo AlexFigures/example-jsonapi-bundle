@@ -1,0 +1,78 @@
+{
+  "php": "8.2.34",
+  "packages": {
+    "symfony/framework-bundle": {
+      "version": "v7.4.20",
+      "revision": "99786f9338c24770ce4de6a95d049675aa75b129",
+      "install_path": "/srv/app/vendor/composer/../symfony/framework-bundle"
+    },
+    "doctrine/orm": {
+      "version": "3.7.4",
+      "revision": "84e21e325e3da22e46d7facbccdc9258f2332b1e",
+      "install_path": "/srv/app/vendor/composer/../doctrine/orm"
+    },
+    "doctrine/dbal": {
+      "version": "4.5.0",
+      "revision": "c435cd7ea33e17d2a89288caf994cf3d4549b879",
+      "install_path": "/srv/app/vendor/composer/../doctrine/dbal"
+    },
+    "doctrine/doctrine-bundle": {
+      "version": "2.19.1",
+      "revision": "72b53688c30451a7c65addd50b2167d31459724a",
+      "install_path": "/srv/app/vendor/composer/../doctrine/doctrine-bundle"
+    },
+    "alexfigures/symfony-jsonapi-bundle": {
+      "version": "dev-main",
+      "revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
+      "install_path": "/srv/app/vendor/composer/../alexfigures/symfony-jsonapi-bundle"
+    }
+  },
+  "example_revision": "84ddaeb9a715c7d2816ad490f27ccd795fdc50a5",
+  "example_dirty": false,
+  "lock_sha256": "bfd5bf8da728aad79f2af73bc258833847c654ff5a54ec4a32e5c2a12942b475",
+  "composer_sha256": "620bf911213001a8d05ab54e0d1518349fc3dcfcea5fcfd49a89eda8b2338e7c",
+  "contract_sha256": "780dad2babaa94e1de3f99df10e6a05d198e847f0c1f9756cbd0da5a5cfdbd10",
+  "platform": {
+    "target": "sf74",
+    "mode": "stabilization",
+    "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85"
+  },
+  "recorded_at": "2026-10-08T10:28:48.983623+00:00",
+  "clean_install": {
+    "vendor_volume": "jsonapi-vendor-9cc579565b6845008d2352db7c666e26",
+    "cache_volume": "jsonapi-cache-9cc579565b6845008d2352db7c666e26",
+    "lock_sha256": "bfd5bf8da728aad79f2af73bc258833847c654ff5a54ec4a32e5c2a12942b475",
+    "time": "2026-10-08T10:28:46.143360+00:00"
+  },
+  "suites": {
+    "Acceptance": {
+      "PASS": 683,
+      "SKIP": 0
+    },
+    "Production": {
+      "PASS": 82
+    },
+    "Features": {
+      "PASS": 280
+    },
+    "Torture": {
+      "PASS": 62
+    }
+  },
+  "open_gaps": [],
+  "unexpected_failures": [],
+  "skips": 0,
+  "result": "GO",
+  "reasons": [],
+  "provenance": {
+    "acceptance": {
+      "junit_sha256": "3216da24f47f046bcc9be10c984933f87168ecbda9b8c8a4f2423afabbb84cfc",
+      "trace_sha256": "38602d43b95664ba3fba732167ede3eb6501c49a69cd830feaadbf019d9e20be"
+    },
+    "torture": {
+      "junit_sha256": "9b2e14f81c13351e4f5857f9fa1fc062935916de281b8e8b5eee2afc3639d2c9",
+      "trace_sha256": "320df85848b48cd3f591ddc59f6a30cd0eba8cce988eb3c09d5ad38be6e9ab7d"
+    }
+  },
+  "evidence_kind": "STABILIZATION"
+}
