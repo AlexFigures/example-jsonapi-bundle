@@ -36,6 +36,8 @@ Use `--update` to update the bundle within the explicit manifest constraint. To 
 
 The clean install uses unique empty Docker volumes for vendor and Symfony cache, leaving existing directories intact. It executes Composer install, check-platform-reqs, validate --strict, application boot, full Acceptance (including Production/Features), and full blocking Torture. Each CI branch obtains its PHP runtime from its pinned target; a mismatched compat branch name fails. Tests recreate disposable schemas. PostgreSQL database creation is idempotent in the common gate; MySQL test databases are initialized by docker/mysql/init.sql.
 
+`var/release-run.json` records the current attempt separately from committed earlier reports. Installation/boot errors write NO-GO with `complete_evidence: false`; an old GO artifact cannot certify a failed new attempt.
+
 Generated evidence includes actual PHP/FrameworkBundle/Doctrine versions, bundle version+commit, example HEAD and dirty-snapshot flag, normalized executable contract digest, Composer lock/manifest digests, raw JUnit/HTTP hashes, fresh-install identity and all suite results. An all-green dirty snapshot can be diagnostic evidence; immutable release evidence needs committed source/lock/reports.
 
 GO is a **platform execution** result: correct actual runtime and installed package, all suites pass, no skips/regressions/stale markers, coherent source and dependency digests. Known failing assertions also produce NO-GO. This is not automatic approval of the bundle's overall API freeze. The release owner must separately confirm public-surface decisions and every required platform. A Symfony 7.4 GO cannot certify Symfony 8.1.

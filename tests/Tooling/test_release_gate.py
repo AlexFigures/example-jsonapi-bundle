@@ -3,6 +3,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
 
 spec = importlib.util.spec_from_file_location('gate', Path(__file__).parents[2] / 'tools/release-gate.py')
@@ -41,6 +42,21 @@ class CleanupTest(unittest.TestCase):
         self.assertIn("ExpectedBundleGap('GAP', ['item'])", source)
         self.assertIn("DataProvider('cases')", source)
         self.assertIn('self::assertSame(200, $status);', source)
+
+
+class AttemptEvidenceTest(unittest.TestCase):
+    def test_install_failure_has_no_go_marker_even_with_old_green_evidence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'var').mkdir()
+            (root / 'var/release-evidence.json').write_text('{"result":"GO"}')
+            with patch.object(gate, 'ROOT', root), patch.object(gate.sys, 'argv', ['release-gate.py', '--run']), patch.object(gate, 'main', side_effect=RuntimeError('Composer install failed')):
+                with self.assertRaises(RuntimeError):
+                    gate.cli()
+            marker = json.loads((root / 'var/release-run.json').read_text())
+            self.assertEqual('NO-GO', marker['result'])
+            self.assertFalse(marker['complete_evidence'])
+            self.assertIn('Composer install failed', marker['error'])
 
 
 if __name__ == '__main__':

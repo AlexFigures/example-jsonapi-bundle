@@ -11,6 +11,8 @@ import json
 import re
 import subprocess
 import sys
+import time
+from datetime import datetime, timezone
 from collections import Counter
 from pathlib import Path
 
@@ -244,5 +246,30 @@ def main():
     return generate(previous)
 
 
+def cli():
+    """A failed install/boot must not make committed old GO reports look current."""
+    executing = '--run' in sys.argv
+    started = time.time()
+    marker = ROOT / 'var/release-run.json'
+    attempt = {'started_at': datetime.now(timezone.utc).isoformat(), 'result': 'RUNNING', 'complete_evidence': False}
+    if executing:
+        marker.parent.mkdir(parents=True, exist_ok=True)
+        marker.write_text(json.dumps(attempt, indent=2) + '\n')
+    try:
+        code = main()
+    except (Exception, SystemExit) as error:
+        if executing:
+            attempt.update(result='NO-GO', complete_evidence=False, error=str(error), exit_code=2)
+            marker.write_text(json.dumps(attempt, indent=2) + '\n')
+        raise
+    if executing:
+        provenance = ROOT / 'var/release-evidence.json'
+        attempt.update(result='GO' if code == 0 else 'NO-GO', exit_code=code,
+                       complete_evidence=provenance.exists() and provenance.stat().st_mtime >= started,
+                       finished_at=datetime.now(timezone.utc).isoformat())
+        marker.write_text(json.dumps(attempt, indent=2) + '\n')
+    return code
+
+
 if __name__ == '__main__':
-    raise SystemExit(main())
+    raise SystemExit(cli())
