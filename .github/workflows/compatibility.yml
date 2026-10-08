@@ -51,6 +51,7 @@ jobs:
             docs/release-gate.*
             var/release-*.log
             var/release-evidence.json
+            var/release-run.json
             var/clean-install.json
             var/acceptance-junit.xml
             var/torture/junit.xml
