@@ -1,6 +1,6 @@
 {
   "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
-  "readiness": "REVIEW_REQUIRED",
+  "readiness": "GO",
   "acceptance": {
     "PASS": 683,
     "SKIP": 0

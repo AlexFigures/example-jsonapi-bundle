@@ -2,7 +2,7 @@
 
 A Composer consumer of `alexfigures/symfony-jsonapi-bundle`: a publishing application with PostgreSQL articles/authors and MySQL comments, plus independent HTTP acceptance and production fault tests. Bundle source is installed from its committed lock; no vendor patches.
 
-The canonical consumer uses Symfony 7.4 / PHP 8.2. Exact executed platforms and package revisions are in the [compatibility matrix](docs/compatibility-matrix.md). A `dev-main` run proves its locked commit; release proof requires an actual published RC/final package.
+The canonical consumer uses Symfony 7.4 / PHP 8.2 and pins the published `v1.0.0-RC` bundle. Exact executed platforms and package revisions are in the [compatibility matrix](docs/compatibility-matrix.md); verified Actions runs and retained artifacts are in [GitHub release evidence](docs/github-release-evidence.md). A `dev-main` run proves its locked commit; final-release proof requires the actual published final package.
 
 ## Quick start
 
