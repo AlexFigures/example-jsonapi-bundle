@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Acceptance\Features\Events;
 
-use AlexFigures\Symfony\Events\{ResourceChangedEvent, RelationshipChangedEvent};
+use AlexFigures\JsonApi\Events\{ResourceChangedEvent, RelationshipChangedEvent};
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\EventDispatcher\Attribute\AsEventListener;
 use Symfony\Component\HttpFoundation\RequestStack;

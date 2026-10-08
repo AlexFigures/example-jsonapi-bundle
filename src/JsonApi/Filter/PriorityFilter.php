@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\JsonApi\Filter;
 
-use AlexFigures\Symfony\Filter\Handler\FilterHandlerInterface;
+use AlexFigures\JsonApi\Filter\Handler\FilterHandlerInterface;
 use Doctrine\ORM\QueryBuilder;
 
 /** Two configured services demonstrate registry ordering without overriding core parsing. */

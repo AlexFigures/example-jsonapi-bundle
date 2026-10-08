@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Fixtures\Discovery\Invalid;
 
-use AlexFigures\Symfony\Resource\Attribute\{Attribute, Id, JsonApiResource};
+use AlexFigures\JsonApi\Resource\Attribute\{Attribute, Id, JsonApiResource};
 
 #[JsonApiResource(type: 'invalid-discovery')]
 final class InvalidArticle

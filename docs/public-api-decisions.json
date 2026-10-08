@@ -8,8 +8,9 @@
     },
     {
       "surface": "TypedRelationshipReader / TypedRelationshipUpdater",
-      "status": "DESIGN_DECISION",
-      "direction": "Latest bundle documents active typed dispatch through supports(sourceType) and relationship reader/updater tags. Dedicated two-type external dispatch verification is still needed; the previous claim of no active seam is obsolete."
+      "status": "RESOLVED",
+      "direction": "Public supports(sourceType) dispatch is verified by TypedRelationshipTest: two types, autoconfiguration and explicit tags, all reader/updater endpoint methods, pagination, state isolation and configured reader fallback. Endpoint adapters do not provide representation preloading or durable transactions automatically.",
+      "resolved_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85"
     },
     {
       "surface": "RelationshipReadMap in public batch/hook signatures",

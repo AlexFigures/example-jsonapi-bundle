@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\JsonApi\DataLayer;
 
-use AlexFigures\Symfony\Resource\Mapper\WriteMapperInterface;
-use AlexFigures\Symfony\Resource\Definition\ResourceDefinition;
-use AlexFigures\Symfony\Resource\Write\WriteContext;
+use AlexFigures\JsonApi\Resource\Mapper\WriteMapperInterface;
+use AlexFigures\JsonApi\Resource\Definition\ResourceDefinition;
+use AlexFigures\JsonApi\Resource\Write\WriteContext;
 use App\PgEntity\FeatureArticle;
 
 /** Example application-owned input transformation; no JSON:API parsing or validation replacement. */

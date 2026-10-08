@@ -4,29 +4,29 @@ declare(strict_types=1);
 
 namespace App\PgEntity;
 
-use AlexFigures\Symfony\Resource\Attribute\Attribute as JsonApiAttribute;
-use AlexFigures\Symfony\Resource\Attribute\Id;
-use AlexFigures\Symfony\Resource\Attribute\JsonApiResource;
-use AlexFigures\Symfony\Resource\Attribute\Relationship;
-use AlexFigures\Symfony\Resource\Attribute\FilterableFields;
-use AlexFigures\Symfony\Resource\Attribute\FilterableField;
-use AlexFigures\Symfony\Resource\Attribute\SortableFields;
-use AlexFigures\Symfony\Resource\Attribute\SortableField;
-use AlexFigures\Symfony\Resource\Metadata\RelationshipLinkingPolicy;
+use AlexFigures\JsonApi\Resource\Attribute\Attribute as JsonApiAttribute;
+use AlexFigures\JsonApi\Resource\Attribute\Id;
+use AlexFigures\JsonApi\Resource\Attribute\JsonApiResource;
+use AlexFigures\JsonApi\Resource\Attribute\Relationship;
+use AlexFigures\JsonApi\Resource\Attribute\FilterableFields;
+use AlexFigures\JsonApi\Resource\Attribute\FilterableField;
+use AlexFigures\JsonApi\Resource\Attribute\SortableFields;
+use AlexFigures\JsonApi\Resource\Attribute\SortableField;
+use AlexFigures\JsonApi\Resource\Metadata\RelationshipLinkingPolicy;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[FilterableFields([new FilterableField('author', inherit: true), new FilterableField('tags', inherit: true), new FilterableField('search', operators: ['eq'], customHandler: \App\JsonApi\Filter\ArticleSearchFilter::class), new FilterableField('title', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('slug', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('status', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('published-at', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('views', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('featured', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull']), new FilterableField('author.name', operators: ['eq', 'ne', 'neq', 'gt', 'gte', 'lt', 'lte', 'in', 'nin', 'like', 'ilike', 'between', 'isnull', 'null', 'nnull'])])]
 #[SortableFields([new SortableField('title-length', customHandler: \App\JsonApi\Sort\TitleLengthSort::class), 'id', 'title', 'createdAt', 'published-at', 'views', 'author.name'])]
-#[\AlexFigures\Symfony\Profile\Attribute\Auditable]
+#[\AlexFigures\JsonApi\Profile\Attribute\Auditable]
 #[ORM\Entity]
 #[ORM\HasLifecycleCallbacks]
 #[ORM\Table(name: 'articles')]
 #[JsonApiResource(type: 'articles', normalizationContext: ['groups' => ['articles:read']], denormalizationContext: ['groups' => ['articles:write']])]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'articles.publish', path: '/api/articles/{id}/publish', methods: ['POST'], handler: \App\Application\Article\PublishArticle::class)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'articles.publish', path: '/api/articles/{id}/publish', methods: ['POST'], handler: \App\Application\Article\PublishArticle::class)]
 class Article
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column(type: 'integer'), Id]

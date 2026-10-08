@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\JsonApi\DataLayer;
 
-use AlexFigures\Symfony\Contract\Data\{TypedResourcePersister, ChangeSet};
+use AlexFigures\JsonApi\Contract\Data\{TypedResourcePersister, ChangeSet};
 use App\FeatureMemory\{MemoryCard, MemoryNote};
 
 /** Uses the legacy public contract and documented jsonapi.persister tag intentionally. */

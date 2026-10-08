@@ -1,3 +1,5 @@
+> Historical configuration audit. Removed declarations are not part of the current public inventory. See [feature coverage](../feature-coverage.md).
+
 # Configuration and extension audit
 
 The installed Composer dependency is the source of the inventory. These findings distinguish unsupported public promises from ordinary application policy. No application substitute is supplied for an inactive bundle feature.

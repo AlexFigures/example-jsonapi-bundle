@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\JsonApi;
 
-use AlexFigures\Symfony\Contract\Data\{ResourceRepository, Slice};
-use AlexFigures\Symfony\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface;
-use AlexFigures\Symfony\Query\Criteria;
+use AlexFigures\JsonApi\Contract\Data\{ResourceRepository, Slice};
+use AlexFigures\JsonApi\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface;
+use AlexFigures\JsonApi\Query\Criteria;
 use App\Security\PublishingRules;
 use Doctrine\ORM\QueryBuilder;
 

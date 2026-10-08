@@ -4,28 +4,28 @@ declare(strict_types=1);
 
 namespace App\PgEntity;
 
-use AlexFigures\Symfony\Resource\Attribute\Attribute;
-use AlexFigures\Symfony\Resource\Attribute\FilterableField;
-use AlexFigures\Symfony\Resource\Attribute\FilterableFields;
-use AlexFigures\Symfony\Resource\Attribute\Id;
-use AlexFigures\Symfony\Resource\Attribute\JsonApiResource;
-use AlexFigures\Symfony\Resource\Attribute\Relationship;
-use AlexFigures\Symfony\Resource\Attribute\SortableField;
-use AlexFigures\Symfony\Resource\Attribute\SortableFields;
+use AlexFigures\JsonApi\Resource\Attribute\Attribute;
+use AlexFigures\JsonApi\Resource\Attribute\FilterableField;
+use AlexFigures\JsonApi\Resource\Attribute\FilterableFields;
+use AlexFigures\JsonApi\Resource\Attribute\Id;
+use AlexFigures\JsonApi\Resource\Attribute\JsonApiResource;
+use AlexFigures\JsonApi\Resource\Attribute\Relationship;
+use AlexFigures\JsonApi\Resource\Attribute\SortableField;
+use AlexFigures\JsonApi\Resource\Attribute\SortableFields;
 use App\JsonApi\Sort\TitleLengthSort;
 use Doctrine\ORM\Mapping as ORM;
 
 /** Isolated metadata cookbook resource; the production Article contract stays unchanged. */
 #[ORM\Entity]
 #[ORM\Table(name: 'feature_articles')]
-#[JsonApiResource(type: 'feature-articles', relationshipPolicies: ['source' => \AlexFigures\Symfony\Resource\Metadata\RelationshipLinkingPolicy::VERIFY], normalizationContext: ['groups' => ['feature:read']], denormalizationContext: ['groups' => ['feature:write']], writeRequests: ['create' => \App\Api\Cookbook\FeatureArticleInput::class, 'update' => \App\Api\Cookbook\FeatureArticleUpdateInput::class], versionResolver: \App\Api\Cookbook\FeatureVersionResolver::class)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.read', path: '/cookbook/features/{id}/read', handler: \App\Api\Cookbook\FeatureReadHandler::class)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.query', path: '/cookbook/features-query', handler: \App\Api\Cookbook\FeatureReadHandler::class)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.command', path: '/cookbook/features/{id}/command/{form}', methods: ['POST'], handler: \App\Api\Cookbook\FeatureCommandHandler::class)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.scoped', path: '/cookbook/features/{id}/scoped/{scope}', handler: \App\Api\Cookbook\ScopedTransactionHandler::class)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.options', path: '/cookbook/route-options/{id}/{mode}', handler: \App\Api\Cookbook\FeatureReadHandler::class, defaults: ['mode' => 'normal'], requirements: ['id' => '\\d+', 'mode' => '[a-z]+'], description: 'Read with route defaults and requirements', priority: 20)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.priority', path: '/api/feature-articles/priority', handler: \App\Api\Cookbook\FeatureReadHandler::class, priority: 50)]
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.legacy', path: '/cookbook/legacy/{id}', controller: \App\Controller\FeatureLegacyController::class)]
+#[JsonApiResource(type: 'feature-articles', relationshipPolicies: ['source' => \AlexFigures\JsonApi\Resource\Metadata\RelationshipLinkingPolicy::VERIFY], normalizationContext: ['groups' => ['feature:read']], denormalizationContext: ['groups' => ['feature:write']], writeRequests: ['create' => \App\Api\Cookbook\FeatureArticleInput::class, 'update' => \App\Api\Cookbook\FeatureArticleUpdateInput::class], versionResolver: \App\Api\Cookbook\FeatureVersionResolver::class)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.read', path: '/cookbook/features/{id}/read', handler: \App\Api\Cookbook\FeatureReadHandler::class)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.query', path: '/cookbook/features-query', handler: \App\Api\Cookbook\FeatureReadHandler::class)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.command', path: '/cookbook/features/{id}/command/{form}', methods: ['POST'], handler: \App\Api\Cookbook\FeatureCommandHandler::class)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.scoped', path: '/cookbook/features/{id}/scoped/{scope}', handler: \App\Api\Cookbook\ScopedTransactionHandler::class)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.options', path: '/cookbook/route-options/{id}/{mode}', handler: \App\Api\Cookbook\FeatureReadHandler::class, defaults: ['mode' => 'normal'], requirements: ['id' => '\\d+', 'mode' => '[a-z]+'], description: 'Read with route defaults and requirements', priority: 20)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.priority', path: '/api/feature-articles/priority', handler: \App\Api\Cookbook\FeatureReadHandler::class, priority: 50)]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.legacy', path: '/cookbook/legacy/{id}', controller: \App\Controller\FeatureLegacyController::class)]
 #[FilterableFields([
     new FilterableField('source', inherit: true),
     new FilterableField('priority-search', operators: ['eq']),
@@ -71,7 +71,7 @@ class FeatureArticle
         return $this->articleTags->map(static fn (FeatureArticleTag $link): Tag => $link->tag);
     }
 
-    #[ORM\ManyToOne(targetEntity: Author::class), Relationship(targetType: 'authors', linkingPolicy: \AlexFigures\Symfony\Resource\Metadata\RelationshipLinkingPolicy::REFERENCE)]
+    #[ORM\ManyToOne(targetEntity: Author::class), Relationship(targetType: 'authors', linkingPolicy: \AlexFigures\JsonApi\Resource\Metadata\RelationshipLinkingPolicy::REFERENCE)]
     #[\Symfony\Component\Serializer\Attribute\Groups(['feature:read', 'feature:write'])]
     public ?Author $author = null;
 

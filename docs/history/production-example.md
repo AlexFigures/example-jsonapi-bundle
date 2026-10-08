@@ -1,3 +1,5 @@
+> Historical report. Earlier findings and failures are retained for context; current evidence is in [release gate](../release-gate.md).
+
 # Publishing application walkthrough
 
 Start with `src/PgEntity/Article.php`, `config/packages/jsonapi.yaml`,
@@ -268,7 +270,7 @@ scenario to files, public APIs, results and responsibility classification.
 
 ### Atomic route configuration
 
-[Kernel](../src/Kernel.php) imports normal application routes and registers the public
+[Kernel](../../src/Kernel.php) imports normal application routes and registers the public
 AtomicController only when `jsonapi.atomic.enabled` is true, at
 `jsonapi.atomic.endpoint`. This is normal Symfony application routing: changing the
 endpoint must also change the path of the Atomic media channel if one is configured.

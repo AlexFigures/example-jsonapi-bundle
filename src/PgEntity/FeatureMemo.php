@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\PgEntity;
 
-use AlexFigures\Symfony\Resource\Attribute\{Attribute, Id, JsonApiResource};
+use AlexFigures\JsonApi\Resource\Attribute\{Attribute, Id, JsonApiResource};
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
-#[\AlexFigures\Symfony\Profile\Attribute\Auditable]
-#[\AlexFigures\Symfony\Profile\Attribute\SoftDeletable(deletedAtField: 'deleted')]
+#[\AlexFigures\JsonApi\Profile\Attribute\Auditable]
+#[\AlexFigures\JsonApi\Profile\Attribute\SoftDeletable(deletedAtField: 'deleted')]
 #[ORM\Entity]
 #[ORM\Table(name: 'feature_memos')]
 #[JsonApiResource(type: 'feature-memos', normalizationContext: ['groups' => ['memo:read']], denormalizationContext: ['groups' => ['memo:write']])]

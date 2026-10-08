@@ -1,0 +1,50 @@
+{
+  "sf81": {
+    "status": "RESOLVED_LOCK_NOT_EXECUTED",
+    "php": "8.4.26",
+    "symfony_constraint": "8.1.*",
+    "expected_bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
+    "composer_exit_code": 0,
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "-v",
+      "/home/aleksandr/projects/mine/example-jsonapi-bundle/compatibility/fixtures/sf81:/srv/app",
+      "jsonapi-consumer:8.4",
+      "composer",
+      "update",
+      "--with-all-dependencies",
+      "--no-install",
+      "--no-scripts",
+      "--no-interaction"
+    ],
+    "manifest_sha256": "b5e1fda3f66099ac79cafa7a95a6d2266f4d589010744a2133f4f9d0b9192439",
+    "log": "compatibility-resolution-sf81.txt",
+    "recorded_at": "2026-10-08T09:03:07.470696+00:00"
+  },
+  "sf82": {
+    "status": "RESOLVED_LOCK_NOT_EXECUTED",
+    "php": "8.4.26",
+    "symfony_constraint": "8.2.*@dev",
+    "expected_bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
+    "composer_exit_code": 0,
+    "command": [
+      "docker",
+      "run",
+      "--rm",
+      "-v",
+      "/home/aleksandr/projects/mine/example-jsonapi-bundle/compatibility/fixtures/sf82:/srv/app",
+      "jsonapi-consumer:8.4",
+      "composer",
+      "update",
+      "--with-all-dependencies",
+      "--no-install",
+      "--no-scripts",
+      "--no-interaction"
+    ],
+    "manifest_sha256": "616effc47435b96cde5a2f086845f0f5ba0dac1c66cce1a0ff6e781f33ff11e5",
+    "log": "compatibility-resolution-sf82.txt",
+    "recorded_at": "2026-10-08T09:03:11.145222+00:00"
+  }
+}

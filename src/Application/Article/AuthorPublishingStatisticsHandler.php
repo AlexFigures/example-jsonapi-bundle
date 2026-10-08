@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Application\Article;
 
-use AlexFigures\Symfony\CustomRoute\Attribute\NoTransaction;
-use AlexFigures\Symfony\CustomRoute\Context\CustomRouteContext;
-use AlexFigures\Symfony\CustomRoute\Handler\CustomRouteHandlerInterface;
-use AlexFigures\Symfony\CustomRoute\Result\CustomRouteResult;
-use AlexFigures\Symfony\Http\Exception\ForbiddenException;
-use AlexFigures\Symfony\Http\Exception\NotFoundException;
+use AlexFigures\JsonApi\CustomRoute\Attribute\NoTransaction;
+use AlexFigures\JsonApi\CustomRoute\Context\CustomRouteContext;
+use AlexFigures\JsonApi\CustomRoute\Handler\CustomRouteHandlerInterface;
+use AlexFigures\JsonApi\CustomRoute\Result\CustomRouteResult;
+use AlexFigures\JsonApi\Http\Exception\ForbiddenException;
+use AlexFigures\JsonApi\Http\Exception\NotFoundException;
 use App\Api\AuthorPublishingStatistics;
 use App\PgEntity\Author;
 use App\Security\PublishingContext;

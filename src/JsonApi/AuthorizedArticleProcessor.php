@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\JsonApi;
 
-use AlexFigures\Symfony\Contract\Data\{ResourceProcessor, ChangeSet};
+use AlexFigures\JsonApi\Contract\Data\{ResourceProcessor, ChangeSet};
 use App\Security\PublishingRules;
 
 final class AuthorizedArticleProcessor implements ResourceProcessor

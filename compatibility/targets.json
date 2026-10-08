@@ -1,0 +1,5 @@
+{
+  "sf74": {"branch": "compat/symfony-7.4-php-8.2", "php": "8.2", "php_platform": "8.2.34", "symfony": "7.4.*", "doctrine_bundle": "^2.19.1", "orm": "^3.7.2", "dbal": "^4.5", "kind": "REQUIRED"},
+  "sf81": {"branch": "compat/symfony-8.1-php-8.4", "php": "8.4", "php_platform": "8.4.26", "symfony": "8.1.*", "doctrine_bundle": "^3.0", "orm": "^3.7.2", "dbal": "^4.5", "kind": "REQUIRED"},
+  "sf82": {"branch": "compat/symfony-8.2-php-8.4", "php": "8.4", "php_platform": "8.4.26", "symfony": "8.2.*@dev", "doctrine_bundle": "^3.0", "orm": "^3.7.2", "dbal": "^4.5", "kind": "FORWARD"}
+}

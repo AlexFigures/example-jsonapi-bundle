@@ -1,18 +1,18 @@
 {
-  "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+  "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
   "readiness": "REVIEW_REQUIRED",
   "acceptance": {
-    "PASS": 666,
+    "PASS": 680,
     "SKIP": 0
   },
-  "acceptance_assertions": 6806,
+  "acceptance_assertions": 6990,
   "torture_assertions": 4185,
   "subsets": {
     "Production": {
-      "PASS": 76
+      "PASS": 82
     },
     "Features": {
-      "PASS": 273
+      "PASS": 277
     }
   },
   "torture": {
@@ -23,8 +23,7 @@
   "new_regressions": [],
   "stale_markers": [],
   "feature_statuses": {
-    "COVERED_GREEN": 330,
-    "CONFIG_ONLY": 17,
+    "COVERED_GREEN": 332,
     "NOT_COVERED": 4,
     "NOT_APPLICABLE": 1
   },

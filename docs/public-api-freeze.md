@@ -1,26 +1,9 @@
-# Public API freeze review
+# Public API review
 
-This is a consumer recommendation, not a bundle architecture decision. The owner must confirm the stable contract or remove/internalize unsupported declarations before 1.0. Executable outcomes are in [release-gate.md](release-gate.md); every public declaration has an evidence status in [feature-coverage.md](feature-coverage.md).
+The consumer records bounded executable contracts in [feature coverage](feature-coverage.md) and [feature-review.json](feature-review.json). [Public API decisions](public-api-decisions.json) records the resolved extension choices on the tested bundle revision. Current failing contracts belong in [current gaps](current-gaps.json), not the historical audit.
 
-| Surface | Proposed freeze group | External evidence / decision |
-|---|---|---|
-| Resource attributes, generated operations, filters/operators/sorts, custom routes, ResponseFactory | STABILIZE_FOR_1_0 | HTTP examples and fixed composition journeys; only the bounded verified contracts recorded by the feature inventory |
-| `writeRequests`, `WriteMapperInterface` | STABILIZE_FOR_1_0 or KEEP_BUT_FIX according to current results | CREATE/UPDATE independent constraints, partial PATCH, unknown/server-owned input, relationship and Atomic validation in PublicInputAndVersionTest; current default mapper wiring is active |
-| `VersionResolverInterface` | STABILIZE_FOR_1_0 or KEEP_BUT_FIX according to current results | One negotiated alternate view through SHOW, INDEX, sparse, include, related; stable identities. Representation selection is unrelated to cache/version ETags |
-| `TypedResourcePersister` / `jsonapi.persister` | STABILIZE_FOR_1_0 | Two-type HTTP dispatch regression; latest documentation explicitly supports this legacy name. Current @api declaration and public extension index retain the existing persister API and type dispatch adapter |
-| `TypedRelationshipReader`, `TypedRelationshipUpdater` | DESIGN_DECISION → DEPRECATE_OR_REMOVE_BEFORE_1_0 or implement | Latest revision documents active typed dispatch/tags; dedicated consumer two-type relationship dispatch verification remains needed |
-| `RelationshipBatchReaderInterface` | STABILIZE_FOR_1_0 | Computed association HTTP/include, bounded batch queries and budget; required `RelationshipReadMap` is now explicitly public @api |
-| `RelationshipReadMap`, `CustomRouteMetadata` | STABILIZE_FOR_1_0 | Explicit @api DTOs; public batch/preloader/registry signature assertions retain this contract |
-| Document/Query/Read/Write/Relationship/FetchPlan profile hooks | STABILIZE_FOR_1_0 or KEEP_BUT_FIX according to current results | Visible HTTP effects, DI, default/negotiated activation; metadata/default-write outcomes remain executable |
-| `dx.dev_toolbar`, `dx.sandbox.*`, `dx.doctor.*`, `dx.maker.*` | DEPRECATED / not stable functionality | CONFIG_ONLY; explicitly deprecated as unimplemented |
-| `errors.locale` | DEPRECATED / not stable functionality | Explicitly deprecated as unimplemented |
-| Doctrine query/second-level cache, partial hydration, default-fetch options | DEPRECATED / not stable functionality | All five inactive options explicitly deprecated; see configuration audit |
-| `ResourceMetaHookInterface`, `ResourceWriteTransactionManagerInterface` | DESIGN_DECISION → STABILIZE_FOR_1_0 with bounded semantics | New public interfaces on the updated revision; built-in audit metadata and typed generated writes provide integration evidence. Application implementations now have HTTP evidence in PublicHooksTest and CustomProviderTest |
-| Controller internals, compiler passes, bridge implementation helpers | INTERNALIZE | The example does not instantiate internal controllers or promise their behavior as extension APIs |
-| Cross-connection Atomic | DESIGN_DECISION confirmed: reject before mutation | No distributed transaction promise. Same-connection batches retain all-or-nothing semantics |
+Typed repositories, persisters and relationship services dispatch through `supports(type)` and documented tags. [TypedRelationshipTest](../tests/Acceptance/Features/DataLayer/TypedRelationshipTest.php) proves two source types, all endpoint reader/updater operations, automatic and explicit registration, isolated mutations, pagination and reader fallback. Representation preloading, application authorization and durable transaction semantics remain distinct capabilities.
 
-CONFIG_ONLY and DOCUMENTATION_ONLY are freeze questions, not executable runtime bugs. The former PARTIAL entries now have bounded executable contracts or explicit gaps; the review manifest records the evidence. Do not treat a green aggregate test count as proof of every theoretical permutation.
+Custom profiles and hook DTOs, query-plan scope forwarding, safe write models, projections and response builders have independent consumer assertions. Green means the linked bounded contract, not every possible composition. Removed inactive configuration is not advertised as a feature; its earlier audit is in [history](history/configuration-dx-audit.md).
 
-Logical custom predicates are frozen for AND/OR and nested branches. The installed HTTP parser exposes only AND/OR; NOT is not a supported AST input. NativeOperatorsTest retains its controlled-400 assertion, so no unsupported NOT semantics are invented.
-
-Tenant-safe query-plan forwarding meets all retained page 5/20 query budgets. On `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`, `DoctrineCollectionQueryProviderInterface`, `ResourceRepositoryLocator` and `getRepositoryForType` are explicitly marked `@api`. The focused decorator capability decision is resolved; PublicSignatureTest protects the annotations and Torture protects the visibility/query behavior. General bundle API freeze review remains separate.
+A GO from the external gate proves executed consumer behavior on one platform. It does not publish the bundle or substitute for a published RC/final package, immutable evidence tags or the release owner's API/versioning decision. Cross-connection Atomic rejects before mutation; the package does not promise distributed transactions. External event delivery remains application-owned.

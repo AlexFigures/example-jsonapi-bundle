@@ -16,7 +16,7 @@ jsonapi:
         per_type:
             tags: []
 services:
-    AlexFigures\Symfony\Contract\Data\RepresentationPreloaderInterface: '@App\JsonApi\DataLayer\MemoryArticleProvider'
+    AlexFigures\JsonApi\Contract\Data\RepresentationPreloaderInterface: '@App\JsonApi\DataLayer\MemoryArticleProvider'
     cookbook.memory_probe:
         class: App\EventSubscriber\MemoryProviderProbe
         autowire: true

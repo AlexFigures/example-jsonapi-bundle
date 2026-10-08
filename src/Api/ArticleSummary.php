@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Api;
 
-use AlexFigures\Symfony\Resource\Attribute\Attribute;
-use AlexFigures\Symfony\Resource\Attribute\Id;
-use AlexFigures\Symfony\Resource\Attribute\JsonApiResource;
-use AlexFigures\Symfony\Resource\Definition\ReadProjection;
-use AlexFigures\Symfony\Resource\Definition\ResourceOperation;
+use AlexFigures\JsonApi\Resource\Attribute\Attribute;
+use AlexFigures\JsonApi\Resource\Attribute\Id;
+use AlexFigures\JsonApi\Resource\Attribute\JsonApiResource;
+use AlexFigures\JsonApi\Resource\Definition\ReadProjection;
+use AlexFigures\JsonApi\Resource\Definition\ResourceOperation;
 use App\PgEntity\Article;
 
 #[JsonApiResource(

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use AlexFigures\Symfony\Contract\Data\ChangeSet;
-use AlexFigures\Symfony\Contract\Data\ResourceIdentifier;
-use AlexFigures\Symfony\Query\Criteria;
+use AlexFigures\JsonApi\Contract\Data\ChangeSet;
+use AlexFigures\JsonApi\Contract\Data\ResourceIdentifier;
+use AlexFigures\JsonApi\Query\Criteria;
 use Doctrine\ORM\QueryBuilder;
 
 /** Policies are application code; dispatching them on every transport path is bundle code. */

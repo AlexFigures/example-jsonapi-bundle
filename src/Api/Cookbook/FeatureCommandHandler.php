@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Api\Cookbook;
 
-use AlexFigures\Symfony\CustomRoute\Context\CustomRouteContext;
-use AlexFigures\Symfony\CustomRoute\Handler\CustomRouteHandlerInterface;
-use AlexFigures\Symfony\CustomRoute\Result\CustomRouteResult;
+use AlexFigures\JsonApi\CustomRoute\Context\CustomRouteContext;
+use AlexFigures\JsonApi\CustomRoute\Handler\CustomRouteHandlerInterface;
+use AlexFigures\JsonApi\CustomRoute\Result\CustomRouteResult;
 use Doctrine\Persistence\ManagerRegistry;
 
 final class FeatureCommandHandler implements CustomRouteHandlerInterface

@@ -25,19 +25,9 @@ injection. Large-scale faults/topology remain in Torture.
 The old `test` environment deliberately retains its broad write-type fixture
 mapping and disables publishing policy. This preserves generic enum/datetime/number
 assertions while production HTTP tests enforce the narrower application contract.
-The configured YAML groups appear in Symfony metadata but are ignored by the bundle;
-five unchanged historical assertions expose `WRITE-MODEL-SERIALIZER-METADATA`.
-Never copy `config/acceptance-serializer` into a production serializer mapping.
-See [the walkthrough](docs/production-example.md) and
-[iteration report](docs/production-iteration.md).
+The configured YAML serializer groups are exercised by the unchanged protocol assertions. Never copy `config/acceptance-serializer` into production input configuration. Follow the [dev guide](docs/dev-guide.md) and [cookbook](docs/cookbook.md).
 
-New contracts are classified as `MUST_CONFORMANCE`, `DESIRED_CAPABILITY`,
-`APPLICATION_POLICY`, `INFRASTRUCTURE_LIMIT`, or `DOCUMENTATION_GAP`. Existing
-`SHOULD_CONFORMANCE` and `OPTIONAL_FEATURE` categories retain their meanings.
-The new executable failures are desired generic integration capabilities, not
-claims that JSON:API mandates authentication, custom commands or an outbox.
-Every new failure has a stable ID, `ExpectedBundleGap` marker, inventory entry and
-normal assertion. No skips, no assertions endorsing leaked data, no vendor patch.
+Historical findings are retained under [docs/history](docs/history/README.md). Only currently failing cases carry active gap markers; resolved assertions continue to execute. [Current gaps](docs/current-gaps.json) is the authoritative active list. Categories distinguish protocol requirements, desired integration capabilities, application policy and infrastructure limits; no skipped case or assertion endorses observed bad behavior.
 
 ## Specification and application decisions
 

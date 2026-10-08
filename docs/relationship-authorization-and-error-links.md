@@ -14,14 +14,14 @@ A dedicated relationship authorization contract is still a bundle API design que
 
 ## Optional errors[].links.type
 
-[ErrorLinksController](../src/Controller/ErrorLinksController.php) supplies application documentation through the public JsonApiResponseFactory error builder. [ErrorTypeLinksTest](../tests/Acceptance/Protocol/ErrorTypeLinksTest.php) checks:
+[ErrorLinksController](../src/Controller/ErrorLinksController.php) supplies application documentation through the public JsonApiResponseFactory error builder's `withTypeLink()`. The coexistence case uses documented `ErrorBuilder::create(aboutLink: ..., typeLink: ...)` and JsonApiHttpException through the kernel error boundary. [ErrorTypeLinksTest](../tests/Acceptance/Protocol/ErrorTypeLinksTest.php) checks:
 
 - `type` identifies a problem type, independently of an occurrence-specific `about` link;
 - both links may coexist on each error;
 - multiple validation errors retain their error links;
 - an application that supplies no type link still returns a valid error document.
 
-`ERROR-LINKS-TYPE` is a DESIRED_CAPABILITY, not a mandatory-member conformance violation: JSON:API makes this member optional. On the tested dependency, withLinks stores supplied links at document level and errors[].links.type is absent. Assertions remain failing. The application does not construct JSON:API errors itself to hide this limitation.
+`ERROR-LINKS-TYPE` was a DESIRED_CAPABILITY, not a mandatory-member conformance violation: JSON:API makes this member optional. The updated package documents withLinks as document-level links and provides withTypeLink for error links. The consumer fixture now uses that supported API; unchanged assertions determine whether the historical gap is resolved.
 
 The required bundle contract is an application-facing way to supply error-object links and preserve them in serialization. If the bundle deliberately separates error links from document links with a new API, update this fixture to that supported API; the desired HTTP assertions remain unchanged.
 

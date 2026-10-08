@@ -1,0 +1,54 @@
+name: External compatibility proof
+on:
+  push:
+    branches: [main, 'compat/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: compatibility-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  release-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select the branch's actual PHP runtime
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          platform=json.loads(Path('compatibility/platform.json').read_text())
+          target=json.loads(Path('compatibility/targets.json').read_text())[platform['target']]
+          branch=os.environ.get('GITHUB_HEAD_REF') or os.environ['GITHUB_REF_NAME']
+          if branch.startswith('compat/') and branch != target['branch']:
+              raise SystemExit('Branch name and pinned platform disagree')
+          with open(os.environ['GITHUB_ENV'],'a') as output:
+              output.write('COMPAT_PHP_VERSION='+target['php']+'\n')
+              output.write('APP_PORT=18080\n')
+              output.write('COMPAT_TARGET='+platform['target']+'\n')
+          PY
+      - name: Fresh package install, strict Composer validation, boot and all suites
+        run: python3 tools/release-gate.py --run --clean-install
+      - name: Tooling safety tests
+        if: always()
+        run: python3 -m unittest discover -s tests/Tooling
+      - name: Publish proof and raw failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: compatibility-${{ env.COMPAT_TARGET }}
+          path: |
+            docs/compatibility-evidence*.json
+            docs/compatibility-evidence/
+            docs/release-compatibility.md
+            docs/compatibility-matrix.md
+            docs/current-gaps.json
+            docs/release-gate.*
+            var/release-*.log
+            var/release-evidence.json
+            var/clean-install.json
+            var/acceptance-junit.xml
+            var/torture/junit.xml

@@ -4,7 +4,7 @@
 
 Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes documentation/contract drift or discoverability. `DX_GAP` describes public integration ergonomics/tooling. `CONFIG_IMPLEMENTATION_GAP` identifies accepted configuration with no corresponding runtime implementation.
 
-Baseline: bundle `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`, PHP 8.3.35, PHPUnit 11.5.56.
+Baseline: bundle `96a1530f3155ddf001b7d1e48fd33e375c382d85`, PHP 8.2.34, PHPUnit 11.5.57.
 
 ## CONTENT-NEGOTIATION-001 — content negotiation
 
@@ -1084,3 +1084,15 @@ Baseline: bundle `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`, PHP 8.3.35, PHPUnit
 - Bundle change: Honor the documented actor metadata mapping or remove the unsupported promise/attribute option before 1.0. Actor assignment remains application policy.
 - Tests:
   - [Features/Profiles/SoftDeleteActorTest::testConfiguredActorFieldAppearsInNegotiatedSoftDeleteMetadata](../tests/Acceptance/Features/Profiles/SoftDeleteActorTest.php)
+
+## ERROR-LINKS-TYPE — JSON:API optional error links
+
+**DESIRED_CAPABILITY · P2**. Observed: 0 failing / 3 cases.
+
+- Expected: Application-supplied problem type is serialized as errors[].links.type; optional about identifies the occurrence, both coexist, and omission remains valid. The same contract applies to every validation error.
+- Current on tested revision: PASS; historical gap resolved for all covered cases.
+- Historical baseline: ResponseFactory error()->withLinks stores type/about at document level; errors[].links.type is absent for single and multiple errors.
+- Bundle change: Provide a public error-link input supporting type and about and preserve them per error through response serialization. An explicitly separate API for document-level links is fine; do not require application-built JSON responses. Adapt this consumer fixture if the supported API deliberately changes.
+- Tests:
+  - [Protocol/ErrorTypeLinksTest::testApplicationErrorTypeLinkIsSerializedOnEachError](../tests/Acceptance/Protocol/ErrorTypeLinksTest.php)
+- Responsibility: The application chooses documentation URIs; the bundle owns JSON:API error object construction and serialization. The optional member is not required on every error, but an explicitly supplied error link must be representable through the public API.

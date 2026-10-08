@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Api\Cookbook;
 
-use AlexFigures\Symfony\Profile\ProfileContext;
-use AlexFigures\Symfony\Resource\Definition\{VersionDefinition, VersionResolverInterface, ReadProjection};
+use AlexFigures\JsonApi\Profile\ProfileContext;
+use AlexFigures\JsonApi\Resource\Definition\{VersionDefinition, VersionResolverInterface, ReadProjection};
 use App\JsonApi\Profile\CookbookProfile;
 
 /** Representation selection only; this does not implement optimistic locking. */

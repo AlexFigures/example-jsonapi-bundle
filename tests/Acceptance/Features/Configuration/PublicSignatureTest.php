@@ -22,17 +22,17 @@ final class PublicSignatureTest extends TestCase
     }
     public static function signatures(): iterable
     {
-        yield 'batch reader return' => [\AlexFigures\Symfony\Contract\Data\RelationshipBatchReaderInterface::class, 'read', null];
-        yield 'preloader return' => [\AlexFigures\Symfony\Contract\Data\RepresentationPreloaderInterface::class, 'preload', null];
-        yield 'custom route registry addRoute' => [\AlexFigures\Symfony\Resource\Registry\CustomRouteRegistryInterface::class, 'addRoute', 0];
+        yield 'batch reader return' => [\AlexFigures\JsonApi\Contract\Data\RelationshipBatchReaderInterface::class, 'read', null];
+        yield 'preloader return' => [\AlexFigures\JsonApi\Contract\Data\RepresentationPreloaderInterface::class, 'preload', null];
+        yield 'custom route registry addRoute' => [\AlexFigures\JsonApi\Resource\Registry\CustomRouteRegistryInterface::class, 'addRoute', 0];
     }
 
     public function testDecoratorQueryPlanCapabilityIsPublic(): void
     {
         foreach ([
-            new \ReflectionClass(\AlexFigures\Symfony\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface::class),
-            new \ReflectionClass(\AlexFigures\Symfony\Bridge\Symfony\Locator\ResourceRepositoryLocator::class),
-            new \ReflectionMethod(\AlexFigures\Symfony\Bridge\Symfony\Locator\ResourceRepositoryLocator::class, 'getRepositoryForType'),
+            new \ReflectionClass(\AlexFigures\JsonApi\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface::class),
+            new \ReflectionClass(\AlexFigures\JsonApi\Bridge\Symfony\Locator\ResourceRepositoryLocator::class),
+            new \ReflectionMethod(\AlexFigures\JsonApi\Bridge\Symfony\Locator\ResourceRepositoryLocator::class, 'getRepositoryForType'),
         ] as $contract) {
             $documentation = $contract->getDocComment() ?: '';
             self::assertStringContainsString('@api', $documentation);

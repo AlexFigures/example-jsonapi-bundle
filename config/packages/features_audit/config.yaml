@@ -11,7 +11,7 @@ jsonapi:
             updated_by: updatedBy
             expose_in_meta: true
 services:
-    AlexFigures\Symfony\Profile\Builtin\AuditTrailProfile:
+    AlexFigures\JsonApi\Profile\Builtin\AuditTrailProfile:
         arguments:
             $config:
                 userProvider: '@App\Security\AuditIdentity'

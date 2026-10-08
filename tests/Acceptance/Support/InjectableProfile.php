@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Tests\Acceptance\Support;
 
-use AlexFigures\Symfony\Profile\ProfileInterface;
-use AlexFigures\Symfony\Profile\Descriptor\ProfileDescriptor;
-use AlexFigures\Symfony\Profile\Validation\ProfileRequirements;
+use AlexFigures\JsonApi\Profile\ProfileInterface;
+use AlexFigures\JsonApi\Profile\Descriptor\ProfileDescriptor;
+use AlexFigures\JsonApi\Profile\Validation\ProfileRequirements;
 use App\Security\PublishingContext;
 
 /** Minimal consumer reproduction: profile services should support ordinary constructor DI. */

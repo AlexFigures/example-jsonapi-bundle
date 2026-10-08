@@ -4,7 +4,7 @@ from pathlib import Path
 inventory=json.loads(Path('docs/public-feature-inventory.json').read_text())
 # Evidence points to independent application tests, never bundle-owned unit tests.
 rules=[
-('Http/Response/JsonApiErrorBuilder::withLinks','Protocol/ErrorTypeLinksTest.php','COVERED_GAP','ERROR-LINKS-TYPE'),
+('Http/Response/JsonApiErrorBuilder::withTypeLink','Protocol/ErrorTypeLinksTest.php','COVERED_GAP','ERROR-LINKS-TYPE'),
 ('Contract/Tx/ResourceWriteTransactionManagerInterface','Features/DataLayer/TypedProviderTest.php','PARTIAL',''),
 ('Profile/Hook/ResourceMetaHookInterface','Features/Profiles/AuditIdentityTest.php','PARTIAL',''),
 ('ServiceTag/jsonapi.persister','Features/DataLayer/TypedProviderTest.php','COVERED_GAP','DX-TYPED-PERSISTER-DISPATCH'),
@@ -48,8 +48,10 @@ rules=[
 ('jsonapi.profiles.audit_trail.expose_in_meta','Features/Profiles/AuditIdentityTest.php','COVERED_GAP','PROFILE-AUDIT-META'),
 ('jsonapi.profiles.audit_trail.','Features/Profiles/AuditIdentityTest.php','COVERED_GREEN',''),
 ('Contract/Data/TypedResourcePersister','Features/DataLayer/TypedProviderTest.php','COVERED_GAP','DX-TYPED-PERSISTER-DISPATCH'),
-('Contract/Data/TypedRelationshipReader','','NOT_COVERED',''),
-('Contract/Data/TypedRelationshipUpdater','','NOT_COVERED',''),
+('Contract/Data/TypedRelationshipReader','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
+('Contract/Data/TypedRelationshipUpdater','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
+('ServiceTag/jsonapi.relationship_reader','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
+('ServiceTag/jsonapi.relationship_updater','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
 ('Resource/Mapper/WriteMapperInterface','Features/Mapping/PublicInputAndVersionTest.php','PARTIAL','WRITE-REQUEST-DTO'),
 ('Resource/Mapper/DefaultWriteMapper','Features/Mapping/PublicInputAndVersionTest.php','PARTIAL','WRITE-REQUEST-DTO'),
 ('Contract/Data/RelationshipBatchReaderInterface','Features/DataLayer/BatchRelationshipReaderTest.php','COVERED_GREEN',''),
@@ -191,16 +193,3 @@ lines+=['', '## Reviewed contract boundaries', '', 'The former 228 PARTIAL entri
 Path('docs/feature-coverage.md').write_text('\n'.join(lines).rstrip()+'\n')
 Path('docs/feature-coverage.json').write_text(json.dumps(dict(bundle_revision=inventory['bundle_revision'],counts=dict(counts),features=rows),indent=2)+'\n')
 print(dict(counts))
-audit_path=Path('docs/partial-review.json')
-if audit_path.exists():
- audit=json.loads(audit_path.read_text())
- by_name={r['feature']:r for r in rows}
- audit['bundle_revision']=inventory['bundle_revision']
- audit['features']=[by_name[name] for name in audit['baseline_features']]
- audit['outcomes']=dict(Counter(r['status'] for r in audit['features']))
- audit_path.write_text(json.dumps(audit,indent=2)+'\n')
- review_lines=['# Completed review of 228 PARTIAL entries','', 'Tested revision: `'+inventory['bundle_revision']+'`.', '', 'Each original row now has evidence or an executable gap. Results: '+str(audit['outcomes'])+'. Green proves the linked bounded assertion contract, not every theoretical permutation.', '', '| Original feature | Reviewed status | Consumer evidence | Gap |','|---|---|---|---|']
- for r in audit['features']:
-  review_lines.append('| '+r['feature']+' | '+r['status']+' | [test](../tests/Acceptance/'+r['test']+') | '+(r['gap'] or '—')+' |')
- review_lines+=['', 'The 32 final exact semantic decisions are recorded in [feature-review.json](feature-review.json). Current observed failures are in [current-gaps.json](current-gaps.json); inactive API/configuration surfaces require explicit bundle implementation/removal decisions before freeze.', '']
- Path('docs/partial-review.md').write_text('\n'.join(review_lines))

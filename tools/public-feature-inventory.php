@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 require dirname(__DIR__).'/vendor/autoload.php';
 
-use AlexFigures\Symfony\Bridge\Symfony\DependencyInjection\Configuration;
+use AlexFigures\JsonApi\Bridge\Symfony\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\ArrayNode;
 
 $features = [];
@@ -27,7 +27,7 @@ foreach (['Resource/Attribute', 'Docs/Attribute', 'Contract/Data', 'Contract/Res
     foreach (glob($bundle.'/src/'.$directory.'/*.php') as $file) {
         $short = basename($file, '.php');
         if ($directory === 'Resource/Metadata' && $short !== 'RelationshipLinkingPolicy') { continue; }
-        $class = 'AlexFigures\\Symfony\\'.str_replace('/', '\\', $directory).'\\'.$short;
+        $class = 'AlexFigures\\JsonApi\\'.str_replace('/', '\\', $directory).'\\'.$short;
         if (!class_exists($class) && !interface_exists($class) && !enum_exists($class)) { continue; }
         $reflection = new ReflectionClass($class);
         $features[] = ['feature' => $directory.'/'.$short, 'public_api' => $class, 'kind' => 'public_type'];
@@ -44,7 +44,7 @@ foreach (['Resource/Attribute', 'Docs/Attribute', 'Contract/Data', 'Contract/Res
     }
 }
 foreach (['Profile/ProfileInterface', 'CustomRoute/Context/CustomRouteContext', 'CustomRoute/Result/CustomRouteResult', 'CustomRoute/Query/CriteriaBuilder', 'Http/Response/JsonApiResponseFactory', 'Http/Response/JsonApiResponseBuilder'] as $name) {
-    $class = 'AlexFigures\\Symfony\\'.str_replace('/', '\\', $name);
+    $class = 'AlexFigures\\JsonApi\\'.str_replace('/', '\\', $name);
     foreach ((new ReflectionClass($class))->getMethods(ReflectionMethod::IS_PUBLIC) as $method) {
         if ($method->isConstructor() || str_starts_with($method->getName(), 'get')) { continue; }
         $features[] = ['feature' => $name.'::'.$method->getName(), 'public_api' => $class, 'kind' => 'public_method'];
@@ -52,8 +52,8 @@ foreach (['Profile/ProfileInterface', 'CustomRoute/Context/CustomRouteContext', 
 }
 $tags = [];
 $features[] = [
-    'feature' => 'Http/Response/JsonApiErrorBuilder::withLinks',
-    'public_api' => \AlexFigures\Symfony\Http\Response\JsonApiErrorBuilder::class,
+    'feature' => 'Http/Response/JsonApiErrorBuilder::withTypeLink',
+    'public_api' => \AlexFigures\JsonApi\Http\Response\JsonApiErrorBuilder::class,
     'kind' => 'public_method',
 ];
 foreach (glob($bundle.'/config/*.php') as $file) {

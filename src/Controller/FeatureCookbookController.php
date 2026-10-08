@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use AlexFigures\Symfony\Docs\Attribute\{OpenApiEndpoint, OpenApiParameter, OpenApiRequestBody, OpenApiResponse, OpenApiHeader, OpenApiExample};
-use AlexFigures\Symfony\Http\Response\JsonApiResponseFactory;
+use AlexFigures\JsonApi\Docs\Attribute\{OpenApiEndpoint, OpenApiParameter, OpenApiRequestBody, OpenApiResponse, OpenApiHeader, OpenApiExample};
+use AlexFigures\JsonApi\Http\Response\JsonApiResponseFactory;
 use App\PgEntity\Author;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,7 +21,7 @@ final class FeatureCookbookController
     #[Route('/cookbook/errors/{kind}', name: 'cookbook.errors', methods: ['GET'])]
     public function applicationError(string $kind): Response
     {
-        if ($kind === 'client') { throw new \AlexFigures\Symfony\Http\Exception\BadRequestException('Application input rejected.'); }
+        if ($kind === 'client') { throw new \AlexFigures\JsonApi\Http\Exception\BadRequestException('Application input rejected.'); }
         throw new \RuntimeException('Cookbook private diagnostic.');
     }
 

@@ -4,24 +4,24 @@ declare(strict_types=1);
 
 namespace App\PgEntity;
 
-use AlexFigures\Symfony\Resource\Attribute\Attribute as JsonApiAttribute;
-use AlexFigures\Symfony\Resource\Attribute\Id;
-use AlexFigures\Symfony\Resource\Attribute\JsonApiResource;
-use AlexFigures\Symfony\Resource\Attribute\Relationship;
-use AlexFigures\Symfony\Resource\Attribute\FilterableFields;
-use AlexFigures\Symfony\Resource\Attribute\FilterableField;
-use AlexFigures\Symfony\Resource\Attribute\SortableFields;
-use AlexFigures\Symfony\Resource\Attribute\SortableField;
-use AlexFigures\Symfony\Resource\Metadata\RelationshipLinkingPolicy;
+use AlexFigures\JsonApi\Resource\Attribute\Attribute as JsonApiAttribute;
+use AlexFigures\JsonApi\Resource\Attribute\Id;
+use AlexFigures\JsonApi\Resource\Attribute\JsonApiResource;
+use AlexFigures\JsonApi\Resource\Attribute\Relationship;
+use AlexFigures\JsonApi\Resource\Attribute\FilterableFields;
+use AlexFigures\JsonApi\Resource\Attribute\FilterableField;
+use AlexFigures\JsonApi\Resource\Attribute\SortableFields;
+use AlexFigures\JsonApi\Resource\Attribute\SortableField;
+use AlexFigures\JsonApi\Resource\Metadata\RelationshipLinkingPolicy;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Serializer\Attribute\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'audit_logs')]
-#[JsonApiResource(type: 'audit-logs', operations: [\AlexFigures\Symfony\Resource\Definition\ResourceOperation::INDEX, \AlexFigures\Symfony\Resource\Definition\ResourceOperation::SHOW], normalizationContext: ['groups' => ['audit-logs:read']], denormalizationContext: ['groups' => ['audit-logs:write']])]
+#[JsonApiResource(type: 'audit-logs', operations: [\AlexFigures\JsonApi\Resource\Definition\ResourceOperation::INDEX, \AlexFigures\JsonApi\Resource\Definition\ResourceOperation::SHOW], normalizationContext: ['groups' => ['audit-logs:read']], denormalizationContext: ['groups' => ['audit-logs:write']])]
 class AuditLog
 {
     #[ORM\Id, ORM\GeneratedValue, ORM\Column(type: 'integer'), Id]

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use AlexFigures\Symfony\Bridge\Symfony\Routing\Attribute\MediaChannel;
+use AlexFigures\JsonApi\Bridge\Symfony\Routing\Attribute\MediaChannel;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 

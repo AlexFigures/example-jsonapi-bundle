@@ -1,3 +1,5 @@
+> Historical report. Earlier findings and failures are retained for context; current evidence is in [release gate](../release-gate.md).
+
 # OpenAPI public contract coverage
 
 The spec is fetched through `GET /_jsonapi/openapi.json`, not through the generator service.

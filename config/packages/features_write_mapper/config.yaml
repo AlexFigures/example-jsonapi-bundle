@@ -5,5 +5,5 @@ imports:
 services:
     cookbook.application_write_mapper:
         class: App\JsonApi\DataLayer\CookbookWriteMapper
-        decorates: AlexFigures\Symfony\Resource\Mapper\WriteMapperInterface
+        decorates: AlexFigures\JsonApi\Resource\Mapper\WriteMapperInterface
         arguments: ['@cookbook.application_write_mapper.inner', 'Edited: ']
