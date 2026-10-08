@@ -10,7 +10,7 @@ services:
         decorates: doctrine
         arguments: ['@App\Torture\Infrastructure\TenantRegistry.inner', '@request_stack']
     App\Torture\Infrastructure\TenantRepository:
-        decorates: AlexFigures\Symfony\Contract\Data\ResourceRepository
+        decorates: AlexFigures\JsonApi\Contract\Data\ResourceRepository
         arguments: ['@App\Torture\Infrastructure\TenantRepository.inner', '@request_stack']
     App\Torture\Infrastructure\TortureFixtures:
         autowire: true

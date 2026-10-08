@@ -1,15 +1,21 @@
 services:
   php:
-    build: {context: ., dockerfile: docker/php/Dockerfile}
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+      args:
+        PHP_VERSION: ${COMPAT_PHP_VERSION:-8.2}
     image: ${ACCEPTANCE_PHP_IMAGE:-example-jsonapi-php}
     working_dir: /srv/app
-    command: php -S 0.0.0.0:8000 -t public
+    user: ${LOCAL_UID:-1000}:${LOCAL_GID:-1000}
+    command: php -S 0.0.0.0:8000 -t public public/router.php
     volumes:
       - ./:/srv/app
     ports:
       - "${APP_PORT:-8080}:8000"
     environment:
       COMPOSER_ALLOW_SUPERUSER: 1
+      COMPOSER_HOME: /tmp/composer
       DATABASE_URL: "postgresql://symfony:symfony@pgsql:5432/symfony_pg?serverVersion=16&charset=utf8"
       MYSQL_URL: "mysql://symfony:symfony@mysql:3306/symfony_mysql?serverVersion=8.0&charset=utf8mb4"
     depends_on:

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\JsonApi\Filter;
 
-use AlexFigures\Symfony\Filter\Operator\AbstractOperator;
-use AlexFigures\Symfony\Filter\Operator\DoctrineExpression;
-use AlexFigures\Symfony\Http\Exception\BadRequestException;
+use AlexFigures\JsonApi\Filter\Operator\AbstractOperator;
+use AlexFigures\JsonApi\Filter\Operator\DoctrineExpression;
+use AlexFigures\JsonApi\Http\Exception\BadRequestException;
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 
 final class StartsWithOperator extends AbstractOperator

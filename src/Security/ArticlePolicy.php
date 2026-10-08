@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use AlexFigures\Symfony\Http\Exception\ForbiddenException;
-use AlexFigures\Symfony\Http\Exception\NotFoundException;
+use AlexFigures\JsonApi\Http\Exception\ForbiddenException;
+use AlexFigures\JsonApi\Http\Exception\NotFoundException;
 use App\PgEntity\Article;
 use Doctrine\Persistence\ManagerRegistry;
 

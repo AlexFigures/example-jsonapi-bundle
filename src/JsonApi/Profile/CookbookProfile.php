@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace App\JsonApi\Profile;
 
-use AlexFigures\Symfony\Profile\ProfileInterface;
-use AlexFigures\Symfony\Profile\ProfileContext;
-use AlexFigures\Symfony\Profile\Descriptor\ProfileDescriptor;
-use AlexFigures\Symfony\Profile\Validation\ProfileRequirements;
-use AlexFigures\Symfony\Profile\Hook\{DocumentHook, QueryHook, ReadHook, WriteHook, RelationshipHook, ResourceMetaHookInterface, FilterParameterProviderInterface, RelationshipFetchRequirementsHookInterface};
-use AlexFigures\Symfony\Contract\Data\{ChangeSet, ResourceIdentifier};
-use AlexFigures\Symfony\Query\Criteria;
-use AlexFigures\Symfony\Resource\Metadata\ResourceMetadata;
-use AlexFigures\Symfony\Http\Exception\ForbiddenException;
+use AlexFigures\JsonApi\Profile\ProfileInterface;
+use AlexFigures\JsonApi\Profile\ProfileContext;
+use AlexFigures\JsonApi\Profile\Descriptor\ProfileDescriptor;
+use AlexFigures\JsonApi\Profile\Validation\ProfileRequirements;
+use AlexFigures\JsonApi\Profile\Hook\{DocumentHook, QueryHook, ReadHook, WriteHook, RelationshipHook, ResourceMetaHookInterface, FilterParameterProviderInterface, RelationshipFetchRequirementsHookInterface};
+use AlexFigures\JsonApi\Contract\Data\{ChangeSet, ResourceIdentifier};
+use AlexFigures\JsonApi\Query\Criteria;
+use AlexFigures\JsonApi\Resource\Metadata\ResourceMetadata;
+use AlexFigures\JsonApi\Http\Exception\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /** Opt-in representation policy. Mandatory authorization belongs outside negotiated profiles. */

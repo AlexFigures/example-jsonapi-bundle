@@ -1,12 +1,12 @@
 # Подтверждённые гэпы для реализации в бандле
 
-Проверенная ревизия: `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`.
+Проверенная ревизия: `96a1530f3155ddf001b7d1e48fd33e375c382d85`.
 
 Источник: полный независимый прогон приложения; [current-gaps.json](current-gaps.json) содержит только актуальные наблюдаемые гэпы.
 
-Acceptance: {'PASS': 666, 'SKIP': 0}. Torture: {'PASS': 62}. Новых неклассифицированных регрессий: 0.
+Acceptance: {'PASS': 683, 'SKIP': 0}. Torture: {'PASS': 62}. Новых неклассифицированных регрессий: 0.
 
-Feature inventory: {'COVERED_GREEN': 330, 'CONFIG_ONLY': 17, 'NOT_COVERED': 4, 'NOT_APPLICABLE': 1}. PARTIAL — 0; ограниченные доказанные контракты описаны в [feature-review.json](feature-review.json).
+Feature inventory: {'COVERED_GREEN': 336, 'NOT_APPLICABLE': 1}. PARTIAL — 0; ограниченные доказанные контракты описаны в [feature-review.json](feature-review.json).
 
 ## Производительность и решения перед 1.0
 
@@ -24,6 +24,5 @@ Feature inventory: {'COVERED_GREEN': 330, 'CONFIG_ONLY': 17, 'NOT_COVERED': 4, '
 
 Публичные inactive surfaces требуют реализации либо удаления/депрекации до freeze; это отдельные design findings, а не дополнительные HTTP-сбои:
 
-- **TypedRelationshipReader / TypedRelationshipUpdater**: Latest bundle documents active typed dispatch through supports(sourceType) and relationship reader/updater tags. Dedicated two-type external dispatch verification is still needed; the previous claim of no active seam is obsolete.
 
 Намеренное ограничение: Atomic поддерживает одну транзакционную границу. Batch через независимые соединения должен отвергаться до первой мутации; распределённая транзакция не требуется.

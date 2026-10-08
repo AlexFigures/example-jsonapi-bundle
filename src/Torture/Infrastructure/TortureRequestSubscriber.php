@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Torture\Infrastructure;
 
-use AlexFigures\Symfony\Http\Error\ErrorObject;
-use AlexFigures\Symfony\Http\Exception\JsonApiHttpException;
+use AlexFigures\JsonApi\Http\Error\ErrorObject;
+use AlexFigures\JsonApi\Http\Exception\JsonApiHttpException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\{RequestEvent, ResponseEvent};
 

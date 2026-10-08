@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use AlexFigures\Symfony\Http\Response\JsonApiResponseFactory;
+use AlexFigures\JsonApi\Http\Response\JsonApiResponseFactory;
 use Doctrine\Persistence\ManagerRegistry;
 use App\PgEntity\FeatureArticle;
 use Symfony\Component\HttpFoundation\Request;

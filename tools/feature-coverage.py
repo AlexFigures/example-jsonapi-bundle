@@ -4,7 +4,7 @@ from pathlib import Path
 inventory=json.loads(Path('docs/public-feature-inventory.json').read_text())
 # Evidence points to independent application tests, never bundle-owned unit tests.
 rules=[
-('Http/Response/JsonApiErrorBuilder::withLinks','Protocol/ErrorTypeLinksTest.php','COVERED_GAP','ERROR-LINKS-TYPE'),
+('Http/Response/JsonApiErrorBuilder::withTypeLink','Protocol/ErrorTypeLinksTest.php','COVERED_GAP','ERROR-LINKS-TYPE'),
 ('Contract/Tx/ResourceWriteTransactionManagerInterface','Features/DataLayer/TypedProviderTest.php','PARTIAL',''),
 ('Profile/Hook/ResourceMetaHookInterface','Features/Profiles/AuditIdentityTest.php','PARTIAL',''),
 ('ServiceTag/jsonapi.persister','Features/DataLayer/TypedProviderTest.php','COVERED_GAP','DX-TYPED-PERSISTER-DISPATCH'),
@@ -32,12 +32,6 @@ rules=[
 ('jsonapi.cache.enabled','Features/Cache/DisabledCacheTest.php','COVERED_GREEN',''),
 ('jsonapi.limits.fields_max_total','Features/Relationships/DocumentBudgetTest.php','COVERED_GREEN',''),
 ('jsonapi.limits.included_max_resources','Features/Relationships/DocumentBudgetTest.php','COVERED_GREEN',''),
-('jsonapi.performance.doctrine.enable_query_cache','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.query_cache_pool','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.enable_second_level_cache','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.hydrate_partial_by_fields','','CONFIG_ONLY',''),
-('jsonapi.performance.doctrine.default_fetch','','CONFIG_ONLY',''),
-('jsonapi.errors.locale','','CONFIG_ONLY',''),
 ('jsonapi.errors.','Features/Protocol/ErrorConfigurationTest.php','COVERED_GREEN',''),
 ('jsonapi.cache.etag.strategy','Features/Cache/VersionStrategyTest.php','COVERED_GAP','CACHE-VERSION-STRATEGY'),
 ('jsonapi.cache.etag.include_query_shape','Features/Cache/QueryShapeTest.php','COVERED_GREEN',''),
@@ -48,8 +42,10 @@ rules=[
 ('jsonapi.profiles.audit_trail.expose_in_meta','Features/Profiles/AuditIdentityTest.php','COVERED_GAP','PROFILE-AUDIT-META'),
 ('jsonapi.profiles.audit_trail.','Features/Profiles/AuditIdentityTest.php','COVERED_GREEN',''),
 ('Contract/Data/TypedResourcePersister','Features/DataLayer/TypedProviderTest.php','COVERED_GAP','DX-TYPED-PERSISTER-DISPATCH'),
-('Contract/Data/TypedRelationshipReader','','NOT_COVERED',''),
-('Contract/Data/TypedRelationshipUpdater','','NOT_COVERED',''),
+('Contract/Data/TypedRelationshipReader','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
+('Contract/Data/TypedRelationshipUpdater','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
+('ServiceTag/jsonapi.relationship_reader','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
+('ServiceTag/jsonapi.relationship_updater','Features/DataLayer/TypedRelationshipTest.php','COVERED_GREEN',''),
 ('Resource/Mapper/WriteMapperInterface','Features/Mapping/PublicInputAndVersionTest.php','PARTIAL','WRITE-REQUEST-DTO'),
 ('Resource/Mapper/DefaultWriteMapper','Features/Mapping/PublicInputAndVersionTest.php','PARTIAL','WRITE-REQUEST-DTO'),
 ('Contract/Data/RelationshipBatchReaderInterface','Features/DataLayer/BatchRelationshipReaderTest.php','COVERED_GREEN',''),
@@ -95,8 +91,6 @@ rules=[
 ('jsonapi.docs.generator.json_schema.', 'Features/Docs/OpenApiTest.php','COVERED_GAP','CONFIG-JSON-SCHEMA'),
 ('jsonapi.docs.generator.openapi.', 'Features/Docs/OpenApiTest.php','COVERED_GREEN',''),
 ('jsonapi.docs.ui.', 'Features/Docs/RedocTest.php','COVERED_GREEN',''),
-('jsonapi.dx.', '', 'CONFIG_ONLY',''),
-('jsonapi.release.', '', 'CONFIG_ONLY',''),
 ('jsonapi.profiles.soft_delete.strategy','Features/Profiles/BooleanSoftDeleteTest.php','COVERED_GAP','PROFILE-SOFT-BOOLEAN'),
 ('jsonapi.profiles.soft_delete.default_visibility','Features/Profiles/SoftDeleteConfigurationTest.php','COVERED_GAP','PROFILE-SOFT-VISIBILITY'),
 ('jsonapi.profiles.soft_delete.delete_semantics','Features/Profiles/SoftDeleteConfigurationTest.php','COVERED_GAP','PROFILE-SOFT-DELETE-SEMANTICS'),
@@ -175,7 +169,7 @@ for item in inventory['features']:
   test,status,gap=review['test'],review['status'],review['gap']
  if gap and gap_states.get(gap)=='RESOLVED_ON_TESTED_REVISION' and status=='COVERED_GAP': status='COVERED_GREEN'
  if status=='NOT_APPLICABLE': finding='Value/default implementation without a separate application-facing HTTP operation.'
- elif status=='DOCUMENTATION_ONLY': finding='Public legacy interface claims typed dispatch but has no discovered active registration path; see configuration-dx-audit.md.'
+ elif status=='DOCUMENTATION_ONLY': finding='Public legacy interface claims typed dispatch but has no discovered active registration path; see docs/history/configuration-dx-audit.md.'
  elif status=='NOT_COVERED': finding='No independent execution evidence yet.'
  elif status=='CONFIG_ONLY': finding='Source audit: no runtime implementation. Inactive dx/errors.locale/Doctrine knobs are explicitly deprecated on the current revision; release configuration is audited separately.'
  elif gap and gap_states.get(gap)=='RESOLVED_ON_TESTED_REVISION': finding='Historical gap resolved; the bounded consumer contract remains a regression assertion.'
@@ -191,16 +185,3 @@ lines+=['', '## Reviewed contract boundaries', '', 'The former 228 PARTIAL entri
 Path('docs/feature-coverage.md').write_text('\n'.join(lines).rstrip()+'\n')
 Path('docs/feature-coverage.json').write_text(json.dumps(dict(bundle_revision=inventory['bundle_revision'],counts=dict(counts),features=rows),indent=2)+'\n')
 print(dict(counts))
-audit_path=Path('docs/partial-review.json')
-if audit_path.exists():
- audit=json.loads(audit_path.read_text())
- by_name={r['feature']:r for r in rows}
- audit['bundle_revision']=inventory['bundle_revision']
- audit['features']=[by_name[name] for name in audit['baseline_features']]
- audit['outcomes']=dict(Counter(r['status'] for r in audit['features']))
- audit_path.write_text(json.dumps(audit,indent=2)+'\n')
- review_lines=['# Completed review of 228 PARTIAL entries','', 'Tested revision: `'+inventory['bundle_revision']+'`.', '', 'Each original row now has evidence or an executable gap. Results: '+str(audit['outcomes'])+'. Green proves the linked bounded assertion contract, not every theoretical permutation.', '', '| Original feature | Reviewed status | Consumer evidence | Gap |','|---|---|---|---|']
- for r in audit['features']:
-  review_lines.append('| '+r['feature']+' | '+r['status']+' | [test](../tests/Acceptance/'+r['test']+') | '+(r['gap'] or '—')+' |')
- review_lines+=['', 'The 32 final exact semantic decisions are recorded in [feature-review.json](feature-review.json). Current observed failures are in [current-gaps.json](current-gaps.json); inactive API/configuration surfaces require explicit bundle implementation/removal decisions before freeze.', '']
- Path('docs/partial-review.md').write_text('\n'.join(review_lines))

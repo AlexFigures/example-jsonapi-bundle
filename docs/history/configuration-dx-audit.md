@@ -1,3 +1,5 @@
+> Historical configuration audit. Removed declarations are not part of the current public inventory. See [feature coverage](../feature-coverage.md).
+
 # Configuration and extension audit
 
 The installed Composer dependency is the source of the inventory. These findings distinguish unsupported public promises from ordinary application policy. No application substitute is supplied for an inactive bundle feature.
@@ -21,6 +23,6 @@ Inventory statuses are not interchangeable: DOCUMENTATION_ONLY and CONFIG_ONLY a
 
 The Torture environment explicitly sets `relationship_max_identifiers: 20000`: its existing high-cardinality contract serializes 10,001 tasks plus other associations. The production default budget legitimately rejected that fixture after cache refresh. This is stress-environment policy, not a bundle defect; normal acceptance keeps dedicated low-budget rejection assertions unchanged.
 
-The focused public API/configuration audit was refreshed against `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`. Historical IDs above are not an open-gap list; [current-gaps.json](current-gaps.json) is authoritative.
+The focused public API/configuration audit was refreshed against `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`. Historical IDs above are not an open-gap list; [current-gaps.json](../current-gaps.json) is authoritative.
 
 The updated revision introduces ResourceMetaHookInterface and ResourceWriteTransactionManagerInterface. PublicHooksTest now exercises an application-owned resource-meta hook through HTTP; MemoryArticleProvider implements the transaction capability and CustomProviderTest verifies generated writes and Atomic rollback. Their bounded consumer contracts are recorded in feature-review.json; they are no longer PARTIAL.

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\FeatureMemory;
 
-use AlexFigures\Symfony\Resource\Attribute\{Attribute, Id, JsonApiResource, Relationship};
+use AlexFigures\JsonApi\Resource\Attribute\{Attribute, Id, JsonApiResource, Relationship};
 
 #[JsonApiResource(type: 'memory-articles')]
 final class MemoryArticle

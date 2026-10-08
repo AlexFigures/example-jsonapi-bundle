@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\JsonApi\DataLayer;
 
-use AlexFigures\Symfony\Contract\Data\{RelationshipBatchReaderInterface, ResourceRepository, ResourceIdentifier};
-use AlexFigures\Symfony\Http\Exception\BadRequestException;
-use AlexFigures\Symfony\Query\{Criteria, Pagination};
-use AlexFigures\Symfony\Query\Fetch\{RelationshipReadRequirements, RelationshipReadMap};
+use AlexFigures\JsonApi\Contract\Data\{RelationshipBatchReaderInterface, ResourceRepository, ResourceIdentifier};
+use AlexFigures\JsonApi\Http\Exception\BadRequestException;
+use AlexFigures\JsonApi\Query\{Criteria, Pagination};
+use AlexFigures\JsonApi\Query\Fetch\{RelationshipReadRequirements, RelationshipReadMap};
 use App\PgEntity\FeatureArticle;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,5 +1,5 @@
 {
-  "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+  "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
   "revision_semantics": "Verification snapshots, not fix commits; null first_seen means exact historical first observation is unknown.",
   "history": [
     {
@@ -20,7 +20,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -41,7 +41,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -65,7 +65,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -86,7 +86,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -107,7 +107,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -131,7 +131,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -155,7 +155,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -179,7 +179,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -200,7 +200,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -221,7 +221,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -242,7 +242,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -263,7 +263,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -287,7 +287,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -308,7 +308,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -332,7 +332,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -362,7 +362,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -383,7 +383,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -413,7 +413,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -434,7 +434,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -464,7 +464,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -488,7 +488,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -509,7 +509,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -533,7 +533,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -554,7 +554,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -575,7 +575,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -599,7 +599,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -624,7 +624,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -651,7 +651,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -676,7 +676,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -700,7 +700,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -724,7 +724,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -751,7 +751,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -775,7 +775,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -805,7 +805,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -829,7 +829,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -850,7 +850,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -871,7 +871,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -892,7 +892,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -913,7 +913,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -934,7 +934,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -955,7 +955,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -976,7 +976,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1000,7 +1000,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1021,7 +1021,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1043,7 +1043,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1071,7 +1071,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1093,7 +1093,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1127,7 +1127,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1149,7 +1149,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1176,7 +1176,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1204,7 +1204,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1226,7 +1226,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1248,7 +1248,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1270,7 +1270,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1292,7 +1292,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1314,7 +1314,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1336,7 +1336,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1362,7 +1362,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1384,7 +1384,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1406,7 +1406,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1431,7 +1431,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1456,7 +1456,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1478,7 +1478,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1500,7 +1500,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1522,7 +1522,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1547,7 +1547,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1573,7 +1573,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1598,7 +1598,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1620,7 +1620,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1642,7 +1642,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1668,7 +1668,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1690,7 +1690,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1712,7 +1712,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1734,7 +1734,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1756,7 +1756,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1778,7 +1778,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1800,7 +1800,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -1822,7 +1822,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1844,7 +1844,7 @@
       "current_evidence": [],
       "verified_tests": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -1865,7 +1865,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1886,7 +1886,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1907,7 +1907,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1928,7 +1928,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1949,7 +1949,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1970,7 +1970,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -1991,7 +1991,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -2012,7 +2012,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -2033,7 +2033,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -2057,7 +2057,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -2078,7 +2078,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -2099,7 +2099,7 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
     },
     {
@@ -2120,8 +2120,30 @@
       "status": "RESOLVED",
       "current_evidence": [],
       "verified_tests": [],
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb"
+    },
+    {
+      "id": "ERROR-LINKS-TYPE",
+      "area": "JSON:API optional error links",
+      "priority": "P2",
+      "category": "DESIRED_CAPABILITY",
+      "expected": "Application-supplied problem type is serialized as errors[].links.type; optional about identifies the occurrence, both coexist, and omission remains valid. The same contract applies to every validation error.",
+      "why_bundle": "The application chooses documentation URIs; the bundle owns JSON:API error object construction and serialization. The optional member is not required on every error, but an explicitly supplied error link must be representable through the public API.",
+      "bundle_change_required": "Provide a public error-link input supporting type and about and preserve them per error through response serialization. An explicitly separate API for document-level links is fine; do not require application-built JSON responses. Adapt this consumer fixture if the supported API deliberately changes.",
+      "tests": [
+        {
+          "test": "Protocol/ErrorTypeLinksTest::testApplicationErrorTypeLinkIsSerializedOnEachError"
+        }
+      ],
+      "historical_observation": "ResponseFactory error()->withLinks stores type/about at document level; errors[].links.type is absent for single and multiple errors.",
+      "actual": [],
+      "status": "RESOLVED",
+      "current_evidence": [],
+      "verified_tests": [],
+      "first_seen_revision": "b5e5e3ccbc96954e6b66fee40c931dac651ba00a",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
+      "resolved_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85"
     },
     {
       "id": "PERFORMANCE-NPLUS1",
@@ -2148,7 +2170,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b",
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "e0b6f935fe5bbc1ae577a4ef2a6c414eb393ca6a"
     },
     {
@@ -2175,7 +2197,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2198,7 +2220,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2219,7 +2241,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2240,7 +2262,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2261,7 +2283,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2282,7 +2304,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2305,7 +2327,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     },
     {
@@ -2328,7 +2350,7 @@
       "current_evidence": [],
       "actual": [],
       "first_seen_revision": null,
-      "last_verified_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+      "last_verified_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
       "resolved_revision": "1a32d7b35ca5ce3e7c4500f52a2455655fa57c6b"
     }
   ]

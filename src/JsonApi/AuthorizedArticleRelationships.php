@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\JsonApi;
 
-use AlexFigures\Symfony\Contract\Data\{RelationshipUpdater, ResourceIdentifier};
+use AlexFigures\JsonApi\Contract\Data\{RelationshipUpdater, ResourceIdentifier};
 use App\Security\PublishingRules;
 
 final class AuthorizedArticleRelationships implements RelationshipUpdater

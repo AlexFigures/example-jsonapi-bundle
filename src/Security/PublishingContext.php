@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use AlexFigures\Symfony\Http\Exception\JsonApiHttpException;
-use AlexFigures\Symfony\Http\Error\ErrorObject;
+use AlexFigures\JsonApi\Http\Exception\JsonApiHttpException;
+use AlexFigures\JsonApi\Http\Error\ErrorObject;
 use Symfony\Component\HttpFoundation\RequestStack;
 
 /** Deterministic demo credentials. Replace this adapter with your real authenticator. */

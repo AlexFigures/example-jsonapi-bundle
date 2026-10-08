@@ -1,0 +1,20 @@
+imports:
+    - { resource: '../features_typed/config.yaml' }
+jsonapi:
+    data_layer:
+        provider: custom
+        repository: App\JsonApi\DataLayer\MemoryArticleProvider
+        processor: App\JsonApi\DataLayer\MemoryArticleProvider
+        relationship_reader: App\JsonApi\DataLayer\MemoryArticleProvider
+        transaction_manager: App\JsonApi\DataLayer\MemoryArticleProvider
+services:
+    AlexFigures\JsonApi\Contract\Data\ExistenceChecker: '@App\JsonApi\DataLayer\MemoryExistenceChecker'
+    cookbook.card_relationships:
+        class: App\JsonApi\DataLayer\TypedMemoryRelationships
+        autoconfigure: true
+        arguments: ['memory-cards', 'card']
+    cookbook.note_relationships:
+        class: App\JsonApi\DataLayer\TypedMemoryRelationships
+        autoconfigure: false
+        arguments: ['memory-notes', 'note']
+        tags: ['jsonapi.relationship_reader', 'jsonapi.relationship_updater']

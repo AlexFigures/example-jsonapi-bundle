@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\JsonApi\DataLayer;
 
-use AlexFigures\Symfony\Contract\Data\{TypedResourceRepository, Slice};
-use AlexFigures\Symfony\Query\Criteria;
+use AlexFigures\JsonApi\Contract\Data\{TypedResourceRepository, Slice};
+use AlexFigures\JsonApi\Query\Criteria;
 use App\FeatureMemory\{MemoryCard, MemoryNote};
 
 final class TypedMemoryRepository implements TypedResourceRepository

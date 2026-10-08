@@ -15,8 +15,8 @@ class CleanupTest(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.previous_root = gate.ROOT
         gate.ROOT = Path(self.temp.name)
-        (gate.ROOT / 'docs').mkdir()
-        (gate.ROOT / 'docs/torture-gaps.json').write_text('{"gaps": []}')
+        (gate.ROOT / 'docs/history').mkdir(parents=True)
+        (gate.ROOT / 'docs/history/torture-gaps.json').write_text('{"gaps": []}')
         self.path = gate.ROOT / 'tests/Acceptance/DemoTest.php'
         self.path.parent.mkdir(parents=True)
 

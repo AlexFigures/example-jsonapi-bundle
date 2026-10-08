@@ -234,7 +234,7 @@
   "features": [
     {
       "feature": "Contract/Data/ExistenceChecker",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\ExistenceChecker",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Data\\ExistenceChecker",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
@@ -243,7 +243,7 @@
     },
     {
       "feature": "Contract/Data/RepresentationPreloaderInterface",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\RepresentationPreloaderInterface",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Data\\RepresentationPreloaderInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
@@ -252,7 +252,7 @@
     },
     {
       "feature": "Contract/Data/SliceIds",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\SliceIds",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Data\\SliceIds",
       "status": "COVERED_GREEN",
       "test": "Relationships/RelatedResourcesTest.php",
       "gap": "",
@@ -261,7 +261,7 @@
     },
     {
       "feature": "Contract/Data/WriteConcurrencyGuardInterface",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Data\\WriteConcurrencyGuardInterface",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Data\\WriteConcurrencyGuardInterface",
       "status": "COVERED_GREEN",
       "test": "Production/ConcurrencyAndAtomicTest.php",
       "gap": "",
@@ -270,7 +270,7 @@
     },
     {
       "feature": "Contract/Resource/ResourceMetadataInterface",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Resource\\ResourceMetadataInterface",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Resource\\ResourceMetadataInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "DOCS-METADATA-CONTRACT",
@@ -279,7 +279,7 @@
     },
     {
       "feature": "Contract/Tx/ResourceWriteTransactionManagerInterface",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\ResourceWriteTransactionManagerInterface",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Tx\\ResourceWriteTransactionManagerInterface",
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
@@ -288,7 +288,7 @@
     },
     {
       "feature": "Contract/Tx/TransactionManager",
-      "public_api": "AlexFigures\\Symfony\\Contract\\Tx\\TransactionManager",
+      "public_api": "AlexFigures\\JsonApi\\Contract\\Tx\\TransactionManager",
       "status": "COVERED_GREEN",
       "test": "Features/DataLayer/CustomProviderTest.php",
       "gap": "",
@@ -297,7 +297,7 @@
     },
     {
       "feature": "CustomRoute/Context/CustomRouteContext::criteria",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Context\\CustomRouteContext",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -306,7 +306,7 @@
     },
     {
       "feature": "CustomRoute/Context/CustomRouteContext::hasQueryParam",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Context\\CustomRouteContext",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -315,7 +315,7 @@
     },
     {
       "feature": "CustomRoute/Context/CustomRouteContext::hasResource",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Context\\CustomRouteContext",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Context\\CustomRouteContext",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -324,7 +324,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::accepted",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -333,7 +333,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::badRequest",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -342,7 +342,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::collection",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -351,7 +351,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::conflict",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -360,7 +360,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::created",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -369,7 +369,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::forbidden",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -378,7 +378,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isCollection",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -387,7 +387,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isError",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -396,7 +396,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isNoContent",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -405,7 +405,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::isResource",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -414,7 +414,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::noContent",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -423,7 +423,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::notFound",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -432,7 +432,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::resource",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -441,7 +441,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::unprocessable",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -450,7 +450,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withHeader",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -459,7 +459,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withLinks",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -468,7 +468,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withMeta",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -477,7 +477,7 @@
     },
     {
       "feature": "CustomRoute/Result/CustomRouteResult::withStatus",
-      "public_api": "AlexFigures\\Symfony\\CustomRoute\\Result\\CustomRouteResult",
+      "public_api": "AlexFigures\\JsonApi\\CustomRoute\\Result\\CustomRouteResult",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -486,7 +486,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -495,7 +495,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$deprecated",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -504,7 +504,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$description",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -513,7 +513,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$examples",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -522,7 +522,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$operationId",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -531,7 +531,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$parameters",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -540,7 +540,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$requestBody",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -549,7 +549,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$responses",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -558,7 +558,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$security",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -567,7 +567,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$summary",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -576,7 +576,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiEndpoint::$tags",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiEndpoint",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiEndpoint",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -585,7 +585,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiExample",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiExample",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -594,7 +594,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiExample::$description",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiExample",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -603,7 +603,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiExample::$summary",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiExample",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -612,7 +612,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiExample::$value",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiExample",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiExample",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -621,7 +621,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiHeader",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -630,7 +630,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader::$description",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiHeader",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -639,7 +639,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader::$format",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiHeader",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -648,7 +648,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiHeader::$type",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiHeader",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiHeader",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -657,7 +657,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -666,7 +666,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$description",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -675,7 +675,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$example",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -684,7 +684,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$format",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -693,7 +693,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$in",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -702,7 +702,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$name",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -711,7 +711,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$required",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -720,7 +720,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$schema",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -729,7 +729,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiParameter::$type",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiParameter",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiParameter",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -738,7 +738,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiRequestBody",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -747,7 +747,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$contentType",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiRequestBody",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -756,7 +756,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$description",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiRequestBody",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -765,7 +765,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$required",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiRequestBody",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -774,7 +774,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiRequestBody::$schema",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiRequestBody",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiRequestBody",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -783,7 +783,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiResponse",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -792,7 +792,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$contentType",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiResponse",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -801,7 +801,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$description",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiResponse",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -810,7 +810,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$headers",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiResponse",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -819,7 +819,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$schema",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiResponse",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -828,7 +828,7 @@
     },
     {
       "feature": "Docs/Attribute/OpenApiResponse::$schemaRef",
-      "public_api": "AlexFigures\\Symfony\\Docs\\Attribute\\OpenApiResponse",
+      "public_api": "AlexFigures\\JsonApi\\Docs\\Attribute\\OpenApiResponse",
       "status": "COVERED_GREEN",
       "test": "Features/Docs/OpenApiTest.php",
       "gap": "",
@@ -837,7 +837,7 @@
     },
     {
       "feature": "Filter/Handler/FilterHandlerInterface",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\FilterHandlerInterface",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Handler\\FilterHandlerInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/SearchCompositionTest.php",
       "gap": "",
@@ -846,7 +846,7 @@
     },
     {
       "feature": "Filter/Handler/SortHandlerInterface",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Handler\\SortHandlerInterface",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Handler\\SortHandlerInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -855,7 +855,7 @@
     },
     {
       "feature": "Filter/Operator/AbstractOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\AbstractOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\AbstractOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -864,7 +864,7 @@
     },
     {
       "feature": "Filter/Operator/BetweenOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\BetweenOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\BetweenOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -873,7 +873,7 @@
     },
     {
       "feature": "Filter/Operator/EqualOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\EqualOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\EqualOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -882,7 +882,7 @@
     },
     {
       "feature": "Filter/Operator/GreaterOrEqualOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterOrEqualOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\GreaterOrEqualOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -891,7 +891,7 @@
     },
     {
       "feature": "Filter/Operator/GreaterThanOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\GreaterThanOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\GreaterThanOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -900,7 +900,7 @@
     },
     {
       "feature": "Filter/Operator/ILikeOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\ILikeOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\ILikeOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -909,7 +909,7 @@
     },
     {
       "feature": "Filter/Operator/InOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\InOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\InOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -918,7 +918,7 @@
     },
     {
       "feature": "Filter/Operator/IsNullOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\IsNullOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\IsNullOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -927,7 +927,7 @@
     },
     {
       "feature": "Filter/Operator/LessOrEqualOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessOrEqualOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\LessOrEqualOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -936,7 +936,7 @@
     },
     {
       "feature": "Filter/Operator/LessThanOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LessThanOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\LessThanOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -945,7 +945,7 @@
     },
     {
       "feature": "Filter/Operator/LikeOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\LikeOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\LikeOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -954,7 +954,7 @@
     },
     {
       "feature": "Filter/Operator/NotEqualOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotEqualOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\NotEqualOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -963,7 +963,7 @@
     },
     {
       "feature": "Filter/Operator/NotInOperator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\NotInOperator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\NotInOperator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -972,7 +972,7 @@
     },
     {
       "feature": "Filter/Operator/Operator",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Operator",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\Operator",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -981,7 +981,7 @@
     },
     {
       "feature": "Filter/Operator/Registry",
-      "public_api": "AlexFigures\\Symfony\\Filter\\Operator\\Registry",
+      "public_api": "AlexFigures\\JsonApi\\Filter\\Operator\\Registry",
       "status": "COVERED_GREEN",
       "test": "Query/FilteringTest.php",
       "gap": "",
@@ -990,7 +990,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::accepted",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -999,7 +999,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::collection",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -1008,7 +1008,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::created",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -1017,7 +1017,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::error",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -1026,7 +1026,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::noContent",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -1035,7 +1035,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::resource",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -1044,7 +1044,7 @@
     },
     {
       "feature": "Http/Response/JsonApiResponseFactory::validationErrors",
-      "public_api": "AlexFigures\\Symfony\\Http\\Response\\JsonApiResponseFactory",
+      "public_api": "AlexFigures\\JsonApi\\Http\\Response\\JsonApiResponseFactory",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/ResponseFactoryTest.php",
       "gap": "",
@@ -1053,7 +1053,7 @@
     },
     {
       "feature": "Profile/Attribute/Auditable",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\Auditable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
@@ -1062,7 +1062,7 @@
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdAtField",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\Auditable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
@@ -1071,7 +1071,7 @@
     },
     {
       "feature": "Profile/Attribute/Auditable::$createdByField",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\Auditable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
@@ -1080,7 +1080,7 @@
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedAtField",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\Auditable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
@@ -1089,7 +1089,7 @@
     },
     {
       "feature": "Profile/Attribute/Auditable::$updatedByField",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\Auditable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\Auditable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/AuditFieldNamesTest.php",
       "gap": "PROFILE-AUDIT-ATTRIBUTE-FIELDS",
@@ -1098,7 +1098,7 @@
     },
     {
       "feature": "Profile/Attribute/SoftDeletable",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\SoftDeletable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/BooleanSoftDeleteTest.php",
       "gap": "",
@@ -1107,7 +1107,7 @@
     },
     {
       "feature": "Profile/Attribute/SoftDeletable::$deletedAtField",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\SoftDeletable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/BooleanSoftDeleteTest.php",
       "gap": "",
@@ -1116,7 +1116,7 @@
     },
     {
       "feature": "Profile/Attribute/SoftDeletable::$deletedByField",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Attribute\\SoftDeletable",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Attribute\\SoftDeletable",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/SoftDeleteActorTest.php",
       "gap": "PROFILE-SOFT-DELETE-ACTOR-META",
@@ -1125,7 +1125,7 @@
     },
     {
       "feature": "Profile/Hook/DocumentHook",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\DocumentHook",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Hook\\DocumentHook",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
@@ -1134,7 +1134,7 @@
     },
     {
       "feature": "Profile/Hook/FilterParameterProviderInterface",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\FilterParameterProviderInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Hook\\FilterParameterProviderInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
@@ -1143,7 +1143,7 @@
     },
     {
       "feature": "Profile/Hook/QueryHook",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\QueryHook",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Hook\\QueryHook",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
@@ -1152,7 +1152,7 @@
     },
     {
       "feature": "Profile/Hook/RelationshipFetchRequirementsHookInterface",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\RelationshipFetchRequirementsHookInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Hook\\RelationshipFetchRequirementsHookInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
@@ -1161,7 +1161,7 @@
     },
     {
       "feature": "Profile/Hook/ResourceMetaHookInterface",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\ResourceMetaHookInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Hook\\ResourceMetaHookInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
@@ -1170,7 +1170,7 @@
     },
     {
       "feature": "Profile/Hook/WriteHook",
-      "public_api": "AlexFigures\\Symfony\\Profile\\Hook\\WriteHook",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\Hook\\WriteHook",
       "status": "COVERED_GREEN",
       "test": "Features/Profiles/PublicHooksTest.php",
       "gap": "",
@@ -1179,7 +1179,7 @@
     },
     {
       "feature": "Profile/ProfileInterface::descriptor",
-      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\ProfileInterface",
       "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
       "gap": "",
@@ -1188,7 +1188,7 @@
     },
     {
       "feature": "Profile/ProfileInterface::hooks",
-      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\ProfileInterface",
       "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
       "gap": "",
@@ -1197,7 +1197,7 @@
     },
     {
       "feature": "Profile/ProfileInterface::requirements",
-      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\ProfileInterface",
       "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
       "gap": "",
@@ -1206,7 +1206,7 @@
     },
     {
       "feature": "Profile/ProfileInterface::uri",
-      "public_api": "AlexFigures\\Symfony\\Profile\\ProfileInterface",
+      "public_api": "AlexFigures\\JsonApi\\Profile\\ProfileInterface",
       "status": "COVERED_GREEN",
       "test": "Production/ExtensibilityTest.php",
       "gap": "",
@@ -1215,7 +1215,7 @@
     },
     {
       "feature": "Resource/Attribute/Attribute",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Attribute",
       "status": "COVERED_GREEN",
       "test": "Mapping/FieldAliasesTest.php",
       "gap": "",
@@ -1224,7 +1224,7 @@
     },
     {
       "feature": "Resource/Attribute/Attribute::$name",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Attribute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Attribute",
       "status": "COVERED_GREEN",
       "test": "Mapping/FieldAliasesTest.php",
       "gap": "",
@@ -1233,7 +1233,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableField",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableField",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1242,7 +1242,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableField::$customHandler",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableField",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1251,7 +1251,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableField::$except",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableField",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1260,7 +1260,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableField::$field",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableField",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1269,7 +1269,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableField::$inherit",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableField",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1278,7 +1278,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableField::$operators",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableField",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1287,7 +1287,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableFields",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableFields",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1296,7 +1296,7 @@
     },
     {
       "feature": "Resource/Attribute/FilterableFields::$fields",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\FilterableFields",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\FilterableFields",
       "status": "COVERED_GREEN",
       "test": "Features/Filtering/InheritanceAndExtensionsTest.php",
       "gap": "",
@@ -1305,7 +1305,7 @@
     },
     {
       "feature": "Resource/Attribute/Id",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Id",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Id",
       "status": "COVERED_GREEN",
       "test": "Mapping/FieldAliasesTest.php",
       "gap": "",
@@ -1314,7 +1314,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1323,7 +1323,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$controller",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1332,7 +1332,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$defaults",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1341,7 +1341,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$description",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "",
@@ -1350,7 +1350,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$handler",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1359,7 +1359,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$methods",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1368,7 +1368,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$name",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1377,7 +1377,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$path",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1386,7 +1386,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$priority",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1395,7 +1395,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$requirements",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1404,7 +1404,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiCustomRoute::$resourceType",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiCustomRoute",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiCustomRoute",
       "status": "COVERED_GREEN",
       "test": "Features/CustomRoutes/HandlerContractTest.php",
       "gap": "",
@@ -1413,7 +1413,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-ROUTE-PREFIX",
@@ -1422,7 +1422,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$dataClass",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
@@ -1431,7 +1431,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$denormalizationContext",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Production/WriteSurfaceTest.php",
       "gap": "",
@@ -1440,7 +1440,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$description",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "",
@@ -1449,7 +1449,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$exposeId",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "DOCS-EXPOSE-ID-CONTRACT",
@@ -1458,7 +1458,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$normalizationContext",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Production/WriteSurfaceTest.php",
       "gap": "",
@@ -1467,7 +1467,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$operations",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1476,7 +1476,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$readProjection",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
@@ -1485,7 +1485,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$relationshipPolicies",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-RELATIONSHIP-POLICIES",
@@ -1494,7 +1494,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$routePrefix",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ResourceOptionsTest.php",
       "gap": "RESOURCE-ROUTE-PREFIX",
@@ -1503,7 +1503,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$type",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Resource/ResourceReadTest.php",
       "gap": "",
@@ -1512,7 +1512,7 @@
     },
     {
       "feature": "Resource/Attribute/JsonApiResource::$viewClass",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\JsonApiResource",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\JsonApiResource",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
@@ -1521,7 +1521,7 @@
     },
     {
       "feature": "Resource/Attribute/Relationship",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Relationship",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
@@ -1530,7 +1530,7 @@
     },
     {
       "feature": "Resource/Attribute/Relationship::$inverse",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Relationship",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
@@ -1539,7 +1539,7 @@
     },
     {
       "feature": "Resource/Attribute/Relationship::$linkingPolicy",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Relationship",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
@@ -1548,7 +1548,7 @@
     },
     {
       "feature": "Resource/Attribute/Relationship::$propertyPath",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Relationship",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
@@ -1557,7 +1557,7 @@
     },
     {
       "feature": "Resource/Attribute/Relationship::$targetType",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Relationship",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
@@ -1566,7 +1566,7 @@
     },
     {
       "feature": "Resource/Attribute/Relationship::$toMany",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\Relationship",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\Relationship",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/PathAliasTest.php",
       "gap": "",
@@ -1575,7 +1575,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableField",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableField",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1584,7 +1584,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableField::$customHandler",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableField",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1593,7 +1593,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableField::$except",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableField",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1602,7 +1602,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableField::$field",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableField",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1611,7 +1611,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableField::$inherit",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableField",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableField",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1620,7 +1620,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableFields",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableFields",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1629,7 +1629,7 @@
     },
     {
       "feature": "Resource/Attribute/SortableFields::$fields",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Attribute\\SortableFields",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Attribute\\SortableFields",
       "status": "COVERED_GREEN",
       "test": "Features/Sorting/AggregateSemanticsTest.php",
       "gap": "",
@@ -1638,7 +1638,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceDefinition",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceDefinition",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceDefinition",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ConstructorAndProjectionTest.php",
       "gap": "",
@@ -1647,7 +1647,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceOperation",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceOperation",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1656,7 +1656,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceOperation::CREATE",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceOperation",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1665,7 +1665,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceOperation::DELETE",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceOperation",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1674,7 +1674,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceOperation::INDEX",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceOperation",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1683,7 +1683,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceOperation::SHOW",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceOperation",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1692,7 +1692,7 @@
     },
     {
       "feature": "Resource/Definition/ResourceOperation::UPDATE",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Definition\\ResourceOperation",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Definition\\ResourceOperation",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/SelectiveOperationsTest.php",
       "gap": "",
@@ -1701,7 +1701,7 @@
     },
     {
       "feature": "Resource/Mapper/DefaultWriteMapper",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\DefaultWriteMapper",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Mapper\\DefaultWriteMapper",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ApplicationWriteMapperTest.php",
       "gap": "",
@@ -1710,7 +1710,7 @@
     },
     {
       "feature": "Resource/Mapper/WriteMapperInterface",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Mapper\\WriteMapperInterface",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Mapper\\WriteMapperInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/ApplicationWriteMapperTest.php",
       "gap": "",
@@ -1719,7 +1719,7 @@
     },
     {
       "feature": "Resource/Metadata/RelationshipLinkingPolicy",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Metadata\\RelationshipLinkingPolicy",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
@@ -1728,7 +1728,7 @@
     },
     {
       "feature": "Resource/Metadata/RelationshipLinkingPolicy::REFERENCE",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Metadata\\RelationshipLinkingPolicy",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
@@ -1737,7 +1737,7 @@
     },
     {
       "feature": "Resource/Metadata/RelationshipLinkingPolicy::VERIFY",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Metadata\\RelationshipLinkingPolicy",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Metadata\\RelationshipLinkingPolicy",
       "status": "COVERED_GREEN",
       "test": "Features/Relationships/LinkingPoliciesTest.php",
       "gap": "",
@@ -1746,7 +1746,7 @@
     },
     {
       "feature": "Resource/Registry/CustomRouteRegistry",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistry",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Registry\\CustomRouteRegistry",
       "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
@@ -1755,7 +1755,7 @@
     },
     {
       "feature": "Resource/Registry/CustomRouteRegistryInterface",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\CustomRouteRegistryInterface",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Registry\\CustomRouteRegistryInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Configuration/PublicSignatureTest.php",
       "gap": "DX-PUBLIC-SIGNATURE-INTERNAL-DTO",
@@ -1764,7 +1764,7 @@
     },
     {
       "feature": "Resource/Registry/ResourceRegistry",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistry",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Registry\\ResourceRegistry",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
@@ -1773,7 +1773,7 @@
     },
     {
       "feature": "Resource/Registry/ResourceRegistryInterface",
-      "public_api": "AlexFigures\\Symfony\\Resource\\Registry\\ResourceRegistryInterface",
+      "public_api": "AlexFigures\\JsonApi\\Resource\\Registry\\ResourceRegistryInterface",
       "status": "COVERED_GREEN",
       "test": "Features/Mapping/RegistryContractTest.php",
       "gap": "RESOURCE-REGISTRY-PROJECTION-COLLISION",
@@ -2285,7 +2285,7 @@
       "finding": "Enabled/disabled resource linkage writes; per-type allowed/forbidden client IDs and duplicate collision. Atomic and UUID assertions remain in their own suites."
     }
   ],
-  "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+  "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
   "outcomes": {
     "COVERED_GREEN": 228
   }

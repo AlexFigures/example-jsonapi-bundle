@@ -1,0 +1,71 @@
+doctrine:
+    dbal:
+        default_connection: pgsql
+        types:
+            uuid: Symfony\Bridge\Doctrine\Types\UuidType
+        connections:
+            pgsql:
+                url: '%env(resolve:DATABASE_URL)%'
+                driver: 'pdo_pgsql'
+            mysql:
+                url: '%env(resolve:MYSQL_URL)%'
+                driver: 'pdo_mysql'
+                charset: utf8mb4
+                default_table_options:
+                    charset: utf8mb4
+                    collate: utf8mb4_unicode_ci
+    orm:
+        default_entity_manager: pgsql
+        auto_generate_proxy_classes: true
+        entity_managers:
+            pgsql:
+                connection: pgsql
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                auto_mapping: false
+                mappings:
+                    PgEntity:
+                        is_bundle: false
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/PgEntity'
+                        prefix: 'App\PgEntity'
+                        alias: PgEntity
+            mysql:
+                connection: mysql
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                auto_mapping: false
+                mappings:
+                    MysqlEntity:
+                        is_bundle: false
+                        type: attribute
+                        dir: '%kernel.project_dir%/src/MysqlEntity'
+                        prefix: 'App\MysqlEntity'
+                        alias: MysqlEntity
+
+when@test:
+    doctrine:
+        dbal:
+            connections:
+                pgsql:
+                    dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+                mysql:
+                    dbname_suffix: '_test%env(default::TEST_TOKEN)%'
+
+when@prod:
+    doctrine:
+        orm:
+            auto_generate_proxy_classes: false
+            proxy_dir: '%kernel.build_dir%/doctrine/orm/Proxies'
+            query_cache_driver:
+                type: pool
+                pool: doctrine.system_cache_pool
+            result_cache_driver:
+                type: pool
+                pool: doctrine.result_cache_pool
+
+    framework:
+        cache:
+            pools:
+                doctrine.result_cache_pool:
+                    adapter: cache.app
+                doctrine.system_cache_pool:
+                    adapter: cache.system

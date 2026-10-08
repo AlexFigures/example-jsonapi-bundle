@@ -21,7 +21,7 @@ if (!is_file($junitPath)) {
     fwrite(STDERR, "Run the full suite with --log-junit var/acceptance-junit.xml first.\n");
     exit(2);
 }
-$inventory = json_decode(file_get_contents($root.'/docs/bundle-gaps.json'), true, 512, JSON_THROW_ON_ERROR);
+$inventory = json_decode(file_get_contents($root.'/docs/history/bundle-gaps.json'), true, 512, JSON_THROW_ON_ERROR);
 $inventory['bundle_revision'] = Composer\InstalledVersions::getReference('alexfigures/symfony-jsonapi-bundle');
 $gapById = array_column($inventory['gaps'], null, 'id');
 $methods = [];
@@ -150,12 +150,13 @@ foreach ($rows as $row) {
     $matrix .= '| '.$row['area'].' | '.$escape($row['scenario']).' | ['.basename($row['file']).'](../'.$row['file'].') | '.(implode(', ', $row['expected_statuses']) ?: 'See test assertions').' | '.$row['result'].' / '.(implode(', ', $row['current_statuses']) ?: 'trace not recorded').' | '.($row['bundle_gaps'] === [] ? 'No' : ($row['result'] === 'PASS' ? 'Resolved: ' : 'OPEN: ').implode(', ', $row['bundle_gaps']))." |\n";
 }
 writeReportFile($root.'/docs/acceptance-matrix.md', $matrix);
-$gapDoc = "# Known bundle gaps\n\n`docs/bundle-gaps.json` is the reviewed inventory. Only active failing cases carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; resolved tests keep their assertions and historical target references; they use normal assertions and are never skipped. This report validates the markers against the inventory.\n\n";
+$gapDoc = "# Current Acceptance status\n\n`docs/history/bundle-gaps.json` is the reviewed inventory. Only active failing cases carry `#[Group('bundle-gap')]` and `#[ExpectedBundleGap('ID')]`; resolved tests keep their assertions and historical target references; they use normal assertions and are never skipped. This report validates the markers against the inventory.\n\n";
 $gapDoc .= "Categories: `MUST_CONFORMANCE` and `SHOULD_CONFORMANCE` refer to normative JSON:API requirements; `DESIRED_CAPABILITY` is an intentional application contract; `OPTIONAL_FEATURE` is never a conformance failure merely because absent. `APPLICATION_POLICY` belongs to the application; `INFRASTRUCTURE_LIMIT` belongs to the runtime/database/distributed system; `DOCUMENTATION_GAP` describes documentation/contract drift or discoverability. `DX_GAP` describes public integration ergonomics/tooling. `CONFIG_IMPLEMENTATION_GAP` identifies accepted configuration with no corresponding runtime implementation.\n\n";
-$gapDoc .= "Baseline: bundle `{$inventory['bundle_revision']}`, PHP ".PHP_VERSION.', PHPUnit '.PHPUnit\Runner\Version::id().".\n\n";
+$gapDoc .= "Tested bundle `{$inventory['bundle_revision']}`, PHP ".PHP_VERSION.', PHPUnit '.PHPUnit\Runner\Version::id().".\n\n";
 foreach ($inventory['gaps'] as $gap) {
     $matching = array_filter($rows, static fn (array $row): bool => in_array($gap['id'], $row['historical_gaps'], true));
     $failCount = count(array_filter($matching, static fn (array $row): bool => $row['result'] === 'FAIL'));
+    if ($failCount === 0) { continue; }
     $gapDoc .= '## '.$gap['id'].' — '.$gap['area']."\n\n";
     $gapDoc .= '**'.$gap['category'].' · '.$gap['priority'].'**. Observed: '.$failCount.' failing / '.count($matching)." cases.\n\n";
     $gapDoc .= '- Expected: '.$gap['expected']."\n- Current on tested revision: ".($failCount === 0 ? 'PASS; historical gap resolved for all covered cases.' : 'OPEN; see observed failures in acceptance-results.json.')."\n- Historical baseline: ".$gap['current']."\n- Bundle change: ".$gap['bundle_change_required']."\n- Tests:\n";
@@ -166,6 +167,7 @@ foreach ($inventory['gaps'] as $gap) {
     if (isset($gap['why_bundle'])) { $gapDoc .= '- Responsibility: '.$gap['why_bundle']."\n"; }
     $gapDoc .= "\n";
 }
+$gapDoc .= "Current observed failures are also summarized in [current-gaps.json](current-gaps.json). Closed investigations and reviewed IDs are in [history](history/README.md).\n";
 writeReportFile($root.'/docs/acceptance-status.md', rtrim($gapDoc)."\n");
 fwrite(STDOUT, json_encode($counts, JSON_THROW_ON_ERROR)."\n");
 exit($counts['unexpected_fail'] > 0 || $counts['skipped'] > 0 ? 1 : 0);

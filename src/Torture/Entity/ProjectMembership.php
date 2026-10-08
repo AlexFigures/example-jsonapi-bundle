@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Torture\Entity;
 
-use AlexFigures\Symfony\Resource\Attribute\Attribute as JsonApiAttribute;
-use AlexFigures\Symfony\Resource\Attribute\{Id, JsonApiResource, Relationship, FilterableFields, FilterableField, SortableFields};
+use AlexFigures\JsonApi\Resource\Attribute\Attribute as JsonApiAttribute;
+use AlexFigures\JsonApi\Resource\Attribute\{Id, JsonApiResource, Relationship, FilterableFields, FilterableField, SortableFields};
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\{ArrayCollection, Collection};
 use Symfony\Component\Validator\Constraints as Assert;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Tests\Acceptance\Support;
 
-use AlexFigures\Symfony\Events\ResourceChangedEvent;
+use AlexFigures\JsonApi\Events\ResourceChangedEvent;
 use App\Application\Article\ArticlePublished;
 use Doctrine\DBAL\DriverManager;
 use Doctrine\Persistence\ManagerRegistry;

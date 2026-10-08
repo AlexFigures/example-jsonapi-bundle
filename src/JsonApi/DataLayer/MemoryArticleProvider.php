@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\JsonApi\DataLayer;
 
-use AlexFigures\Symfony\Contract\Data\{ResourceRepository, ResourceProcessor, RelationshipReader, Slice, SliceIds, ChangeSet};
-use AlexFigures\Symfony\Contract\Tx\ResourceWriteTransactionManagerInterface;
-use AlexFigures\Symfony\Contract\Data\RepresentationPreloaderInterface;
-use AlexFigures\Symfony\Query\Fetch\RelationshipReadMap;
+use AlexFigures\JsonApi\Contract\Data\{ResourceRepository, ResourceProcessor, RelationshipReader, Slice, SliceIds, ChangeSet};
+use AlexFigures\JsonApi\Contract\Tx\ResourceWriteTransactionManagerInterface;
+use AlexFigures\JsonApi\Contract\Data\RepresentationPreloaderInterface;
+use AlexFigures\JsonApi\Query\Fetch\RelationshipReadMap;
 use Symfony\Component\HttpFoundation\Request;
-use AlexFigures\Symfony\Http\Exception\{NotFoundException, ConflictException, UnprocessableEntityException};
-use AlexFigures\Symfony\Query\{Criteria, Pagination};
+use AlexFigures\JsonApi\Http\Exception\{NotFoundException, ConflictException, UnprocessableEntityException};
+use AlexFigures\JsonApi\Query\{Criteria, Pagination};
 use App\FeatureMemory\MemoryArticle;
 
 /** A deterministic source, not a Doctrine adapter; reset on each kernel boot. */

@@ -12,7 +12,7 @@ The review now assigns every inventoried row a bounded supported contract, an ex
 | JSON Schema profile configuration | SchemaProfilesTest checks disabled profile annotations; OpenApiTest checks enabled annotations and local schema refs |
 | Custom route options/result forms | HandlerContractTest asserts defaults, requirements, priority, controller/handler forms and response modifiers; RegistryContractTest checks description/registry access |
 | Configured input linkage writes | WriteConfigurationTest rejects embedded relationships when disabled and asserts no partial insert; enabled writes retain existing protocol coverage |
-| Tenant query-plan capability | Query budgets and tenant isolation pass with explicit safe forwarding; internal capability/locator stability remains a DESIGN_DECISION |
+| Tenant query-plan capability | Query budgets and tenant isolation pass with explicit safe forwarding; capability/locator public signatures are verified by PublicSignatureTest |
 
 COVERED_GREEN means the linked assertions verify the stated contract. It does not promise every theoretical combination. COVERED_GAP retains a desired failing assertion; current-gaps.json is the authoritative observed-failure inventory. CONFIG_ONLY and DOCUMENTATION_ONLY require bundle implementation/removal decisions before freeze. There are no silent waivers for promised public behavior.
 

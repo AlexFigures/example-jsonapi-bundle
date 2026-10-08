@@ -1,6 +1,8 @@
+> Historical iteration report; current evidence is in [release gate](../release-gate.md).
+
 # PR #67 independent verification
 
-Tested bundle: `a17ffd40a7d3a1e642a33aaf788427bb6b117fdb`. Generated from complete HTTP/kernel Acceptance and Torture evidence. No distributed transaction promise; independent connections reject before mutation.
+Tested bundle: `96a1530f3155ddf001b7d1e48fd33e375c382d85`. Generated from complete HTTP/kernel Acceptance and Torture evidence. No distributed transaction promise; independent connections reject before mutation.
 
 | External contract | Executable evidence | Result |
 |---|---|---|

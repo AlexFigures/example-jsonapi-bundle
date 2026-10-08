@@ -14,15 +14,15 @@ services:
     App\Application\Article\PublishArticle:
         tags: ['jsonapi.custom_route_handler']
     App\JsonApi\ScopedArticleRepository:
-        decorates: AlexFigures\Symfony\Contract\Data\ResourceRepository
+        decorates: AlexFigures\JsonApi\Contract\Data\ResourceRepository
         arguments:
             $inner: '@App\JsonApi\ScopedArticleRepository.inner'
     App\JsonApi\AuthorizedArticleProcessor:
-        decorates: AlexFigures\Symfony\Contract\Data\ResourceProcessor
+        decorates: AlexFigures\JsonApi\Contract\Data\ResourceProcessor
         arguments:
             $inner: '@App\JsonApi\AuthorizedArticleProcessor.inner'
     App\JsonApi\AuthorizedArticleRelationships:
-        decorates: AlexFigures\Symfony\Contract\Data\RelationshipUpdater
+        decorates: AlexFigures\JsonApi\Contract\Data\RelationshipUpdater
         arguments:
             $inner: '@App\JsonApi\AuthorizedArticleRelationships.inner'
     App\Application\Article\AuthorPublishingStatisticsHandler:
@@ -40,10 +40,13 @@ services:
     App\JsonApi\DataLayer\TypedMemoryRepository:
         arguments:
             $type: disabled
+    App\JsonApi\DataLayer\TypedMemoryRelationships:
+        autoconfigure: false
+        arguments: ['disabled', 'disabled']
     App\Api\Cookbook\ScopedTransactionHandler:
         tags: ['jsonapi.custom_route_handler']
     App\JsonApi\DataLayer\CookbookReadMapper:
-        decorates: AlexFigures\Symfony\Resource\Mapper\ReadMapperInterface
+        decorates: AlexFigures\JsonApi\Resource\Mapper\ReadMapperInterface
         arguments: ['@App\JsonApi\DataLayer\CookbookReadMapper.inner']
     App\JsonApi\DataLayer\SuggestedAuthorsBatchReader:
         autoconfigure: false

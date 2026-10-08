@@ -1,12 +1,12 @@
 {
     "evidence": {
         "verified": true,
-        "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
-        "junit_sha256": "c1253e0f2ad57a3bfd0d7a7d64bdc2093804cf02fb5ce8689f9897fdbd1c56ee",
-        "trace_sha256": "972c0f6da899fd662a3a66b48954980b7513907fe42739462822eb56ce45fb80"
+        "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
+        "junit_sha256": "4aed6439717ff9449f237ec6cc12226e5f21c22d7046499bfd08ba664b201529",
+        "trace_sha256": "fd6e3f7afc93fc455760a95e76cab0d4677efc704572d80e31f282f933a0d096"
     },
-    "assertions": 6806,
-    "bundle_revision": "a17ffd40a7d3a1e642a33aaf788427bb6b117fdb",
+    "assertions": 7127,
+    "bundle_revision": "96a1530f3155ddf001b7d1e48fd33e375c382d85",
     "gap_summary": [
         {
             "id": "CONTENT-NEGOTIATION-001",
@@ -651,12 +651,19 @@
             "passing_cases": 1,
             "failing_cases": 0,
             "current_failures": []
+        },
+        {
+            "id": "ERROR-LINKS-TYPE",
+            "status": "RESOLVED_ON_TESTED_REVISION",
+            "passing_cases": 3,
+            "failing_cases": 0,
+            "current_failures": []
         }
     ],
-    "phpunit_version": "11.5.56",
-    "php_version": "8.3.35",
+    "phpunit_version": "11.5.57",
+    "php_version": "8.2.34",
     "counts": {
-        "stable_pass": 666,
+        "stable_pass": 683,
         "gap_pass": 0,
         "gap_fail": 0,
         "unexpected_fail": 0,
@@ -3679,6 +3686,56 @@
         },
         {
             "area": "Features",
+            "scenario": "testAllEndpointOperationsDispatchBySourceType with data set \"autoconfigured cards\"",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedRelationshipTest::testAllEndpointOperationsDispatchBySourceType with data set \"autoconfigured cards\"",
+            "file": "tests/Acceptance/Features/DataLayer/TypedRelationshipTest.php",
+            "expected_statuses": [
+                200,
+                204
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testAllEndpointOperationsDispatchBySourceType with data set \"explicitly tagged notes\"",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedRelationshipTest::testAllEndpointOperationsDispatchBySourceType with data set \"explicitly tagged notes\"",
+            "file": "tests/Acceptance/Features/DataLayer/TypedRelationshipTest.php",
+            "expected_statuses": [
+                200,
+                204
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testUnmatchedTypeUsesConfiguredReaderFallback",
+            "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\TypedRelationshipTest::testUnmatchedTypeUsesConfiguredReaderFallback",
+            "file": "tests/Acceptance/Features/DataLayer/TypedRelationshipTest.php",
+            "expected_statuses": [
+                200
+            ],
+            "current_statuses": [
+                200
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
             "scenario": "testRejectPolicyDoesNotInvokeUnboundedComputedFallback",
             "test": "App\\Tests\\Acceptance\\Features\\DataLayer\\UnplannedRelationshipTest::testRejectPolicyDoesNotInvokeUnboundedComputedFallback",
             "file": "tests/Acceptance/Features/DataLayer/UnplannedRelationshipTest.php",
@@ -6561,6 +6618,70 @@
         },
         {
             "area": "Features",
+            "scenario": "testDefaultRelationshipHookRejectsBeforePersistence with data set \"replace to-one\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DefaultAuthorizationHookTest::testDefaultRelationshipHookRejectsBeforePersistence with data set \"replace to-one\"",
+            "file": "tests/Acceptance/Features/Relationships/DefaultAuthorizationHookTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultRelationshipHookRejectsBeforePersistence with data set \"replace to-many\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DefaultAuthorizationHookTest::testDefaultRelationshipHookRejectsBeforePersistence with data set \"replace to-many\"",
+            "file": "tests/Acceptance/Features/Relationships/DefaultAuthorizationHookTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultRelationshipHookRejectsBeforePersistence with data set \"add to-many\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DefaultAuthorizationHookTest::testDefaultRelationshipHookRejectsBeforePersistence with data set \"add to-many\"",
+            "file": "tests/Acceptance/Features/Relationships/DefaultAuthorizationHookTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
+            "scenario": "testDefaultRelationshipHookRejectsBeforePersistence with data set \"remove to-many\"",
+            "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DefaultAuthorizationHookTest::testDefaultRelationshipHookRejectsBeforePersistence with data set \"remove to-many\"",
+            "file": "tests/Acceptance/Features/Relationships/DefaultAuthorizationHookTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Features",
             "scenario": "testFieldBudgetAtLimitStillAllowsConnectedInclude",
             "test": "App\\Tests\\Acceptance\\Features\\Relationships\\DocumentBudgetTest::testFieldBudgetAtLimitStillAllowsConnectedInclude",
             "file": "tests/Acceptance/Features/Relationships/DocumentBudgetTest.php",
@@ -8106,6 +8227,110 @@
         },
         {
             "area": "Production",
+            "scenario": "testExistingTargetDoesNotGrantPermission with data set \"replace to-one\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipAuthorizationTest::testExistingTargetDoesNotGrantPermission with data set \"replace to-one\"",
+            "file": "tests/Acceptance/Production/RelationshipAuthorizationTest.php",
+            "expected_statuses": [
+                200,
+                403
+            ],
+            "current_statuses": [
+                200,
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testExistingTargetDoesNotGrantPermission with data set \"replace to-many\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipAuthorizationTest::testExistingTargetDoesNotGrantPermission with data set \"replace to-many\"",
+            "file": "tests/Acceptance/Production/RelationshipAuthorizationTest.php",
+            "expected_statuses": [
+                200,
+                403
+            ],
+            "current_statuses": [
+                200,
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testExistingTargetDoesNotGrantPermission with data set \"add to-many\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipAuthorizationTest::testExistingTargetDoesNotGrantPermission with data set \"add to-many\"",
+            "file": "tests/Acceptance/Production/RelationshipAuthorizationTest.php",
+            "expected_statuses": [
+                200,
+                403
+            ],
+            "current_statuses": [
+                200,
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testExistingTargetDoesNotGrantPermission with data set \"remove to-many\"",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipAuthorizationTest::testExistingTargetDoesNotGrantPermission with data set \"remove to-many\"",
+            "file": "tests/Acceptance/Production/RelationshipAuthorizationTest.php",
+            "expected_statuses": [
+                200,
+                403
+            ],
+            "current_statuses": [
+                200,
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testNullLinkageCannotBypassAuthorization",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipAuthorizationTest::testNullLinkageCannotBypassAuthorization",
+            "file": "tests/Acceptance/Production/RelationshipAuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
+            "scenario": "testForbiddenRelationshipRollsBackEarlierAtomicMutation",
+            "test": "App\\Tests\\Acceptance\\Production\\RelationshipAuthorizationTest::testForbiddenRelationshipRollsBackEarlierAtomicMutation",
+            "file": "tests/Acceptance/Production/RelationshipAuthorizationTest.php",
+            "expected_statuses": [
+                403
+            ],
+            "current_statuses": [
+                403
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Production",
             "scenario": "testEditorMayAddAndRemoveTags",
             "test": "App\\Tests\\Acceptance\\Production\\RelationshipPolicyTest::testEditorMayAddAndRemoveTags",
             "file": "tests/Acceptance/Production/RelationshipPolicyTest.php",
@@ -9034,6 +9259,76 @@
             ],
             "current_statuses": [
                 500
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [],
+            "failure": null
+        },
+        {
+            "area": "Protocol",
+            "scenario": "testApplicationErrorTypeLinkIsSerializedOnEachError with data set \"type only\"",
+            "test": "App\\Tests\\Acceptance\\Protocol\\ErrorTypeLinksTest::testApplicationErrorTypeLinkIsSerializedOnEachError with data set \"type only\"",
+            "file": "tests/Acceptance/Protocol/ErrorTypeLinksTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [
+                "ERROR-LINKS-TYPE"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Protocol",
+            "scenario": "testApplicationErrorTypeLinkIsSerializedOnEachError with data set \"type and occurrence are distinct\"",
+            "test": "App\\Tests\\Acceptance\\Protocol\\ErrorTypeLinksTest::testApplicationErrorTypeLinkIsSerializedOnEachError with data set \"type and occurrence are distinct\"",
+            "file": "tests/Acceptance/Protocol/ErrorTypeLinksTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [
+                "ERROR-LINKS-TYPE"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Protocol",
+            "scenario": "testApplicationErrorTypeLinkIsSerializedOnEachError with data set \"multiple validation errors\"",
+            "test": "App\\Tests\\Acceptance\\Protocol\\ErrorTypeLinksTest::testApplicationErrorTypeLinkIsSerializedOnEachError with data set \"multiple validation errors\"",
+            "file": "tests/Acceptance/Protocol/ErrorTypeLinksTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
+            ],
+            "result": "PASS",
+            "bundle_gaps": [],
+            "historical_gaps": [
+                "ERROR-LINKS-TYPE"
+            ],
+            "failure": null
+        },
+        {
+            "area": "Protocol",
+            "scenario": "testTypeLinkIsOptionalWhenApplicationDoesNotSupplyIt",
+            "test": "App\\Tests\\Acceptance\\Protocol\\ErrorTypeLinksTest::testTypeLinkIsOptionalWhenApplicationDoesNotSupplyIt",
+            "file": "tests/Acceptance/Protocol/ErrorTypeLinksTest.php",
+            "expected_statuses": [
+                422
+            ],
+            "current_statuses": [
+                422
             ],
             "result": "PASS",
             "bundle_gaps": [],

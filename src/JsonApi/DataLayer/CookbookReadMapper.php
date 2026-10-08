@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\JsonApi\DataLayer;
 
-use AlexFigures\Symfony\Resource\Mapper\ReadMapperInterface;
-use AlexFigures\Symfony\Resource\Definition\ResourceDefinition;
-use AlexFigures\Symfony\Query\Criteria;
+use AlexFigures\JsonApi\Resource\Mapper\ReadMapperInterface;
+use AlexFigures\JsonApi\Resource\Definition\ResourceDefinition;
+use AlexFigures\JsonApi\Query\Criteria;
 use App\Api\FeatureCustomSummary;
 use App\PgEntity\FeatureArticle;
 

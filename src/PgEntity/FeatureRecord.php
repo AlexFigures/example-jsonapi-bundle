@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\PgEntity;
 
-use AlexFigures\Symfony\Resource\Attribute\{Attribute, Id, JsonApiResource, Relationship};
-use AlexFigures\Symfony\Resource\Definition\ResourceOperation;
+use AlexFigures\JsonApi\Resource\Attribute\{Attribute, Id, JsonApiResource, Relationship};
+use AlexFigures\JsonApi\Resource\Definition\ResourceOperation;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Attribute\Groups;
 

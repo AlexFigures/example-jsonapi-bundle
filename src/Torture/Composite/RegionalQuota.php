@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Torture\Composite;
 
-use AlexFigures\Symfony\Resource\Attribute\{Attribute as JsonApiAttribute, Id, JsonApiResource};
+use AlexFigures\JsonApi\Resource\Attribute\{Attribute as JsonApiAttribute, Id, JsonApiResource};
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]

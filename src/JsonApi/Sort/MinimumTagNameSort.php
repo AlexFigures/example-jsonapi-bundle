@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\JsonApi\Sort;
 
-use AlexFigures\Symfony\Filter\Handler\SortHandlerInterface;
+use AlexFigures\JsonApi\Filter\Handler\SortHandlerInterface;
 use Doctrine\ORM\QueryBuilder;
 
 /** Explicit application semantics for otherwise ambiguous to-many ordering. */

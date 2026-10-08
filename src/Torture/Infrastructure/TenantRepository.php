@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Torture\Infrastructure;
 
-use AlexFigures\Symfony\Contract\Data\{ResourceRepository, Slice};
-use AlexFigures\Symfony\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface;
-use AlexFigures\Symfony\Query\Criteria;
+use AlexFigures\JsonApi\Contract\Data\{ResourceRepository, Slice};
+use AlexFigures\JsonApi\Bridge\Doctrine\Query\DoctrineCollectionQueryProviderInterface;
+use AlexFigures\JsonApi\Query\Criteria;
 use Doctrine\ORM\QueryBuilder;
 use Symfony\Component\HttpFoundation\RequestStack;
 
@@ -31,7 +31,7 @@ final class TenantRepository implements ResourceRepository, DoctrineCollectionQu
         // manager. Keep the validation check on this optimized path as on normal reads.
         $this->check();
         $provider = $this->inner;
-        if ($provider instanceof \AlexFigures\Symfony\Bridge\Symfony\Locator\ResourceRepositoryLocator) {
+        if ($provider instanceof \AlexFigures\JsonApi\Bridge\Symfony\Locator\ResourceRepositoryLocator) {
             // The bundle's locator selects a type-specific repository before asking
             // it for optional query capabilities, so preserve that dispatch here.
             $provider = $provider->getRepositoryForType($type);

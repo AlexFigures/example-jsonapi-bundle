@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\JsonApi\Profile;
 
-use AlexFigures\Symfony\Profile\Hook\{FetchPlanHookInterface, DocumentHook};
-use AlexFigures\Symfony\Profile\ProfileContext;
+use AlexFigures\JsonApi\Profile\Hook\{FetchPlanHookInterface, DocumentHook};
+use AlexFigures\JsonApi\Profile\ProfileContext;
 use Symfony\Component\HttpFoundation\Request;
-use AlexFigures\Symfony\Resource\Metadata\ResourceMetadata;
+use AlexFigures\JsonApi\Resource\Metadata\ResourceMetadata;
 
 /** Separate hook demonstrates the legacy count-planning contract independently. */
 final class CookbookCountPlan implements FetchPlanHookInterface, DocumentHook

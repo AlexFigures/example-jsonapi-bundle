@@ -1,0 +1,10 @@
+services:
+  php:
+    volumes:
+      - fresh_vendor:/srv/app/vendor
+      - fresh_cache:/srv/app/var/cache
+volumes:
+  fresh_vendor:
+    name: ${COMPAT_VENDOR_VOLUME:?Unique clean-install vendor volume required}
+  fresh_cache:
+    name: ${COMPAT_CACHE_VOLUME:?Unique clean-install cache volume required}

@@ -12,8 +12,6 @@ use PHPUnit\Framework\Attributes\Group;
 
 final class ErrorTypeLinksTest extends AcceptanceTestCase
 {
-    #[ExpectedBundleGap('ERROR-LINKS-TYPE')]
-    #[Group('bundle-gap')]
     #[DataProvider('variants')]
     public function testApplicationErrorTypeLinkIsSerializedOnEachError(string $variant, int $count): void
     {

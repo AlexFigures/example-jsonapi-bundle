@@ -10,7 +10,7 @@ require __DIR__.'/report-evidence.php';
 $root = dirname(__DIR__);
 $xmlPath = $argv[1] ?? $root.'/var/torture/junit.xml';
 if (!is_file($xmlPath)) { throw new RuntimeException('Run the complete torture suite with --log-junit var/torture/junit.xml first.'); }
-$inventory = json_decode(file_get_contents($root.'/docs/torture-gaps.json'), true, 512, JSON_THROW_ON_ERROR);
+$inventory = json_decode(file_get_contents($root.'/docs/history/torture-gaps.json'), true, 512, JSON_THROW_ON_ERROR);
 $gaps = array_column($inventory['gaps'], null, 'id');
 $methods = [];
 $expected = 0;

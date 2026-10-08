@@ -5,5 +5,5 @@ acceptance_failure:
 
 acceptance_strict_atomic:
     path: /api/strict-operations
-    controller: AlexFigures\Symfony\Bridge\Symfony\Controller\AtomicController
+    controller: AlexFigures\JsonApi\Bridge\Symfony\Controller\AtomicController
     methods: [POST]

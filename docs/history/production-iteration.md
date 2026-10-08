@@ -1,3 +1,5 @@
+> Historical report. Earlier findings and failures are retained for context; current evidence is in [release gate](../release-gate.md).
+
 # Production onboarding iteration
 
 ## Latest acceptance refresh

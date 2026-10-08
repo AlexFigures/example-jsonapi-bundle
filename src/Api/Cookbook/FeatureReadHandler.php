@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Api\Cookbook;
 
-use AlexFigures\Symfony\CustomRoute\Attribute\NoTransaction;
-use AlexFigures\Symfony\CustomRoute\Context\CustomRouteContext;
-use AlexFigures\Symfony\CustomRoute\Handler\CustomRouteHandlerInterface;
-use AlexFigures\Symfony\CustomRoute\Result\CustomRouteResult;
+use AlexFigures\JsonApi\CustomRoute\Attribute\NoTransaction;
+use AlexFigures\JsonApi\CustomRoute\Context\CustomRouteContext;
+use AlexFigures\JsonApi\CustomRoute\Handler\CustomRouteHandlerInterface;
+use AlexFigures\JsonApi\CustomRoute\Result\CustomRouteResult;
 use Doctrine\Persistence\ManagerRegistry;
 
-#[\AlexFigures\Symfony\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.explicit-type', path: '/cookbook/typed-features/{id}', handler: FeatureReadHandler::class, resourceType: 'feature-articles')]
+#[\AlexFigures\JsonApi\Resource\Attribute\JsonApiCustomRoute(name: 'cookbook.explicit-type', path: '/cookbook/typed-features/{id}', handler: FeatureReadHandler::class, resourceType: 'feature-articles')]
 #[NoTransaction]
 final class FeatureReadHandler implements CustomRouteHandlerInterface
 {

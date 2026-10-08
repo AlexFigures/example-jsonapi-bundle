@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\JsonApi\Filter;
 
-use AlexFigures\Symfony\Filter\Handler\FilterHandlerInterface;
-use AlexFigures\Symfony\Http\Exception\BadRequestException;
+use AlexFigures\JsonApi\Filter\Handler\FilterHandlerInterface;
+use AlexFigures\JsonApi\Http\Exception\BadRequestException;
 use Doctrine\ORM\QueryBuilder;
 
 final class ArticleSearchFilter implements FilterHandlerInterface
